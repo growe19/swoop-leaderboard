@@ -437,13 +437,13 @@ var resultsRA = [];
 					if (type === 'display') {
 						let directionMove = "";
 							if (data[0] >= '+1' ) {
-								directionMove = "<span class=text-danger rotateUp>&lsaquo;</span>"; // Position change red, you've dropped places!
+								directionMove = "<span class=text-danger><i class="fa-solid fa-chevron-down"></i></span>"; // Position change red, you've dropped places!
 							}
 							else if (data[0] < '0' ) {
-								directionMove = "<span class=text-success rotateDn>&lsaquo;</span>"; // Position change green, you've overtaken cars!
+								directionMove = "<span class=text-success><i class="fa-solid fa-chevron-up"></i></span>"; // Position change green, you've overtaken cars!
 							}
 							else {
-								directionMove = "<span class=text-secondary>&#9655;</span> 0"; // Position change static, you've maintained track position!
+								directionMove = "<span class=text-secondary><i class="fa-solid fa-dash"></i></span> 0"; // Position change static, you've maintained track position!
 							}
 						return '' + directionMove + ' ' + data + '';
 					}
