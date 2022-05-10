@@ -1,0 +1,142 @@
+	
+		body {
+            font-family: 'Exo';
+            font-size: 14px;
+            }
+    
+            .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+            background-color: #fff;
+            color: #000;
+            }
+       
+            .badge-outline {
+            border: 1px solid #999;
+            background-color: transparent;
+            }
+     
+            .badge-outline.badge-success {
+            border-color: #468847;
+            }
+     
+            .badge-outline.badge-danger {
+            border-color: #df4759;
+            }
+            
+            .badge-outline.badge-pit {
+            border-color: #ffffff;
+            }
+    
+            .badge-outline.badge-platinum.text-platinum {
+            border-color: #CDD5E0;
+            color: #CDD5E0;
+            }
+            
+            .badge-outline.badge-gold.text-gold {
+            border-color: #C9B037;
+            color: #C9B037;
+            }
+     
+            .badge-outline.badge-silver.text-silver {
+            border-color: #D7D7D7;
+            color: #D7D7D7;
+            }
+     
+            .badge-outline.badge-bronze.text-bronze {
+            border-color: #CD7F32;
+            color: #CD7F32;
+            }
+     
+            .badge-outline.badge-best.text-best {
+            color: #7A43B6;
+            }
+     
+            .badge-purple {
+            background-color: #6f42c1;
+            color: #ffffff;
+            }
+    
+            th {
+            border-right: 1px solid;
+            }
+    
+            .text-gold {
+            color: #C9B037;
+            }
+    
+            .text-silver {
+            color: #D7D7D7;
+            }
+     
+            .text-bronze {
+            color: #CD7F32;
+            }
+    
+            .text-purple {
+            color: #7951a8;
+            }
+    
+            .dtsr-confirmation{
+            color: #343a40;
+            }
+    
+            .progress_bar .pro-bar {
+            background: hsl(0, 0%, 97%);
+            box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.1) inset;
+            height:4px;
+            margin-bottom: 0px; /*  12 */
+            margin-top: 5px; /*  50 */
+            position: relative;
+            }
+    
+            .progress_bar .progress_bar_title{
+            color: hsl(218, 4%, 50%);
+            font-size: 15px;
+            font-weight: 300;
+            position: relative;
+            top: -28px;
+            z-index: 1;
+            }
+            
+            .progress_bar .progress_number{
+            float: right;
+            margin-top: -24px;
+            }
+    
+            .progress_bar .progress-bar-inner {
+            background-color: hsl(0, 0%, 88%);
+            display: block;
+            width: 0;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: width 1s linear 0s;
+            }
+            
+            .progress_bar .progress-bar-inner:before {
+            content: "";
+            background-color: hsl(0, 0%, 100%);
+            border-radius: 50%;
+            width: 4px;
+            height: 4px;
+            position: absolute;
+            right: 1px;
+            top: 0;
+            z-index: 1;
+            }
+            
+            .progress_bar .progress-bar-inner:after {
+            content: "";
+            width: 14px;
+            height: 14px;
+            background-color: inherit;
+            border-radius: 50%;
+            position: absolute;
+            right: -4px;
+            top: -5px;
+            }
+    
+            .nowrapping {
+            white-space: nowrap;
+            }
+            
