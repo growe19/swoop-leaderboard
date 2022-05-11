@@ -37,8 +37,8 @@
         }
 
 		else if ( mode == 'static') {
-            driverURL = 'AllCars.txt';
-			sessionURL = 'SessionInfo.txt';
+            driverURL = 'https://garyrowe.co.uk/acc/AllCars.txt';
+			sessionURL = 'https://garyrowe.co.uk/acc/SessionInfo.txt';
         }
 
 		else {
