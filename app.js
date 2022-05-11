@@ -981,19 +981,7 @@ console.log('');
 		table.ajax.reload();
 	});
 
-	table.on('draw', function () {
-		// If reloading table then show previously shown rows
-		if (childRows) {
-			childRows.every(function ( rowIdx, tableLoop, rowLoop ) {
-			d = this.data();
-			console.log(d);
-			this.child($(format(d))).show();
-			this.nodes().to$().addClass('shown');
-			} );
-		// Reset childRows so loop is not executed each draw
-		childRows = null;
-		}
-	});
+	table.on('draw', formatChildRows);
 
 	// This adds the bg-dark class to the fixedHeader
 	//
@@ -1012,3 +1000,20 @@ console.log('');
 		 loadlink(); // This function adds the Title and Clock countdown
 	}, 1000 ); // reload rate
 }); // end of $(document).ready(function () {
+
+/**
+ *
+ */
+function formatChildRows() {
+	// If reloading table then show previously shown rows
+	if (childRows) {
+		childRows.every(function (rowIdx, tableLoop, rowLoop) {
+			d = this.data();
+			console.log(d);
+			this.child($(format(d))).show();
+			this.nodes().to$().addClass('shown');
+		});
+		// Reset childRows so loop is not executed each draw
+		childRows = null;
+	}
+}
