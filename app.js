@@ -49,29 +49,29 @@
 		// URL are set above in the IF
 
 		var driverData = (function () {
-			var driverData = null;
+			let driverData = {};
 			$.ajax({
-			'async': false,
-			'global': false,
-			'url': driverURL,
-			'dataType': "json",
-			'success': function (data) {
-            driverData = data;
-			}
+				'async': false,
+				'global': false,
+				'url': driverURL,
+				'dataType': "json",
+				'success': function (data) {
+					driverData = data;
+				}
 			});
 			return driverData;
 		})();
 
 		var sessionData = (function () {
-			var sessionData = null;
+			let sessionData = {};
 			$.ajax({
-			'async': false,
-			'global': false,
-			'url': sessionURL,
-			'dataType': "json",
-			'success': function (data) {
-            sessionData = data;
-			}
+				'async': false,
+				'global': false,
+				'url': sessionURL,
+				'dataType': "json",
+				'success': function (data) {
+					sessionData = data;
+				}
 			});
 			return sessionData;
 		})();
