@@ -1,19 +1,4 @@
 
-        
-    
-	
-
-	/*
-	var json = '[{"ID":"151032",  "user":"UsersName1",  "message":"This is a message.","date":"1293452007","replies":"1","categories":false,"categoriesArray":[], "lat":"0.000000000000000","lng":"0.000000000000000"},{"ID":"151033","user":"UsersName2","message":"This is another message.","date":"1293452007","replies":"2","categories":false,"categoriesArray":[],"lat":"0.000000000000000","lng":"0.000000000000000"}]';
-var msgs = JSON.parse(json);
-
-for (var i = 0, l = msgs.length; i < l; i++) {
-    var msg = msgs[i];
-    var div = document.createElement('div');
-    div.innerHTML = 'Hello ' + msg.user + ' your Id is: ' + msg.ID + 'and your message is: ' + msg.message + ' it has ' + msg.replies + ' replies';
-    document.body.appendChild(div);
-}*/
-	
 	
 	// Global var to track shown child rows
 	
@@ -227,7 +212,12 @@ var resultsRA = [];
 		
 
 				
-	/*
+	/* Parameters from the Swoop API that are from AllCars 
+
+	Historic Results come from /Acc/GetRaceAppCarWithResults/{serieId}/{raceNumber}
+
+	In the string above the {serieId} is actually the raceAppSerieId from /Acc/GetSessionInfos
+
 	"raceAppTag": "string",
     "raceAppTagPosition": 0,
     "raceAppGlobalChampionshipTotalPoints": 0,
@@ -289,6 +279,9 @@ var resultsRA = [];
                	collectionLayout: 'fixed columns', //three-column // fixed columns
                 collectionTitle: '<span class="text-dark"><h3>Column Visibility Control</h3></span>',
 				text: 'Column Visibility',
+
+				// IF NEW COLUMNS ARE ADDED DON'T FORGET TO ADD THE NUMBER HERE
+
 				columns : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43 ],
 				columnText: function ( dt, idx, title ) {
 					if(idx==0){ return '<small>'+(idx)+': Additional Data +</small>';}
@@ -335,7 +328,6 @@ var resultsRA = [];
 					if(idx==41){ return '<small>'+(idx)+': RaceApp.eu: Championship Pred Change</small>';}
 					if(idx==42){ return '<small>'+(idx)+': RaceApp.eu: Tag Predicted Champ Pos</small>';}
 					if(idx==43){ return '<small>'+(idx)+': RaceApp.eu: Tag Predicted Champ Pts</small>';}
-					//if(idx==43){ return '<small>'+(idx)+': isDriver?</small>';}
 
                     return (idx)+': ERROR';
                 }
@@ -427,12 +419,12 @@ var resultsRA = [];
 		"columns": [
 			{
 				"className":      'dt-control',
-/* id=0 */		"data":           null, // This column is for the child expanding data
+		"data":           null, // This column is for the child expanding data
 				"defaultContent": ''
 			},
-/* id=1 */	{ 'data': 'racePosition' },
-/* id=1 */	{ 'data': 'gridPosition' },
-/* id=2 */	{ "data": "movements" ,
+	{ 'data': 'racePosition' },
+	{ 'data': 'gridPosition' },
+	{ "data": "movements" ,
 				render: function(data, type) {
 					if (type === 'display') {
 						let directionMove = "";
@@ -450,8 +442,8 @@ var resultsRA = [];
 				return data;
 				}
 			},
-/* id=3 */	{ 'data': 'currentDriver_ShortName' }, 
-/* id=4 */	{ "data": "currentDriver_NationalityNumber" ,
+	{ 'data': 'currentDriver_ShortName' }, 
+	{ "data": "currentDriver_NationalityNumber" ,
 				"render": function (data, type, row) {
 					if ( row['currentDriver_NationalityNumber'] == '0') { return '';}
 					else if ( row['currentDriver_NationalityNumber'] == '1') { return '<span class="fi fi-it"></span>';}
@@ -543,17 +535,17 @@ var resultsRA = [];
 					else { return '';}
 				}
 			},
-/* id=5 */	// { 'data': 'currentDriver_Nationality' },
-/* id=5 */	{ 'data': null,"defaultContent": '' }, // Testing spacing of Nationality
 
-/* id=6 */	{ 'data': 'raceNumber' }, 
+	{ 'data': null,"defaultContent": '' }, // currentDriver_Nationality
 
-/* id=7 */	// { 'data': 'currentDriver_FullName' }, 
-/* id=7 */	{ 'data': null,"defaultContent": '' }, // Testing capitalising the fullname
+	{ 'data': 'raceNumber' }, 
 
-/* id=8 */	{ 'data': 'currentDriver_FirstName'	},	
-/* id=9 */	{ 'data': 'currentDriver_LasttName' }, 
-/* id=10 */	{ 'data': 'driverCategory' , 
+
+	{ 'data': null,"defaultContent": '' }, // currentDriver_FullName
+
+	{ 'data': 'currentDriver_FirstName'	},	
+	{ 'data': 'currentDriver_LasttName' }, 
+	{ 'data': 'driverCategory' , 
 				"render": function (data, type, row) {
 					if ( row['driverCategory'] == '0') { return '<span class="badge text-bronze badge-outline badge-bronze">BRONZE</span>';}
 					else if ( row['driverCategory'] == '1') { return '<span class="badge text-silver badge-outline badge-silver">SILVER</span>';}
@@ -562,11 +554,10 @@ var resultsRA = [];
 					else { return 'Error';}
 				}
 			},
-/* id=11 */ { 'data': 'teamName' }, 
-/* id=12 */ //{ 'data': 'teamNationality' }, 
-/* id=12 */	{ 'data': null,"defaultContent": '' }, // Testing spacing of Nationality
+{ 'data': 'teamName' }, 
 
-/* id=13 */ { "data": "carBrand" , 
+{ 'data': null,"defaultContent": '' }, // teamNationality
+{ "data": "carBrand" , 
 				"render": function (data, type, row) {
 					if ( row['carBrand'] == 'Mercedes-AMG') { return '<span class="car-mercedes-benz"></span>';}
 					else if ( row['carBrand'] == 'Honda') { return '<span class="car-honda"></span>';}
@@ -593,9 +584,9 @@ var resultsRA = [];
 				}
 			//https://garyrowe.co.uk/acc/car-makes-icons-1.1.1/dist/demo.html			
 			},					
-/* id=14 */ { 'data': 'carBrand' }, 
-/* id=15 */ { 'data': 'carName' }, 
-/* id=16 */ { "data": "serie" , 
+ { 'data': 'carBrand' }, 
+ { 'data': 'carName' }, 
+ { "data": "serie" , 
 				"render": function (data, type, row) {
 					if ( row['serie'] == '0') { return '<span class="badge badge-dark">GT3</span>';} //GT3
 					else if ( row['serie'] == '1') { return '<span class="badge badge-purple">GT4</span>';} //GT4
@@ -607,7 +598,7 @@ var resultsRA = [];
 					else { return 'Error';}
 				}
 			},
-/* id=17 */ { "data": "cupCategory" , 
+ { "data": "cupCategory" , 
 				"render": function (data, type, row) {
 					if ( row['cupCategory'] == '0') { return '<span class="badge badge-light">PRO</span>';} //Pro
 					else if ( row['cupCategory'] == '1') { return '<span class="badge badge-dark">PRO-AM</span>';} //ProAm
@@ -617,33 +608,31 @@ var resultsRA = [];
 					else { return 'Error';}
 				}
 			},
-/* id=18 */	{ 'data': 'laps' }, 
-/* id=19 */	{ 'data': null,"defaultContent": '' }, // Progress bar
-/* id=20 */	//{ 'data': 'gap' }, 
-/* id=21 */	//{ 'data': 'gapToLeader' }, 
-
-/* id=20 */	{ 'data': null,"defaultContent": '' }, // Progress bar
-/* id=21 */	{ 'data': null,"defaultContent": '' }, // Progress bar
-
-/* id=22 */	{ 'data': 'lastLapTime' }, 
-/* id=23 */	{ 'data': 'lastLapSector1' }, 
-/* id=24 */	{ 'data': 'lastLapSector2' }, 
-/* id=25 */	{ 'data': 'lastLapSector3' }, 
-/* id=26 */	{ 'data': null,"defaultContent": '' }, // this is the bestLapTime column but needs processing on it for IS GLOBAL BEST
-/* id=27 */	{ 'data': 'bestSector1' }, 
-/* id=28 */	{ 'data': 'bestSector2' }, 
-/* id=29 */	{ 'data': 'bestSector3' }, 
-/* id=30 */	//{ 'data': 'deltaFromBestLap' }, 
-/* id=30 */	{ 'data': null,"defaultContent": '' }, // Progress bar
-
-/* id=31 */	//{ 'data': 'deltaFromAllCarsBestLap' }, 
-/* id=31 */	{ 'data': null,"defaultContent": '' }, // Progress bar
+	{ 'data': 'laps' }, 
+	{ 'data': null,"defaultContent": '' }, // Progress bar
 
 
-/* id=32 */	{ 'data': null,"defaultContent": '' }, // RaceApp Tag
-/* id=33 */	{ 'data': null,"defaultContent": '' },
-/* id=34 */	{ 'data': 'inPitSince' }, 
-/* id=35 */	{ "data": "raceAppTag" ,
+	{ 'data': null,"defaultContent": '' }, // gap
+	{ 'data': null,"defaultContent": '' }, // gapToLeader
+
+	{ 'data': 'lastLapTime' }, 
+	{ 'data': 'lastLapSector1' }, 
+	{ 'data': 'lastLapSector2' }, 
+	{ 'data': 'lastLapSector3' }, 
+	{ 'data': null,"defaultContent": '' }, // this is the bestLapTime column but needs processing on it for IS GLOBAL BEST
+	{ 'data': 'bestSector1' }, 
+	{ 'data': 'bestSector2' }, 
+	{ 'data': 'bestSector3' }, 
+
+	{ 'data': null,"defaultContent": '' }, // deltaFromBestLap
+
+{ 'data': null,"defaultContent": '' }, // deltaFromAllCarsBestLap
+
+
+	{ 'data': null,"defaultContent": '' }, // RaceApp Tag
+	{ 'data': null,"defaultContent": '' },
+	{ 'data': 'inPitSince' }, 
+	{ "data": "raceAppTag" ,
 				"render": function (data, type, row) {
 					if ( row["raceAppTag"] == 'SILVER') {
 						return '<span class="badge text-silver badge-outline badge-silver">SILVER</span>';}
@@ -656,9 +645,9 @@ var resultsRA = [];
 					else { return '<span class="badge badge-outline badge-danger">NOT FOUND</span>';} 
 				}
 			},
-/* id=36 */	{ 'data': 'raceAppTagPosition' }, 
-/* id=37 */	{ 'data': null,"defaultContent": '' }, // Gap within RaceApp Class
-/* id=38 */	{ "data": "raceAppByTagChampionshipPosition" ,
+	{ 'data': 'raceAppTagPosition' }, 
+	{ 'data': null,"defaultContent": '' }, // Gap within RaceApp Class
+	{ "data": "raceAppByTagChampionshipPosition" ,
 				"render": function (data, type, row) {
 					if ( row["raceAppByTagChampionshipPosition"] == '1') {
 						return '1 <i class="fa-solid fa-trophy text-gold"></i>';}
@@ -669,9 +658,9 @@ var resultsRA = [];
 					else { return row["raceAppByTagChampionshipPosition"];} 
 				}
 			},	
-/* id=39 */	{ 'data': 'raceAppByTagChampionshipTotalPoints' }, 
-/* id=40 */	{ 'data': null,"defaultContent": '' }, // this is the change
-/* id=41 */	{ "data": "raceAppByTagChampionshipPredictedPosition" , 
+	{ 'data': 'raceAppByTagChampionshipTotalPoints' }, 
+{ 'data': null,"defaultContent": '' }, // this is the change
+{ "data": "raceAppByTagChampionshipPredictedPosition" , 
 				"render": function (data, type, row) {
 					if ( row["raceAppByTagChampionshipPredictedPosition"] == '1') {
 						return '1 <i class="fa-solid fa-trophy text-gold"></i>';}
@@ -682,17 +671,21 @@ var resultsRA = [];
 					else { return row["raceAppByTagChampionshipPredictedPosition"];} 
 				}
 			},	
-/* id=42 */	{ 'data': 'raceAppByTagChampionshipPredictedPoints' }, 
+	{ 'data': 'raceAppByTagChampionshipPredictedPoints' }, 
 
 
         ],
 
 		"order": [colOrderURLParam, 'asc'],
 
-		"columnDefs": [
+		"columnDefs": [ //  when new columns are added all these need tweaking
 			{ className: "nowrapping", "targets": [ 4,8,9,10,12,13,16,22,24,25,26,28,29,30,31,32,34,38 ] }, //UPDATE TARGET
 
-		/*	{
+		/*
+		
+		Keep all this so I can update them all please
+
+			{
 				searchBuilderTitle: '',
 				targets: [] //UPDATE TARGET
 			},
@@ -825,42 +818,7 @@ var resultsRA = [];
 
 				if (type === 'display') {
 			
-					/*if (isItMe >= '1' ) {
-
-						if (notMoving >= '1' ) {
-							return '<div class="progress_bar" style="width: 300px;"><div class="pro-bar"><span class="progress-bar-inner" style="background-color: #d9534f; width: ' + Math.trunc(splinePercent) + '%;" data-value="' + Math.trunc(splinePercent) + '" data-percentage-value="' + Math.trunc(splinePercent) + '"></span></div></div>'+
-							'<br/>'+
-							'<div class="progress_bar" style="width: 300px;height:5px">'+
-							'<div class="progress-bar" style="background-color: #' + sectOneCol + '; width:33.33%">'+
-							//	'Sector 1'+
-							'</div>'+
-							'<div class="progress-bar" style="background-color: #' + sectTwoCol + '; width:33.33%">'+
-							//	'Sector 2'+
-							'</div>'+
-							'<div class="progress-bar" style="background-color: #' + sectThreeCol + '; width:33.33%">'+
-							//	'Sector 3'+
-							'</div>'+
-							'</div>'
-							}
-									
-						else {
-							return '<div class="progress_bar"><div class="pro-bar"><span class="progress-bar-inner" style="background-color: #5cb85c; width: ' + Math.trunc(splinePercent) + '%;" data-value="' + Math.trunc(splinePercent) + '" data-percentage-value="' + Math.trunc(splinePercent) + '"></span></div></div>'+
-							'<br/>'+
-							'<div class="progress_bar" style="width: 300px;height:5px">'+
-							'<div class="progress-bar" style="background-color: #' + sectOneCol + '; width:33.33%">'+
-							//	'Sector 1'+
-							'</div>'+
-							'<div class="progress-bar" style="background-color: #' + sectTwoCol + '; width:33.33%">'+
-							//	'Sector 2'+
-							'</div>'+
-							'<div class="progress-bar" style="background-color: #' + sectThreeCol + '; width:33.33%">'+
-							//	'Sector 3'+
-							'</div>'+
-							'</div>'
-						}
-					}
-									
-					else { */
+				
 						if (notMoving >= '1' ) {
 							return '<div class="progress_bar" style="width: 300px;"><div class="pro-bar"><span class="progress-bar-inner" style="background-color: #d9534f; width: ' + Math.trunc(splinePercent) + '%;" data-value="' + Math.trunc(splinePercent) + '" data-percentage-value="' + Math.trunc(splinePercent) + '"></span></div></div>'
 						}
@@ -974,9 +932,7 @@ var resultsRA = [];
 	"createdRow": function( row, data ) {        
 		/*
 		
-			URL parameter trigger:
-			showme=0
-			showme=1    this will show the line you are on
+			this is now driver numebres not on off
 		
 		*/
 		const showMe = urlParams.get('showme');
@@ -1000,13 +956,7 @@ var resultsRA = [];
 		})
 		
 		
-		/*
-		if ( showMe == "1") { 
-			if ( data['isPlayer'] === 1 ) {      
-				$(row).addClass('bg-light text-dark');
-			}  
-		}
-		*/
+	
      
     },
 	
