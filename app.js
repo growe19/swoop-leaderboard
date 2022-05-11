@@ -1,11 +1,7 @@
 
-        
-    
-	
-
 	/*
 	var json = '[{"ID":"151032",  "user":"UsersName1",  "message":"This is a message.","date":"1293452007","replies":"1","categories":false,"categoriesArray":[], "lat":"0.000000000000000","lng":"0.000000000000000"},{"ID":"151033","user":"UsersName2","message":"This is another message.","date":"1293452007","replies":"2","categories":false,"categoriesArray":[],"lat":"0.000000000000000","lng":"0.000000000000000"}]';
-var msgs = JSON.parse(json);
+	var msgs = JSON.parse(json);
 
 for (var i = 0, l = msgs.length; i < l; i++) {
     var msg = msgs[i];
@@ -13,58 +9,57 @@ for (var i = 0, l = msgs.length; i < l; i++) {
     div.innerHTML = 'Hello ' + msg.user + ' your Id is: ' + msg.ID + 'and your message is: ' + msg.message + ' it has ' + msg.replies + ' replies';
     document.body.appendChild(div);
 }*/
-	
-	
+
+
 	// Global var to track shown child rows
-	
+
     var childRows = null;
-		
-		
+
 	$(document).ready(function() {
-	
+
 		const queryString = window.location.search;
-		
+
 		console.log('Found the parameters that the User has set: '+queryString);
 		const urlParams = new URLSearchParams(queryString);
 		const mode = urlParams.get('mode');
-		
+
 		const colOrderURLParam = urlParams.get('order');
 		//const showMe = urlParams.get('showme');
-	 
+
 		console.log('Mode: '+mode);
 		console.log('Column Ordering by Column ID: '+colOrderURLParam);
-	 
+
 		//Check to see if there are any parameters set and if there are not then load the default string
 		if (mode == null){
 			window.open('https://' + location.host + location.pathname + "?mode=live&hide=0&order=1&class=&showme=","_self")
-		} 
-			 
+		}
+
 		let driverURL = '';
 		let sessionURL = '';
-		
+
 		if ( mode == 'dev') {
 			driverURL = 'http://localhost:8000/AccTest/Allcars';
 			sessionURL = 'http://localhost:8000/AccTest/GetSessionInfos';
 		}
-					
+
 		else if ( mode == 'ip') {
 			var ipAddress = window.prompt("Please enter the IP address of your Host machine running SimHub and the SwoopAPI:");
-            driverURL = 'http://'+ ipAddress+':8000/Acc/Allcars'; 
-			sessionURL = 'http://'+ ipAddress+':8000/Acc/GetSessionInfos'; 
+            driverURL = 'http://'+ ipAddress+':8000/Acc/Allcars';
+			sessionURL = 'http://'+ ipAddress+':8000/Acc/GetSessionInfos';
         }
 
 		else {
-			driverURL = 'http://localhost:8000/Acc/Allcars'; 
+			driverURL = 'http://localhost:8000/Acc/Allcars';
 			sessionURL = 'http://localhost:8000/Acc/GetSessionInfos';
 		}
-	
-	
-	
+
+
+
 		// Combine two data sets into one
 		//var driverURL =	"http://localhost:8000/Acc/Allcars";
 		//var sessionURL = "http://localhost:8000/Acc/GetSessionInfos";
 		// URL are set above in the IF
-		
+
 		var driverData = (function () {
 			var driverData = null;
 			$.ajax({
@@ -77,8 +72,8 @@ for (var i = 0, l = msgs.length; i < l; i++) {
 			}
 			});
 			return driverData;
-		})(); 
-		
+		})();
+
 		var sessionData = (function () {
 			var sessionData = null;
 			$.ajax({
@@ -91,7 +86,7 @@ for (var i = 0, l = msgs.length; i < l; i++) {
 			}
 			});
 			return sessionData;
-		})(); 
+		})();
 
 console.log('////////// DRIVER DATA //////////');
 console.log(driverData);
@@ -139,94 +134,87 @@ console.log('');
 
 
 
-		// console.log(appObjects);
-		// Combine two data sets into one
-	
+	// console.log(appObjects);
+	// Combine two data sets into one
+
 	// console.log(typeof appObjects);
-	
+
 	// var appObjectsCleaned = JSON.parse(JSON.stringify(appObjects)); // ERR: still an object
 	// var appObjectsCleaned = JSON.parse(appObjects); // ERR doesn't work
 	var appObjectsCleaned = JSON.stringify(appObjects); // converts it all to a string but 404 when loading into table
-	
+
 	//sessionData.cars = driverData
-	
-	
+
 	console.log(appObjectsCleaned);
-		// Combine two data sets into one
-	
+	// Combine two data sets into one
+
 	console.log(typeof appObjectsCleaned);
-	
-	
+
+
 	var appObjectsCleanedAgain = $.parseJSON(appObjectsCleaned);
-	
+
 	console.log(appObjectsCleanedAgain);
 	console.log(typeof appObjectsCleanedAgain);
-	
-	
-	
-	
-  
 
-
-  
-
-	
+	/**
+	 *
+	 * @param {*} d
+	 * @returns
+	 */
 	function format ( d ) {
-    
-	
 		const url = 'http://localhost:8000/Acc/GetRaceAppCarWithResults/' + appObjects.raceAppSerieId + '/' + d.raceNumber;
 		const params = {};
-		
+
 		$.get(url, params, null, 'json')
-    .done(function (response) {
-      console.log(response);
-      console.log('carNumber: %i', response.carNumber);
-      // assuming "response" has your full JSON you can then dig into the "results" ...
-      if (response && response.hasOwnProperty('results')) {
-        console.log(response.results);
-        const tableBody = $('#tblBody'+ d.raceNumber);
-var resultsRA = [];
-        $.each(response.results, function (i, val) {
-           resultsRA.push( '<tr><td>'+ val.track +' </td><td>'+ val.position +'/' + val.driverCount +' </td><td>'+ val.positionInClass +' </td><td>'+ val.points +' </td><td> -'+ val.penaltyPoints +'pts / +' + val.penaltySeconds + 'sec </td></tr>');
-          //$(tableBody).append(tableRow);
-		//$(tableRow).appendTo($("#tblbody"+ d.raceNumber));
-		
-		// table id     resultsDriver'+d.raceNumber
-		// table body   tblbody'+ d.raceNumber
-		document.getElementById("resultsDriver"+d.raceNumber) === resultsRA.join();
-		//$("#resultsDriver"+d.raceNumber).append(tableRow);
-        });
-      }
-    })
-    .catch(function (error) {
-      console.warn(error);
-    });
-		
+			.done(function (response) {
+				console.log(response);
+				console.log('carNumber: %i', response.carNumber);
+				// assuming "response" has your full JSON you can then dig into the "results" ...
+				if (response && response.hasOwnProperty('results')) {
+					console.log(response.results);
+					const tableBody = $('#tblBody'+ d.raceNumber);
+					var resultsRA = [];
+					$.each(response.results, function (i, val) {
+						resultsRA.push( '<tr><td>'+ val.track +' </td><td>'+ val.position +'/' + val.driverCount +' </td><td>'+ val.positionInClass +' </td><td>'+ val.points +' </td><td> -'+ val.penaltyPoints +'pts / +' + val.penaltySeconds + 'sec </td></tr>');
+						//$(tableBody).append(tableRow);
+						//$(tableRow).appendTo($("#tblbody"+ d.raceNumber));
+
+						// table id     resultsDriver'+d.raceNumber
+						// table body   tblbody'+ d.raceNumber
+						document.getElementById("resultsDriver"+d.raceNumber) === resultsRA.join();
+						//$("#resultsDriver"+d.raceNumber).append(tableRow);
+					});
+				}
+			})
+			.catch(function (error) {
+				console.warn(error);
+			});
+
 		console.log('Results history from:' + url);
-	
+
 		//var my_json_results;
-	
-	//	$.getJSON(url, function(json) {
+
+		//	$.getJSON(url, function(json) {
 		//	my_json_results = json;
-	//		console.log(my_json_results.results);
+		//	console.log(my_json_results.results);
 		//});
-	
-		// If this RETURN code isn't here then the page breaks. 
+
+		// If this RETURN code isn't here then the page breaks.
 		//
 		// ERROR: TypeError: Cannot read properties of undefined (reading 'show')
-		// This is referring to something on line 1426 ...... 
+		// This is referring to something on line 1426 ......
 		// LINE 1426 : row.child( format(row.data()) ).show();
 		//
-		
+
 		//GetResultsData();
 		return	'<p>'+d.raceNumber+' '+d.currentDriver_FullName+'</p>'+
 				'<p>Currently '+moment.localeData().ordinal(d.raceAppByTagChampionshipPosition)+' in '+d.raceAppTag+' with '+d.raceAppByTagChampionshipTotalPoints+' points.</p>'+
 				'<p>Best Finish: '+moment.localeData().ordinal(d.raceAppByTagBestResult)+'</p>'+
-	
-		'<table id="resultsDriver'+d.raceNumber+'" cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;width=500px"><thead><tr><th>Event</th><th>Overall Position</th><th>Class Position</th><th>Points</th><th>Penalties</th></tr></thead><tbody id="tblbody'+ d.raceNumber+'"></tbody></table>';
-		
 
-				
+		'<table id="resultsDriver'+d.raceNumber+'" cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;width=500px"><thead><tr><th>Event</th><th>Overall Position</th><th>Class Position</th><th>Points</th><th>Penalties</th></tr></thead><tbody id="tblbody'+ d.raceNumber+'"></tbody></table>';
+
+
+
 	/*
 	"raceAppTag": "string",
     "raceAppTagPosition": 0,
@@ -241,51 +229,49 @@ var resultsRA = [];
     "raceAppByTagChampionshipPredictedPosition": 0,
     "raceAppByTagBestResult": 0,
 	*/
-	
+
 	}
-   	 
-	function loadlink(){
-			var my_json;
-			$.getJSON(sessionURL, function(json) {
-				my_json = json;
-				
-				
-					$('#trackNameLoad').html(json.track);
-					$('#sessionRemainLoad').html(json.sessionTimeLeft);
-				
-				
-				
-			});
-		}
-		
-	
-	
-		/* Datatable Configuration
-		================================================== */
-		table = $('#example').DataTable({
-			
+
+	/**
+	 * get data from sessionURL and insert into header section
+	 */
+	function loadlink() {
+		var my_json;
+		$.getJSON(sessionURL, function(json) {
+			my_json = json;
+			$('#trackNameLoad').html(json.track);
+			$('#sessionRemainLoad').html(json.sessionTimeLeft);
+		});
+	}
+
+
+
+	/* Datatable Configuration
+	================================================== */
+	table = $('#example').DataTable({
+
 		searchBuilder: {
 		},
-			
+
 		dom: 'Bfrtip',
-			
+
 		buttons: [
 			{
                 extend: 'searchBuilder',
-		            config: {
-        
-					},
+				config: {
+
+				},
             },
 			{
-                text: 'Clear Conditions', 
+                text: 'Clear Conditions',
 				action: function ( e, dt, node, config ) { $('#example').DataTable().searchBuilder.rebuild(); }
             },
 
           	{
                 extend: 'colvis',
 				columnText: function ( dt, idx, title ) {
-				return (idx)+': '+title;
-            },
+					return (idx)+': '+title;
+				},
                	collectionLayout: 'fixed columns', //three-column // fixed columns
                 collectionTitle: '<span class="text-dark"><h3>Column Visibility Control</h3></span>',
 				text: 'Column Visibility',
@@ -343,11 +329,11 @@ var resultsRA = [];
 			{
                 extend: 'savedStatesCreate',
 				text: 'Saved Layouts',
-                collectionLayout: 'fixed columns', 
+                collectionLayout: 'fixed columns',
                 collectionTitle: '<span class="text-dark"><h3>Manage Saved Table Layouts</h3></span>',
             },
 			{
-                text: 'Order by Track Pos.', 
+                text: 'Order by Track Pos.',
                 action: function ( e, dt, node, config ) { table.order([[1, 'asc']]).draw();}
             },
 			{
@@ -371,7 +357,7 @@ var resultsRA = [];
 					},
 			    ]
             },
-		], // End of buttons 
+		], // End of buttons
 
 		"processing": false, 	// Need to test this to see how it works
 		"select": false,
@@ -413,17 +399,12 @@ var resultsRA = [];
 			"infoEmpty": "No Drivers Found",
 			"search": "Quick Global Filter",
         },
-		
 
 		//"data": appObjects.cars,
-        
-		
-			"ajax": {
+		"ajax": {
 			"url": driverURL, // Source set from the ?mode= parameter in the URL. Current options are 'live' or 'ip'
 			"dataSrc": ""
         },
-		
-		  
 		"columns": [
 			{
 				"className":      'dt-control',
@@ -450,7 +431,7 @@ var resultsRA = [];
 				return data;
 				}
 			},
-/* id=3 */	{ 'data': 'currentDriver_ShortName' }, 
+/* id=3 */	{ 'data': 'currentDriver_ShortName' },
 /* id=4 */	{ "data": "currentDriver_NationalityNumber" ,
 				"render": function (data, type, row) {
 					if ( row['currentDriver_NationalityNumber'] == '0') { return '';}
@@ -546,14 +527,14 @@ var resultsRA = [];
 /* id=5 */	// { 'data': 'currentDriver_Nationality' },
 /* id=5 */	{ 'data': null,"defaultContent": '' }, // Testing spacing of Nationality
 
-/* id=6 */	{ 'data': 'raceNumber' }, 
+/* id=6 */	{ 'data': 'raceNumber' },
 
-/* id=7 */	// { 'data': 'currentDriver_FullName' }, 
+/* id=7 */	// { 'data': 'currentDriver_FullName' },
 /* id=7 */	{ 'data': null,"defaultContent": '' }, // Testing capitalising the fullname
 
-/* id=8 */	{ 'data': 'currentDriver_FirstName'	},	
-/* id=9 */	{ 'data': 'currentDriver_LasttName' }, 
-/* id=10 */	{ 'data': 'driverCategory' , 
+/* id=8 */	{ 'data': 'currentDriver_FirstName'	},
+/* id=9 */	{ 'data': 'currentDriver_LasttName' },
+/* id=10 */	{ 'data': 'driverCategory' ,
 				"render": function (data, type, row) {
 					if ( row['driverCategory'] == '0') { return '<span class="badge text-bronze badge-outline badge-bronze">BRONZE</span>';}
 					else if ( row['driverCategory'] == '1') { return '<span class="badge text-silver badge-outline badge-silver">SILVER</span>';}
@@ -562,11 +543,11 @@ var resultsRA = [];
 					else { return 'Error';}
 				}
 			},
-/* id=11 */ { 'data': 'teamName' }, 
-/* id=12 */ //{ 'data': 'teamNationality' }, 
+/* id=11 */ { 'data': 'teamName' },
+/* id=12 */ //{ 'data': 'teamNationality' },
 /* id=12 */	{ 'data': null,"defaultContent": '' }, // Testing spacing of Nationality
 
-/* id=13 */ { "data": "carBrand" , 
+/* id=13 */ { "data": "carBrand" ,
 				"render": function (data, type, row) {
 					if ( row['carBrand'] == 'Mercedes-AMG') { return '<span class="car-mercedes-benz"></span>';}
 					else if ( row['carBrand'] == 'Honda') { return '<span class="car-honda"></span>';}
@@ -591,11 +572,11 @@ var resultsRA = [];
 					else if ( row['carBrand'] == 'Reiter') { return '';}
 					else { return '';}
 				}
-			//https://garyrowe.co.uk/acc/car-makes-icons-1.1.1/dist/demo.html			
-			},					
-/* id=14 */ { 'data': 'carBrand' }, 
-/* id=15 */ { 'data': 'carName' }, 
-/* id=16 */ { "data": "serie" , 
+			//https://garyrowe.co.uk/acc/car-makes-icons-1.1.1/dist/demo.html
+			},
+/* id=14 */ { 'data': 'carBrand' },
+/* id=15 */ { 'data': 'carName' },
+/* id=16 */ { "data": "serie" ,
 				"render": function (data, type, row) {
 					if ( row['serie'] == '0') { return '<span class="badge badge-dark">GT3</span>';} //GT3
 					else if ( row['serie'] == '1') { return '<span class="badge badge-purple">GT4</span>';} //GT4
@@ -607,7 +588,7 @@ var resultsRA = [];
 					else { return 'Error';}
 				}
 			},
-/* id=17 */ { "data": "cupCategory" , 
+/* id=17 */ { "data": "cupCategory" ,
 				"render": function (data, type, row) {
 					if ( row['cupCategory'] == '0') { return '<span class="badge badge-light">PRO</span>';} //Pro
 					else if ( row['cupCategory'] == '1') { return '<span class="badge badge-dark">PRO-AM</span>';} //ProAm
@@ -617,72 +598,72 @@ var resultsRA = [];
 					else { return 'Error';}
 				}
 			},
-/* id=18 */	{ 'data': 'laps' }, 
+/* id=18 */	{ 'data': 'laps' },
 /* id=19 */	{ 'data': null,"defaultContent": '' }, // Progress bar
-/* id=20 */	//{ 'data': 'gap' }, 
-/* id=21 */	//{ 'data': 'gapToLeader' }, 
+/* id=20 */	//{ 'data': 'gap' },
+/* id=21 */	//{ 'data': 'gapToLeader' },
 
 /* id=20 */	{ 'data': null,"defaultContent": '' }, // Progress bar
 /* id=21 */	{ 'data': null,"defaultContent": '' }, // Progress bar
 
-/* id=22 */	{ 'data': 'lastLapTime' }, 
-/* id=23 */	{ 'data': 'lastLapSector1' }, 
-/* id=24 */	{ 'data': 'lastLapSector2' }, 
-/* id=25 */	{ 'data': 'lastLapSector3' }, 
+/* id=22 */	{ 'data': 'lastLapTime' },
+/* id=23 */	{ 'data': 'lastLapSector1' },
+/* id=24 */	{ 'data': 'lastLapSector2' },
+/* id=25 */	{ 'data': 'lastLapSector3' },
 /* id=26 */	{ 'data': null,"defaultContent": '' }, // this is the bestLapTime column but needs processing on it for IS GLOBAL BEST
-/* id=27 */	{ 'data': 'bestSector1' }, 
-/* id=28 */	{ 'data': 'bestSector2' }, 
-/* id=29 */	{ 'data': 'bestSector3' }, 
-/* id=30 */	//{ 'data': 'deltaFromBestLap' }, 
+/* id=27 */	{ 'data': 'bestSector1' },
+/* id=28 */	{ 'data': 'bestSector2' },
+/* id=29 */	{ 'data': 'bestSector3' },
+/* id=30 */	//{ 'data': 'deltaFromBestLap' },
 /* id=30 */	{ 'data': null,"defaultContent": '' }, // Progress bar
 
-/* id=31 */	//{ 'data': 'deltaFromAllCarsBestLap' }, 
+/* id=31 */	//{ 'data': 'deltaFromAllCarsBestLap' },
 /* id=31 */	{ 'data': null,"defaultContent": '' }, // Progress bar
 
 
 /* id=32 */	{ 'data': null,"defaultContent": '' }, // RaceApp Tag
 /* id=33 */	{ 'data': null,"defaultContent": '' },
-/* id=34 */	{ 'data': 'inPitSince' }, 
+/* id=34 */	{ 'data': 'inPitSince' },
 /* id=35 */	{ "data": "raceAppTag" ,
 				"render": function (data, type, row) {
 					if ( row["raceAppTag"] == 'SILVER') {
 						return '<span class="badge text-silver badge-outline badge-silver">SILVER</span>';}
 					else if ( row["raceAppTag"] == 'BRONZE') {
-						return '<span class="badge text-bronze badge-outline badge-bronze">BRONZE</span>';} 
+						return '<span class="badge text-bronze badge-outline badge-bronze">BRONZE</span>';}
 					else if ( row["raceAppTag"] == 'GOLD') {
-						return '<span class="badge text-gold badge-outline badge-gold">GOLD</span>';} 
+						return '<span class="badge text-gold badge-outline badge-gold">GOLD</span>';}
 					else if ( row["raceAppTag"] == 'PLATIN') {
-						return '<span class="badge text-platinum badge-outline badge-platinum">PLATINUM</span>';} 
-					else { return '<span class="badge badge-outline badge-danger">NOT FOUND</span>';} 
+						return '<span class="badge text-platinum badge-outline badge-platinum">PLATINUM</span>';}
+					else { return '<span class="badge badge-outline badge-danger">NOT FOUND</span>';}
 				}
 			},
-/* id=36 */	{ 'data': 'raceAppTagPosition' }, 
+/* id=36 */	{ 'data': 'raceAppTagPosition' },
 /* id=37 */	{ 'data': null,"defaultContent": '' }, // Gap within RaceApp Class
 /* id=38 */	{ "data": "raceAppByTagChampionshipPosition" ,
 				"render": function (data, type, row) {
 					if ( row["raceAppByTagChampionshipPosition"] == '1') {
 						return '1 <i class="fa-solid fa-trophy text-gold"></i>';}
 					else if ( row["raceAppByTagChampionshipPosition"] == '2') {
-						return '2 <i class="fa-solid fa-trophy text-silver"></i>';}		
+						return '2 <i class="fa-solid fa-trophy text-silver"></i>';}
 					else if ( row["raceAppByTagChampionshipPosition"] == '3') {
 						return '3 <i class="fa-solid fa-trophy text-bronze"></i>';}
-					else { return row["raceAppByTagChampionshipPosition"];} 
+					else { return row["raceAppByTagChampionshipPosition"];}
 				}
-			},	
-/* id=39 */	{ 'data': 'raceAppByTagChampionshipTotalPoints' }, 
+			},
+/* id=39 */	{ 'data': 'raceAppByTagChampionshipTotalPoints' },
 /* id=40 */	{ 'data': null,"defaultContent": '' }, // this is the change
-/* id=41 */	{ "data": "raceAppByTagChampionshipPredictedPosition" , 
+/* id=41 */	{ "data": "raceAppByTagChampionshipPredictedPosition" ,
 				"render": function (data, type, row) {
 					if ( row["raceAppByTagChampionshipPredictedPosition"] == '1') {
 						return '1 <i class="fa-solid fa-trophy text-gold"></i>';}
 					else if ( row["raceAppByTagChampionshipPredictedPosition"] == '2') {
-						return '2 <i class="fa-solid fa-trophy text-silver"></i>';}		
+						return '2 <i class="fa-solid fa-trophy text-silver"></i>';}
 					else if ( row["raceAppByTagChampionshipPredictedPosition"] == '3') {
 						return '3 <i class="fa-solid fa-trophy text-bronze"></i>';}
-					else { return row["raceAppByTagChampionshipPredictedPosition"];} 
+					else { return row["raceAppByTagChampionshipPredictedPosition"];}
 				}
-			},	
-/* id=42 */	{ 'data': 'raceAppByTagChampionshipPredictedPoints' }, 
+			},
+/* id=42 */	{ 'data': 'raceAppByTagChampionshipPredictedPoints' },
 
 
         ],
@@ -725,12 +706,12 @@ var resultsRA = [];
 				targets: [37] //UPDATE TARGET
 			},
 			{ "orderable": false, "targets": [0] },
-		
+
 			{"render": function ( data, type, row ) {
 				var sum1 = row['raceAppByTagChampionshipPosition'];
 				var sum2 = row['raceAppByTagChampionshipPredictedPosition'];
 				var theAnswer = sum1 - sum2;
-			
+
 				if (type === 'display') {
 					if (theAnswer >= '+1' ) {
 						championshipChange = "<span class=text-success>&#9650;</span> +" + theAnswer; // Position change red, you've dropped places!
@@ -750,7 +731,7 @@ var resultsRA = [];
 			{"render": function ( data, type, row ) {
 				var bestTime = row['bestLapTime'];
 				var areYouTheBest = row['haveAllBestLapTime'];
-			
+
 				if (type === 'display') {
 					if (areYouTheBest >= '1' ) {
 						bestMarker = "<span class='text-purple'>" + bestTime + "</span>"; // Global best goes purple!
@@ -768,7 +749,7 @@ var resultsRA = [];
 				var pitStopCountForD = row['pitStopCount'];
 				var areTheyPitting = row['isPiting'];
 				var pittingTimer = row['inPitSince'];
-			
+
 				if (type === 'display') {
 					if (areTheyPitting >= '1' ) {
 						let number = parseInt(pitStopCountForD, 10)
@@ -779,24 +760,24 @@ var resultsRA = [];
 					}
 					return '' + pitColMsg + '';
 				}
-				return data;	
+				return data;
 			},
 			"targets": 33 //UPDATE TARGET
 			},
-			
+
 			{"render": function ( data, type, row ) {
-				
+
 				var splinePercent = row['splinePosition'] * 100 ;
 				var notMoving = row['isPiting'];
 				var isItMe = row['isPlayer'];
 				var sectOne = row['currentSector1Status'];
 				var sectTwo = row['currentSector2Status'];
 				var sectThree = row['currentSector3Status'];
-					
+
 				var sectOneCol = "";
 				var sectTwoCol = "";
 				var sectThreeCol = "";
-				
+
 				if ( row['currentSector1Status'] == '0') { sectOneCol = '292b2c';}
 				else if ( row['currentSector1Status'] == '1') { sectOneCol = 'd9534f';}
 				else if ( row['currentSector1Status'] == '2') { sectOneCol = 'f0ad4e';}
@@ -815,16 +796,16 @@ var resultsRA = [];
 				else if ( row['currentSector3Status'] == '3') { sectThreeCol = '5cb85c';}
 				else { sectOneCol = '7951a8';} //4
 
-				/*	
+				/*
 				None = 0,
 				Invalid = 1,
 				Slower = 2,
 				Best = 3,
 				OverallBest = 4
-				*/	
+				*/
 
 				if (type === 'display') {
-			
+
 					/*if (isItMe >= '1' ) {
 
 						if (notMoving >= '1' ) {
@@ -842,7 +823,7 @@ var resultsRA = [];
 							'</div>'+
 							'</div>'
 							}
-									
+
 						else {
 							return '<div class="progress_bar"><div class="pro-bar"><span class="progress-bar-inner" style="background-color: #5cb85c; width: ' + Math.trunc(splinePercent) + '%;" data-value="' + Math.trunc(splinePercent) + '" data-percentage-value="' + Math.trunc(splinePercent) + '"></span></div></div>'+
 							'<br/>'+
@@ -859,7 +840,7 @@ var resultsRA = [];
 							'</div>'
 						}
 					}
-									
+
 					else { */
 						if (notMoving >= '1' ) {
 							return '<div class="progress_bar" style="width: 300px;"><div class="pro-bar"><span class="progress-bar-inner" style="background-color: #d9534f; width: ' + Math.trunc(splinePercent) + '%;" data-value="' + Math.trunc(splinePercent) + '" data-percentage-value="' + Math.trunc(splinePercent) + '"></span></div></div>'
@@ -874,114 +855,114 @@ var resultsRA = [];
 			},
 			"targets": 20 //UPDATE TARGET
 			},
-		
+
 			{"render": function ( data, type, row ) {
 				var lastStopAge = row['lapsFromLastPitStop'];
 				return lastStopAge;
 			},
 			"targets": 34 //UPDATE TARGET
 			},
-			
+
 			{"render": function ( data, type, row ) {
 				var capFullname = row['currentDriver_FullName'];
 				return capFullname.toUpperCase();
 			},
 			"targets": 8 //UPDATE TARGET
 			},
-			
+
 			{"render": function ( data, type, row ) {
-				var nationSpace = row['currentDriver_Nationality'];	
+				var nationSpace = row['currentDriver_Nationality'];
 				if (nationSpace == "Any" || nationSpace == null || nationSpace == "" ){
 				return "";
-			} 
+			}
 				return nationSpace.replace(/[A-Z]/g, ' $&').trim();
-				
+
 			},
 			"targets": 6 //UPDATE TARGET
 			},
-			
+
 			{"render": function ( data, type, row ) {
 			var teamSpace = row['teamNationality'];
-			
+
 				if (teamSpace = "Any"){
 				return "";
-			} 
+			}
 			else if (teamSpace = ""){
 							return "";
 						}
-						
+
 				return teamSpace.replace(/[A-Z]/g, ' $&').trim();
-				
+
 			},
 			"targets": 13 //UPDATE TARGET
-			}, 
-			
+			},
+
 			{"render": function ( data, type, row ) {
 			var timeFormatA = row['gap'];
 			if (timeFormatA == null){
 				return timeFormatA;
-			} 
+			}
 				return timeFormatA.replace(/'/g, '.');
 			},
 			"targets": 21 //UPDATE TARGET
 			},
-			
+
 			{"render": function ( data, type, row ) {
 			var timeFormatB = row['gapToLeader'];
 			if (timeFormatB == null){
 				return timeFormatB;
-			} 
+			}
 				return timeFormatB.replace(/'/g, '.');
 			},
 			"targets": 22 //UPDATE TARGET
 			},
-			
+
 			{"render": function ( data, type, row ) {
 			var timeFormatC = row['deltaFromBestLap'];
 			if (timeFormatC == null){
 				return timeFormatC;
-			} 
+			}
 				return timeFormatC.replace(/'/g, '.');
 			},
 			"targets": 31 //UPDATE TARGET
 			},
-			
+
 			{"render": function ( data, type, row ) {
 			var timeFormatD = row['deltaFromAllCarsBestLap'];
 			if (timeFormatD == null){
 				return timeFormatD;
-			} 
+			}
 				return timeFormatD.replace(/'/g, '.');
 			},
 			"targets": 32 //UPDATE TARGET
 			},
-			
-			
+
+
 			{"render": function ( data, type, row ) {
 				return "sum";
 				/*
-				
+
 					This is where the code will go to calculate the gap between players in the same RaceApp Class
-				
+
 				*/
 			},
 			"targets": 38 //UPDATE TARGET
 			},
-			
-			
+
+
 		],
-	
-	"createdRow": function( row, data ) {        
+
+	"createdRow": function( row, data ) {
 		/*
-		
+
 			URL parameter trigger:
 			showme=0
 			showme=1    this will show the line you are on
-		
+
 		*/
 		const showMe = urlParams.get('showme');
 	//	console.log("Show me setting from URL: "+showMe);
-		
+
 		$(function(){
 			//var s = "jpeg, jpg, gif, png";
 			var match = showMe.split(',')
@@ -990,39 +971,39 @@ var resultsRA = [];
 				{
 				var variable = match[a]
 				// console.log(variable)
-				
-				if ( data['raceNumber'] == variable ) {      
+
+				if ( data['raceNumber'] == variable ) {
 				$(row).addClass('bg-light text-dark');
-			}  
-				
-				
+			}
+
+
 				}
 		})
-		
-		
+
+
 		/*
-		if ( showMe == "1") { 
-			if ( data['isPlayer'] === 1 ) {      
+		if ( showMe == "1") {
+			if ( data['isPlayer'] === 1 ) {
 				$(row).addClass('bg-light text-dark');
-			}  
+			}
 		}
 		*/
-     
+
     },
-	
+
 	/*
-	
+
 	This is the code for indicating where you'll exit the pits in the leaderboard.
-	
+
 	"drawCallback": function( settings ) {
     // isPlayer
-	// lastDriveThroughTime   =   time driving through, stopping and exiting the pit lane 
-	// gapToLeader	
-	
+	// lastDriveThroughTime   =   time driving through, stopping and exiting the pit lane
+	// gapToLeader
+
 	var api = this.api();
-	
+
     console.log( api.rows( {page:'current'} ).data() );
-	
+
 	var tabledata = api.rows( {page:'current'} ).data();
 	console.log(tabledata);
 	tabledata.forEach((row) => {
@@ -1030,12 +1011,12 @@ var resultsRA = [];
 			console.log("hello");
 		}
 	});
-		
+
     }*/
-	
+
 
  	}); // End of DataTable $('#example').DataTable({
-	
+
 	const queryStringForHide = window.location.search;
 	const urlParamsHide = new URLSearchParams(queryStringForHide);
 	const hiddenCols = urlParamsHide.get('hide');
@@ -1047,12 +1028,12 @@ var resultsRA = [];
 	//classFiltering
 	document.getElementById("myText").value = classFiltering;
 	table.columns(36).search( $('#myText').val() ).draw(); //UPDATE TARGET COLUMN
-	
+
 	// Add event listener for opening and closing details
     $('#example tbody').on('click', 'td.dt-control', function () {
         var tr = $(this).closest('tr');
         var row = table.row( tr );
- 
+
         if ( row.child.isShown() ) {
             // This row is already open - close it
             row.child.hide();
@@ -1064,7 +1045,7 @@ var resultsRA = [];
             tr.addClass('shown');
         }
     } );
-		
+
 	$('button').on('click', function () {
 		// Get shown rows
 		childRows = table.rows($('.shown'));
@@ -1084,7 +1065,7 @@ var resultsRA = [];
 		childRows = null;
 		}
 	});
-	
+
 	// This adds the bg-dark class to the fixedHeader
 	//
 	//        but fixed header is disabled so don't think this is needed anymore!!!!!!
@@ -1093,13 +1074,13 @@ var resultsRA = [];
 	for(var i = 0; i < elements.length; i++){
     elements[i].className += " bg-dark";
 	}
-	
+
 	setInterval(function() {
 
-		childRows = table.rows($('.shown')); // Keep column 1 button open/showing if it has been clicked.		
+		childRows = table.rows($('.shown')); // Keep column 1 button open/showing if it has been clicked.
 		table.ajax.reload();
-		
+
 		 loadlink(); // This function adds the Title and Clock countdown
-	}, 1000 ); // reload rate 
-	
+	}, 1000 ); // reload rate
+
 	}); // end of $(document).ready(function () {
