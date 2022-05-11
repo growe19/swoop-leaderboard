@@ -39,6 +39,7 @@
 		else if ( mode == 'static') {
             driverURL = 'https://garyrowe.co.uk/acc/AllCars.txt';
 			sessionURL = 'https://garyrowe.co.uk/acc/SessionInfo.txt';
+			console.log('Sourcing static data from Gary Rowe');
         }
 
 		else {
