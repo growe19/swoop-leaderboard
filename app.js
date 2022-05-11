@@ -36,6 +36,11 @@
 			sessionURL = 'http://'+ ipAddress+':8000/Acc/GetSessionInfos';
         }
 
+		else if ( mode == 'static') {
+            driverURL = 'AllCars.txt';
+			sessionURL = 'SessionInfo.txt';
+        }
+
 		else {
 			driverURL = 'http://localhost:8000/Acc/Allcars';
 			sessionURL = 'http://localhost:8000/Acc/GetSessionInfos';
@@ -599,8 +604,8 @@ console.log('');
 	{ 'data': 'bestSector3' },
 	{ 'data': null,"defaultContent": '' }, // deltaFromBestLap
 	{ 'data': null,"defaultContent": '' }, // deltaFromAllCarsBestLap
-	{ 'data': null,"defaultContent": '' }, // RaceApp Tag
-	{ 'data': null,"defaultContent": '' },
+	{ 'data': null,"defaultContent": '' }, // Pit Stop Count
+	{ 'data': null,"defaultContent": '' }, // Laps Ago
 	{ 'data': 'inPitSince' },
 	{ "data": "raceAppTag" ,
 		"render": function (data, type, row) {
@@ -897,25 +902,17 @@ console.log('');
 
 	"createdRow": function( row, data ) {
 		/*
-			this is now driver numebers not on/off
+			The URL &showme parameter is comma separated Race Numbers of Drivers you want to see inverted in the table
 		*/
 		const showMe = urlParams.get('showme');
-		//	console.log("Show me setting from URL: "+showMe);
-
 		$(function(){
-			//var s = "jpeg, jpg, gif, png";
 			var match = showMe.split(',')
-			// console.log(match)
 			for (var a in match)
 				{
 				var variable = match[a]
-				// console.log(variable)
-
-				if ( data['raceNumber'] == variable ) {
-				$(row).addClass('bg-light text-dark');
-			}
-
-
+					if ( data['raceNumber'] == variable ) {
+						$(row).addClass('bg-light text-dark');
+					}
 				}
 		})
     },
