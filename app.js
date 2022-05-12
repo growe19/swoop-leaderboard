@@ -340,12 +340,20 @@ const table = $dt.DataTable({
     },
   { 'data': 'currentDriver_ShortName' },
   {
-    "data": "currentDriver_NationalityNumber" ,
+    "data": "currentDriver_NationalityNumber",
     "render": driverNationality
   },
-  { 'data': null,"defaultContent": '' }, // currentDriver_Nationality
+  {
+    // currentDriver_Nationality
+    'data': null,
+    "defaultContent": ''
+  },
   { 'data': 'raceNumber' },
-  { 'data': null,"defaultContent": '' }, // currentDriver_FullName
+  {
+    // currentDriver_FullName
+    'data': null,
+    "defaultContent": ''
+  },
   { 'data': 'currentDriver_FirstName'	},
   { 'data': 'currentDriver_LasttName' },
   { 'data': 'driverCategory' ,
@@ -781,12 +789,16 @@ for (var i = 0; i < elements.length; i++) {
 }
 
 // set an event handler to add child rows each time the table is drawn
-table.on('draw', formatChildRows);
+// table.on('draw', populateShownChildRows);
 
 // refresh the content periodically
 setInterval(function() {
   // make a collection of rows where the child row is open
-  childRows = table.rows($('.shown')); // Keep column 1 button open/showing if it has been clicked.
+  const $openRows = $('.shown');
+  if ($openRows.length > 0) {
+    populatShownChildRows();
+  }
+  // childRows = table.rows(); // Keep column 1 button open/showing if it has been clicked.
   table.ajax.reload();
 
   loadlink(sessionURL, mode, start); // This function adds the Title and Clock countdown
@@ -796,16 +808,17 @@ setInterval(function() {
 /**
  * update content for any open child rows
  */
-function formatChildRows() {
+function populatShownChildRows() {
+  childRows = table.rows();
 	console.log('formatChildRows: %o', childRows);
 	// If reloading table then show previously shown rows
 	if (childRows) {
 		childRows.every(function (rowIdx, tableLoop, rowLoop) {
-			// get the table data (this)
-			const d = this.data();
-			console.log(d);
+			// get the table data
+			const rowData = this.data();
+			// console.log(d);
 
-			format(d, sessionData.raceAppSerieId, this);
+			format(rowData, sessionData.raceAppSerieId, this);
 		});
 
 		// Reset childRows so loop is not executed each draw
