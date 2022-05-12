@@ -1,8 +1,10 @@
 import carbrand from "./modules/carBrand.js";
+import driverCategory from "./modules/driverCategory.js";
 import driverNationality from "./modules/driverNationality.js";
 import highlightMe from "./modules/highlightMe.js";
 import loadlink from "./modules/loadlink.js";
 import movement from "./modules/movement.js";
+import sector from "./modules/sector.js";
 
 // Global var to track shown child rows
 var childRows = null;
@@ -316,8 +318,9 @@ $(document).ready(function() {
     "order": [colOrderURLParam, 'asc'],
     "columns": [
       {
+        // This column is for the child expanding data
         "className": 'dt-control',
-        "data": null, // This column is for the child expanding data
+        "data": null,
         "defaultContent": '',
         'orderable': false
       },
@@ -329,39 +332,46 @@ $(document).ready(function() {
       },
       { 'data': 'currentDriver_ShortName' },
       {
-        "data": "currentDriver_NationalityNumber",
-        "render": driverNationality
+        // column 5
+        'data': 'currentDriver_NationalityNumber',
+        'render': driverNationality
       },
       {
-        // currentDriver_Nationality
-        'data': null,
-        "defaultContent": ''
+        'data': 'currentDriver_Nationality',
+        'render': function (data, type, row) {
+          if (data == "Any" || data == null || data == "" ) {
+            return "";
+          }
+
+          return nationSpace.replace(/[A-Z]/g, ' $&').trim();
+        },
       },
       { 'data': 'raceNumber' },
       {
-        // currentDriver_FullName
-        'data': null,
-        "defaultContent": ''
-      },
-      { 'data': 'currentDriver_FirstName'	},
-      { 'data': 'currentDriver_LasttName' },
-      {
-        'data': 'driverCategory' ,
+        'data': 'currentDriver_FullName',
         'render': function (data, type, row) {
-          if ( row['driverCategory'] == '0') { return '<span class="badge text-bronze badge-outline badge-bronze">BRONZE</span>';}
-          else if ( row['driverCategory'] == '1') { return '<span class="badge text-silver badge-outline badge-silver">SILVER</span>';}
-          else if ( row['driverCategory'] == '2') { return '<span class="badge text-gold badge-outline badge-gold">GOLD</span>';}
-          else if ( row['driverCategory'] == '3') { return '<span class="badge text-platinum badge-outline badge-platinum">PLATINUM</span>';}
-          else { return 'Error';}
+          return data.toUpperCase();
         }
       },
-      { 'data': 'teamName' },
-      { 'data': null,"defaultContent": '' }, // teamNationality
+      { 'data': 'currentDriver_FirstName'	},
       {
-        "data": "carBrand" ,
-        "render": carbrand
+        // column 10
+        'data': 'currentDriver_LasttName'
       },
-      { 'data': 'carBrand' },
+      {
+        'data': 'driverCategory',
+        'render': driverCategory
+      },
+      { 'data': 'teamName' },
+      { 'data': null, "defaultContent": '' }, // teamNationality
+      {
+        'data': 'carBrand',
+        'render': carbrand
+      },
+      {
+        // column 15
+        'data': 'carBrand'
+      },
       { 'data': 'carName' },
       { "data": "serie" ,
         "render": function (data, type, row) {
@@ -386,7 +396,11 @@ $(document).ready(function() {
         }
       },
       { 'data': 'laps' },
-      { 'data': null,"defaultContent": '' }, // Progress bar
+      {
+        // column 20 - progress bar
+        'data': null,
+        'defaultContent': ''
+      },
       { 'data': null,"defaultContent": '' }, // gap
       { 'data': null,"defaultContent": '' }, // gapToLeader
       { 'data': 'lastLapTime' },
@@ -418,15 +432,18 @@ $(document).ready(function() {
       },
       { 'data': 'raceAppTagPosition' },
       { 'data': null,"defaultContent": '' }, // Gap within RaceApp Class
-      { "data": "raceAppByTagChampionshipPosition" ,
-        "render": function (data, type, row) {
-          if ( row["raceAppByTagChampionshipPosition"] == '1') {
-            return '1 <i class="fa-solid fa-trophy text-gold"></i>';}
-          else if ( row["raceAppByTagChampionshipPosition"] == '2') {
-            return '2 <i class="fa-solid fa-trophy text-silver"></i>';}
-          else if ( row["raceAppByTagChampionshipPosition"] == '3') {
-            return '3 <i class="fa-solid fa-trophy text-bronze"></i>';}
-          else { return row["raceAppByTagChampionshipPosition"];}
+      {
+        'data': "raceAppByTagChampionshipPosition" ,
+        'render': function (data, type, row) {
+          if (data === 1) {
+            return '1 <i class="fa-solid fa-trophy text-gold"></i>';
+          } else if (data === 2) {
+            return '2 <i class="fa-solid fa-trophy text-silver"></i>';
+          } else if (data === '3') {
+            return '3 <i class="fa-solid fa-trophy text-bronze"></i>';
+          } else {
+            return data;
+          }
         }
       },
       { 'data': 'raceAppByTagChampionshipTotalPoints' },
@@ -460,75 +477,8 @@ $(document).ready(function() {
         'targets': [ 4,8,9,10,12,13,16,22,24,25,26,28,29,30,31,32,34,38 ]
       },
       {
-        "render": function ( data, type, row ) {
-          var nationSpace = row['currentDriver_Nationality'];
-          if (nationSpace == "Any" || nationSpace == null || nationSpace == "" ) {
-            return "";
-          }
-          return nationSpace.replace(/[A-Z]/g, ' $&').trim();
-
-        },
-        "targets": 6 //UPDATE TARGET
-      },
-      {
-        "render": function ( data, type, row ) {
-          var capFullname = row['currentDriver_FullName'];
-          return capFullname.toUpperCase();
-        },
-        "targets": 8 //UPDATE TARGET
-      },
-      {
-        "render": function (data, type, row) {
-          var splinePercent = row['splinePosition'] * 100 ;
-          var notMoving = row['isPiting'];
-          var isItMe = row['isPlayer'];
-          var sectOne = row['currentSector1Status'];
-          var sectTwo = row['currentSector2Status'];
-          var sectThree = row['currentSector3Status'];
-
-          var sectOneCol = "";
-          var sectTwoCol = "";
-          var sectThreeCol = "";
-
-          if ( row['currentSector1Status'] == '0') { sectOneCol = '292b2c';}
-          else if ( row['currentSector1Status'] == '1') { sectOneCol = 'd9534f';}
-          else if ( row['currentSector1Status'] == '2') { sectOneCol = 'f0ad4e';}
-          else if ( row['currentSector1Status'] == '3') { sectOneCol = '5cb85c';}
-          else { sectOneCol = '7951a8';} //4
-
-          if ( row['currentSector2Status'] == '0') { sectTwoCol = '292b2c';}
-          else if ( row['currentSector2Status'] == '1') { sectTwoCol = 'd9534f';}
-          else if ( row['currentSector2Status'] == '2') { sectTwoCol = 'f0ad4e';}
-          else if ( row['currentSector2Status'] == '3') { sectTwoCol = '5cb85c';}
-          else { sectOneCol = '7951a8';} //4
-
-          if ( row['currentSector3Status'] == '0') { sectThreeCol = '292b2c';}
-          else if ( row['currentSector3Status'] == '1') { sectThreeCol = 'd9534f';}
-          else if ( row['currentSector3Status'] == '2') { sectThreeCol = 'f0ad4e';}
-          else if ( row['currentSector3Status'] == '3') { sectThreeCol = '5cb85c';}
-          else { sectOneCol = '7951a8';} //4
-
-          /*
-          None = 0,
-          Invalid = 1,
-          Slower = 2,
-          Best = 3,
-          OverallBest = 4
-          */
-
-          if (type === 'display') {
-              if (notMoving >= '1' ) {
-                return '<div class="progress_bar" style="width: 300px;"><div class="pro-bar"><span class="progress-bar-inner" style="background-color: #d9534f; width: ' + Math.trunc(splinePercent) + '%;" data-value="' + Math.trunc(splinePercent) + '" data-percentage-value="' + Math.trunc(splinePercent) + '"></span></div></div>'
-              }
-              else {
-                return '<div class="progress_bar" style="width: 300px;"><div class="pro-bar"><span class="progress-bar-inner" style="background-color: #5cb85c; width: ' + Math.trunc(splinePercent) + '%;" data-value="' + Math.trunc(splinePercent) + '" data-percentage-value="' + Math.trunc(splinePercent) + '"></span></div></div>'
-              }
-            //}
-            return 'error'
-          }
-          return data;
-        },
-        "targets": 20 //UPDATE TARGET
+        'render': sector,
+        'targets': 20
       },
       {
         "render": function ( data, type, row ) {
@@ -573,9 +523,9 @@ $(document).ready(function() {
             if (areYouTheBest >= 1) {
               bestMarker = `<span class="text-purple">${bestTime}</span>`; // Global best goes purple!
             } else {
-              bestMarker = bestTime; // Position change static, you've maintained track position!
+              bestMarker = bestTime;
             }
-            return '' + bestMarker + '';
+            return bestMarker;
           }
 
           return data;
@@ -648,14 +598,14 @@ $(document).ready(function() {
       },
       {
         "render": function (data, type, row) {
-          const sum1 = row['raceAppByTagChampionshipPosition'];
-          const sum2 = row['raceAppByTagChampionshipPredictedPosition'];
-          let positionChange = sum1 - sum2;
-
-          // default = position unchanged
-          let championshipChange = `<span class=text-primary>&#9655;</span>${positionChange}`;
-
           if (type === 'display') {
+            const sum1 = row['raceAppByTagChampionshipPosition'];
+            const sum2 = row['raceAppByTagChampionshipPredictedPosition'];
+            let positionChange = sum1 - sum2;
+
+            // default = position unchanged
+            let championshipChange = `<span class=text-primary>&#9655;</span>${positionChange}`;
+
             if (positionChange >= 1) {
               // Position change red, you've dropped places!
               championshipChange = "<span class=text-success>&#9650;</span> +" + positionChange;
@@ -671,7 +621,7 @@ $(document).ready(function() {
         "targets": 41 //UPDATE TARGET
       }
     ],
-    // 'createdRow': highlightMe
+    'createdRow': highlightMe
   }); // End of DataTable definition
 
   /*
