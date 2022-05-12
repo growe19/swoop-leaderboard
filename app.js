@@ -708,7 +708,7 @@ function populatShownChildRows(table, raceAppSerieId) {
 		});
 
 		// Reset childRows so loop is not executed each draw
-		childRows = null;
+		// childRows = null;
 	}
 }
 
@@ -773,7 +773,7 @@ function populatShownChildRows(table, raceAppSerieId) {
 					</tbody>
 				</table>`;
 
-			// dataTable.child(r).show();
+			dataTable.child(r);
 			// dataTable.nodes().to$().addClass('shown');
 		})
 		.fail(function (error) {
