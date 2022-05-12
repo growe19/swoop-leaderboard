@@ -890,7 +890,7 @@ setInterval(function() {
   childRows = table.rows($('.shown')); // Keep column 1 button open/showing if it has been clicked.
   table.ajax.reload();
 
-  loadlink(sessionURL, mode); // This function adds the Title and Clock countdown
+  loadlink(sessionURL, mode, start); // This function adds the Title and Clock countdown
 }, refresh ); // reload rate can be set as a URL param
 }); // end of $(document).ready(function () {
 
