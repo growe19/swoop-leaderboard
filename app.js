@@ -1,10 +1,11 @@
 import carbrand from "./modules/carBrand.js";
 import driverCategory from "./modules/driverCategory.js";
-import driverNationality from "./modules/driverNationality.js";
+import render_flag from "./modules/flags.js";
 import highlightMe from "./modules/highlightMe.js";
 import loadlink from "./modules/loadlink.js";
 import movement from "./modules/movement.js";
 import sector from "./modules/sector.js";
+import render_trophy from "./modules/trophys.js";
 
 // Global var to track shown child rows
 var childRows = null;
@@ -168,7 +169,7 @@ $(document).ready(function() {
       'url': driverURL, // Source set from the ?mode= parameter in the URL. Current options are 'live' or 'ip'
       'dataSrc': ''
     },
-    buttons: [
+    'buttons': [
       {
         extend: 'searchBuilder',
         config: {},
@@ -180,17 +181,19 @@ $(document).ready(function() {
         }
       },
       {
-        extend: 'colvis',
+        'extend': 'colvis',
+        /*
         columnText: function ( dt, idx, title ) {
           return (idx)+': '+title;
         },
-        collectionLayout: 'fixed columns', //three-column // fixed columns
-        collectionTitle: '<span class="text-dark"><h3>Column Visibility Control</h3></span>',
-        text: 'Column Visibility',
+        */
+        'collectionLayout': 'fixed columns', //three-column // fixed columns
+        'collectionTitle': '<span class="text-dark"><h3>Column Visibility Control</h3></span>',
+        'text': 'Column Visibility',
 
         // IF NEW COLUMNS ARE ADDED DON'T FORGET TO ADD THE NUMBER HERE
-        columns : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43 ],
-        columnText: function ( dt, idx, title ) {
+        'columns': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43],
+        'columnText': function ( dt, idx, title ) {
           if(idx==0){ return '<small>'+(idx)+': Additional Data +</small>';}
           if(idx==1){ return '<small>'+(idx)+': Track Position</small>';}
           if(idx==2){ return '<small>'+(idx)+': Starting Grid Position</small>';}
@@ -236,8 +239,8 @@ $(document).ready(function() {
           if(idx==42){ return '<small>'+(idx)+': RaceApp.eu: Tag Predicted Champ Pos</small>';}
           if(idx==43){ return '<small>'+(idx)+': RaceApp.eu: Tag Predicted Champ Pts</small>';}
 
-                    return (idx)+': ERROR';
-                }
+          return (idx)+': ERROR';
+        }
       },
       {
         extend: 'savedStatesCreate',
@@ -334,7 +337,7 @@ $(document).ready(function() {
       {
         // column 5
         'data': 'currentDriver_NationalityNumber',
-        'render': driverNationality
+        'render': render_flag
       },
       {
         'data': 'currentDriver_Nationality',
@@ -343,7 +346,7 @@ $(document).ready(function() {
             return "";
           }
 
-          return nationSpace.replace(/[A-Z]/g, ' $&').trim();
+          return data.replace(/[A-Z]/g, ' $&').trim();
         },
       },
       { 'data': 'raceNumber' },
@@ -405,17 +408,20 @@ $(document).ready(function() {
       { 'data': null,"defaultContent": '' }, // gapToLeader
       { 'data': 'lastLapTime' },
       { 'data': 'lastLapSector1' },
-      { 'data': 'lastLapSector2' },
+      {
+        // column 25
+        'data': 'lastLapSector2'
+      },
       { 'data': 'lastLapSector3' },
       { 'data': null,"defaultContent": '' }, // this is the bestLapTime column but needs processing on it for IS GLOBAL BEST
       { 'data': 'bestSector1' },
       { 'data': 'bestSector2' },
-      { 'data': 'bestSector3' },
+      { 'data': 'bestSector3' }, // column 30
       { 'data': null,"defaultContent": '' }, // deltaFromBestLap
       { 'data': null,"defaultContent": '' }, // deltaFromAllCarsBestLap
       { 'data': null,"defaultContent": '' }, // Pit Stop Count
       { 'data': null,"defaultContent": '' }, // Laps Ago
-      { 'data': 'inPitSince' },
+      { 'data': 'inPitSince' }, // column 35
       {
         'data': "raceAppTag" ,
         'render': function (data, type, row) {
@@ -446,25 +452,35 @@ $(document).ready(function() {
           }
         }
       },
-      { 'data': 'raceAppByTagChampionshipTotalPoints' },
-      { 'data': null, "defaultContent": '' }, // this is the change
+      { 'data': 'raceAppByTagChampionshipTotalPoints' }, // column 40
       {
-        "data": "raceAppByTagChampionshipPredictedPosition" ,
-        "render": function (data, type, row) {
+        'data': null,
+        'render': function (data, type, row) {
           if (type === 'display') {
-            if (data === 1) {
-              return '1 <i class="fa-solid fa-trophy text-gold"></i>';
-            }	else if (data === 2) {
-              return '2 <i class="fa-solid fa-trophy text-silver"></i>';
-            }	else if (data === 3) {
-              return '3 <i class="fa-solid fa-trophy text-bronze"></i>';
-            }	else {
-              return data;
+            const sum1 = row.raceAppByTagChampionshipPosition;
+            const sum2 = row.raceAppByTagChampionshipPredictedPosition;
+            let positionChange = sum1 - sum2;
+
+            // default = position unchanged
+            let championshipChange = `<span class=text-primary>&#9655;</span>${positionChange}`;
+
+            if (positionChange >= 1) {
+              // Position change red, you've dropped places!
+              championshipChange = "<span class=text-success>&#9650;</span> +" + positionChange;
+            } else if (positionChange < 0) {
+              // Position change green, you've overtaken cars!
+              championshipChange = "<span class=text-danger>&#9660;</span> " + positionChange;
             }
+            return championshipChange;
           }
 
           return data;
         }
+      },
+      {
+        // column 42
+        'data': 'raceAppByTagChampionshipPredictedPosition',
+        'render': render_trophy
       },
       {
         'data': 'raceAppByTagChampionshipPredictedPoints'
@@ -475,10 +491,6 @@ $(document).ready(function() {
         // add a no wrap class to these columns
         'className': 'nowrapping',
         'targets': [ 4,8,9,10,12,13,16,22,24,25,26,28,29,30,31,32,34,38 ]
-      },
-      {
-        'render': sector,
-        'targets': 20
       },
       {
         "render": function ( data, type, row ) {
@@ -493,6 +505,10 @@ $(document).ready(function() {
         "targets": 13 //UPDATE TARGET
       },
       {
+        'render': sector,
+        'targets': 20
+      },
+      {
         "render": function ( data, type, row ) {
           var timeFormatA = row['gap'];
           if (timeFormatA === null) {
@@ -502,7 +518,6 @@ $(document).ready(function() {
         },
         "targets": 21 //UPDATE TARGET
       },
-
       {
         "render": function ( data, type, row ) {
           var timeFormatB = row['gapToLeader'];
@@ -580,12 +595,12 @@ $(document).ready(function() {
         "targets": 34 //UPDATE TARGET
       },
       {
-        searchBuilderTitle: 'RaceApp.eu Driver Tag (Class)',
-        targets: [36] //UPDATE TARGET
+        'searchBuilderTitle': 'RaceApp.eu Driver Tag (Class)',
+        'targets': 36
       },
       {
-        searchBuilderTitle: 'RaceApp.eu Position within Driver Tag (Class)',
-        targets: [37] //UPDATE TARGET
+        'searchBuilderTitle': 'RaceApp.eu Position within Driver Tag (Class)',
+        'targets': 37
       },
       {
         "render": function ( data, type, row ) {
@@ -594,31 +609,7 @@ $(document).ready(function() {
             This is where the code will go to calculate the gap between players in the same RaceApp Class
           */
         },
-        "targets": 38 //UPDATE TARGET
-      },
-      {
-        "render": function (data, type, row) {
-          if (type === 'display') {
-            const sum1 = row['raceAppByTagChampionshipPosition'];
-            const sum2 = row['raceAppByTagChampionshipPredictedPosition'];
-            let positionChange = sum1 - sum2;
-
-            // default = position unchanged
-            let championshipChange = `<span class=text-primary>&#9655;</span>${positionChange}`;
-
-            if (positionChange >= 1) {
-              // Position change red, you've dropped places!
-              championshipChange = "<span class=text-success>&#9650;</span> +" + positionChange;
-            } else if (positionChange < 0) {
-              // Position change green, you've overtaken cars!
-              championshipChange = "<span class=text-danger>&#9660;</span> " + positionChange;
-            }
-            return championshipChange;
-          }
-
-          return data;
-        },
-        "targets": 41 //UPDATE TARGET
+        "targets": 38
       }
     ],
     'createdRow': highlightMe
