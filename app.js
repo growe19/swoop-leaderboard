@@ -681,7 +681,7 @@ $(document).ready(function() {
     // make a collection of rows where the child row is open
     const $openRows = $('.shown');
     if ($openRows.length > 0) {
-      populatShownChildRows(table);
+      populatShownChildRows(table, sessionData.raceAppSerieId);
     }
     // childRows = table.rows(); // Keep column 1 button open/showing if it has been clicked.
     table.ajax.reload();
@@ -694,7 +694,7 @@ $(document).ready(function() {
 /**
  * update content for any open child rows
  */
-function populatShownChildRows(table) {
+function populatShownChildRows(table, raceAppSerieId) {
   const childRows = table.rows();
 	console.log('populateShownChildRows: %o', childRows);
 	// If reloading table then show previously shown rows
@@ -704,7 +704,7 @@ function populatShownChildRows(table) {
 			const rowData = this.data();
 			// console.log(d);
 
-			format(rowData, sessionData.raceAppSerieId, this);
+			format(rowData, raceAppSerieId, table);
 		});
 
 		// Reset childRows so loop is not executed each draw
