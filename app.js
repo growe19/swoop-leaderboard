@@ -599,7 +599,7 @@ const table = $('#leaderboard').DataTable({
       "orderable": false,
       "targets": [0]
     },
-    {"render": function ( data, type, row ) {
+    {"render": function (data, type, row) {
       var sum1 = row['raceAppByTagChampionshipPosition'];
       var sum2 = row['raceAppByTagChampionshipPredictedPosition'];
       var theAnswer = sum1 - sum2;
@@ -621,7 +621,7 @@ const table = $('#leaderboard').DataTable({
     "targets": 41 //UPDATE TARGET
     },
     {
-      "render": function ( data, type, row ) {
+      "render": function (data, type, row) {
         const bestTime = row['bestLapTime'];
         const areYouTheBest = parseInt(row['haveAllBestLapTime']);
         let bestMarker;
@@ -639,28 +639,28 @@ const table = $('#leaderboard').DataTable({
       },
       "targets": 27 //UPDATE TARGET
     },
-    {"render": function ( data, type, row ) {
-      var pitStopCountForD = row['pitStopCount'];
-      var areTheyPitting = row['isPiting'];
-      var pittingTimer = row['inPitSince'];
+    {
+      "render": function ( data, type, row ) {
+        const pitStopCountForD = parseInt(row['pitStopCount']);
+        const areTheyPitting = parseInt(row['isPiting']);
+        // const pittingTimer = row['inPitSince'];
+        let pitColMsg = '';
 
-      if (type === 'display') {
-        if (areTheyPitting >= '1' ) {
-          let number = parseInt(pitStopCountForD, 10)
-          pitColMsg = number + 1; // Position change red, you've dropped places!
+        if (type === 'display') {
+          if (areTheyPitting >= 1) {
+            pitColMsg = pitStopCountForD + 1; // Position change red, you've dropped places!
+          } else {
+            pitColMsg = pitStopCountForD; // Position change static, you've maintained track position!
+          }
+          return '' + pitColMsg + '';
         }
-        else {
-          pitColMsg = pitStopCountForD; // Position change static, you've maintained track position!
-        }
-        return '' + pitColMsg + '';
-      }
-      return data;
-    },
-    "targets": 33 //UPDATE TARGET
-    },
 
-    {"render": function ( data, type, row ) {
-
+        return data;
+      },
+      "targets": 33 //UPDATE TARGET
+    },
+    {
+      "render": function (data, type, row) {
       var splinePercent = row['splinePosition'] * 100 ;
       var notMoving = row['isPiting'];
       var isItMe = row['isPlayer'];
@@ -712,7 +712,6 @@ const table = $('#leaderboard').DataTable({
     },
     "targets": 20 //UPDATE TARGET
     },
-
     {"render": function ( data, type, row ) {
       var lastStopAge = row['lapsFromLastPitStop'];
       return lastStopAge;
@@ -738,23 +737,20 @@ const table = $('#leaderboard').DataTable({
     },
     {
       "render": function ( data, type, row ) {
-        var teamSpace = row['teamNationality'];
+        const teamSpace = row['teamNationality'];
 
-        if (teamSpace = "Any") {
-          return "";
-        }	else if (teamSpace = ""){
+        if (teamSpace === "Any" || teamSpace === '') {
           return "";
         }
 
         return teamSpace.replace(/[A-Z]/g, ' $&').trim();
-
       },
       "targets": 13 //UPDATE TARGET
     },
     {
       "render": function ( data, type, row ) {
         var timeFormatA = row['gap'];
-        if (timeFormatA == null){
+        if (timeFormatA === null) {
           return timeFormatA;
         }
         return timeFormatA.replace(/'/g, '.');
@@ -762,24 +758,25 @@ const table = $('#leaderboard').DataTable({
       "targets": 21 //UPDATE TARGET
     },
 
-    {"render": function ( data, type, row ) {
-    var timeFormatB = row['gapToLeader'];
-    if (timeFormatB == null){
-      return timeFormatB;
-    }
-      return timeFormatB.replace(/'/g, '.');
+    {
+      "render": function ( data, type, row ) {
+        var timeFormatB = row['gapToLeader'];
+        if (timeFormatB == null){
+          return timeFormatB;
+        }
+        return timeFormatB.replace(/'/g, '.');
+      },
+      "targets": 22 //UPDATE TARGET
     },
-    "targets": 22 //UPDATE TARGET
-    },
-
-    {"render": function ( data, type, row ) {
-    var timeFormatC = row['deltaFromBestLap'];
-    if (timeFormatC == null){
-      return timeFormatC;
-    }
-      return timeFormatC.replace(/'/g, '.');
-    },
-    "targets": 31 //UPDATE TARGET
+    {
+      "render": function ( data, type, row ) {
+        const timeFormatC = row['deltaFromBestLap'];
+        if (timeFormatC == null){
+          return timeFormatC;
+        }
+        return timeFormatC.replace(/'/g, '.');
+      },
+      "targets": 31 //UPDATE TARGET
     },
     {"render": function ( data, type, row ) {
     var timeFormatD = row['deltaFromAllCarsBestLap'];
