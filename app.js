@@ -823,7 +823,7 @@ function formatChildRows() {
 			const d = this.data();
 			console.log(d);
 
-			format(d.raceNumber, sessionData.raceAppSerieId, this);
+			format(d, sessionData.raceAppSerieId, this);
 		});
 
 		// Reset childRows so loop is not executed each draw
@@ -834,12 +834,13 @@ function formatChildRows() {
 /**
  * get previous results for a car
  *
+ * @param {object} d car details
  * @param {int} raceAppSerieId
  * @param {int} raceNumber
  * @param {DataTable} dataTable
  */
- function format(raceNumber, raceAppSerieId, dataTable) {
-	let url = 'http://localhost:8000/Acc/GetRaceAppCarWithResults/' + raceAppSerieId + '/' + raceNumber;
+ function format(d, raceAppSerieId, dataTable) {
+	let url = 'http://localhost:8000/Acc/GetRaceAppCarWithResults/' + raceAppSerieId + '/' + d.raceNumber;
 	if (mode === 'static') {
 		url = 'seriesId2666carId63.json';
 	}
