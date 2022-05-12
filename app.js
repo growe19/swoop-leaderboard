@@ -1,7 +1,7 @@
 
 	// Global var to track shown child rows
-
     var childRows = null;
+	var start = new Date();
 
 	$(document).ready(function() {
 
@@ -39,6 +39,7 @@
 		else if ( mode == 'static') {
             driverURL = 'AllCars.json';
 			sessionURL = 'SessionInfo.json';
+
 			console.log('Sourcing static data from GitHub');
         }
 
@@ -77,6 +78,15 @@
 					sessionData = data;
 				}
 			});
+
+			// simulate a count down for static
+			if (mode === 'static') {
+				const DURATION = 60 * 60 * 1000;
+				const now = new Date();
+				const elapsed = now - start;
+				const remain = DURATION - elapsed;
+				sessionData.sessionTimeLeft = new Date(1995, 1, 1, 0, 0, remain).toTimeString();
+			}
 			return sessionData;
 		})();
 
@@ -1033,6 +1043,15 @@ function loadlink(sessionURL) {
 	// var my_json;
 	$.getJSON(sessionURL, function(json) {
 		console.log(json);
+
+		// simulate a count down for static
+		if (mode === 'static') {
+			const DURATION = 60 * 60 * 1000;
+			const now = new Date();
+			const elapsed = now - start;
+			const remain = DURATION - elapsed;
+			sessionData.sessionTimeLeft = new Date(1995, 1, 1, 0, 0, remain).toTimeString();
+		}
 
 		// my_json = json;
 		$('#trackNameLoad').html(json.track);
