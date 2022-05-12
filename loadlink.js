@@ -1,7 +1,7 @@
 /**
  * get data from sessionURL and insert into header section
  */
-export default function loadlink(sessionURL) {
+export default function loadlink(sessionURL, mode) {
 	// var my_json;
 	$.getJSON(sessionURL, function(json) {
 		console.log(json);
