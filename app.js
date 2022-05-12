@@ -778,7 +778,7 @@ $('body').on('click', 'td.dt-control', function () {
     tr.removeClass('shown');
   } else {
     // Open this row
-    row.child( format(row.data()) ).show();
+    row.child(format(row.data(), sessionData.raceAppSerieId, table)).show();
     tr.addClass('shown');
   }
 });
