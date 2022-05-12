@@ -8,41 +8,33 @@
 	const urlParams = new URLSearchParams(queryString);
 	const colOrderURLParam = urlParams.get('order');
 	const mode = urlParams.get('mode');
+	const showMe = urlParams.get('showme');
 
 	$(document).ready(function() {
-
-		//const showMe = urlParams.get('showme');
-
 		console.log('Mode: %s', mode);
-		console.log('Column Ordering by Column ID: '+colOrderURLParam);
+		console.log('Column Ordering by Column ID: %s', colOrderURLParam);
 
-		//Check to see if there are any parameters set and if there are not then load the default string
-		if (mode == null){
+		// Check to see if there are any parameters set and if there are not then load the default string
+		if (mode == null) {
 			window.open('https://' + location.host + location.pathname + "?mode=live&hide=0&order=1&class=&showme=","_self")
 		}
 
 		let driverURL = '';
 		let sessionURL = '';
 
-		if ( mode == 'dev') {
+		if ( mode === 'dev') {
 			driverURL = 'http://localhost:8000/AccTest/Allcars';
 			sessionURL = 'http://localhost:8000/AccTest/GetSessionInfos';
-		}
-
-		else if ( mode == 'ip') {
+		} else if ( mode === 'ip') {
 			var ipAddress = window.prompt("Please enter the IP address of your Host machine running SimHub and the SwoopAPI:");
             driverURL = 'http://'+ ipAddress+':8000/Acc/Allcars';
 			sessionURL = 'http://'+ ipAddress+':8000/Acc/GetSessionInfos';
-        }
-
-		else if ( mode == 'static') {
+        } else if ( mode === 'static') {
             driverURL = 'AllCars.json';
 			sessionURL = 'SessionInfo.json';
 
 			console.log('Sourcing static data from GitHub');
-        }
-
-		else {
+        } else {
 			driverURL = 'http://localhost:8000/Acc/Allcars';
 			sessionURL = 'http://localhost:8000/Acc/GetSessionInfos';
 		}
@@ -906,7 +898,7 @@ console.log('');
 	}
 
 	setInterval(function() {
-
+		// make a collection of rows where the child row is open
 		childRows = table.rows($('.shown')); // Keep column 1 button open/showing if it has been clicked.
 		table.ajax.reload();
 
@@ -918,6 +910,7 @@ console.log('');
  *
  */
 function formatChildRows() {
+	console.log('formatChildRows: %o', childRows);
 	// If reloading table then show previously shown rows
 	if (childRows) {
 		childRows.every(function (rowIdx, tableLoop, rowLoop) {
