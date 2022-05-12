@@ -1,4 +1,4 @@
-import loadlink from "./loadlink";
+import loadlink from "./loadlink.js";
 
 // Global var to track shown child rows
 var childRows = null;
