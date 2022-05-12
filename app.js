@@ -599,26 +599,29 @@ const table = $('#leaderboard').DataTable({
       "orderable": false,
       "targets": [0]
     },
-    {"render": function (data, type, row) {
-      var sum1 = row['raceAppByTagChampionshipPosition'];
-      var sum2 = row['raceAppByTagChampionshipPredictedPosition'];
-      var theAnswer = sum1 - sum2;
+    {
+      "render": function (data, type, row) {
+        const sum1 = row['raceAppByTagChampionshipPosition'];
+        const sum2 = row['raceAppByTagChampionshipPredictedPosition'];
+        let positionChange = sum1 - sum2;
 
-      if (type === 'display') {
-        if (theAnswer >= '+1' ) {
-          championshipChange = "<span class=text-success>&#9650;</span> +" + theAnswer; // Position change red, you've dropped places!
+        // default = position unchanged
+        let championshipChange = `<span class=text-primary>&#9655;</span>${positionChange}`;
+
+        if (type === 'display') {
+          if (positionChange >= 1) {
+            // Position change red, you've dropped places!
+            championshipChange = "<span class=text-success>&#9650;</span> +" + positionChange;
+          } else if (positionChange < 0) {
+            // Position change green, you've overtaken cars!
+            championshipChange = "<span class=text-danger>&#9660;</span> " + positionChange;
+          }
+          return championshipChange;
         }
-        else if (theAnswer < '0' ) {
-          championshipChange = "<span class=text-danger>&#9660;</span> " + theAnswer; // Position change gree, you've overtaken cars!
-        }
-        else {
-          championshipChange = "<span class=text-primary>&#9655;</span> " + theAnswer; // Position change static, you've maintained track position!
-        }
-        return '' + championshipChange + '';
-      }
-      return data;
-    },
-    "targets": 41 //UPDATE TARGET
+
+        return data;
+      },
+      "targets": 41 //UPDATE TARGET
     },
     {
       "render": function (data, type, row) {
