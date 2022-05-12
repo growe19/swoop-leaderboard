@@ -914,10 +914,11 @@ function formatChildRows() {
 	// If reloading table then show previously shown rows
 	if (childRows) {
 		childRows.every(function (rowIdx, tableLoop, rowLoop) {
-			d = this.data();
+			// get the table data (this)
+			const d = this.data();
 			console.log(d);
-			this.child($(format(d))).show();
-			this.nodes().to$().addClass('shown');
+
+			format(d, this);
 		});
 		// Reset childRows so loop is not executed each draw
 		childRows = null;
@@ -925,13 +926,13 @@ function formatChildRows() {
 }
 
 /**
- * get additional data for a given race + car
+ * get previous results for a car
  *
- * @param {*} d
+ * @param {object} d
  * @returns
  */
- function format ( d ) {
-	const url = 'http://localhost:8000/Acc/GetRaceAppCarWithResults/' + appObjects.raceAppSerieId + '/' + d.raceNumber;
+ function format(d, dataTable) {
+	const url = 'http://localhost:8000/Acc/GetRaceAppCarWithResults/' + d.raceAppSerieId + '/' + d.raceNumber;
 	const params = {};
 
 	$.get(url, params, null, 'json')
@@ -941,25 +942,54 @@ function formatChildRows() {
 			// assuming "response" has your full JSON you can then dig into the "results" ...
 			if (response && response.hasOwnProperty('results')) {
 				console.log(response.results);
-				const tableBody = $('#tblBody'+ d.raceNumber);
+				// const tableBody = $('#tblBody'+ d.raceNumber);
 				var resultsRA = [];
 				$.each(response.results, function (i, val) {
-					resultsRA.push( '<tr><td>'+ val.track +' </td><td>'+ val.position +'/' + val.driverCount +' </td><td>'+ val.positionInClass +' </td><td>'+ val.points +' </td><td> -'+ val.penaltyPoints +'pts / +' + val.penaltySeconds + 'sec </td></tr>');
-					//$(tableBody).append(tableRow);
-					//$(tableRow).appendTo($("#tblbody"+ d.raceNumber));
+					const html = `<tr>
+						<td>${val.track}</td>
+						<td>${val.position}/${val.driverCount}</td>
+						<td>${val.positionInClass}</td>
+						<td>${val.points}</td>
+						<td>- ${val.penaltyPoints}pts / ${val.penaltySeconds}sec</td>
+					</tr>`;
 
-					// table id     resultsDriver'+d.raceNumber
-					// table body   tblbody'+ d.raceNumber
-					document.getElementById("resultsDriver"+d.raceNumber) === resultsRA.join();
-					//$("#resultsDriver"+d.raceNumber).append(tableRow);
+					resultsRA.push(html);
+
+					// append onto the driver row
+					// document.getElementById('resultsDriver' + d.raceNumber) === resultsRA.join();
 				});
 			}
+
+			const cpos = moment.localeData().ordinal(d.raceAppByTagChampionshipPosition);
+			const best = moment.localeData().ordinal(d.raceAppByTagBestResult);
+			const results = resultsRA.join();
+
+			const r = `<p>${d.raceNumber} ${d.currentDriver_FullName}</p>
+				<p>Currently ${cpos} in ${d.raceAppTag} with ${d.raceAppByTagChampionshipTotalPoints} points</p>
+				<p>Best Finish: ${best}</p>
+				<table id="resultsDriver${d.raceNumber}" cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;width=500px">
+					<thead>
+						<tr>
+							<th>Event</th>
+							<th>Overall Position</th>
+							<th>Class Position</th>
+							<th>Points</th>
+							<th>Penalties</th>
+						</tr>
+					</thead>
+					<tbody id="tblbody${d.raceNumber}">
+						${results}
+					</tbody>
+				</table>`;
+
+			dataTable.child(r).show();
+			dataTable.nodes().to$().addClass('shown');
 		})
-		.catch(function (error) {
+		.error(function (error) {
 			console.warn(error);
 		});
 
-	console.log('Results history from:' + url);
+	// console.log('Results history from:' + url);
 
 	//var my_json_results;
 
@@ -976,10 +1006,6 @@ function formatChildRows() {
 	//
 
 	//GetResultsData();
-	return	'<p>'+d.raceNumber+' '+d.currentDriver_FullName+'</p>'+
-			'<p>Currently '+moment.localeData().ordinal(d.raceAppByTagChampionshipPosition)+' in '+d.raceAppTag+' with '+d.raceAppByTagChampionshipTotalPoints+' points.</p>'+
-			'<p>Best Finish: '+moment.localeData().ordinal(d.raceAppByTagBestResult)+'</p>'+
-			'<table id="resultsDriver'+d.raceNumber+'" cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;width=500px"><thead><tr><th>Event</th><th>Overall Position</th><th>Class Position</th><th>Points</th><th>Penalties</th></tr></thead><tbody id="tblbody'+ d.raceNumber+'"></tbody></table>';
 
 	/* Parameters from the Swoop API that are from AllCars
 
@@ -1008,6 +1034,8 @@ function formatChildRows() {
 function loadlink(sessionURL) {
 	// var my_json;
 	$.getJSON(sessionURL, function(json) {
+		console.log(json);
+
 		// my_json = json;
 		$('#trackNameLoad').html(json.track);
 		$('#sessionRemainLoad').html(json.sessionTimeLeft);
