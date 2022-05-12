@@ -8,7 +8,7 @@ import sector from "./modules/sector.js";
 import render_trophy from "./modules/trophys.js";
 
 // Global var to track shown child rows
-var childRows = null;
+// var childRows = null;
 var start = new Date();
 
 const queryString = window.location.search;
@@ -690,7 +690,7 @@ $(document).ready(function() {
     // make a collection of rows where the child row is open
     const $openRows = $('.shown');
     if ($openRows.length > 0) {
-      populatShownChildRows();
+      populatShownChildRows(table);
     }
     // childRows = table.rows(); // Keep column 1 button open/showing if it has been clicked.
     table.ajax.reload();
@@ -703,7 +703,7 @@ $(document).ready(function() {
 /**
  * update content for any open child rows
  */
-function populatShownChildRows() {
+function populatShownChildRows(table) {
   const childRows = table.rows();
 	console.log('populateShownChildRows: %o', childRows);
 	// If reloading table then show previously shown rows
