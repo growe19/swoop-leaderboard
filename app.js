@@ -89,706 +89,707 @@ $(document).ready(function() {
     return sessionData;
   })();
 
-console.log('////////// DRIVER DATA //////////');
-console.log(driverData);
-console.log('');
-console.log('////////// DRIVER DATA TYPE //////////');
-console.log(typeof driverData);
-console.log('');
-console.log('');
-console.log('////////// DRIVER URL //////////');
-console.log(driverURL);
-console.log('');
-console.log('////////// DRIVER URL DATA TYPE //////////');
-console.log(typeof driverURL);
-console.log('');
-console.log('');
+  console.log('////////// DRIVER DATA //////////');
+  console.log(driverData);
+  console.log('');
+  console.log('////////// DRIVER DATA TYPE //////////');
+  console.log(typeof driverData);
+  console.log('');
+  console.log('');
+  console.log('////////// DRIVER URL //////////');
+  console.log(driverURL);
+  console.log('');
+  console.log('////////// DRIVER URL DATA TYPE //////////');
+  console.log(typeof driverURL);
+  console.log('');
+  console.log('');
 
-console.log('////////// SESSION DATA //////////');
-console.log(sessionData);
-console.log('');
-console.log('////////// SESSION DATA TYPE //////////');
-console.log(typeof sessionData);
-console.log('');
-console.log('');
-console.log('////////// SESSION URL //////////');
-console.log(sessionURL);
-console.log('');
-console.log('////////// SESSION URL DATA TYPE //////////');
-console.log(typeof sessionURL);
-console.log('');
+  console.log('////////// SESSION DATA //////////');
+  console.log(sessionData);
+  console.log('');
+  console.log('////////// SESSION DATA TYPE //////////');
+  console.log(typeof sessionData);
+  console.log('');
+  console.log('');
+  console.log('////////// SESSION URL //////////');
+  console.log(sessionURL);
+  console.log('');
+  console.log('////////// SESSION URL DATA TYPE //////////');
+  console.log(typeof sessionURL);
+  console.log('');
 
-//var appObjects = $.extend({}, sessionData, driverData);
-//var appObjects = sessionData.concat(driverData);
+  //var appObjects = $.extend({}, sessionData, driverData);
+  //var appObjects = sessionData.concat(driverData);
 
-sessionData.cars = driverData;
-var appObjects = sessionData;
+  sessionData.cars = driverData;
+  var appObjects = sessionData;
 
-console.log('////////// COMBINED DATA //////////');
-console.log(appObjects);
-console.log('');
-console.log('////////// COMBINED DATA TYPE //////////');
-console.log(typeof appObjects);
-console.log('');
-console.log('');
+  console.log('////////// COMBINED DATA //////////');
+  console.log(appObjects);
+  console.log('');
+  console.log('////////// COMBINED DATA TYPE //////////');
+  console.log(typeof appObjects);
+  console.log('');
+  console.log('');
 
-// console.log(appObjects);
-// Combine two data sets into one
+  // console.log(appObjects);
+  // Combine two data sets into one
 
-// console.log(typeof appObjects);
+  // console.log(typeof appObjects);
 
-// var appObjectsCleaned = JSON.parse(JSON.stringify(appObjects)); // ERR: still an object
-// var appObjectsCleaned = JSON.parse(appObjects); // ERR doesn't work
-// var appObjectsCleaned = JSON.stringify(appObjects); // converts it all to a string but 404 when loading into table
+  // var appObjectsCleaned = JSON.parse(JSON.stringify(appObjects)); // ERR: still an object
+  // var appObjectsCleaned = JSON.parse(appObjects); // ERR doesn't work
+  // var appObjectsCleaned = JSON.stringify(appObjects); // converts it all to a string but 404 when loading into table
 
-//sessionData.cars = driverData
+  //sessionData.cars = driverData
 
-// console.log(appObjectsCleaned);
-// Combine two data sets into one
-// console.log(typeof appObjectsCleaned);
-//var appObjectsCleanedAgain = $.parseJSON(appObjectsCleaned);
-// console.log(appObjectsCleanedAgain);
-// console.log(typeof appObjectsCleanedAgain);
+  // console.log(appObjectsCleaned);
+  // Combine two data sets into one
+  // console.log(typeof appObjectsCleaned);
+  //var appObjectsCleanedAgain = $.parseJSON(appObjectsCleaned);
+  // console.log(appObjectsCleanedAgain);
+  // console.log(typeof appObjectsCleanedAgain);
 
 
-/* Datatable Configuration
-================================================== */
-const $dt = $('#leaderboard');
-if ($dt.length !== 1) {
-  console.error('Missing table element');
-  return false;
-}
+  /* Datatable Configuration
+  ================================================== */
+  const $dt = $('#leaderboard');
+  if ($dt.length !== 1) {
+    console.error('Missing table element');
+    return false;
+  }
 
-console.log('Data Table definition');
-const table = $dt.DataTable({
-  dom: 'Bfrtip',
-  searchBuilder: {},
-  buttons: [
-    {
-      extend: 'searchBuilder',
-      config: {},
-    },
-    {
-      text: 'Clear Conditions',
-      action: function ( e, dt, node, config ) {
-        $('#example').DataTable().searchBuilder.rebuild();
-      }
-    },
-    {
-      extend: 'colvis',
-      columnText: function ( dt, idx, title ) {
-        return (idx)+': '+title;
+  console.log('Data Table definition');
+  const table = $dt.DataTable({
+    dom: 'Bfrtip',
+    searchBuilder: {},
+    buttons: [
+      {
+        extend: 'searchBuilder',
+        config: {},
       },
-      collectionLayout: 'fixed columns', //three-column // fixed columns
-      collectionTitle: '<span class="text-dark"><h3>Column Visibility Control</h3></span>',
-      text: 'Column Visibility',
+      {
+        text: 'Clear Conditions',
+        action: function ( e, dt, node, config ) {
+          $('#example').DataTable().searchBuilder.rebuild();
+        }
+      },
+      {
+        extend: 'colvis',
+        columnText: function ( dt, idx, title ) {
+          return (idx)+': '+title;
+        },
+        collectionLayout: 'fixed columns', //three-column // fixed columns
+        collectionTitle: '<span class="text-dark"><h3>Column Visibility Control</h3></span>',
+        text: 'Column Visibility',
 
-      // IF NEW COLUMNS ARE ADDED DON'T FORGET TO ADD THE NUMBER HERE
-      columns : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43 ],
-      columnText: function ( dt, idx, title ) {
-        if(idx==0){ return '<small>'+(idx)+': Additional Data +</small>';}
-        if(idx==1){ return '<small>'+(idx)+': Track Position</small>';}
-        if(idx==2){ return '<small>'+(idx)+': Starting Grid Position</small>';}
-        if(idx==3){ return '<small>'+(idx)+': Grid to Track Pos Change</small>';}
-        if(idx==4){ return '<small>'+(idx)+': Driver: Short Name</small>';}
-        if(idx==5){ return '<small>'+(idx)+': Driver: Nationality Flag</small>';}
-        if(idx==6){ return '<small>'+(idx)+': Driver: Nationality Word</small>';}
-        if(idx==7){ return '<small>'+(idx)+': Driver: Race Number</small>';}
-        if(idx==8){ return '<small>'+(idx)+': Driver: Full Name</small>';}
-        if(idx==9){ return '<small>'+(idx)+': Driver: First Name</small>';}
-        if(idx==10){ return '<small>'+(idx)+': Driver: Last Name</small>';}
-        if(idx==11){ return '<small>'+(idx)+': Driver: Category</small>';}
-        if(idx==12){ return '<small>'+(idx)+': Team: Name</small>';}
-        if(idx==13){ return '<small>'+(idx)+': Team: Nationality Flag</small>';}
-        if(idx==14){ return '<small>'+(idx)+': Car: Logo</small>';}
-        if(idx==15){ return '<small>'+(idx)+': Car: Manufacturer</small>';}
-        if(idx==16){ return '<small>'+(idx)+': Car: Model</small>';}
-        if(idx==17){ return '<small>'+(idx)+': Car: Series</small>';}
-        if(idx==18){ return '<small>'+(idx)+': Car: Cup </small>';}
-        if(idx==19){ return '<small>'+(idx)+': Lap: Total Count</small>';}
-        if(idx==20){ return '<small>'+(idx)+': Lap: Track Progress Bar</small>';}
-        if(idx==21){ return '<small>'+(idx)+': Gap: To Driver Ahead</small>';}
-        if(idx==22){ return '<small>'+(idx)+': Gap: To Leader</small>';}
-        if(idx==23){ return '<small>'+(idx)+': Last Lap: Time</small>';}
-        if(idx==24){ return '<small>'+(idx)+': Last Lap: Sector 1</small>';}
-        if(idx==25){ return '<small>'+(idx)+': Last Lap: Sector 2</small>';}
-        if(idx==26){ return '<small>'+(idx)+': Last Lap: Sector 3</small>';}
-        if(idx==27){ return '<small>'+(idx)+': Best Lap: Time</small>';}
-        if(idx==28){ return '<small>'+(idx)+': Best Lap: Sector 1</small>';}
-        if(idx==29){ return '<small>'+(idx)+': Best Lap: Sector 2</small>';}
-        if(idx==30){ return '<small>'+(idx)+': Best Lap: Sector 3</small>';}
-        if(idx==31){ return '<small>'+(idx)+': Delta: Driver Best Lap</small>';}
-        if(idx==32){ return '<small>'+(idx)+': Delta: All Cars Best Lap</small>';}
-        if(idx==33){ return '<small>'+(idx)+': Pit Stop: Count</small>';}
-        if(idx==34){ return '<small>'+(idx)+': Pit Stop: Age</small>';}
-        if(idx==35){ return '<small>'+(idx)+': Pit Stop: Delta</small>';}
-        if(idx==36){ return '<small>'+(idx)+': RaceApp.eu: Tag</small>';}
-        if(idx==37){ return '<small>'+(idx)+': RA.eu: Tag Pos #</small>';}
-        if(idx==38){ return '<small>'+(idx)+': RA.eu: Tag Gap in Class</small>';}
-        if(idx==39){ return '<small>'+(idx)+': RA.eu: Tag Current Champ Pos</small>';}
-        if(idx==40){ return '<small>'+(idx)+': RA.eu: Tag Current Champ Pts</small>';}
-        if(idx==41){ return '<small>'+(idx)+': RaceApp.eu: Championship Pred Change</small>';}
-        if(idx==42){ return '<small>'+(idx)+': RaceApp.eu: Tag Predicted Champ Pos</small>';}
-        if(idx==43){ return '<small>'+(idx)+': RaceApp.eu: Tag Predicted Champ Pts</small>';}
+        // IF NEW COLUMNS ARE ADDED DON'T FORGET TO ADD THE NUMBER HERE
+        columns : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43 ],
+        columnText: function ( dt, idx, title ) {
+          if(idx==0){ return '<small>'+(idx)+': Additional Data +</small>';}
+          if(idx==1){ return '<small>'+(idx)+': Track Position</small>';}
+          if(idx==2){ return '<small>'+(idx)+': Starting Grid Position</small>';}
+          if(idx==3){ return '<small>'+(idx)+': Grid to Track Pos Change</small>';}
+          if(idx==4){ return '<small>'+(idx)+': Driver: Short Name</small>';}
+          if(idx==5){ return '<small>'+(idx)+': Driver: Nationality Flag</small>';}
+          if(idx==6){ return '<small>'+(idx)+': Driver: Nationality Word</small>';}
+          if(idx==7){ return '<small>'+(idx)+': Driver: Race Number</small>';}
+          if(idx==8){ return '<small>'+(idx)+': Driver: Full Name</small>';}
+          if(idx==9){ return '<small>'+(idx)+': Driver: First Name</small>';}
+          if(idx==10){ return '<small>'+(idx)+': Driver: Last Name</small>';}
+          if(idx==11){ return '<small>'+(idx)+': Driver: Category</small>';}
+          if(idx==12){ return '<small>'+(idx)+': Team: Name</small>';}
+          if(idx==13){ return '<small>'+(idx)+': Team: Nationality Flag</small>';}
+          if(idx==14){ return '<small>'+(idx)+': Car: Logo</small>';}
+          if(idx==15){ return '<small>'+(idx)+': Car: Manufacturer</small>';}
+          if(idx==16){ return '<small>'+(idx)+': Car: Model</small>';}
+          if(idx==17){ return '<small>'+(idx)+': Car: Series</small>';}
+          if(idx==18){ return '<small>'+(idx)+': Car: Cup </small>';}
+          if(idx==19){ return '<small>'+(idx)+': Lap: Total Count</small>';}
+          if(idx==20){ return '<small>'+(idx)+': Lap: Track Progress Bar</small>';}
+          if(idx==21){ return '<small>'+(idx)+': Gap: To Driver Ahead</small>';}
+          if(idx==22){ return '<small>'+(idx)+': Gap: To Leader</small>';}
+          if(idx==23){ return '<small>'+(idx)+': Last Lap: Time</small>';}
+          if(idx==24){ return '<small>'+(idx)+': Last Lap: Sector 1</small>';}
+          if(idx==25){ return '<small>'+(idx)+': Last Lap: Sector 2</small>';}
+          if(idx==26){ return '<small>'+(idx)+': Last Lap: Sector 3</small>';}
+          if(idx==27){ return '<small>'+(idx)+': Best Lap: Time</small>';}
+          if(idx==28){ return '<small>'+(idx)+': Best Lap: Sector 1</small>';}
+          if(idx==29){ return '<small>'+(idx)+': Best Lap: Sector 2</small>';}
+          if(idx==30){ return '<small>'+(idx)+': Best Lap: Sector 3</small>';}
+          if(idx==31){ return '<small>'+(idx)+': Delta: Driver Best Lap</small>';}
+          if(idx==32){ return '<small>'+(idx)+': Delta: All Cars Best Lap</small>';}
+          if(idx==33){ return '<small>'+(idx)+': Pit Stop: Count</small>';}
+          if(idx==34){ return '<small>'+(idx)+': Pit Stop: Age</small>';}
+          if(idx==35){ return '<small>'+(idx)+': Pit Stop: Delta</small>';}
+          if(idx==36){ return '<small>'+(idx)+': RaceApp.eu: Tag</small>';}
+          if(idx==37){ return '<small>'+(idx)+': RA.eu: Tag Pos #</small>';}
+          if(idx==38){ return '<small>'+(idx)+': RA.eu: Tag Gap in Class</small>';}
+          if(idx==39){ return '<small>'+(idx)+': RA.eu: Tag Current Champ Pos</small>';}
+          if(idx==40){ return '<small>'+(idx)+': RA.eu: Tag Current Champ Pts</small>';}
+          if(idx==41){ return '<small>'+(idx)+': RaceApp.eu: Championship Pred Change</small>';}
+          if(idx==42){ return '<small>'+(idx)+': RaceApp.eu: Tag Predicted Champ Pos</small>';}
+          if(idx==43){ return '<small>'+(idx)+': RaceApp.eu: Tag Predicted Champ Pts</small>';}
 
-                  return (idx)+': ERROR';
+                    return (idx)+': ERROR';
+                }
+      },
+      {
+        extend: 'savedStatesCreate',
+        text: 'Saved Layouts',
+        collectionLayout: 'fixed columns',
+        collectionTitle: '<span class="text-dark"><h3>Manage Saved Table Layouts</h3></span>',
+      },
+      {
+        text: 'Order by Track Pos.',
+        action: function (e, dt, node, config) {
+          table.order([[1, 'asc']]).draw();
+        }
+      },
+      {
+        extend: 'colvisGroup',
+        text: 'Show All Columns',
+        show: ':hidden'
+      },
+      {
+        extend: 'collection',
+        text: 'Export',
+        titleAttr: 'Exports all Columns but only visible rows.',
+        buttons: [
+          'copy',
+          'excel',
+          {
+            extend: 'pdfHtml5',
+            text: 'PDF',
+            orientation: 'landscape',
+            pageSize: 'A2',
+            pageMargins: [ 20, 50, 20, 50 ], // [left, top, right, bottom] or [horizontal, vertical] or just a number for equal margins
+          },
+        ]
+      },
+    ], // End of buttons
+
+    "processing": false, 	// Need to test this to see how it works
+    "select": false,
+    "colReorder": false, 	// Reordering of Columsn doesn't work when you have spanned headings
+    "paging": false,		// Paging turned off so that all Drivers appear on one page
+    "ordering": true,		// Column ordering is allowed
+    "info": false,		// Info turned off, I got bored of this
+    "stateSave": true,		// Saving the layout of the table, columns and search etc.
+    "searching": true,		// Searching is allowed
+    "scrollX": true,		// Scrolling allowed as there are so many columns
+    "fixedHeader": {
+      header: false,
+      headerOffset: $('#navbar').outerHeight()
+    },
+    "language": {
+      searchBuilder: {
+        button: 'Conditional Filtering',
+        add: 'Add Condition',
+        condition: 'Condition',
+        clearAll: 'Clear All Conditions',
+        delete: 'Delete Condition',
+        deleteTitle: 'Delete Title',
+        data: 'Column',
+        left: 'Remove Nested Condition',
+        //leftTitle: 'Left Title',
+        logicAnd: 'AND',
+        logicOr: 'OR',
+        right: 'Add Nested Condition',
+        //rightTitle: 'Right Title',
+        title: {
+            0: 'Conditional Filtering',
+            _: 'Filters applied to Drivers Table ( %d )'
+        },
+        value: 'Option',
+        valueJoiner: 'et'
+      },
+      "zeroRecords": "No Drivers Found",
+      "info": "Showing _MAX_ Drivers",
+      "infoEmpty": "No Drivers Found",
+      "search": "Quick Global Filter",
+    },
+    "ajax": {
+      "url": driverURL, // Source set from the ?mode= parameter in the URL. Current options are 'live' or 'ip'
+      "dataSrc": ""
+    },
+    "columns": [
+      {
+        "className": 'dt-control',
+        "data": null, // This column is for the child expanding data
+        "defaultContent": '',
+        'orderable': false
+      },
+      { 'data': 'racePosition' },
+      { 'data': 'gridPosition' },
+      { "data": "movements" ,
+        render: function(data, type) {
+          if (type === 'display') {
+            let directionMove = "";
+              if (data[0] >= '+1' ) {
+                directionMove = "<span class=text-danger>&#9660;</span>"; // Position change red, you've dropped places!
               }
-    },
-    {
-      extend: 'savedStatesCreate',
-      text: 'Saved Layouts',
-      collectionLayout: 'fixed columns',
-      collectionTitle: '<span class="text-dark"><h3>Manage Saved Table Layouts</h3></span>',
-    },
-    {
-      text: 'Order by Track Pos.',
-      action: function (e, dt, node, config) {
-        table.order([[1, 'asc']]).draw();
-      }
-    },
-    {
-      extend: 'colvisGroup',
-      text: 'Show All Columns',
-      show: ':hidden'
-    },
-    {
-      extend: 'collection',
-      text: 'Export',
-      titleAttr: 'Exports all Columns but only visible rows.',
-      buttons: [
-        'copy',
-        'excel',
-        {
-          extend: 'pdfHtml5',
-          text: 'PDF',
-          orientation: 'landscape',
-          pageSize: 'A2',
-          pageMargins: [ 20, 50, 20, 50 ], // [left, top, right, bottom] or [horizontal, vertical] or just a number for equal margins
-        },
-      ]
-    },
-  ], // End of buttons
-
-  "processing": false, 	// Need to test this to see how it works
-  "select": false,
-  "colReorder": false, 	// Reordering of Columsn doesn't work when you have spanned headings
-  "paging": false,		// Paging turned off so that all Drivers appear on one page
-  "ordering": true,		// Column ordering is allowed
-  "info": false,		// Info turned off, I got bored of this
-  "stateSave": true,		// Saving the layout of the table, columns and search etc.
-  "searching": true,		// Searching is allowed
-  "scrollX": true,		// Scrolling allowed as there are so many columns
-  "fixedHeader": {
-    header: false,
-    headerOffset: $('#navbar').outerHeight()
-  },
-  "language": {
-    searchBuilder: {
-      button: 'Conditional Filtering',
-      add: 'Add Condition',
-      condition: 'Condition',
-      clearAll: 'Clear All Conditions',
-      delete: 'Delete Condition',
-      deleteTitle: 'Delete Title',
-      data: 'Column',
-      left: 'Remove Nested Condition',
-      //leftTitle: 'Left Title',
-      logicAnd: 'AND',
-      logicOr: 'OR',
-      right: 'Add Nested Condition',
-      //rightTitle: 'Right Title',
-      title: {
-          0: 'Conditional Filtering',
-          _: 'Filters applied to Drivers Table ( %d )'
-      },
-      value: 'Option',
-      valueJoiner: 'et'
-    },
-    "zeroRecords": "No Drivers Found",
-    "info": "Showing _MAX_ Drivers",
-    "infoEmpty": "No Drivers Found",
-    "search": "Quick Global Filter",
-  },
-  "ajax": {
-    "url": driverURL, // Source set from the ?mode= parameter in the URL. Current options are 'live' or 'ip'
-    "dataSrc": ""
-  },
-  "columns": [
-    {
-      "className": 'dt-control',
-      "data": null, // This column is for the child expanding data
-      "defaultContent": '',
-      'orderable': false
-    },
-    { 'data': 'racePosition' },
-    { 'data': 'gridPosition' },
-    { "data": "movements" ,
-      render: function(data, type) {
-        if (type === 'display') {
-          let directionMove = "";
-            if (data[0] >= '+1' ) {
-              directionMove = "<span class=text-danger>&#9660;</span>"; // Position change red, you've dropped places!
-            }
-            else if (data[0] < '0' ) {
-              directionMove = "<span class=text-success>&#9650;</span>"; // Position change green, you've overtaken cars!
-            }
-            else {
-              directionMove = "<span class=text-secondary>&#9655;</span> 0"; // Position change static, you've maintained track position!
-            }
-          return '' + directionMove + ' ' + data + '';
-        }
-      return data;
-      }
-    },
-  { 'data': 'currentDriver_ShortName' },
-  {
-    "data": "currentDriver_NationalityNumber",
-    "render": driverNationality
-  },
-  {
-    // currentDriver_Nationality
-    'data': null,
-    "defaultContent": ''
-  },
-  { 'data': 'raceNumber' },
-  {
-    // currentDriver_FullName
-    'data': null,
-    "defaultContent": ''
-  },
-  { 'data': 'currentDriver_FirstName'	},
-  { 'data': 'currentDriver_LasttName' },
-  { 'data': 'driverCategory' ,
-    "render": function (data, type, row) {
-      if ( row['driverCategory'] == '0') { return '<span class="badge text-bronze badge-outline badge-bronze">BRONZE</span>';}
-      else if ( row['driverCategory'] == '1') { return '<span class="badge text-silver badge-outline badge-silver">SILVER</span>';}
-      else if ( row['driverCategory'] == '2') { return '<span class="badge text-gold badge-outline badge-gold">GOLD</span>';}
-      else if ( row['driverCategory'] == '3') { return '<span class="badge text-platinum badge-outline badge-platinum">PLATINUM</span>';}
-      else { return 'Error';}
-    }
-  },
-  { 'data': 'teamName' },
-  { 'data': null,"defaultContent": '' }, // teamNationality
-  {
-    "data": "carBrand" ,
-    "render": carbrand
-  },
-  { 'data': 'carBrand' },
-  { 'data': 'carName' },
-  { "data": "serie" ,
-    "render": function (data, type, row) {
-      if ( row['serie'] == '0') { return '<span class="badge badge-dark">GT3</span>';} //GT3
-      else if ( row['serie'] == '1') { return '<span class="badge badge-purple">GT4</span>';} //GT4
-      else if ( row['serie'] == '2') { return '<span class="badge badge-danger">CHL</span>';} //CHL
-      else if ( row['serie'] == '3') { return '<span class="badge badge-warning">ST</span>';} //ST
-      else if ( row['serie'] == '4') { return '<span class="badge badge-success">CUP</span>';} //CUP
-      else if ( row['serie'] == '5') { return '<span class="badge badge-primary">TCX</span>';} //TCX
-      else if ( row['serie'] == '299') { return '?';} //NONE
-      else { return 'Error';}
-    }
-  },
-  { "data": "cupCategory" ,
-    "render": function (data, type, row) {
-      if ( row['cupCategory'] == '0') { return '<span class="badge badge-light">PRO</span>';} //Pro
-      else if ( row['cupCategory'] == '1') { return '<span class="badge badge-dark">PRO-AM</span>';} //ProAm
-      else if ( row['cupCategory'] == '2') { return '<span class="badge badge-danger">AM</span>';} //Am
-      else if ( row['cupCategory'] == '3') { return '<span class="badge text-dark badge-light">SILVER</span>';} //Silver
-      else if ( row['cupCategory'] == '4') { return '<span class="badge text-dark badge-light">NATIONAL</span>';} //National
-      else { return 'Error';}
-    }
-  },
-  { 'data': 'laps' },
-  { 'data': null,"defaultContent": '' }, // Progress bar
-  { 'data': null,"defaultContent": '' }, // gap
-  { 'data': null,"defaultContent": '' }, // gapToLeader
-  { 'data': 'lastLapTime' },
-  { 'data': 'lastLapSector1' },
-  { 'data': 'lastLapSector2' },
-  { 'data': 'lastLapSector3' },
-  { 'data': null,"defaultContent": '' }, // this is the bestLapTime column but needs processing on it for IS GLOBAL BEST
-  { 'data': 'bestSector1' },
-  { 'data': 'bestSector2' },
-  { 'data': 'bestSector3' },
-  { 'data': null,"defaultContent": '' }, // deltaFromBestLap
-  { 'data': null,"defaultContent": '' }, // deltaFromAllCarsBestLap
-  { 'data': null,"defaultContent": '' }, // Pit Stop Count
-  { 'data': null,"defaultContent": '' }, // Laps Ago
-  { 'data': 'inPitSince' },
-  { "data": "raceAppTag" ,
-    "render": function (data, type, row) {
-      if ( row["raceAppTag"] == 'SILVER') {
-        return '<span class="badge text-silver badge-outline badge-silver">SILVER</span>';}
-      else if ( row["raceAppTag"] == 'BRONZE') {
-        return '<span class="badge text-bronze badge-outline badge-bronze">BRONZE</span>';}
-      else if ( row["raceAppTag"] == 'GOLD') {
-        return '<span class="badge text-gold badge-outline badge-gold">GOLD</span>';}
-      else if ( row["raceAppTag"] == 'PLATIN') {
-        return '<span class="badge text-platinum badge-outline badge-platinum">PLATINUM</span>';}
-      else { return '<span class="badge badge-outline badge-danger">NOT FOUND</span>';}
-    }
-  },
-  { 'data': 'raceAppTagPosition' },
-  { 'data': null,"defaultContent": '' }, // Gap within RaceApp Class
-  { "data": "raceAppByTagChampionshipPosition" ,
-    "render": function (data, type, row) {
-      if ( row["raceAppByTagChampionshipPosition"] == '1') {
-        return '1 <i class="fa-solid fa-trophy text-gold"></i>';}
-      else if ( row["raceAppByTagChampionshipPosition"] == '2') {
-        return '2 <i class="fa-solid fa-trophy text-silver"></i>';}
-      else if ( row["raceAppByTagChampionshipPosition"] == '3') {
-        return '3 <i class="fa-solid fa-trophy text-bronze"></i>';}
-      else { return row["raceAppByTagChampionshipPosition"];}
-    }
-  },
-  { 'data': 'raceAppByTagChampionshipTotalPoints' },
-  { 'data': null,"defaultContent": '' }, // this is the change
-  {
-    "data": "raceAppByTagChampionshipPredictedPosition" ,
-    "render": function (data, type, row) {
-      if ( row["raceAppByTagChampionshipPredictedPosition"] == '1') {
-        return '1 <i class="fa-solid fa-trophy text-gold"></i>';
-      }	else if ( row["raceAppByTagChampionshipPredictedPosition"] == '2') {
-        return '2 <i class="fa-solid fa-trophy text-silver"></i>';
-      }	else if ( row["raceAppByTagChampionshipPredictedPosition"] == '3') {
-        return '3 <i class="fa-solid fa-trophy text-bronze"></i>';
-      }	else {
-        return row["raceAppByTagChampionshipPredictedPosition"];
-      }
-    }
-  },
-  { 'data': 'raceAppByTagChampionshipPredictedPoints' },
-  ],
-  "order": [colOrderURLParam, 'asc'],
-  "columnDefs": [ //  when new columns are added all these need tweaking
-    {
-      // add a no wrap class to these columns
-      'className': 'nowrapping',
-      'targets': [ 4,8,9,10,12,13,16,22,24,25,26,28,29,30,31,32,34,38 ]
-    }, //UPDATE TARGET
-
-    /*  Keep all this so I can update them all please
-      {
-        searchBuilderTitle: '',
-        targets: [] //UPDATE TARGET
-      },
-      {
-        searchBuilderTitle: '',
-        targets: [] //UPDATE TARGET
-      },
-      {
-        searchBuilderTitle: '',
-        targets: [] //UPDATE TARGET
-      },
-      {
-        searchBuilderTitle: '',
-        targets: [] //UPDATE TARGET
-      },
-      {
-        searchBuilderTitle: '',
-        targets: [] //UPDATE TARGET
-      },
-      {
-        searchBuilderTitle: '',
-        targets: [] //UPDATE TARGET
-      }, */
-      {
-        searchBuilderTitle: 'RaceApp.eu Driver Tag (Class)',
-        targets: [36] //UPDATE TARGET
-      },
-      {
-        searchBuilderTitle: 'RaceApp.eu Position within Driver Tag (Class)',
-        targets: [37] //UPDATE TARGET
-      },
-      {
-        "orderable": false,
-        "targets": [0]
-      },
-      {
-        "render": function (data, type, row) {
-          const sum1 = row['raceAppByTagChampionshipPosition'];
-          const sum2 = row['raceAppByTagChampionshipPredictedPosition'];
-          let positionChange = sum1 - sum2;
-
-          // default = position unchanged
-          let championshipChange = `<span class=text-primary>&#9655;</span>${positionChange}`;
-
-          if (type === 'display') {
-            if (positionChange >= 1) {
-              // Position change red, you've dropped places!
-              championshipChange = "<span class=text-success>&#9650;</span> +" + positionChange;
-            } else if (positionChange < 0) {
-              // Position change green, you've overtaken cars!
-              championshipChange = "<span class=text-danger>&#9660;</span> " + positionChange;
-            }
-            return championshipChange;
+              else if (data[0] < '0' ) {
+                directionMove = "<span class=text-success>&#9650;</span>"; // Position change green, you've overtaken cars!
+              }
+              else {
+                directionMove = "<span class=text-secondary>&#9655;</span> 0"; // Position change static, you've maintained track position!
+              }
+            return '' + directionMove + ' ' + data + '';
           }
-
-          return data;
-        },
-        "targets": 41 //UPDATE TARGET
-      },
-      {
-        "render": function (data, type, row) {
-          const bestTime = row['bestLapTime'];
-          const areYouTheBest = parseInt(row['haveAllBestLapTime']);
-          let bestMarker;
-
-          if (type === 'display') {
-            if (areYouTheBest >= 1) {
-              bestMarker = `<span class="text-purple">${bestTime}</span>`; // Global best goes purple!
-            } else {
-              bestMarker = bestTime; // Position change static, you've maintained track position!
-            }
-            return '' + bestMarker + '';
-          }
-
-          return data;
-        },
-        "targets": 27 //UPDATE TARGET
-      },
-      {
-        "render": function ( data, type, row ) {
-          const pitStopCountForD = parseInt(row['pitStopCount']);
-          const areTheyPitting = parseInt(row['isPiting']);
-          // const pittingTimer = row['inPitSince'];
-          let pitColMsg = '';
-
-          if (type === 'display') {
-            if (areTheyPitting >= 1) {
-              pitColMsg = pitStopCountForD + 1; // Position change red, you've dropped places!
-            } else {
-              pitColMsg = pitStopCountForD; // Position change static, you've maintained track position!
-            }
-            return '' + pitColMsg + '';
-          }
-
-          return data;
-        },
-        "targets": 33 //UPDATE TARGET
-      },
-      {
-        "render": function (data, type, row) {
-        var splinePercent = row['splinePosition'] * 100 ;
-        var notMoving = row['isPiting'];
-        var isItMe = row['isPlayer'];
-        var sectOne = row['currentSector1Status'];
-        var sectTwo = row['currentSector2Status'];
-        var sectThree = row['currentSector3Status'];
-
-        var sectOneCol = "";
-        var sectTwoCol = "";
-        var sectThreeCol = "";
-
-        if ( row['currentSector1Status'] == '0') { sectOneCol = '292b2c';}
-        else if ( row['currentSector1Status'] == '1') { sectOneCol = 'd9534f';}
-        else if ( row['currentSector1Status'] == '2') { sectOneCol = 'f0ad4e';}
-        else if ( row['currentSector1Status'] == '3') { sectOneCol = '5cb85c';}
-        else { sectOneCol = '7951a8';} //4
-
-        if ( row['currentSector2Status'] == '0') { sectTwoCol = '292b2c';}
-        else if ( row['currentSector2Status'] == '1') { sectTwoCol = 'd9534f';}
-        else if ( row['currentSector2Status'] == '2') { sectTwoCol = 'f0ad4e';}
-        else if ( row['currentSector2Status'] == '3') { sectTwoCol = '5cb85c';}
-        else { sectOneCol = '7951a8';} //4
-
-        if ( row['currentSector3Status'] == '0') { sectThreeCol = '292b2c';}
-        else if ( row['currentSector3Status'] == '1') { sectThreeCol = 'd9534f';}
-        else if ( row['currentSector3Status'] == '2') { sectThreeCol = 'f0ad4e';}
-        else if ( row['currentSector3Status'] == '3') { sectThreeCol = '5cb85c';}
-        else { sectOneCol = '7951a8';} //4
-
-        /*
-        None = 0,
-        Invalid = 1,
-        Slower = 2,
-        Best = 3,
-        OverallBest = 4
-        */
-
-        if (type === 'display') {
-            if (notMoving >= '1' ) {
-              return '<div class="progress_bar" style="width: 300px;"><div class="pro-bar"><span class="progress-bar-inner" style="background-color: #d9534f; width: ' + Math.trunc(splinePercent) + '%;" data-value="' + Math.trunc(splinePercent) + '" data-percentage-value="' + Math.trunc(splinePercent) + '"></span></div></div>'
-            }
-            else {
-              return '<div class="progress_bar" style="width: 300px;"><div class="pro-bar"><span class="progress-bar-inner" style="background-color: #5cb85c; width: ' + Math.trunc(splinePercent) + '%;" data-value="' + Math.trunc(splinePercent) + '" data-percentage-value="' + Math.trunc(splinePercent) + '"></span></div></div>'
-            }
-          //}
-          return 'error'
-        }
         return data;
+        }
       },
-      "targets": 20 //UPDATE TARGET
-      },
-      {"render": function ( data, type, row ) {
-        var lastStopAge = row['lapsFromLastPitStop'];
-        return lastStopAge;
-      },
-      "targets": 34 //UPDATE TARGET
-      },
-      {"render": function ( data, type, row ) {
-        var capFullname = row['currentDriver_FullName'];
-        return capFullname.toUpperCase();
-      },
-      "targets": 8 //UPDATE TARGET
-      },
-      {
-        "render": function ( data, type, row ) {
-          var nationSpace = row['currentDriver_Nationality'];
-          if (nationSpace == "Any" || nationSpace == null || nationSpace == "" ) {
-            return "";
-          }
-          return nationSpace.replace(/[A-Z]/g, ' $&').trim();
-
-        },
-      "targets": 6 //UPDATE TARGET
-      },
-      {
-        "render": function ( data, type, row ) {
-          const teamSpace = row['teamNationality'];
-
-          if (teamSpace === "Any" || teamSpace === '') {
-            return "";
-          }
-
-          return teamSpace.replace(/[A-Z]/g, ' $&').trim();
-        },
-        "targets": 13 //UPDATE TARGET
-      },
-      {
-        "render": function ( data, type, row ) {
-          var timeFormatA = row['gap'];
-          if (timeFormatA === null) {
-            return timeFormatA;
-          }
-          return timeFormatA.replace(/'/g, '.');
-        },
-        "targets": 21 //UPDATE TARGET
-      },
-
-      {
-        "render": function ( data, type, row ) {
-          var timeFormatB = row['gapToLeader'];
-          if (timeFormatB == null){
-            return timeFormatB;
-          }
-          return timeFormatB.replace(/'/g, '.');
-        },
-        "targets": 22 //UPDATE TARGET
-      },
-      {
-        "render": function ( data, type, row ) {
-          const timeFormatC = row['deltaFromBestLap'];
-          if (timeFormatC == null){
-            return timeFormatC;
-          }
-          return timeFormatC.replace(/'/g, '.');
-        },
-        "targets": 31 //UPDATE TARGET
-      },
-      {"render": function ( data, type, row ) {
-      var timeFormatD = row['deltaFromAllCarsBestLap'];
-      if (timeFormatD == null){
-        return timeFormatD;
+    { 'data': 'currentDriver_ShortName' },
+    {
+      "data": "currentDriver_NationalityNumber",
+      "render": driverNationality
+    },
+    {
+      // currentDriver_Nationality
+      'data': null,
+      "defaultContent": ''
+    },
+    { 'data': 'raceNumber' },
+    {
+      // currentDriver_FullName
+      'data': null,
+      "defaultContent": ''
+    },
+    { 'data': 'currentDriver_FirstName'	},
+    { 'data': 'currentDriver_LasttName' },
+    { 'data': 'driverCategory' ,
+      "render": function (data, type, row) {
+        if ( row['driverCategory'] == '0') { return '<span class="badge text-bronze badge-outline badge-bronze">BRONZE</span>';}
+        else if ( row['driverCategory'] == '1') { return '<span class="badge text-silver badge-outline badge-silver">SILVER</span>';}
+        else if ( row['driverCategory'] == '2') { return '<span class="badge text-gold badge-outline badge-gold">GOLD</span>';}
+        else if ( row['driverCategory'] == '3') { return '<span class="badge text-platinum badge-outline badge-platinum">PLATINUM</span>';}
+        else { return 'Error';}
       }
-        return timeFormatD.replace(/'/g, '.');
-      },
-      "targets": 32 //UPDATE TARGET
-      },
-      {"render": function ( data, type, row ) {
-        return "sum";
-        /*
-          This is where the code will go to calculate the gap between players in the same RaceApp Class
-        */
-      },
-      "targets": 38 //UPDATE TARGET
+    },
+    { 'data': 'teamName' },
+    { 'data': null,"defaultContent": '' }, // teamNationality
+    {
+      "data": "carBrand" ,
+      "render": carbrand
+    },
+    { 'data': 'carBrand' },
+    { 'data': 'carName' },
+    { "data": "serie" ,
+      "render": function (data, type, row) {
+        if ( row['serie'] == '0') { return '<span class="badge badge-dark">GT3</span>';} //GT3
+        else if ( row['serie'] == '1') { return '<span class="badge badge-purple">GT4</span>';} //GT4
+        else if ( row['serie'] == '2') { return '<span class="badge badge-danger">CHL</span>';} //CHL
+        else if ( row['serie'] == '3') { return '<span class="badge badge-warning">ST</span>';} //ST
+        else if ( row['serie'] == '4') { return '<span class="badge badge-success">CUP</span>';} //CUP
+        else if ( row['serie'] == '5') { return '<span class="badge badge-primary">TCX</span>';} //TCX
+        else if ( row['serie'] == '299') { return '?';} //NONE
+        else { return 'Error';}
       }
-  ],
+    },
+    { "data": "cupCategory" ,
+      "render": function (data, type, row) {
+        if ( row['cupCategory'] == '0') { return '<span class="badge badge-light">PRO</span>';} //Pro
+        else if ( row['cupCategory'] == '1') { return '<span class="badge badge-dark">PRO-AM</span>';} //ProAm
+        else if ( row['cupCategory'] == '2') { return '<span class="badge badge-danger">AM</span>';} //Am
+        else if ( row['cupCategory'] == '3') { return '<span class="badge text-dark badge-light">SILVER</span>';} //Silver
+        else if ( row['cupCategory'] == '4') { return '<span class="badge text-dark badge-light">NATIONAL</span>';} //National
+        else { return 'Error';}
+      }
+    },
+    { 'data': 'laps' },
+    { 'data': null,"defaultContent": '' }, // Progress bar
+    { 'data': null,"defaultContent": '' }, // gap
+    { 'data': null,"defaultContent": '' }, // gapToLeader
+    { 'data': 'lastLapTime' },
+    { 'data': 'lastLapSector1' },
+    { 'data': 'lastLapSector2' },
+    { 'data': 'lastLapSector3' },
+    { 'data': null,"defaultContent": '' }, // this is the bestLapTime column but needs processing on it for IS GLOBAL BEST
+    { 'data': 'bestSector1' },
+    { 'data': 'bestSector2' },
+    { 'data': 'bestSector3' },
+    { 'data': null,"defaultContent": '' }, // deltaFromBestLap
+    { 'data': null,"defaultContent": '' }, // deltaFromAllCarsBestLap
+    { 'data': null,"defaultContent": '' }, // Pit Stop Count
+    { 'data': null,"defaultContent": '' }, // Laps Ago
+    { 'data': 'inPitSince' },
+    { "data": "raceAppTag" ,
+      "render": function (data, type, row) {
+        if ( row["raceAppTag"] == 'SILVER') {
+          return '<span class="badge text-silver badge-outline badge-silver">SILVER</span>';}
+        else if ( row["raceAppTag"] == 'BRONZE') {
+          return '<span class="badge text-bronze badge-outline badge-bronze">BRONZE</span>';}
+        else if ( row["raceAppTag"] == 'GOLD') {
+          return '<span class="badge text-gold badge-outline badge-gold">GOLD</span>';}
+        else if ( row["raceAppTag"] == 'PLATIN') {
+          return '<span class="badge text-platinum badge-outline badge-platinum">PLATINUM</span>';}
+        else { return '<span class="badge badge-outline badge-danger">NOT FOUND</span>';}
+      }
+    },
+    { 'data': 'raceAppTagPosition' },
+    { 'data': null,"defaultContent": '' }, // Gap within RaceApp Class
+    { "data": "raceAppByTagChampionshipPosition" ,
+      "render": function (data, type, row) {
+        if ( row["raceAppByTagChampionshipPosition"] == '1') {
+          return '1 <i class="fa-solid fa-trophy text-gold"></i>';}
+        else if ( row["raceAppByTagChampionshipPosition"] == '2') {
+          return '2 <i class="fa-solid fa-trophy text-silver"></i>';}
+        else if ( row["raceAppByTagChampionshipPosition"] == '3') {
+          return '3 <i class="fa-solid fa-trophy text-bronze"></i>';}
+        else { return row["raceAppByTagChampionshipPosition"];}
+      }
+    },
+    { 'data': 'raceAppByTagChampionshipTotalPoints' },
+    { 'data': null,"defaultContent": '' }, // this is the change
+    {
+      "data": "raceAppByTagChampionshipPredictedPosition" ,
+      "render": function (data, type, row) {
+        if ( row["raceAppByTagChampionshipPredictedPosition"] == '1') {
+          return '1 <i class="fa-solid fa-trophy text-gold"></i>';
+        }	else if ( row["raceAppByTagChampionshipPredictedPosition"] == '2') {
+          return '2 <i class="fa-solid fa-trophy text-silver"></i>';
+        }	else if ( row["raceAppByTagChampionshipPredictedPosition"] == '3') {
+          return '3 <i class="fa-solid fa-trophy text-bronze"></i>';
+        }	else {
+          return row["raceAppByTagChampionshipPredictedPosition"];
+        }
+      }
+    },
+    { 'data': 'raceAppByTagChampionshipPredictedPoints' },
+    ],
+    "order": [colOrderURLParam, 'asc'],
+    "columnDefs": [ //  when new columns are added all these need tweaking
+      {
+        // add a no wrap class to these columns
+        'className': 'nowrapping',
+        'targets': [ 4,8,9,10,12,13,16,22,24,25,26,28,29,30,31,32,34,38 ]
+      }, //UPDATE TARGET
 
-  "createdRow": highlightMe
-}); // End of DataTable definition
+      /*  Keep all this so I can update them all please
+        {
+          searchBuilderTitle: '',
+          targets: [] //UPDATE TARGET
+        },
+        {
+          searchBuilderTitle: '',
+          targets: [] //UPDATE TARGET
+        },
+        {
+          searchBuilderTitle: '',
+          targets: [] //UPDATE TARGET
+        },
+        {
+          searchBuilderTitle: '',
+          targets: [] //UPDATE TARGET
+        },
+        {
+          searchBuilderTitle: '',
+          targets: [] //UPDATE TARGET
+        },
+        {
+          searchBuilderTitle: '',
+          targets: [] //UPDATE TARGET
+        }, */
+        {
+          searchBuilderTitle: 'RaceApp.eu Driver Tag (Class)',
+          targets: [36] //UPDATE TARGET
+        },
+        {
+          searchBuilderTitle: 'RaceApp.eu Position within Driver Tag (Class)',
+          targets: [37] //UPDATE TARGET
+        },
+        {
+          "orderable": false,
+          "targets": [0]
+        },
+        {
+          "render": function (data, type, row) {
+            const sum1 = row['raceAppByTagChampionshipPosition'];
+            const sum2 = row['raceAppByTagChampionshipPredictedPosition'];
+            let positionChange = sum1 - sum2;
 
-/*
-This is the code for indicating where you'll exit the pits in the leaderboard.
+            // default = position unchanged
+            let championshipChange = `<span class=text-primary>&#9655;</span>${positionChange}`;
 
-"drawCallback": function( settings ) {
-  // isPlayer
-  // lastDriveThroughTime   =   time driving through, stopping and exiting the pit lane
-  // gapToLeader
+            if (type === 'display') {
+              if (positionChange >= 1) {
+                // Position change red, you've dropped places!
+                championshipChange = "<span class=text-success>&#9650;</span> +" + positionChange;
+              } else if (positionChange < 0) {
+                // Position change green, you've overtaken cars!
+                championshipChange = "<span class=text-danger>&#9660;</span> " + positionChange;
+              }
+              return championshipChange;
+            }
 
-  var api = this.api();
+            return data;
+          },
+          "targets": 41 //UPDATE TARGET
+        },
+        {
+          "render": function (data, type, row) {
+            const bestTime = row['bestLapTime'];
+            const areYouTheBest = parseInt(row['haveAllBestLapTime']);
+            let bestMarker;
 
-    console.log( api.rows( {page:'current'} ).data() );
+            if (type === 'display') {
+              if (areYouTheBest >= 1) {
+                bestMarker = `<span class="text-purple">${bestTime}</span>`; // Global best goes purple!
+              } else {
+                bestMarker = bestTime; // Position change static, you've maintained track position!
+              }
+              return '' + bestMarker + '';
+            }
 
-  var tabledata = api.rows( {page:'current'} ).data();
-  console.log(tabledata);
-  tabledata.forEach((row) => {
-    if ( row.isPlayer ) {
-      console.log("hello");
+            return data;
+          },
+          "targets": 27 //UPDATE TARGET
+        },
+        {
+          "render": function ( data, type, row ) {
+            const pitStopCountForD = parseInt(row['pitStopCount']);
+            const areTheyPitting = parseInt(row['isPiting']);
+            // const pittingTimer = row['inPitSince'];
+            let pitColMsg = '';
+
+            if (type === 'display') {
+              if (areTheyPitting >= 1) {
+                pitColMsg = pitStopCountForD + 1; // Position change red, you've dropped places!
+              } else {
+                pitColMsg = pitStopCountForD; // Position change static, you've maintained track position!
+              }
+              return '' + pitColMsg + '';
+            }
+
+            return data;
+          },
+          "targets": 33 //UPDATE TARGET
+        },
+        {
+          "render": function (data, type, row) {
+          var splinePercent = row['splinePosition'] * 100 ;
+          var notMoving = row['isPiting'];
+          var isItMe = row['isPlayer'];
+          var sectOne = row['currentSector1Status'];
+          var sectTwo = row['currentSector2Status'];
+          var sectThree = row['currentSector3Status'];
+
+          var sectOneCol = "";
+          var sectTwoCol = "";
+          var sectThreeCol = "";
+
+          if ( row['currentSector1Status'] == '0') { sectOneCol = '292b2c';}
+          else if ( row['currentSector1Status'] == '1') { sectOneCol = 'd9534f';}
+          else if ( row['currentSector1Status'] == '2') { sectOneCol = 'f0ad4e';}
+          else if ( row['currentSector1Status'] == '3') { sectOneCol = '5cb85c';}
+          else { sectOneCol = '7951a8';} //4
+
+          if ( row['currentSector2Status'] == '0') { sectTwoCol = '292b2c';}
+          else if ( row['currentSector2Status'] == '1') { sectTwoCol = 'd9534f';}
+          else if ( row['currentSector2Status'] == '2') { sectTwoCol = 'f0ad4e';}
+          else if ( row['currentSector2Status'] == '3') { sectTwoCol = '5cb85c';}
+          else { sectOneCol = '7951a8';} //4
+
+          if ( row['currentSector3Status'] == '0') { sectThreeCol = '292b2c';}
+          else if ( row['currentSector3Status'] == '1') { sectThreeCol = 'd9534f';}
+          else if ( row['currentSector3Status'] == '2') { sectThreeCol = 'f0ad4e';}
+          else if ( row['currentSector3Status'] == '3') { sectThreeCol = '5cb85c';}
+          else { sectOneCol = '7951a8';} //4
+
+          /*
+          None = 0,
+          Invalid = 1,
+          Slower = 2,
+          Best = 3,
+          OverallBest = 4
+          */
+
+          if (type === 'display') {
+              if (notMoving >= '1' ) {
+                return '<div class="progress_bar" style="width: 300px;"><div class="pro-bar"><span class="progress-bar-inner" style="background-color: #d9534f; width: ' + Math.trunc(splinePercent) + '%;" data-value="' + Math.trunc(splinePercent) + '" data-percentage-value="' + Math.trunc(splinePercent) + '"></span></div></div>'
+              }
+              else {
+                return '<div class="progress_bar" style="width: 300px;"><div class="pro-bar"><span class="progress-bar-inner" style="background-color: #5cb85c; width: ' + Math.trunc(splinePercent) + '%;" data-value="' + Math.trunc(splinePercent) + '" data-percentage-value="' + Math.trunc(splinePercent) + '"></span></div></div>'
+              }
+            //}
+            return 'error'
+          }
+          return data;
+        },
+        "targets": 20 //UPDATE TARGET
+        },
+        {"render": function ( data, type, row ) {
+          var lastStopAge = row['lapsFromLastPitStop'];
+          return lastStopAge;
+        },
+        "targets": 34 //UPDATE TARGET
+        },
+        {"render": function ( data, type, row ) {
+          var capFullname = row['currentDriver_FullName'];
+          return capFullname.toUpperCase();
+        },
+        "targets": 8 //UPDATE TARGET
+        },
+        {
+          "render": function ( data, type, row ) {
+            var nationSpace = row['currentDriver_Nationality'];
+            if (nationSpace == "Any" || nationSpace == null || nationSpace == "" ) {
+              return "";
+            }
+            return nationSpace.replace(/[A-Z]/g, ' $&').trim();
+
+          },
+        "targets": 6 //UPDATE TARGET
+        },
+        {
+          "render": function ( data, type, row ) {
+            const teamSpace = row['teamNationality'];
+
+            if (teamSpace === "Any" || teamSpace === '') {
+              return "";
+            }
+
+            return teamSpace.replace(/[A-Z]/g, ' $&').trim();
+          },
+          "targets": 13 //UPDATE TARGET
+        },
+        {
+          "render": function ( data, type, row ) {
+            var timeFormatA = row['gap'];
+            if (timeFormatA === null) {
+              return timeFormatA;
+            }
+            return timeFormatA.replace(/'/g, '.');
+          },
+          "targets": 21 //UPDATE TARGET
+        },
+
+        {
+          "render": function ( data, type, row ) {
+            var timeFormatB = row['gapToLeader'];
+            if (timeFormatB == null){
+              return timeFormatB;
+            }
+            return timeFormatB.replace(/'/g, '.');
+          },
+          "targets": 22 //UPDATE TARGET
+        },
+        {
+          "render": function ( data, type, row ) {
+            const timeFormatC = row['deltaFromBestLap'];
+            if (timeFormatC == null){
+              return timeFormatC;
+            }
+            return timeFormatC.replace(/'/g, '.');
+          },
+          "targets": 31 //UPDATE TARGET
+        },
+        {"render": function ( data, type, row ) {
+        var timeFormatD = row['deltaFromAllCarsBestLap'];
+        if (timeFormatD == null){
+          return timeFormatD;
+        }
+          return timeFormatD.replace(/'/g, '.');
+        },
+        "targets": 32 //UPDATE TARGET
+        },
+        {"render": function ( data, type, row ) {
+          return "sum";
+          /*
+            This is where the code will go to calculate the gap between players in the same RaceApp Class
+          */
+        },
+        "targets": 38 //UPDATE TARGET
+        }
+    ],
+
+    "createdRow": highlightMe
+  }); // End of DataTable definition
+
+  /*
+  This is the code for indicating where you'll exit the pits in the leaderboard.
+
+  "drawCallback": function( settings ) {
+    // isPlayer
+    // lastDriveThroughTime   =   time driving through, stopping and exiting the pit lane
+    // gapToLeader
+
+    var api = this.api();
+
+      console.log( api.rows( {page:'current'} ).data() );
+
+    var tabledata = api.rows( {page:'current'} ).data();
+    console.log(tabledata);
+    tabledata.forEach((row) => {
+      if ( row.isPlayer ) {
+        console.log("hello");
+      }
+    });
+  }
+  */
+
+  console.log(table);
+
+  console.log('Hiding Columns: %s', hiddenCols);
+
+  table.columns([hiddenCols]).visible(false);
+
+  // classFiltering
+  document.getElementById("myText").value = classFiltering;
+  table.columns(36).search($('#myText').val()).draw(); // UPDATE TARGET COLUMN
+
+  // Add event listener for opening and closing details in the child row
+  $('body').on('click', 'td.dt-control', function () {
+    if (mode === 'static') {
+      console.log('open child row');
+    }
+
+    const $tr = $(this).closest('tr');
+    const row = table.row($tr);
+
+    if (row.child.isShown() ) {
+      // This row is already open - close it
+      row.child.hide();
+      $tr.removeClass('shown');
+    } else {
+      // Open this row
+      // row.child(format(row.data(), sessionData.raceAppSerieId, table)).show();
+      row.child('Driver history coming here ....').show();
+      $tr.addClass('shown');
     }
   });
-}
-*/
 
+  // TODO: what is this for? triggers for every button?
+  $('button').on('click', function () {
+    // Get shown rows
+    childRows = table.rows($('.shown'));
+    table.ajax.reload();
+  });
 
-console.log('Hiding Columns: %s', hiddenCols);
-
-table.columns([hiddenCols]).visible(false);
-
-// classFiltering
-document.getElementById("myText").value = classFiltering;
-table.columns(36).search($('#myText').val()).draw(); // UPDATE TARGET COLUMN
-
-// Add event listener for opening and closing details in the child row
-$('body').on('click', 'td.dt-control', function () {
-  if (mode === 'static') {
-    console.log('open child row');
+  // This adds the bg-dark class to the fixedHeader
+  // but fixed header is disabled so don't think this is needed anymore!!!!!!
+  const elements = document.getElementsByClassName("sorting");
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].className += " bg-dark";
   }
 
-  const $tr = $(this).closest('tr');
-  const row = table.row($tr);
+  // set an event handler to add child rows each time the table is drawn
+  // table.on('draw', populateShownChildRows);
 
-  if (row.child.isShown() ) {
-    // This row is already open - close it
-    row.child.hide();
-    $tr.removeClass('shown');
-  } else {
-    // Open this row
-    // row.child(format(row.data(), sessionData.raceAppSerieId, table)).show();
-    row.child('Driver history coming here ....').show();
-    $tr.addClass('shown');
-  }
-});
+  // refresh the content periodically
+  setInterval(function() {
+    // make a collection of rows where the child row is open
+    const $openRows = $('.shown');
+    if ($openRows.length > 0) {
+      populatShownChildRows();
+    }
+    // childRows = table.rows(); // Keep column 1 button open/showing if it has been clicked.
+    table.ajax.reload();
 
-// TODO: what is this for? triggers for every button?
-$('button').on('click', function () {
-  // Get shown rows
-  childRows = table.rows($('.shown'));
-  table.ajax.reload();
-});
-
-// This adds the bg-dark class to the fixedHeader
-// but fixed header is disabled so don't think this is needed anymore!!!!!!
-//
-var elements = document.getElementsByClassName("sorting");
-for (var i = 0; i < elements.length; i++) {
-  elements[i].className += " bg-dark";
-}
-
-// set an event handler to add child rows each time the table is drawn
-// table.on('draw', populateShownChildRows);
-
-// refresh the content periodically
-setInterval(function() {
-  // make a collection of rows where the child row is open
-  const $openRows = $('.shown');
-  if ($openRows.length > 0) {
-    populatShownChildRows();
-  }
-  // childRows = table.rows(); // Keep column 1 button open/showing if it has been clicked.
-  table.ajax.reload();
-
-  loadlink(sessionURL, mode, start); // This function adds the Title and Clock countdown
-}, refresh ); // reload rate can be set as a URL param
+    // inject the circuit name and session clock
+    loadlink(sessionURL, mode, start);
+  }, refresh ); // reload rate can be set as a URL param
 }); // end of $(document).ready(function () {
 
 /**
@@ -817,7 +818,6 @@ function populatShownChildRows() {
  *
  * @param {object} d car details
  * @param {int} raceAppSerieId
- * @param {int} raceNumber
  * @param {DataTable} dataTable
  */
  function format(d, raceAppSerieId, dataTable) {
