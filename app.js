@@ -886,17 +886,18 @@ console.log('');
 		table.ajax.reload();
 	});
 
+	// set an event handler to add child rows each time the table is drawn
 	table.on('draw', formatChildRows);
 
 	// This adds the bg-dark class to the fixedHeader
-	//
-	//        but fixed header is disabled so don't think this is needed anymore!!!!!!
+	// but fixed header is disabled so don't think this is needed anymore!!!!!!
 	//
 	var elements = document.getElementsByClassName("sorting");
-	for(var i = 0; i < elements.length; i++){
-    elements[i].className += " bg-dark";
+	for (var i = 0; i < elements.length; i++) {
+    	elements[i].className += " bg-dark";
 	}
 
+	// refresh the content periodically
 	setInterval(function() {
 		// make a collection of rows where the child row is open
 		childRows = table.rows($('.shown')); // Keep column 1 button open/showing if it has been clicked.
@@ -907,7 +908,7 @@ console.log('');
 }); // end of $(document).ready(function () {
 
 /**
- *
+ * update content for any open child rows
  */
 function formatChildRows() {
 	console.log('formatChildRows: %o', childRows);
@@ -918,8 +919,9 @@ function formatChildRows() {
 			const d = this.data();
 			console.log(d);
 
-			format(d.raceNumber, this, sessionData.raceAppSerieId);
+			format(d.raceNumber, sessionData.raceAppSerieId, this);
 		});
+
 		// Reset childRows so loop is not executed each draw
 		childRows = null;
 	}
@@ -932,7 +934,10 @@ function formatChildRows() {
  * @returns
  */
  function format(raceNumber, raceAppSerieId, dataTable) {
-	const url = 'http://localhost:8000/Acc/GetRaceAppCarWithResults/' + raceAppSerieId + '/' + raceNumber;
+	let url = 'http://localhost:8000/Acc/GetRaceAppCarWithResults/' + raceAppSerieId + '/' + raceNumber;
+	if (mode === 'static') {
+		url = 'seriesId266carId63.json';
+	}
 	const params = {};
 
 	$.get(url, params, null, 'json')
