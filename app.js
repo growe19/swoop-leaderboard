@@ -309,7 +309,8 @@ console.log('');
 			{
 				"className": 'dt-control',
         "data": null, // This column is for the child expanding data
-				"defaultContent": ''
+				"defaultContent": '',
+        'orderable': false
 			},
       { 'data': 'racePosition' },
       { 'data': 'gridPosition' },
@@ -331,239 +332,236 @@ console.log('');
         return data;
         }
       },
-	{ 'data': 'currentDriver_ShortName' },
-	{ "data": "currentDriver_NationalityNumber" ,
-				"render": function (data, type, row) {
-					if ( row['currentDriver_NationalityNumber'] == '0') { return '';}
-					else if ( row['currentDriver_NationalityNumber'] == '1') { return '<span class="fi fi-it"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '2') { return '<span class="fi fi-de"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '3') { return '<span class="fi fi-fr"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '4') { return '<span class="fi fi-es"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '5') { return '<span class="fi fi-gb"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '6') { return '<span class="fi fi-hu"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '7') { return '<span class="fi fi-be"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '8') { return '<span class="fi fi-ch"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '9') { return '<span class="fi fi-at"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '10') { return '<span class="fi fi-ru"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '11') { return '<span class="fi fi-th"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '12') { return '<span class="fi fi-nl"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '13') { return '<span class="fi fi-pl"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '14') { return '<span class="fi fi-ar"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '15') { return '<span class="fi fi-mc"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '16') { return '<span class="fi fi-ie"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '17') { return '<span class="fi fi-br"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '18') { return '<span class="fi fi-za"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '19') { return '<span class="fi fi-pr"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '20') { return '<span class="fi fi-sk"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '21') { return '<span class="fi fi-om"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '22') { return '<span class="fi fi-gr"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '23') { return '<span class="fi fi-sa"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '24') { return '<span class="fi fi-no"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '25') { return '<span class="fi fi-tr"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '26') { return '<span class="fi fi-kr"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '27') { return '<span class="fi fi-lb"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '28') { return '<span class="fi fi-am"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '29') { return '<span class="fi fi-mx"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '30') { return '<span class="fi fi-se"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '31') { return '<span class="fi fi-fi"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '32') { return '<span class="fi fi-dk"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '33') { return '<span class="fi fi-hr"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '34') { return '<span class="fi fi-ca"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '35') { return '<span class="fi fi-cn"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '36') { return '<span class="fi fi-pt"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '37') { return '<span class="fi fi-sg"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '38') { return '<span class="fi fi-id"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '39') { return '<span class="fi fi-us"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '40') { return '<span class="fi fi-nz"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '41') { return '<span class="fi fi-au"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '42') { return '<span class="fi fi-sm"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '43') { return '<span class="fi fi-ae"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '44') { return '<span class="fi fi-lu"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '45') { return '<span class="fi fi-kw"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '46') { return '<span class="fi fi-hk"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '47') { return '<span class="fi fi-co"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '48') { return '<span class="fi fi-jp"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '49') { return '<span class="fi fi-ad"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '50') { return '<span class="fi fi-az"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '51') { return '<span class="fi fi-bg"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '52') { return '<span class="fi fi-cu"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '53') { return '<span class="fi fi-cz"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '54') { return '<span class="fi fi-ee"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '55') { return '<span class="fi fi-ge"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '56') { return '<span class="fi fi-in"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '57') { return '<span class="fi fi-il"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '58') { return '<span class="fi fi-jm"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '59') { return '<span class="fi fi-lv"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '60') { return '<span class="fi fi-lt"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '61') { return '<span class="fi fi-mo"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '62') { return '<span class="fi fi-my"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '63') { return '<span class="fi fi-np"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '64') { return '<span class="fi fi-nc"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '65') { return '<span class="fi fi-ne"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '66') { return '<span class="fi fi-gb-nir"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '67') { return '<span class="fi fi-pg"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '68') { return '<span class="fi fi-ph"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '69') { return '<span class="fi fi-qa"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '70') { return '<span class="fi fi-ro"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '71') { return '<span class="fi fi-gb-sct"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '72') { return '<span class="fi fi-rs"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '73') { return '<span class="fi fi-si"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '74') { return '<span class="fi fi-tw"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '75') { return '<span class="fi fi-ua"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '76') { return '<span class="fi fi-ve"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '77') { return '<span class="fi fi-gb-wls"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '78') { return '<span class="fi fi-ir"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '79') { return '<span class="fi fi-bh"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '80') { return '<span class="fi fi-zw"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '81') { return '<span class="fi fi-xx"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '82') { return '<span class="fi fi-cl"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '83') { return '<span class="fi fi-uy"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '84') { return '<span class="fi fi-mg"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '85') { return '<span class="fi fi-mt"></span>';}
-					else if ( row['currentDriver_NationalityNumber'] == '86') { return '<span class="fi fi-gb-eng"></span>';}
-					else { return '';}
-				}
-			},
-
-	{ 'data': null,"defaultContent": '' }, // currentDriver_Nationality
-
-	{ 'data': 'raceNumber' },
-
-
-	{ 'data': null,"defaultContent": '' }, // currentDriver_FullName
-
-	{ 'data': 'currentDriver_FirstName'	},
-	{ 'data': 'currentDriver_LasttName' },
-	{ 'data': 'driverCategory' ,
-		"render": function (data, type, row) {
-			if ( row['driverCategory'] == '0') { return '<span class="badge text-bronze badge-outline badge-bronze">BRONZE</span>';}
-			else if ( row['driverCategory'] == '1') { return '<span class="badge text-silver badge-outline badge-silver">SILVER</span>';}
-			else if ( row['driverCategory'] == '2') { return '<span class="badge text-gold badge-outline badge-gold">GOLD</span>';}
-			else if ( row['driverCategory'] == '3') { return '<span class="badge text-platinum badge-outline badge-platinum">PLATINUM</span>';}
-			else { return 'Error';}
-		}
-	},
-	{ 'data': 'teamName' },
-	{ 'data': null,"defaultContent": '' }, // teamNationality
-	{ "data": "carBrand" ,
-				"render": function (data, type, row) {
-					if ( row['carBrand'] == 'Mercedes-AMG') { return '<span class="car-mercedes-benz"></span>';}
-					else if ( row['carBrand'] == 'Honda') { return '<span class="car-honda"></span>';}
-					else if ( row['carBrand'] == 'McLaren') { return '<span class="car-mclaren"></span>';}
-					else if ( row['carBrand'] == 'Audi') { return '<span class="car-audi"></span>';}
-					else if ( row['carBrand'] == 'Porsche') { return '<span class="car-porsche"></span>';}
-					else if ( row['carBrand'] == 'Lamborghini') { return '<span class="car-lamborghini"></span>';}
-					else if ( row['carBrand'] == 'Mercedes') { return '<span class="car-mercedes-benz"></span>';}
-					else if ( row['carBrand'] == 'Aston') { return '<span class="car-aston-martin"></span>';}
-					else if ( row['carBrand'] == 'Lexus') { return '<span class="car-lexus"></span>';}
-					else if ( row['carBrand'] == 'BMW') { return '<span class="car-bmw"></span>';}
-					else if ( row['carBrand'] == 'Ginetta') { return '';}
-					else if ( row['carBrand'] == 'KTM') { return '';}
-					else if ( row['carBrand'] == 'Chevrolet') { return '<span class="car-chevrolet"></span>';}
-					else if ( row['carBrand'] == 'Alpine') { return '';}
-					else if ( row['carBrand'] == 'Maserati') { return '<span class="car-maserati"></span>';}
-					else if ( row['carBrand'] == 'Ferrari') { return '<span class="car-ferrari"></span>';}
-					else if ( row['carBrand'] == 'Nissan') { return '<span class="car-nissan"></span>';}
-					else if ( row['carBrand'] == 'Ferrari') { return '<span class="car-ferrari"></span>';}
-					else if ( row['carBrand'] == 'Bentley') { return '<span class="car-bentley"></span>';}
-					else if ( row['carBrand'] == 'Jaguar') { return '<span class="car-jaguar"></span>';}
-					else if ( row['carBrand'] == 'Reiter') { return '';}
-					else { return '';}
-				}
-			//https://garyrowe.co.uk/acc/car-makes-icons-1.1.1/dist/demo.html
-			},
-	{ 'data': 'carBrand' },
-	{ 'data': 'carName' },
-	{ "data": "serie" ,
-		"render": function (data, type, row) {
-			if ( row['serie'] == '0') { return '<span class="badge badge-dark">GT3</span>';} //GT3
-			else if ( row['serie'] == '1') { return '<span class="badge badge-purple">GT4</span>';} //GT4
-			else if ( row['serie'] == '2') { return '<span class="badge badge-danger">CHL</span>';} //CHL
-			else if ( row['serie'] == '3') { return '<span class="badge badge-warning">ST</span>';} //ST
-			else if ( row['serie'] == '4') { return '<span class="badge badge-success">CUP</span>';} //CUP
-			else if ( row['serie'] == '5') { return '<span class="badge badge-primary">TCX</span>';} //TCX
-			else if ( row['serie'] == '299') { return '?';} //NONE
-			else { return 'Error';}
-		}
-	},
-	{ "data": "cupCategory" ,
-		"render": function (data, type, row) {
-			if ( row['cupCategory'] == '0') { return '<span class="badge badge-light">PRO</span>';} //Pro
-			else if ( row['cupCategory'] == '1') { return '<span class="badge badge-dark">PRO-AM</span>';} //ProAm
-			else if ( row['cupCategory'] == '2') { return '<span class="badge badge-danger">AM</span>';} //Am
-			else if ( row['cupCategory'] == '3') { return '<span class="badge text-dark badge-light">SILVER</span>';} //Silver
-			else if ( row['cupCategory'] == '4') { return '<span class="badge text-dark badge-light">NATIONAL</span>';} //National
-			else { return 'Error';}
-		}
-	},
-	{ 'data': 'laps' },
-	{ 'data': null,"defaultContent": '' }, // Progress bar
-	{ 'data': null,"defaultContent": '' }, // gap
-	{ 'data': null,"defaultContent": '' }, // gapToLeader
-	{ 'data': 'lastLapTime' },
-	{ 'data': 'lastLapSector1' },
-	{ 'data': 'lastLapSector2' },
-	{ 'data': 'lastLapSector3' },
-	{ 'data': null,"defaultContent": '' }, // this is the bestLapTime column but needs processing on it for IS GLOBAL BEST
-	{ 'data': 'bestSector1' },
-	{ 'data': 'bestSector2' },
-	{ 'data': 'bestSector3' },
-	{ 'data': null,"defaultContent": '' }, // deltaFromBestLap
-	{ 'data': null,"defaultContent": '' }, // deltaFromAllCarsBestLap
-	{ 'data': null,"defaultContent": '' }, // Pit Stop Count
-	{ 'data': null,"defaultContent": '' }, // Laps Ago
-	{ 'data': 'inPitSince' },
-	{ "data": "raceAppTag" ,
-		"render": function (data, type, row) {
-			if ( row["raceAppTag"] == 'SILVER') {
-				return '<span class="badge text-silver badge-outline badge-silver">SILVER</span>';}
-			else if ( row["raceAppTag"] == 'BRONZE') {
-				return '<span class="badge text-bronze badge-outline badge-bronze">BRONZE</span>';}
-			else if ( row["raceAppTag"] == 'GOLD') {
-				return '<span class="badge text-gold badge-outline badge-gold">GOLD</span>';}
-			else if ( row["raceAppTag"] == 'PLATIN') {
-				return '<span class="badge text-platinum badge-outline badge-platinum">PLATINUM</span>';}
-			else { return '<span class="badge badge-outline badge-danger">NOT FOUND</span>';}
-		}
-	},
-	{ 'data': 'raceAppTagPosition' },
-	{ 'data': null,"defaultContent": '' }, // Gap within RaceApp Class
-	{ "data": "raceAppByTagChampionshipPosition" ,
-		"render": function (data, type, row) {
-			if ( row["raceAppByTagChampionshipPosition"] == '1') {
-				return '1 <i class="fa-solid fa-trophy text-gold"></i>';}
-			else if ( row["raceAppByTagChampionshipPosition"] == '2') {
-				return '2 <i class="fa-solid fa-trophy text-silver"></i>';}
-			else if ( row["raceAppByTagChampionshipPosition"] == '3') {
-				return '3 <i class="fa-solid fa-trophy text-bronze"></i>';}
-			else { return row["raceAppByTagChampionshipPosition"];}
-		}
-	},
-	{ 'data': 'raceAppByTagChampionshipTotalPoints' },
-	{ 'data': null,"defaultContent": '' }, // this is the change
-	{ "data": "raceAppByTagChampionshipPredictedPosition" ,
-		"render": function (data, type, row) {
-			if ( row["raceAppByTagChampionshipPredictedPosition"] == '1') {
-				return '1 <i class="fa-solid fa-trophy text-gold"></i>';}
-			else if ( row["raceAppByTagChampionshipPredictedPosition"] == '2') {
-				return '2 <i class="fa-solid fa-trophy text-silver"></i>';}
-			else if ( row["raceAppByTagChampionshipPredictedPosition"] == '3') {
-				return '3 <i class="fa-solid fa-trophy text-bronze"></i>';}
-			else { return row["raceAppByTagChampionshipPredictedPosition"];}
-		}
-	},
-	{ 'data': 'raceAppByTagChampionshipPredictedPoints' },
+    { 'data': 'currentDriver_ShortName' },
+    { "data": "currentDriver_NationalityNumber" ,
+          "render": function (data, type, row) {
+            if ( row['currentDriver_NationalityNumber'] == '0') { return '';}
+            else if ( row['currentDriver_NationalityNumber'] == '1') { return '<span class="fi fi-it"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '2') { return '<span class="fi fi-de"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '3') { return '<span class="fi fi-fr"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '4') { return '<span class="fi fi-es"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '5') { return '<span class="fi fi-gb"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '6') { return '<span class="fi fi-hu"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '7') { return '<span class="fi fi-be"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '8') { return '<span class="fi fi-ch"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '9') { return '<span class="fi fi-at"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '10') { return '<span class="fi fi-ru"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '11') { return '<span class="fi fi-th"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '12') { return '<span class="fi fi-nl"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '13') { return '<span class="fi fi-pl"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '14') { return '<span class="fi fi-ar"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '15') { return '<span class="fi fi-mc"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '16') { return '<span class="fi fi-ie"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '17') { return '<span class="fi fi-br"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '18') { return '<span class="fi fi-za"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '19') { return '<span class="fi fi-pr"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '20') { return '<span class="fi fi-sk"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '21') { return '<span class="fi fi-om"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '22') { return '<span class="fi fi-gr"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '23') { return '<span class="fi fi-sa"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '24') { return '<span class="fi fi-no"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '25') { return '<span class="fi fi-tr"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '26') { return '<span class="fi fi-kr"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '27') { return '<span class="fi fi-lb"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '28') { return '<span class="fi fi-am"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '29') { return '<span class="fi fi-mx"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '30') { return '<span class="fi fi-se"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '31') { return '<span class="fi fi-fi"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '32') { return '<span class="fi fi-dk"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '33') { return '<span class="fi fi-hr"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '34') { return '<span class="fi fi-ca"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '35') { return '<span class="fi fi-cn"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '36') { return '<span class="fi fi-pt"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '37') { return '<span class="fi fi-sg"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '38') { return '<span class="fi fi-id"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '39') { return '<span class="fi fi-us"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '40') { return '<span class="fi fi-nz"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '41') { return '<span class="fi fi-au"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '42') { return '<span class="fi fi-sm"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '43') { return '<span class="fi fi-ae"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '44') { return '<span class="fi fi-lu"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '45') { return '<span class="fi fi-kw"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '46') { return '<span class="fi fi-hk"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '47') { return '<span class="fi fi-co"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '48') { return '<span class="fi fi-jp"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '49') { return '<span class="fi fi-ad"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '50') { return '<span class="fi fi-az"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '51') { return '<span class="fi fi-bg"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '52') { return '<span class="fi fi-cu"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '53') { return '<span class="fi fi-cz"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '54') { return '<span class="fi fi-ee"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '55') { return '<span class="fi fi-ge"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '56') { return '<span class="fi fi-in"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '57') { return '<span class="fi fi-il"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '58') { return '<span class="fi fi-jm"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '59') { return '<span class="fi fi-lv"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '60') { return '<span class="fi fi-lt"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '61') { return '<span class="fi fi-mo"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '62') { return '<span class="fi fi-my"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '63') { return '<span class="fi fi-np"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '64') { return '<span class="fi fi-nc"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '65') { return '<span class="fi fi-ne"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '66') { return '<span class="fi fi-gb-nir"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '67') { return '<span class="fi fi-pg"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '68') { return '<span class="fi fi-ph"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '69') { return '<span class="fi fi-qa"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '70') { return '<span class="fi fi-ro"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '71') { return '<span class="fi fi-gb-sct"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '72') { return '<span class="fi fi-rs"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '73') { return '<span class="fi fi-si"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '74') { return '<span class="fi fi-tw"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '75') { return '<span class="fi fi-ua"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '76') { return '<span class="fi fi-ve"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '77') { return '<span class="fi fi-gb-wls"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '78') { return '<span class="fi fi-ir"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '79') { return '<span class="fi fi-bh"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '80') { return '<span class="fi fi-zw"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '81') { return '<span class="fi fi-xx"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '82') { return '<span class="fi fi-cl"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '83') { return '<span class="fi fi-uy"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '84') { return '<span class="fi fi-mg"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '85') { return '<span class="fi fi-mt"></span>';}
+            else if ( row['currentDriver_NationalityNumber'] == '86') { return '<span class="fi fi-gb-eng"></span>';}
+            else { return '';}
+          }
+    },
+    { 'data': null,"defaultContent": '' }, // currentDriver_Nationality
+    { 'data': 'raceNumber' },
+    { 'data': null,"defaultContent": '' }, // currentDriver_FullName
+    { 'data': 'currentDriver_FirstName'	},
+    { 'data': 'currentDriver_LasttName' },
+    { 'data': 'driverCategory' ,
+      "render": function (data, type, row) {
+        if ( row['driverCategory'] == '0') { return '<span class="badge text-bronze badge-outline badge-bronze">BRONZE</span>';}
+        else if ( row['driverCategory'] == '1') { return '<span class="badge text-silver badge-outline badge-silver">SILVER</span>';}
+        else if ( row['driverCategory'] == '2') { return '<span class="badge text-gold badge-outline badge-gold">GOLD</span>';}
+        else if ( row['driverCategory'] == '3') { return '<span class="badge text-platinum badge-outline badge-platinum">PLATINUM</span>';}
+        else { return 'Error';}
+      }
+    },
+    { 'data': 'teamName' },
+    { 'data': null,"defaultContent": '' }, // teamNationality
+    { "data": "carBrand" ,
+          "render": function (data, type, row) {
+            if ( row['carBrand'] == 'Mercedes-AMG') { return '<span class="car-mercedes-benz"></span>';}
+            else if ( row['carBrand'] == 'Honda') { return '<span class="car-honda"></span>';}
+            else if ( row['carBrand'] == 'McLaren') { return '<span class="car-mclaren"></span>';}
+            else if ( row['carBrand'] == 'Audi') { return '<span class="car-audi"></span>';}
+            else if ( row['carBrand'] == 'Porsche') { return '<span class="car-porsche"></span>';}
+            else if ( row['carBrand'] == 'Lamborghini') { return '<span class="car-lamborghini"></span>';}
+            else if ( row['carBrand'] == 'Mercedes') { return '<span class="car-mercedes-benz"></span>';}
+            else if ( row['carBrand'] == 'Aston') { return '<span class="car-aston-martin"></span>';}
+            else if ( row['carBrand'] == 'Lexus') { return '<span class="car-lexus"></span>';}
+            else if ( row['carBrand'] == 'BMW') { return '<span class="car-bmw"></span>';}
+            else if ( row['carBrand'] == 'Ginetta') { return '';}
+            else if ( row['carBrand'] == 'KTM') { return '';}
+            else if ( row['carBrand'] == 'Chevrolet') { return '<span class="car-chevrolet"></span>';}
+            else if ( row['carBrand'] == 'Alpine') { return '';}
+            else if ( row['carBrand'] == 'Maserati') { return '<span class="car-maserati"></span>';}
+            else if ( row['carBrand'] == 'Ferrari') { return '<span class="car-ferrari"></span>';}
+            else if ( row['carBrand'] == 'Nissan') { return '<span class="car-nissan"></span>';}
+            else if ( row['carBrand'] == 'Ferrari') { return '<span class="car-ferrari"></span>';}
+            else if ( row['carBrand'] == 'Bentley') { return '<span class="car-bentley"></span>';}
+            else if ( row['carBrand'] == 'Jaguar') { return '<span class="car-jaguar"></span>';}
+            else if ( row['carBrand'] == 'Reiter') { return '';}
+            else { return '';}
+          }
+        //https://garyrowe.co.uk/acc/car-makes-icons-1.1.1/dist/demo.html
+    },
+    { 'data': 'carBrand' },
+    { 'data': 'carName' },
+    { "data": "serie" ,
+      "render": function (data, type, row) {
+        if ( row['serie'] == '0') { return '<span class="badge badge-dark">GT3</span>';} //GT3
+        else if ( row['serie'] == '1') { return '<span class="badge badge-purple">GT4</span>';} //GT4
+        else if ( row['serie'] == '2') { return '<span class="badge badge-danger">CHL</span>';} //CHL
+        else if ( row['serie'] == '3') { return '<span class="badge badge-warning">ST</span>';} //ST
+        else if ( row['serie'] == '4') { return '<span class="badge badge-success">CUP</span>';} //CUP
+        else if ( row['serie'] == '5') { return '<span class="badge badge-primary">TCX</span>';} //TCX
+        else if ( row['serie'] == '299') { return '?';} //NONE
+        else { return 'Error';}
+      }
+    },
+    { "data": "cupCategory" ,
+      "render": function (data, type, row) {
+        if ( row['cupCategory'] == '0') { return '<span class="badge badge-light">PRO</span>';} //Pro
+        else if ( row['cupCategory'] == '1') { return '<span class="badge badge-dark">PRO-AM</span>';} //ProAm
+        else if ( row['cupCategory'] == '2') { return '<span class="badge badge-danger">AM</span>';} //Am
+        else if ( row['cupCategory'] == '3') { return '<span class="badge text-dark badge-light">SILVER</span>';} //Silver
+        else if ( row['cupCategory'] == '4') { return '<span class="badge text-dark badge-light">NATIONAL</span>';} //National
+        else { return 'Error';}
+      }
+    },
+    { 'data': 'laps' },
+    { 'data': null,"defaultContent": '' }, // Progress bar
+    { 'data': null,"defaultContent": '' }, // gap
+    { 'data': null,"defaultContent": '' }, // gapToLeader
+    { 'data': 'lastLapTime' },
+    { 'data': 'lastLapSector1' },
+    { 'data': 'lastLapSector2' },
+    { 'data': 'lastLapSector3' },
+    { 'data': null,"defaultContent": '' }, // this is the bestLapTime column but needs processing on it for IS GLOBAL BEST
+    { 'data': 'bestSector1' },
+    { 'data': 'bestSector2' },
+    { 'data': 'bestSector3' },
+    { 'data': null,"defaultContent": '' }, // deltaFromBestLap
+    { 'data': null,"defaultContent": '' }, // deltaFromAllCarsBestLap
+    { 'data': null,"defaultContent": '' }, // Pit Stop Count
+    { 'data': null,"defaultContent": '' }, // Laps Ago
+    { 'data': 'inPitSince' },
+    { "data": "raceAppTag" ,
+      "render": function (data, type, row) {
+        if ( row["raceAppTag"] == 'SILVER') {
+          return '<span class="badge text-silver badge-outline badge-silver">SILVER</span>';}
+        else if ( row["raceAppTag"] == 'BRONZE') {
+          return '<span class="badge text-bronze badge-outline badge-bronze">BRONZE</span>';}
+        else if ( row["raceAppTag"] == 'GOLD') {
+          return '<span class="badge text-gold badge-outline badge-gold">GOLD</span>';}
+        else if ( row["raceAppTag"] == 'PLATIN') {
+          return '<span class="badge text-platinum badge-outline badge-platinum">PLATINUM</span>';}
+        else { return '<span class="badge badge-outline badge-danger">NOT FOUND</span>';}
+      }
+    },
+    { 'data': 'raceAppTagPosition' },
+    { 'data': null,"defaultContent": '' }, // Gap within RaceApp Class
+    { "data": "raceAppByTagChampionshipPosition" ,
+      "render": function (data, type, row) {
+        if ( row["raceAppByTagChampionshipPosition"] == '1') {
+          return '1 <i class="fa-solid fa-trophy text-gold"></i>';}
+        else if ( row["raceAppByTagChampionshipPosition"] == '2') {
+          return '2 <i class="fa-solid fa-trophy text-silver"></i>';}
+        else if ( row["raceAppByTagChampionshipPosition"] == '3') {
+          return '3 <i class="fa-solid fa-trophy text-bronze"></i>';}
+        else { return row["raceAppByTagChampionshipPosition"];}
+      }
+    },
+    { 'data': 'raceAppByTagChampionshipTotalPoints' },
+    { 'data': null,"defaultContent": '' }, // this is the change
+    {
+      "data": "raceAppByTagChampionshipPredictedPosition" ,
+      "render": function (data, type, row) {
+        if ( row["raceAppByTagChampionshipPredictedPosition"] == '1') {
+          return '1 <i class="fa-solid fa-trophy text-gold"></i>';
+        }	else if ( row["raceAppByTagChampionshipPredictedPosition"] == '2') {
+          return '2 <i class="fa-solid fa-trophy text-silver"></i>';
+        }	else if ( row["raceAppByTagChampionshipPredictedPosition"] == '3') {
+          return '3 <i class="fa-solid fa-trophy text-bronze"></i>';
+        }	else {
+          return row["raceAppByTagChampionshipPredictedPosition"];
+        }
+      }
+    },
+    { 'data': 'raceAppByTagChampionshipPredictedPoints' },
 	],
+  "order": [colOrderURLParam, 'asc'],
+  "columnDefs": [ //  when new columns are added all these need tweaking
+    {
+      // add a no wrap class to these columns
+      'className': 'nowrapping',
+      'targets': [ 4,8,9,10,12,13,16,22,24,25,26,28,29,30,31,32,34,38 ]
+    }, //UPDATE TARGET
 
-		"order": [colOrderURLParam, 'asc'],
-
-		"columnDefs": [ //  when new columns are added all these need tweaking
-			{ className: "nowrapping", "targets": [ 4,8,9,10,12,13,16,22,24,25,26,28,29,30,31,32,34,38 ] }, //UPDATE TARGET
-
-		/*
-
-		Keep all this so I can update them all please
-
+		/*  Keep all this so I can update them all please
 			{
 				searchBuilderTitle: '',
 				targets: [] //UPDATE TARGET
@@ -596,8 +594,10 @@ console.log('');
 				searchBuilderTitle: 'RaceApp.eu Position within Driver Tag (Class)',
 				targets: [37] //UPDATE TARGET
 			},
-			{ "orderable": false, "targets": [0] },
-
+			{
+        "orderable": false,
+        "targets": [0]
+      },
 			{"render": function ( data, type, row ) {
 				var sum1 = row['raceAppByTagChampionshipPosition'];
 				var sum2 = row['raceAppByTagChampionshipPredictedPosition'];
@@ -716,49 +716,47 @@ console.log('');
 			},
 			"targets": 34 //UPDATE TARGET
 			},
-
 			{"render": function ( data, type, row ) {
 				var capFullname = row['currentDriver_FullName'];
 				return capFullname.toUpperCase();
 			},
 			"targets": 8 //UPDATE TARGET
 			},
+			{
+        "render": function ( data, type, row ) {
+          var nationSpace = row['currentDriver_Nationality'];
+          if (nationSpace == "Any" || nationSpace == null || nationSpace == "" ) {
+            return "";
+          }
+          return nationSpace.replace(/[A-Z]/g, ' $&').trim();
 
-			{"render": function ( data, type, row ) {
-				var nationSpace = row['currentDriver_Nationality'];
-				if (nationSpace == "Any" || nationSpace == null || nationSpace == "" ){
-				return "";
-			}
-				return nationSpace.replace(/[A-Z]/g, ' $&').trim();
-
-			},
+        },
 			"targets": 6 //UPDATE TARGET
 			},
+			{
+        "render": function ( data, type, row ) {
+          var teamSpace = row['teamNationality'];
 
-			{"render": function ( data, type, row ) {
-			var teamSpace = row['teamNationality'];
+          if (teamSpace = "Any") {
+            return "";
+          }	else if (teamSpace = ""){
+            return "";
+          }
 
-				if (teamSpace = "Any"){
-				return "";
-			}
-			else if (teamSpace = ""){
-							return "";
-						}
+          return teamSpace.replace(/[A-Z]/g, ' $&').trim();
 
-				return teamSpace.replace(/[A-Z]/g, ' $&').trim();
-
+        },
+        "targets": 13 //UPDATE TARGET
 			},
-			"targets": 13 //UPDATE TARGET
-			},
-
-			{"render": function ( data, type, row ) {
-			var timeFormatA = row['gap'];
-			if (timeFormatA == null){
-				return timeFormatA;
-			}
-				return timeFormatA.replace(/'/g, '.');
-			},
-			"targets": 21 //UPDATE TARGET
+			{
+        "render": function ( data, type, row ) {
+          var timeFormatA = row['gap'];
+          if (timeFormatA == null){
+            return timeFormatA;
+          }
+          return timeFormatA.replace(/'/g, '.');
+        },
+        "targets": 21 //UPDATE TARGET
 			},
 
 			{"render": function ( data, type, row ) {
@@ -780,7 +778,6 @@ console.log('');
 			},
 			"targets": 31 //UPDATE TARGET
 			},
-
 			{"render": function ( data, type, row ) {
 			var timeFormatD = row['deltaFromAllCarsBestLap'];
 			if (timeFormatD == null){
@@ -790,38 +787,31 @@ console.log('');
 			},
 			"targets": 32 //UPDATE TARGET
 			},
-
-
 			{"render": function ( data, type, row ) {
 				return "sum";
 				/*
-
 					This is where the code will go to calculate the gap between players in the same RaceApp Class
-
 				*/
 			},
 			"targets": 38 //UPDATE TARGET
-			},
-
-
-		],
+			}
+  ],
 
 	"createdRow": function( row, data ) {
 		/*
-			The URL &showme parameter is comma separated Race Numbers of Drivers you want to see inverted in the table
+			The URL '&showme' parameter is comma separated Race Numbers of Drivers you want to see inverted in the table
 		*/
 		const showMe = urlParams.get('showme');
-		$(function(){
+		$(function() {
 			var match = showMe.split(',')
-			for (var a in match)
-				{
+			for (var a in match) {
 				var variable = match[a]
-					if ( data['raceNumber'] == variable ) {
-						$(row).addClass('bg-light text-dark');
-					}
-				}
-		})
-    },
+        if ( data['raceNumber'] == variable ) {
+          $(row).addClass('bg-light text-dark');
+        }
+      }
+		});
+  },
 
 	/*
 
@@ -858,20 +848,20 @@ console.log('');
 	table.columns(36).search( $('#myText').val() ).draw(); // UPDATE TARGET COLUMN
 
 	// Add event listener for opening and closing details in the child row
-    $('#example tbody').on('click', 'td.dt-control', function () {
-        var tr = $(this).closest('tr');
-        var row = table.row(tr);
+  $('#example tbody').on('click', 'td.dt-control', function () {
+    var tr = $(this).closest('tr');
+    var row = table.row(tr);
 
-        if ( row.child.isShown() ) {
-            // This row is already open - close it
-            row.child.hide();
-            tr.removeClass('shown');
-        } else {
-            // Open this row
-            row.child( format(row.data()) ).show();
-            tr.addClass('shown');
-        }
-    });
+    if ( row.child.isShown() ) {
+      // This row is already open - close it
+      row.child.hide();
+      tr.removeClass('shown');
+    } else {
+      // Open this row
+      row.child( format(row.data()) ).show();
+      tr.addClass('shown');
+    }
+  });
 
 	// TODO: what is this for? triggers for every button?
 	$('button').on('click', function () {
@@ -880,16 +870,16 @@ console.log('');
 		table.ajax.reload();
 	});
 
-	// set an event handler to add child rows each time the table is drawn
-	table.on('draw', formatChildRows);
-
 	// This adds the bg-dark class to the fixedHeader
 	// but fixed header is disabled so don't think this is needed anymore!!!!!!
 	//
 	var elements = document.getElementsByClassName("sorting");
 	for (var i = 0; i < elements.length; i++) {
-    	elements[i].className += " bg-dark";
+    elements[i].className += " bg-dark";
 	}
+
+  // set an event handler to add child rows each time the table is drawn
+	table.on('draw', formatChildRows);
 
 	// refresh the content periodically
 	setInterval(function() {
@@ -897,7 +887,7 @@ console.log('');
 		childRows = table.rows($('.shown')); // Keep column 1 button open/showing if it has been clicked.
 		table.ajax.reload();
 
-		 loadlink(sessionURL); // This function adds the Title and Clock countdown
+    loadlink(sessionURL); // This function adds the Title and Clock countdown
 	}, refresh ); // reload rate can be set as a URL param
 }); // end of $(document).ready(function () {
 
