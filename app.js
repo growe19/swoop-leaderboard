@@ -3,18 +3,17 @@
     var childRows = null;
 	var start = new Date();
 
+	const queryString = window.location.search;
+	console.log('Found the parameters that the User has set: '+queryString);
+	const urlParams = new URLSearchParams(queryString);
+	const colOrderURLParam = urlParams.get('order');
+	const mode = urlParams.get('mode');
+
 	$(document).ready(function() {
 
-		const queryString = window.location.search;
-
-		console.log('Found the parameters that the User has set: '+queryString);
-		const urlParams = new URLSearchParams(queryString);
-		const mode = urlParams.get('mode');
-
-		const colOrderURLParam = urlParams.get('order');
 		//const showMe = urlParams.get('showme');
 
-		console.log('Mode: '+mode);
+		console.log('Mode: %s', mode);
 		console.log('Column Ordering by Column ID: '+colOrderURLParam);
 
 		//Check to see if there are any parameters set and if there are not then load the default string
