@@ -809,8 +809,8 @@ setInterval(function() {
  * update content for any open child rows
  */
 function populatShownChildRows() {
-  childRows = table.rows();
-	console.log('formatChildRows: %o', childRows);
+  const childRows = table.rows();
+	console.log('populateShownChildRows: %o', childRows);
 	// If reloading table then show previously shown rows
 	if (childRows) {
 		childRows.every(function (rowIdx, tableLoop, rowLoop) {
