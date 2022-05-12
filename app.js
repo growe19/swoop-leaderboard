@@ -111,9 +111,9 @@ console.log('////////// SESSION URL DATA TYPE //////////');
 console.log(typeof sessionURL);
 console.log('');
 
+//var appObjects = $.extend({}, sessionData, driverData);
+//var appObjects = sessionData.concat(driverData);
 
-        //var appObjects = $.extend({}, sessionData, driverData);
-		//var appObjects = sessionData.concat(driverData);
 sessionData.cars = driverData;
 var appObjects = sessionData;
 
@@ -918,7 +918,7 @@ function formatChildRows() {
 			const d = this.data();
 			console.log(d);
 
-			format(d, this);
+			format(d.raceNumber, this, sessionData.raceAppSerieId);
 		});
 		// Reset childRows so loop is not executed each draw
 		childRows = null;
@@ -931,8 +931,8 @@ function formatChildRows() {
  * @param {object} d
  * @returns
  */
- function format(d, dataTable) {
-	const url = 'http://localhost:8000/Acc/GetRaceAppCarWithResults/' + d.raceAppSerieId + '/' + d.raceNumber;
+ function format(raceNumber, raceAppSerieId, dataTable) {
+	const url = 'http://localhost:8000/Acc/GetRaceAppCarWithResults/' + raceAppSerieId + '/' + raceNumber;
 	const params = {};
 
 	$.get(url, params, null, 'json')
