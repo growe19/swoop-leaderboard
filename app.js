@@ -153,7 +153,7 @@ console.log(typeof appObjectsCleanedAgain);
 
 /* Datatable Configuration
 ================================================== */
-table = $('#example').DataTable({
+const table = $('#leaderboard').DataTable({
   dom: 'Bfrtip',
   searchBuilder: {},
   buttons: [
@@ -620,22 +620,24 @@ table = $('#example').DataTable({
     },
     "targets": 41 //UPDATE TARGET
     },
-    {"render": function ( data, type, row ) {
-      var bestTime = row['bestLapTime'];
-      var areYouTheBest = row['haveAllBestLapTime'];
+    {
+      "render": function ( data, type, row ) {
+        const bestTime = row['bestLapTime'];
+        const areYouTheBest = parseInt(row['haveAllBestLapTime']);
+        let bestMarker;
 
-      if (type === 'display') {
-        if (areYouTheBest >= '1' ) {
-          bestMarker = "<span class='text-purple'>" + bestTime + "</span>"; // Global best goes purple!
+        if (type === 'display') {
+          if (areYouTheBest >= 1) {
+            bestMarker = `<span class="text-purple">${bestTime}</span>`; // Global best goes purple!
+          } else {
+            bestMarker = bestTime; // Position change static, you've maintained track position!
+          }
+          return '' + bestMarker + '';
         }
-        else {
-          bestMarker = bestTime; // Position change static, you've maintained track position!
-        }
-        return '' + bestMarker + '';
-      }
-      return data;
-    },
-    "targets": 27 //UPDATE TARGET
+
+        return data;
+      },
+      "targets": 27 //UPDATE TARGET
     },
     {"render": function ( data, type, row ) {
       var pitStopCountForD = row['pitStopCount'];
