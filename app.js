@@ -37,8 +37,8 @@
         }
 
 		else if ( mode == 'static') {
-            driverURL = 'AllCars.txt';
-			sessionURL = 'SessionInfo.txt';
+            driverURL = 'AllCars.json';
+			sessionURL = 'SessionInfo.json';
 			console.log('Sourcing static data from GitHub');
         }
 
@@ -46,8 +46,6 @@
 			driverURL = 'http://localhost:8000/Acc/Allcars';
 			sessionURL = 'http://localhost:8000/Acc/GetSessionInfos';
 		}
-
-
 
 		// Combine two data sets into one
 		//var driverURL =	"http://localhost:8000/Acc/Allcars";
