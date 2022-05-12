@@ -4,11 +4,15 @@
 	var start = new Date();
 
 	const queryString = window.location.search;
-	console.log('Found the parameters that the User has set: '+queryString);
+	console.log('Found the parameters that the User has set: %s', queryString);
 	const urlParams = new URLSearchParams(queryString);
 	const colOrderURLParam = urlParams.get('order');
 	const mode = urlParams.get('mode');
 	const showMe = urlParams.get('showme');
+  const refresh = parseInt(urlParams.get('refresh') ?? 1000);
+
+	const hiddenCols = urlParams.get('hide');
+	const classFiltering = urlParams.get('class');
 
 	$(document).ready(function() {
 		console.log('Mode: %s', mode);
@@ -149,35 +153,29 @@ console.log('');
 	/* Datatable Configuration
 	================================================== */
 	table = $('#example').DataTable({
-
-		searchBuilder: {
-		},
-
 		dom: 'Bfrtip',
-
+		searchBuilder: {},
 		buttons: [
 			{
-                extend: 'searchBuilder',
-				config: {
-
-				},
-            },
+        extend: 'searchBuilder',
+				config: {},
+      },
 			{
-                text: 'Clear Conditions',
-				action: function ( e, dt, node, config ) { $('#example').DataTable().searchBuilder.rebuild(); }
-            },
-
-          	{
-                extend: 'colvis',
+        text: 'Clear Conditions',
+				action: function ( e, dt, node, config ) {
+					$('#example').DataTable().searchBuilder.rebuild();
+				}
+      },
+      {
+        extend: 'colvis',
 				columnText: function ( dt, idx, title ) {
 					return (idx)+': '+title;
 				},
-               	collectionLayout: 'fixed columns', //three-column // fixed columns
-                collectionTitle: '<span class="text-dark"><h3>Column Visibility Control</h3></span>',
+        collectionLayout: 'fixed columns', //three-column // fixed columns
+        collectionTitle: '<span class="text-dark"><h3>Column Visibility Control</h3></span>',
 				text: 'Column Visibility',
 
 				// IF NEW COLUMNS ARE ADDED DON'T FORGET TO ADD THE NUMBER HERE
-
 				columns : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43 ],
 				columnText: function ( dt, idx, title ) {
 					if(idx==0){ return '<small>'+(idx)+': Additional Data +</small>';}
@@ -227,112 +225,112 @@ console.log('');
 
                     return (idx)+': ERROR';
                 }
-            },
+      },
 			{
-                extend: 'savedStatesCreate',
+        extend: 'savedStatesCreate',
 				text: 'Saved Layouts',
-                collectionLayout: 'fixed columns',
-                collectionTitle: '<span class="text-dark"><h3>Manage Saved Table Layouts</h3></span>',
-            },
+        collectionLayout: 'fixed columns',
+        collectionTitle: '<span class="text-dark"><h3>Manage Saved Table Layouts</h3></span>',
+      },
 			{
-                text: 'Order by Track Pos.',
-                action: function ( e, dt, node, config ) { table.order([[1, 'asc']]).draw();}
-            },
+        text: 'Order by Track Pos.',
+        action: function (e, dt, node, config) {
+          table.order([[1, 'asc']]).draw();
+        }
+      },
 			{
-                extend: 'colvisGroup',
-                text: 'Show All Columns',
-                show: ':hidden'
-            },
+        extend: 'colvisGroup',
+        text: 'Show All Columns',
+        show: ':hidden'
+      },
 			{
 				extend: 'collection',
-                text: 'Export',
+        text: 'Export',
 				titleAttr: 'Exports all Columns but only visible rows.',
 				buttons: [
 					'copy',
-                    'excel',
-                	{
+          'excel',
+          {
 						extend: 'pdfHtml5',
 						text: 'PDF',
 						orientation: 'landscape',
 						pageSize: 'A2',
 						pageMargins: [ 20, 50, 20, 50 ], // [left, top, right, bottom] or [horizontal, vertical] or just a number for equal margins
 					},
-			    ]
-            },
+        ]
+      },
 		], // End of buttons
 
 		"processing": false, 	// Need to test this to see how it works
 		"select": false,
 		"colReorder": false, 	// Reordering of Columsn doesn't work when you have spanned headings
-		"paging":   false,		// Paging turned off so that all Drivers appear on one page
-        "ordering": true,		// Column ordering is allowed
-        "info":     false,		// Info turned off, I got bored of this
+		"paging": false,		// Paging turned off so that all Drivers appear on one page
+    "ordering": true,		// Column ordering is allowed
+    "info": false,		// Info turned off, I got bored of this
 		"stateSave": true,		// Saving the layout of the table, columns and search etc.
 		"searching": true,		// Searching is allowed
 		"scrollX": true,		// Scrolling allowed as there are so many columns
 		"fixedHeader": {
-            header: false,
-            headerOffset: $('#navbar').outerHeight()
+      header: false,
+      headerOffset: $('#navbar').outerHeight()
 		},
 		"language": {
 			searchBuilder: {
-				button: 'Conditional Filtering',
-				add: 'Add Condition',
-				condition: 'Condition',
-				clearAll: 'Clear All Conditions',
-				delete: 'Delete Condition',
-				deleteTitle: 'Delete Title',
-				data: 'Column',
-				left: 'Remove Nested Condition',
-				//leftTitle: 'Left Title',
-				logicAnd: 'AND',
-				logicOr: 'OR',
-				right: 'Add Nested Condition',
-				//rightTitle: 'Right Title',
-				title: {
-					0: 'Conditional Filtering',
-					_: 'Filters applied to Drivers Table ( %d )'
-				},
-				value: 'Option',
-				valueJoiner: 'et'
-			},
-			"zeroRecords": "No Drivers Found",
-			"info": "Showing _MAX_ Drivers",
-			"infoEmpty": "No Drivers Found",
-			"search": "Quick Global Filter",
+        button: 'Conditional Filtering',
+        add: 'Add Condition',
+        condition: 'Condition',
+        clearAll: 'Clear All Conditions',
+        delete: 'Delete Condition',
+        deleteTitle: 'Delete Title',
+        data: 'Column',
+        left: 'Remove Nested Condition',
+        //leftTitle: 'Left Title',
+        logicAnd: 'AND',
+        logicOr: 'OR',
+        right: 'Add Nested Condition',
+        //rightTitle: 'Right Title',
+        title: {
+            0: 'Conditional Filtering',
+            _: 'Filters applied to Drivers Table ( %d )'
         },
-
-		//"data": appObjects.cars,
+        value: 'Option',
+        valueJoiner: 'et'
+      },
+      "zeroRecords": "No Drivers Found",
+      "info": "Showing _MAX_ Drivers",
+      "infoEmpty": "No Drivers Found",
+      "search": "Quick Global Filter",
+    },
 		"ajax": {
 			"url": driverURL, // Source set from the ?mode= parameter in the URL. Current options are 'live' or 'ip'
 			"dataSrc": ""
-        },
+    },
 		"columns": [
 			{
-				"className":      'dt-control',
-		"data":           null, // This column is for the child expanding data
+				"className": 'dt-control',
+        "data": null, // This column is for the child expanding data
 				"defaultContent": ''
 			},
-	{ 'data': 'racePosition' },
-	{ 'data': 'gridPosition' },
-	{ "data": "movements" ,
-		render: function(data, type) {
-			if (type === 'display') {
-				let directionMove = "";
-					if (data[0] >= '+1' ) {
-						directionMove = "<span class=text-danger>&#9660;</span>"; // Position change red, you've dropped places!
-					}
-					else if (data[0] < '0' ) {
-						directionMove = "<span class=text-success>&#9650;</span>"; // Position change green, you've overtaken cars!
-					}
-					else {
-						directionMove = "<span class=text-secondary>&#9655;</span> 0"; // Position change static, you've maintained track position!
-					}
-				return '' + directionMove + ' ' + data + '';
-			}
-		return data;
-		}
-	},
+      { 'data': 'racePosition' },
+      { 'data': 'gridPosition' },
+      { "data": "movements" ,
+        render: function(data, type) {
+          if (type === 'display') {
+            let directionMove = "";
+              if (data[0] >= '+1' ) {
+                directionMove = "<span class=text-danger>&#9660;</span>"; // Position change red, you've dropped places!
+              }
+              else if (data[0] < '0' ) {
+                directionMove = "<span class=text-success>&#9650;</span>"; // Position change green, you've overtaken cars!
+              }
+              else {
+                directionMove = "<span class=text-secondary>&#9655;</span> 0"; // Position change static, you've maintained track position!
+              }
+            return '' + directionMove + ' ' + data + '';
+          }
+        return data;
+        }
+      },
 	{ 'data': 'currentDriver_ShortName' },
 	{ "data": "currentDriver_NationalityNumber" ,
 				"render": function (data, type, row) {
@@ -851,35 +849,31 @@ console.log('');
 
  	}); // End of DataTable $('#example').DataTable({
 
-	const queryStringForHide = window.location.search;
-	const urlParamsHide = new URLSearchParams(queryStringForHide);
-	const hiddenCols = urlParamsHide.get('hide');
-	const classFiltering = urlParamsHide.get('class');
-	console.log('Hiding Columns: '+hiddenCols);
+	console.log('Hiding Columns: %s', hiddenCols);
 
-	table.columns([''+hiddenCols+'']).visible(false);
+	table.columns(['' + hiddenCols + '']).visible(false);
 
-	//classFiltering
+	// classFiltering
 	document.getElementById("myText").value = classFiltering;
-	table.columns(36).search( $('#myText').val() ).draw(); //UPDATE TARGET COLUMN
+	table.columns(36).search( $('#myText').val() ).draw(); // UPDATE TARGET COLUMN
 
-	// Add event listener for opening and closing details
+	// Add event listener for opening and closing details in the child row
     $('#example tbody').on('click', 'td.dt-control', function () {
         var tr = $(this).closest('tr');
-        var row = table.row( tr );
+        var row = table.row(tr);
 
         if ( row.child.isShown() ) {
             // This row is already open - close it
             row.child.hide();
             tr.removeClass('shown');
-        }
-        else {
+        } else {
             // Open this row
             row.child( format(row.data()) ).show();
             tr.addClass('shown');
         }
-    } );
+    });
 
+	// TODO: what is this for? triggers for every button?
 	$('button').on('click', function () {
 		// Get shown rows
 		childRows = table.rows($('.shown'));
@@ -904,7 +898,7 @@ console.log('');
 		table.ajax.reload();
 
 		 loadlink(sessionURL); // This function adds the Title and Clock countdown
-	}, 1000 ); // reload rate
+	}, refresh ); // reload rate can be set as a URL param
 }); // end of $(document).ready(function () {
 
 /**
@@ -930,8 +924,9 @@ function formatChildRows() {
 /**
  * get previous results for a car
  *
- * @param {object} d
- * @returns
+ * @param {int} raceAppSerieId
+ * @param {int} raceNumber
+ * @param {DataTable} dataTable
  */
  function format(raceNumber, raceAppSerieId, dataTable) {
 	let url = 'http://localhost:8000/Acc/GetRaceAppCarWithResults/' + raceAppSerieId + '/' + raceNumber;
