@@ -37,8 +37,8 @@
         }
 
 		else if ( mode == 'static') {
-            driverURL = 'AllCars.txt';
-			sessionURL = 'SessionInfo.txt';
+            driverURL = 'AllCars.json';
+			sessionURL = 'SessionInfo.json';
 			console.log('Sourcing static data from GitHub');
         }
 
