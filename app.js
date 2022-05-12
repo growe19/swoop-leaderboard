@@ -1049,7 +1049,7 @@ function loadlink(sessionURL) {
 			const now = new Date();
 			const elapsed = now - start;
 			const remain = DURATION - elapsed;
-			sessionData.sessionTimeLeft = new Date(1995, 1, 1, 0, 0, remain).toTimeString();
+			json.sessionTimeLeft = new Date(1995, 1, 1, 0, 0, remain).toTimeString();
 		}
 
 		// my_json = json;
