@@ -366,7 +366,10 @@ $(document).ready(function() {
         'render': driverCategory
       },
       { 'data': 'teamName' },
-      { 'data': null, "defaultContent": '' }, // teamNationality
+      {
+        'data': 'teamNationalityNumber',
+        'render': render_flag,
+      },
       {
         'data': 'carBrand',
         'render': carbrand
@@ -491,18 +494,6 @@ $(document).ready(function() {
         // add a no wrap class to these columns
         'className': 'nowrapping',
         'targets': [ 4,8,9,10,12,13,16,22,24,25,26,28,29,30,31,32,34,38 ]
-      },
-      {
-        "render": function ( data, type, row ) {
-          const teamSpace = row['teamNationality'];
-
-          if (teamSpace === "Any" || teamSpace === '') {
-            return "";
-          }
-
-          return teamSpace.replace(/[A-Z]/g, ' $&').trim();
-        },
-        "targets": 13 //UPDATE TARGET
       },
       {
         'render': sector,
