@@ -138,24 +138,27 @@ console.log('');
 
 // var appObjectsCleaned = JSON.parse(JSON.stringify(appObjects)); // ERR: still an object
 // var appObjectsCleaned = JSON.parse(appObjects); // ERR doesn't work
-var appObjectsCleaned = JSON.stringify(appObjects); // converts it all to a string but 404 when loading into table
+// var appObjectsCleaned = JSON.stringify(appObjects); // converts it all to a string but 404 when loading into table
 
 //sessionData.cars = driverData
 
-console.log(appObjectsCleaned);
+// console.log(appObjectsCleaned);
 // Combine two data sets into one
-
-console.log(typeof appObjectsCleaned);
-
-var appObjectsCleanedAgain = $.parseJSON(appObjectsCleaned);
-
+// console.log(typeof appObjectsCleaned);
+//var appObjectsCleanedAgain = $.parseJSON(appObjectsCleaned);
 // console.log(appObjectsCleanedAgain);
 // console.log(typeof appObjectsCleanedAgain);
 
 
 /* Datatable Configuration
 ================================================== */
-const table = $('#leaderboard').DataTable({
+const $dt = $('#leaderboard');
+if ($dt.length !== 1) {
+  console.error('Missing table element');
+  return false;
+}
+
+const table = $dt.DataTable({
   dom: 'Bfrtip',
   searchBuilder: {},
   buttons: [
@@ -731,15 +734,15 @@ tabledata.forEach((row) => {
   }*/
 
 
-}); // End of DataTable $('#example').DataTable({
+}); // End of DataTable definition
 
 console.log('Hiding Columns: %s', hiddenCols);
 
-table.columns(['' + hiddenCols + '']).visible(false);
+table.columns([hiddenCols]).visible(false);
 
 // classFiltering
 document.getElementById("myText").value = classFiltering;
-table.columns(36).search( $('#myText').val() ).draw(); // UPDATE TARGET COLUMN
+table.columns(36).search($('#myText').val()).draw(); // UPDATE TARGET COLUMN
 
 // Add event listener for opening and closing details in the child row
 $('body').on('click', 'td.dt-control', function () {
@@ -747,17 +750,18 @@ $('body').on('click', 'td.dt-control', function () {
     console.log('open child row');
   }
 
-  const tr = $(this).closest('tr');
-  const row = table.row(tr);
+  const $tr = $(this).closest('tr');
+  const row = table.row($tr);
 
-  if ( row.child.isShown() ) {
+  if (row.child.isShown() ) {
     // This row is already open - close it
     row.child.hide();
-    tr.removeClass('shown');
+    $tr.removeClass('shown');
   } else {
     // Open this row
-    row.child(format(row.data(), sessionData.raceAppSerieId, table)).show();
-    tr.addClass('shown');
+    // row.child(format(row.data(), sessionData.raceAppSerieId, table)).show();
+    row.child('Driver history coming here ....').show();
+    $tr.addClass('shown');
   }
 });
 
