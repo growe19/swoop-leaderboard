@@ -851,9 +851,13 @@ document.getElementById("myText").value = classFiltering;
 table.columns(36).search( $('#myText').val() ).draw(); // UPDATE TARGET COLUMN
 
 // Add event listener for opening and closing details in the child row
-$('#example tbody').on('click', 'td.dt-control', function () {
-  var tr = $(this).closest('tr');
-  var row = table.row(tr);
+$('body').on('click', 'td.dt-control', function () {
+  if (mode === 'static') {
+    console.log('open child row');
+  }
+
+  const tr = $(this).closest('tr');
+  const row = table.row(tr);
 
   if ( row.child.isShown() ) {
     // This row is already open - close it
