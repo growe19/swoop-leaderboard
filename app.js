@@ -161,6 +161,10 @@ $(document).ready(function() {
 
   console.log('Data Table definition');
   const table = $dt.DataTable({
+    'ajax': {
+      'url': driverURL, // Source set from the ?mode= parameter in the URL. Current options are 'live' or 'ip'
+      'dataSrc': ''
+    },
     dom: 'Bfrtip',
     searchBuilder: {},
     buttons: [
@@ -309,10 +313,6 @@ $(document).ready(function() {
       "infoEmpty": "No Drivers Found",
       "search": "Quick Global Filter",
     },
-    "ajax": {
-      "url": driverURL, // Source set from the ?mode= parameter in the URL. Current options are 'live' or 'ip'
-      "dataSrc": ""
-    },
     "columns": [
       {
         "className": 'dt-control',
@@ -322,17 +322,15 @@ $(document).ready(function() {
       },
       { 'data': 'racePosition' },
       { 'data': 'gridPosition' },
-      { "data": "movements" ,
-        render: function(data, type) {
+      { 'data': 'movements' ,
+        'render': function(data, type) {
           if (type === 'display') {
             let directionMove = "";
               if (data[0] >= '+1' ) {
                 directionMove = "<span class=text-danger>&#9660;</span>"; // Position change red, you've dropped places!
-              }
-              else if (data[0] < '0' ) {
+              } else if (data[0] < '0' ) {
                 directionMove = "<span class=text-success>&#9650;</span>"; // Position change green, you've overtaken cars!
-              }
-              else {
+              } else {
                 directionMove = "<span class=text-secondary>&#9655;</span> 0"; // Position change static, you've maintained track position!
               }
             return '' + directionMove + ' ' + data + '';
@@ -340,371 +338,127 @@ $(document).ready(function() {
         return data;
         }
       },
-    { 'data': 'currentDriver_ShortName' },
-    {
-      "data": "currentDriver_NationalityNumber",
-      "render": driverNationality
-    },
-    {
-      // currentDriver_Nationality
-      'data': null,
-      "defaultContent": ''
-    },
-    { 'data': 'raceNumber' },
-    {
-      // currentDriver_FullName
-      'data': null,
-      "defaultContent": ''
-    },
-    { 'data': 'currentDriver_FirstName'	},
-    { 'data': 'currentDriver_LasttName' },
-    { 'data': 'driverCategory' ,
-      "render": function (data, type, row) {
-        if ( row['driverCategory'] == '0') { return '<span class="badge text-bronze badge-outline badge-bronze">BRONZE</span>';}
-        else if ( row['driverCategory'] == '1') { return '<span class="badge text-silver badge-outline badge-silver">SILVER</span>';}
-        else if ( row['driverCategory'] == '2') { return '<span class="badge text-gold badge-outline badge-gold">GOLD</span>';}
-        else if ( row['driverCategory'] == '3') { return '<span class="badge text-platinum badge-outline badge-platinum">PLATINUM</span>';}
-        else { return 'Error';}
-      }
-    },
-    { 'data': 'teamName' },
-    { 'data': null,"defaultContent": '' }, // teamNationality
-    {
-      "data": "carBrand" ,
-      "render": carbrand
-    },
-    { 'data': 'carBrand' },
-    { 'data': 'carName' },
-    { "data": "serie" ,
-      "render": function (data, type, row) {
-        if ( row['serie'] == '0') { return '<span class="badge badge-dark">GT3</span>';} //GT3
-        else if ( row['serie'] == '1') { return '<span class="badge badge-purple">GT4</span>';} //GT4
-        else if ( row['serie'] == '2') { return '<span class="badge badge-danger">CHL</span>';} //CHL
-        else if ( row['serie'] == '3') { return '<span class="badge badge-warning">ST</span>';} //ST
-        else if ( row['serie'] == '4') { return '<span class="badge badge-success">CUP</span>';} //CUP
-        else if ( row['serie'] == '5') { return '<span class="badge badge-primary">TCX</span>';} //TCX
-        else if ( row['serie'] == '299') { return '?';} //NONE
-        else { return 'Error';}
-      }
-    },
-    { "data": "cupCategory" ,
-      "render": function (data, type, row) {
-        if ( row['cupCategory'] == '0') { return '<span class="badge badge-light">PRO</span>';} //Pro
-        else if ( row['cupCategory'] == '1') { return '<span class="badge badge-dark">PRO-AM</span>';} //ProAm
-        else if ( row['cupCategory'] == '2') { return '<span class="badge badge-danger">AM</span>';} //Am
-        else if ( row['cupCategory'] == '3') { return '<span class="badge text-dark badge-light">SILVER</span>';} //Silver
-        else if ( row['cupCategory'] == '4') { return '<span class="badge text-dark badge-light">NATIONAL</span>';} //National
-        else { return 'Error';}
-      }
-    },
-    { 'data': 'laps' },
-    { 'data': null,"defaultContent": '' }, // Progress bar
-    { 'data': null,"defaultContent": '' }, // gap
-    { 'data': null,"defaultContent": '' }, // gapToLeader
-    { 'data': 'lastLapTime' },
-    { 'data': 'lastLapSector1' },
-    { 'data': 'lastLapSector2' },
-    { 'data': 'lastLapSector3' },
-    { 'data': null,"defaultContent": '' }, // this is the bestLapTime column but needs processing on it for IS GLOBAL BEST
-    { 'data': 'bestSector1' },
-    { 'data': 'bestSector2' },
-    { 'data': 'bestSector3' },
-    { 'data': null,"defaultContent": '' }, // deltaFromBestLap
-    { 'data': null,"defaultContent": '' }, // deltaFromAllCarsBestLap
-    { 'data': null,"defaultContent": '' }, // Pit Stop Count
-    { 'data': null,"defaultContent": '' }, // Laps Ago
-    { 'data': 'inPitSince' },
-    { "data": "raceAppTag" ,
-      "render": function (data, type, row) {
-        if ( row["raceAppTag"] == 'SILVER') {
-          return '<span class="badge text-silver badge-outline badge-silver">SILVER</span>';}
-        else if ( row["raceAppTag"] == 'BRONZE') {
-          return '<span class="badge text-bronze badge-outline badge-bronze">BRONZE</span>';}
-        else if ( row["raceAppTag"] == 'GOLD') {
-          return '<span class="badge text-gold badge-outline badge-gold">GOLD</span>';}
-        else if ( row["raceAppTag"] == 'PLATIN') {
-          return '<span class="badge text-platinum badge-outline badge-platinum">PLATINUM</span>';}
-        else { return '<span class="badge badge-outline badge-danger">NOT FOUND</span>';}
-      }
-    },
-    { 'data': 'raceAppTagPosition' },
-    { 'data': null,"defaultContent": '' }, // Gap within RaceApp Class
-    { "data": "raceAppByTagChampionshipPosition" ,
-      "render": function (data, type, row) {
-        if ( row["raceAppByTagChampionshipPosition"] == '1') {
-          return '1 <i class="fa-solid fa-trophy text-gold"></i>';}
-        else if ( row["raceAppByTagChampionshipPosition"] == '2') {
-          return '2 <i class="fa-solid fa-trophy text-silver"></i>';}
-        else if ( row["raceAppByTagChampionshipPosition"] == '3') {
-          return '3 <i class="fa-solid fa-trophy text-bronze"></i>';}
-        else { return row["raceAppByTagChampionshipPosition"];}
-      }
-    },
-    { 'data': 'raceAppByTagChampionshipTotalPoints' },
-    { 'data': null,"defaultContent": '' }, // this is the change
-    {
-      "data": "raceAppByTagChampionshipPredictedPosition" ,
-      "render": function (data, type, row) {
-        if ( row["raceAppByTagChampionshipPredictedPosition"] == '1') {
-          return '1 <i class="fa-solid fa-trophy text-gold"></i>';
-        }	else if ( row["raceAppByTagChampionshipPredictedPosition"] == '2') {
-          return '2 <i class="fa-solid fa-trophy text-silver"></i>';
-        }	else if ( row["raceAppByTagChampionshipPredictedPosition"] == '3') {
-          return '3 <i class="fa-solid fa-trophy text-bronze"></i>';
-        }	else {
-          return row["raceAppByTagChampionshipPredictedPosition"];
+      { 'data': 'currentDriver_ShortName' },
+      {
+        "data": "currentDriver_NationalityNumber",
+        "render": driverNationality
+      },
+      {
+        // currentDriver_Nationality
+        'data': null,
+        "defaultContent": ''
+      },
+      { 'data': 'raceNumber' },
+      {
+        // currentDriver_FullName
+        'data': null,
+        "defaultContent": ''
+      },
+      { 'data': 'currentDriver_FirstName'	},
+      { 'data': 'currentDriver_LasttName' },
+      { 'data': 'driverCategory' ,
+        "render": function (data, type, row) {
+          if ( row['driverCategory'] == '0') { return '<span class="badge text-bronze badge-outline badge-bronze">BRONZE</span>';}
+          else if ( row['driverCategory'] == '1') { return '<span class="badge text-silver badge-outline badge-silver">SILVER</span>';}
+          else if ( row['driverCategory'] == '2') { return '<span class="badge text-gold badge-outline badge-gold">GOLD</span>';}
+          else if ( row['driverCategory'] == '3') { return '<span class="badge text-platinum badge-outline badge-platinum">PLATINUM</span>';}
+          else { return 'Error';}
         }
-      }
-    },
-    { 'data': 'raceAppByTagChampionshipPredictedPoints' },
+      },
+      { 'data': 'teamName' },
+      { 'data': null,"defaultContent": '' }, // teamNationality
+      {
+        "data": "carBrand" ,
+        "render": carbrand
+      },
+      { 'data': 'carBrand' },
+      { 'data': 'carName' },
+      { "data": "serie" ,
+        "render": function (data, type, row) {
+          if ( row['serie'] == '0') { return '<span class="badge badge-dark">GT3</span>';} //GT3
+          else if ( row['serie'] == '1') { return '<span class="badge badge-purple">GT4</span>';} //GT4
+          else if ( row['serie'] == '2') { return '<span class="badge badge-danger">CHL</span>';} //CHL
+          else if ( row['serie'] == '3') { return '<span class="badge badge-warning">ST</span>';} //ST
+          else if ( row['serie'] == '4') { return '<span class="badge badge-success">CUP</span>';} //CUP
+          else if ( row['serie'] == '5') { return '<span class="badge badge-primary">TCX</span>';} //TCX
+          else if ( row['serie'] == '299') { return '?';} //NONE
+          else { return 'Error';}
+        }
+      },
+      { "data": "cupCategory" ,
+        "render": function (data, type, row) {
+          if ( row['cupCategory'] == '0') { return '<span class="badge badge-light">PRO</span>';} //Pro
+          else if ( row['cupCategory'] == '1') { return '<span class="badge badge-dark">PRO-AM</span>';} //ProAm
+          else if ( row['cupCategory'] == '2') { return '<span class="badge badge-danger">AM</span>';} //Am
+          else if ( row['cupCategory'] == '3') { return '<span class="badge text-dark badge-light">SILVER</span>';} //Silver
+          else if ( row['cupCategory'] == '4') { return '<span class="badge text-dark badge-light">NATIONAL</span>';} //National
+          else { return 'Error';}
+        }
+      },
+      { 'data': 'laps' },
+      { 'data': null,"defaultContent": '' }, // Progress bar
+      { 'data': null,"defaultContent": '' }, // gap
+      { 'data': null,"defaultContent": '' }, // gapToLeader
+      { 'data': 'lastLapTime' },
+      { 'data': 'lastLapSector1' },
+      { 'data': 'lastLapSector2' },
+      { 'data': 'lastLapSector3' },
+      { 'data': null,"defaultContent": '' }, // this is the bestLapTime column but needs processing on it for IS GLOBAL BEST
+      { 'data': 'bestSector1' },
+      { 'data': 'bestSector2' },
+      { 'data': 'bestSector3' },
+      { 'data': null,"defaultContent": '' }, // deltaFromBestLap
+      { 'data': null,"defaultContent": '' }, // deltaFromAllCarsBestLap
+      { 'data': null,"defaultContent": '' }, // Pit Stop Count
+      { 'data': null,"defaultContent": '' }, // Laps Ago
+      { 'data': 'inPitSince' },
+      { "data": "raceAppTag" ,
+        "render": function (data, type, row) {
+          if ( row["raceAppTag"] == 'SILVER') {
+            return '<span class="badge text-silver badge-outline badge-silver">SILVER</span>';}
+          else if ( row["raceAppTag"] == 'BRONZE') {
+            return '<span class="badge text-bronze badge-outline badge-bronze">BRONZE</span>';}
+          else if ( row["raceAppTag"] == 'GOLD') {
+            return '<span class="badge text-gold badge-outline badge-gold">GOLD</span>';}
+          else if ( row["raceAppTag"] == 'PLATIN') {
+            return '<span class="badge text-platinum badge-outline badge-platinum">PLATINUM</span>';}
+          else { return '<span class="badge badge-outline badge-danger">NOT FOUND</span>';}
+        }
+      },
+      { 'data': 'raceAppTagPosition' },
+      { 'data': null,"defaultContent": '' }, // Gap within RaceApp Class
+      { "data": "raceAppByTagChampionshipPosition" ,
+        "render": function (data, type, row) {
+          if ( row["raceAppByTagChampionshipPosition"] == '1') {
+            return '1 <i class="fa-solid fa-trophy text-gold"></i>';}
+          else if ( row["raceAppByTagChampionshipPosition"] == '2') {
+            return '2 <i class="fa-solid fa-trophy text-silver"></i>';}
+          else if ( row["raceAppByTagChampionshipPosition"] == '3') {
+            return '3 <i class="fa-solid fa-trophy text-bronze"></i>';}
+          else { return row["raceAppByTagChampionshipPosition"];}
+        }
+      },
+      { 'data': 'raceAppByTagChampionshipTotalPoints' },
+      { 'data': null,"defaultContent": '' }, // this is the change
+      {
+        "data": "raceAppByTagChampionshipPredictedPosition" ,
+        "render": function (data, type, row) {
+          if ( row["raceAppByTagChampionshipPredictedPosition"] == '1') {
+            return '1 <i class="fa-solid fa-trophy text-gold"></i>';
+          }	else if ( row["raceAppByTagChampionshipPredictedPosition"] == '2') {
+            return '2 <i class="fa-solid fa-trophy text-silver"></i>';
+          }	else if ( row["raceAppByTagChampionshipPredictedPosition"] == '3') {
+            return '3 <i class="fa-solid fa-trophy text-bronze"></i>';
+          }	else {
+            return row["raceAppByTagChampionshipPredictedPosition"];
+          }
+        }
+      },
+      { 'data': 'raceAppByTagChampionshipPredictedPoints' },
     ],
     "order": [colOrderURLParam, 'asc'],
-    "columnDefs": [ //  when new columns are added all these need tweaking
-      {
-        // add a no wrap class to these columns
-        'className': 'nowrapping',
-        'targets': [ 4,8,9,10,12,13,16,22,24,25,26,28,29,30,31,32,34,38 ]
-      }, //UPDATE TARGET
 
-      /*  Keep all this so I can update them all please
-        {
-          searchBuilderTitle: '',
-          targets: [] //UPDATE TARGET
-        },
-        {
-          searchBuilderTitle: '',
-          targets: [] //UPDATE TARGET
-        },
-        {
-          searchBuilderTitle: '',
-          targets: [] //UPDATE TARGET
-        },
-        {
-          searchBuilderTitle: '',
-          targets: [] //UPDATE TARGET
-        },
-        {
-          searchBuilderTitle: '',
-          targets: [] //UPDATE TARGET
-        },
-        {
-          searchBuilderTitle: '',
-          targets: [] //UPDATE TARGET
-        }, */
-        {
-          searchBuilderTitle: 'RaceApp.eu Driver Tag (Class)',
-          targets: [36] //UPDATE TARGET
-        },
-        {
-          searchBuilderTitle: 'RaceApp.eu Position within Driver Tag (Class)',
-          targets: [37] //UPDATE TARGET
-        },
-        {
-          "orderable": false,
-          "targets": [0]
-        },
-        {
-          "render": function (data, type, row) {
-            const sum1 = row['raceAppByTagChampionshipPosition'];
-            const sum2 = row['raceAppByTagChampionshipPredictedPosition'];
-            let positionChange = sum1 - sum2;
-
-            // default = position unchanged
-            let championshipChange = `<span class=text-primary>&#9655;</span>${positionChange}`;
-
-            if (type === 'display') {
-              if (positionChange >= 1) {
-                // Position change red, you've dropped places!
-                championshipChange = "<span class=text-success>&#9650;</span> +" + positionChange;
-              } else if (positionChange < 0) {
-                // Position change green, you've overtaken cars!
-                championshipChange = "<span class=text-danger>&#9660;</span> " + positionChange;
-              }
-              return championshipChange;
-            }
-
-            return data;
-          },
-          "targets": 41 //UPDATE TARGET
-        },
-        {
-          "render": function (data, type, row) {
-            const bestTime = row['bestLapTime'];
-            const areYouTheBest = parseInt(row['haveAllBestLapTime']);
-            let bestMarker;
-
-            if (type === 'display') {
-              if (areYouTheBest >= 1) {
-                bestMarker = `<span class="text-purple">${bestTime}</span>`; // Global best goes purple!
-              } else {
-                bestMarker = bestTime; // Position change static, you've maintained track position!
-              }
-              return '' + bestMarker + '';
-            }
-
-            return data;
-          },
-          "targets": 27 //UPDATE TARGET
-        },
-        {
-          "render": function ( data, type, row ) {
-            const pitStopCountForD = parseInt(row['pitStopCount']);
-            const areTheyPitting = parseInt(row['isPiting']);
-            // const pittingTimer = row['inPitSince'];
-            let pitColMsg = '';
-
-            if (type === 'display') {
-              if (areTheyPitting >= 1) {
-                pitColMsg = pitStopCountForD + 1; // Position change red, you've dropped places!
-              } else {
-                pitColMsg = pitStopCountForD; // Position change static, you've maintained track position!
-              }
-              return '' + pitColMsg + '';
-            }
-
-            return data;
-          },
-          "targets": 33 //UPDATE TARGET
-        },
-        {
-          "render": function (data, type, row) {
-          var splinePercent = row['splinePosition'] * 100 ;
-          var notMoving = row['isPiting'];
-          var isItMe = row['isPlayer'];
-          var sectOne = row['currentSector1Status'];
-          var sectTwo = row['currentSector2Status'];
-          var sectThree = row['currentSector3Status'];
-
-          var sectOneCol = "";
-          var sectTwoCol = "";
-          var sectThreeCol = "";
-
-          if ( row['currentSector1Status'] == '0') { sectOneCol = '292b2c';}
-          else if ( row['currentSector1Status'] == '1') { sectOneCol = 'd9534f';}
-          else if ( row['currentSector1Status'] == '2') { sectOneCol = 'f0ad4e';}
-          else if ( row['currentSector1Status'] == '3') { sectOneCol = '5cb85c';}
-          else { sectOneCol = '7951a8';} //4
-
-          if ( row['currentSector2Status'] == '0') { sectTwoCol = '292b2c';}
-          else if ( row['currentSector2Status'] == '1') { sectTwoCol = 'd9534f';}
-          else if ( row['currentSector2Status'] == '2') { sectTwoCol = 'f0ad4e';}
-          else if ( row['currentSector2Status'] == '3') { sectTwoCol = '5cb85c';}
-          else { sectOneCol = '7951a8';} //4
-
-          if ( row['currentSector3Status'] == '0') { sectThreeCol = '292b2c';}
-          else if ( row['currentSector3Status'] == '1') { sectThreeCol = 'd9534f';}
-          else if ( row['currentSector3Status'] == '2') { sectThreeCol = 'f0ad4e';}
-          else if ( row['currentSector3Status'] == '3') { sectThreeCol = '5cb85c';}
-          else { sectOneCol = '7951a8';} //4
-
-          /*
-          None = 0,
-          Invalid = 1,
-          Slower = 2,
-          Best = 3,
-          OverallBest = 4
-          */
-
-          if (type === 'display') {
-              if (notMoving >= '1' ) {
-                return '<div class="progress_bar" style="width: 300px;"><div class="pro-bar"><span class="progress-bar-inner" style="background-color: #d9534f; width: ' + Math.trunc(splinePercent) + '%;" data-value="' + Math.trunc(splinePercent) + '" data-percentage-value="' + Math.trunc(splinePercent) + '"></span></div></div>'
-              }
-              else {
-                return '<div class="progress_bar" style="width: 300px;"><div class="pro-bar"><span class="progress-bar-inner" style="background-color: #5cb85c; width: ' + Math.trunc(splinePercent) + '%;" data-value="' + Math.trunc(splinePercent) + '" data-percentage-value="' + Math.trunc(splinePercent) + '"></span></div></div>'
-              }
-            //}
-            return 'error'
-          }
-          return data;
-        },
-        "targets": 20 //UPDATE TARGET
-        },
-        {"render": function ( data, type, row ) {
-          var lastStopAge = row['lapsFromLastPitStop'];
-          return lastStopAge;
-        },
-        "targets": 34 //UPDATE TARGET
-        },
-        {"render": function ( data, type, row ) {
-          var capFullname = row['currentDriver_FullName'];
-          return capFullname.toUpperCase();
-        },
-        "targets": 8 //UPDATE TARGET
-        },
-        {
-          "render": function ( data, type, row ) {
-            var nationSpace = row['currentDriver_Nationality'];
-            if (nationSpace == "Any" || nationSpace == null || nationSpace == "" ) {
-              return "";
-            }
-            return nationSpace.replace(/[A-Z]/g, ' $&').trim();
-
-          },
-        "targets": 6 //UPDATE TARGET
-        },
-        {
-          "render": function ( data, type, row ) {
-            const teamSpace = row['teamNationality'];
-
-            if (teamSpace === "Any" || teamSpace === '') {
-              return "";
-            }
-
-            return teamSpace.replace(/[A-Z]/g, ' $&').trim();
-          },
-          "targets": 13 //UPDATE TARGET
-        },
-        {
-          "render": function ( data, type, row ) {
-            var timeFormatA = row['gap'];
-            if (timeFormatA === null) {
-              return timeFormatA;
-            }
-            return timeFormatA.replace(/'/g, '.');
-          },
-          "targets": 21 //UPDATE TARGET
-        },
-
-        {
-          "render": function ( data, type, row ) {
-            var timeFormatB = row['gapToLeader'];
-            if (timeFormatB == null){
-              return timeFormatB;
-            }
-            return timeFormatB.replace(/'/g, '.');
-          },
-          "targets": 22 //UPDATE TARGET
-        },
-        {
-          "render": function ( data, type, row ) {
-            const timeFormatC = row['deltaFromBestLap'];
-            if (timeFormatC == null){
-              return timeFormatC;
-            }
-            return timeFormatC.replace(/'/g, '.');
-          },
-          "targets": 31 //UPDATE TARGET
-        },
-        {"render": function ( data, type, row ) {
-        var timeFormatD = row['deltaFromAllCarsBestLap'];
-        if (timeFormatD == null){
-          return timeFormatD;
-        }
-          return timeFormatD.replace(/'/g, '.');
-        },
-        "targets": 32 //UPDATE TARGET
-        },
-        {"render": function ( data, type, row ) {
-          return "sum";
-          /*
-            This is where the code will go to calculate the gap between players in the same RaceApp Class
-          */
-        },
-        "targets": 38 //UPDATE TARGET
-        }
-    ],
-
-    "createdRow": highlightMe
+    'createdRow': highlightMe
   }); // End of DataTable definition
 
   /*
