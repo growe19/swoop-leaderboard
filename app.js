@@ -147,97 +147,6 @@ console.log('');
 	console.log(appObjectsCleanedAgain);
 	console.log(typeof appObjectsCleanedAgain);
 
-	/**
-	 *
-	 * @param {*} d
-	 * @returns
-	 */
-	function format ( d ) {
-		const url = 'http://localhost:8000/Acc/GetRaceAppCarWithResults/' + appObjects.raceAppSerieId + '/' + d.raceNumber;
-		const params = {};
-
-		$.get(url, params, null, 'json')
-			.done(function (response) {
-				console.log(response);
-				console.log('carNumber: %i', response.carNumber);
-				// assuming "response" has your full JSON you can then dig into the "results" ...
-				if (response && response.hasOwnProperty('results')) {
-					console.log(response.results);
-					const tableBody = $('#tblBody'+ d.raceNumber);
-					var resultsRA = [];
-					$.each(response.results, function (i, val) {
-						resultsRA.push( '<tr><td>'+ val.track +' </td><td>'+ val.position +'/' + val.driverCount +' </td><td>'+ val.positionInClass +' </td><td>'+ val.points +' </td><td> -'+ val.penaltyPoints +'pts / +' + val.penaltySeconds + 'sec </td></tr>');
-						//$(tableBody).append(tableRow);
-						//$(tableRow).appendTo($("#tblbody"+ d.raceNumber));
-
-						// table id     resultsDriver'+d.raceNumber
-						// table body   tblbody'+ d.raceNumber
-						document.getElementById("resultsDriver"+d.raceNumber) === resultsRA.join();
-						//$("#resultsDriver"+d.raceNumber).append(tableRow);
-					});
-				}
-			})
-			.catch(function (error) {
-				console.warn(error);
-			});
-
-		console.log('Results history from:' + url);
-
-		//var my_json_results;
-
-		//	$.getJSON(url, function(json) {
-		//	my_json_results = json;
-		//	console.log(my_json_results.results);
-		//});
-
-		// If this RETURN code isn't here then the page breaks.
-		//
-		// ERROR: TypeError: Cannot read properties of undefined (reading 'show')
-		// This is referring to something on line 1426 ......
-		// LINE 1426 : row.child( format(row.data()) ).show();
-		//
-
-		//GetResultsData();
-		return	'<p>'+d.raceNumber+' '+d.currentDriver_FullName+'</p>'+
-				'<p>Currently '+moment.localeData().ordinal(d.raceAppByTagChampionshipPosition)+' in '+d.raceAppTag+' with '+d.raceAppByTagChampionshipTotalPoints+' points.</p>'+
-				'<p>Best Finish: '+moment.localeData().ordinal(d.raceAppByTagBestResult)+'</p>'+
-				'<table id="resultsDriver'+d.raceNumber+'" cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;width=500px"><thead><tr><th>Event</th><th>Overall Position</th><th>Class Position</th><th>Points</th><th>Penalties</th></tr></thead><tbody id="tblbody'+ d.raceNumber+'"></tbody></table>';
-
-	/* Parameters from the Swoop API that are from AllCars
-
-	Historic Results come from /Acc/GetRaceAppCarWithResults/{serieId}/{raceNumber}
-
-	In the string above the {serieId} is actually the raceAppSerieId from /Acc/GetSessionInfos
-
-	"raceAppTag": "string",
-    "raceAppTagPosition": 0,
-    "raceAppGlobalChampionshipTotalPoints": 0,
-    "raceAppGlobalBestResult": 0,
-    "raceAppGlobalChampionshipPredictedPoints": 0,
-    "raceAppGlobalChampionshipPosition": 0,
-    "raceAppGlobalChampionshipPredictedPosition": 0,
-    "raceAppByTagChampionshipTotalPoints": 0,
-    "raceAppByTagChampionshipPredictedPoints": 0,
-    "raceAppByTagChampionshipPosition": 0,
-    "raceAppByTagChampionshipPredictedPosition": 0,
-    "raceAppByTagBestResult": 0,
-	*/
-
-	}
-
-	/**
-	 * get data from sessionURL and insert into header section
-	 */
-	function loadlink() {
-		var my_json;
-		$.getJSON(sessionURL, function(json) {
-			my_json = json;
-			$('#trackNameLoad').html(json.track);
-			$('#sessionRemainLoad').html(json.sessionTimeLeft);
-		});
-	}
-
-
 
 	/* Datatable Configuration
 	================================================== */
@@ -1014,4 +923,94 @@ function formatChildRows() {
 		// Reset childRows so loop is not executed each draw
 		childRows = null;
 	}
+}
+
+/**
+ * get additional data for a given race + car
+ *
+ * @param {*} d
+ * @returns
+ */
+ function format ( d ) {
+	const url = 'http://localhost:8000/Acc/GetRaceAppCarWithResults/' + appObjects.raceAppSerieId + '/' + d.raceNumber;
+	const params = {};
+
+	$.get(url, params, null, 'json')
+		.done(function (response) {
+			console.log(response);
+			console.log('carNumber: %i', response.carNumber);
+			// assuming "response" has your full JSON you can then dig into the "results" ...
+			if (response && response.hasOwnProperty('results')) {
+				console.log(response.results);
+				const tableBody = $('#tblBody'+ d.raceNumber);
+				var resultsRA = [];
+				$.each(response.results, function (i, val) {
+					resultsRA.push( '<tr><td>'+ val.track +' </td><td>'+ val.position +'/' + val.driverCount +' </td><td>'+ val.positionInClass +' </td><td>'+ val.points +' </td><td> -'+ val.penaltyPoints +'pts / +' + val.penaltySeconds + 'sec </td></tr>');
+					//$(tableBody).append(tableRow);
+					//$(tableRow).appendTo($("#tblbody"+ d.raceNumber));
+
+					// table id     resultsDriver'+d.raceNumber
+					// table body   tblbody'+ d.raceNumber
+					document.getElementById("resultsDriver"+d.raceNumber) === resultsRA.join();
+					//$("#resultsDriver"+d.raceNumber).append(tableRow);
+				});
+			}
+		})
+		.catch(function (error) {
+			console.warn(error);
+		});
+
+	console.log('Results history from:' + url);
+
+	//var my_json_results;
+
+	//	$.getJSON(url, function(json) {
+	//	my_json_results = json;
+	//	console.log(my_json_results.results);
+	//});
+
+	// If this RETURN code isn't here then the page breaks.
+	//
+	// ERROR: TypeError: Cannot read properties of undefined (reading 'show')
+	// This is referring to something on line 1426 ......
+	// LINE 1426 : row.child( format(row.data()) ).show();
+	//
+
+	//GetResultsData();
+	return	'<p>'+d.raceNumber+' '+d.currentDriver_FullName+'</p>'+
+			'<p>Currently '+moment.localeData().ordinal(d.raceAppByTagChampionshipPosition)+' in '+d.raceAppTag+' with '+d.raceAppByTagChampionshipTotalPoints+' points.</p>'+
+			'<p>Best Finish: '+moment.localeData().ordinal(d.raceAppByTagBestResult)+'</p>'+
+			'<table id="resultsDriver'+d.raceNumber+'" cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;width=500px"><thead><tr><th>Event</th><th>Overall Position</th><th>Class Position</th><th>Points</th><th>Penalties</th></tr></thead><tbody id="tblbody'+ d.raceNumber+'"></tbody></table>';
+
+	/* Parameters from the Swoop API that are from AllCars
+
+	Historic Results come from /Acc/GetRaceAppCarWithResults/{serieId}/{raceNumber}
+
+	In the string above the {serieId} is actually the raceAppSerieId from /Acc/GetSessionInfos
+
+	"raceAppTag": "string",
+	"raceAppTagPosition": 0,
+	"raceAppGlobalChampionshipTotalPoints": 0,
+	"raceAppGlobalBestResult": 0,
+	"raceAppGlobalChampionshipPredictedPoints": 0,
+	"raceAppGlobalChampionshipPosition": 0,
+	"raceAppGlobalChampionshipPredictedPosition": 0,
+	"raceAppByTagChampionshipTotalPoints": 0,
+	"raceAppByTagChampionshipPredictedPoints": 0,
+	"raceAppByTagChampionshipPosition": 0,
+	"raceAppByTagChampionshipPredictedPosition": 0,
+	"raceAppByTagBestResult": 0,
+	*/
+}
+
+/**
+ * get data from sessionURL and insert into header section
+ */
+function loadlink() {
+	var my_json;
+	$.getJSON(sessionURL, function(json) {
+		my_json = json;
+		$('#trackNameLoad').html(json.track);
+		$('#sessionRemainLoad').html(json.sessionTimeLeft);
+	});
 }
