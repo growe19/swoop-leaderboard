@@ -141,7 +141,6 @@ console.log('');
 
 	console.log(typeof appObjectsCleaned);
 
-
 	var appObjectsCleanedAgain = $.parseJSON(appObjectsCleaned);
 
 	console.log(appObjectsCleanedAgain);
@@ -904,7 +903,7 @@ console.log('');
 		childRows = table.rows($('.shown')); // Keep column 1 button open/showing if it has been clicked.
 		table.ajax.reload();
 
-		 loadlink(); // This function adds the Title and Clock countdown
+		 loadlink(sessionURL); // This function adds the Title and Clock countdown
 	}, 1000 ); // reload rate
 }); // end of $(document).ready(function () {
 
@@ -1006,10 +1005,10 @@ function formatChildRows() {
 /**
  * get data from sessionURL and insert into header section
  */
-function loadlink() {
-	var my_json;
+function loadlink(sessionURL) {
+	// var my_json;
 	$.getJSON(sessionURL, function(json) {
-		my_json = json;
+		// my_json = json;
 		$('#trackNameLoad').html(json.track);
 		$('#sessionRemainLoad').html(json.sessionTimeLeft);
 	});
