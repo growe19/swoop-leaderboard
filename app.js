@@ -384,7 +384,7 @@ $(document).ready(function() {
             return '1 <i class="fa-solid fa-trophy text-gold"></i>';
           } else if (data === 2) {
             return '2 <i class="fa-solid fa-trophy text-silver"></i>';
-          } else if (data === '3') {
+          } else if (data === 3) {
             return '3 <i class="fa-solid fa-trophy text-bronze"></i>';
           } else {
             return data;
