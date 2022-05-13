@@ -99,7 +99,7 @@ $(document).ready(function() {
   })();
 
   if (mode === 'static') {
-    customLogging();
+    customLogging(driverURL, driverData, sessionURL, sessionData);
   }
 
   // append the driverData as a property of the sessionData
@@ -722,7 +722,7 @@ function populatShownChildRows(table, raceAppSerieId) {
  * @param {*} driverData
  * @param {*} sessionData
  */
-function customLogging(driverData, sessionData) {
+function customLogging(driverURL, driverData, sessionURL, sessionData) {
   console.log('////////// DRIVER DATA //////////');
   console.log(driverData);
   console.log('');
