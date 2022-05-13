@@ -784,9 +784,6 @@ function dt_control_click_handler(e) {
     console.log('open child row');
   }
 
-  openChildRows.push(carId);
-  console.log(openChildRows);
-
   const $tr = $(this).closest('tr');
   const row = table.row($tr);
 
@@ -794,9 +791,14 @@ function dt_control_click_handler(e) {
     // This row is already open - close it
     row.child.hide();
     $tr.removeClass('shown');
+
+    // remove from the collection of openChildRows
   } else {
     // Open this row
     const carId = row.data()['id'];
+    openChildRows.push(carId);
+    console.log(openChildRows);
+
     getRaceAppCarWithResults(raceAppSerieId, carId, mode)
       .then(data => {
         const html = formatChildRow(data, row.data());
