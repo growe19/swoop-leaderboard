@@ -18,7 +18,7 @@ export default function highlight(row, data) {
   console.log(raceNumbers, data.raceNumber);
 
   raceNumbers.forEach(raceNum => {
-    if (raceNum === data.raceNumber) {
+    if (parseInt(raceNum) === data.raceNumber) {
       $(row).addClass('bg-light text-dark');
     }
   });
