@@ -14,10 +14,17 @@ export default function highlight(row, data) {
   console.log('showMe: ', showMe);
 
   const match = showMe.split(',');
+  raceNumbers.forEach(raceNum => {
+    if (raceNum === data.raceNumber) {
+      $(row).addClass('bg-light text-dark');
+    }
+  });
+  /*
   for (var a in match) {
     const variable = match[a]
     if (data.raceNumber === variable) {
       $(row).addClass('bg-light text-dark');
     }
   }
+  */
 }
