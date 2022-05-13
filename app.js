@@ -1,10 +1,13 @@
 import carbrand from "./modules/carBrand.js";
+import cup_badge from "./modules/cup.js";
 import driverCategory from "./modules/driverCategory.js";
 import render_flag from "./modules/flags.js";
+import getRaceAppCarWithResults from "./modules/getRaceAppCarWithResults.js";
 import highlightMe from "./modules/highlightMe.js";
 import loadlink from "./modules/loadlink.js";
 import movement from "./modules/movement.js";
 import sector from "./modules/sector.js";
+import serie_badge from "./modules/serie.js";
 import render_trophy from "./modules/trophys.js";
 
 // Global var to track shown child rows
@@ -379,27 +382,12 @@ $(document).ready(function() {
         'data': 'carBrand'
       },
       { 'data': 'carName' },
-      { "data": "serie" ,
-        "render": function (data, type, row) {
-          if ( row['serie'] == '0') { return '<span class="badge badge-dark">GT3</span>';} //GT3
-          else if ( row['serie'] == '1') { return '<span class="badge badge-purple">GT4</span>';} //GT4
-          else if ( row['serie'] == '2') { return '<span class="badge badge-danger">CHL</span>';} //CHL
-          else if ( row['serie'] == '3') { return '<span class="badge badge-warning">ST</span>';} //ST
-          else if ( row['serie'] == '4') { return '<span class="badge badge-success">CUP</span>';} //CUP
-          else if ( row['serie'] == '5') { return '<span class="badge badge-primary">TCX</span>';} //TCX
-          else if ( row['serie'] == '299') { return '?';} //NONE
-          else { return 'Error';}
-        }
+      {
+        'data': 'serie',
+        'render': serie_badge
       },
       { "data": "cupCategory" ,
-        "render": function (data, type, row) {
-          if ( row['cupCategory'] == '0') { return '<span class="badge badge-light">PRO</span>';} //Pro
-          else if ( row['cupCategory'] == '1') { return '<span class="badge badge-dark">PRO-AM</span>';} //ProAm
-          else if ( row['cupCategory'] == '2') { return '<span class="badge badge-danger">AM</span>';} //Am
-          else if ( row['cupCategory'] == '3') { return '<span class="badge text-dark badge-light">SILVER</span>';} //Silver
-          else if ( row['cupCategory'] == '4') { return '<span class="badge text-dark badge-light">NATIONAL</span>';} //National
-          else { return 'Error';}
-        }
+        "render": cup_badge
       },
       { 'data': 'laps' },
       {
@@ -654,8 +642,11 @@ $(document).ready(function() {
     } else {
       // Open this row
       // row.child(format(row.data(), sessionData.raceAppSerieId, table)).show();
-      row.child('Driver history coming here ....').show();
-      $tr.addClass('shown');
+      getRaceAppCarWithResults(sessionData.raceAppSerieId, row['id'], mode)
+        .then(data => {
+          row.child(data).show();
+          $tr.addClass('shown');
+        })
     }
   });
 
@@ -681,7 +672,7 @@ $(document).ready(function() {
     // make a collection of rows where the child row is open
     const $openRows = $('.shown');
     if ($openRows.length > 0) {
-      populatShownChildRows(table, sessionData.raceAppSerieId);
+      // populatShownChildRows(table, sessionData.raceAppSerieId);
     }
     // childRows = table.rows(); // Keep column 1 button open/showing if it has been clicked.
     table.ajax.reload();
