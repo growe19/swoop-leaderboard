@@ -645,7 +645,7 @@ $(document).ready(function() {
       const carId = row.data()['id'];
       getRaceAppCarWithResults(sessionData.raceAppSerieId, carId, mode)
         .then(data => {
-          const html = formatChildRow(data, row);
+          const html = formatChildRow(data, row.data());
           row.child(html).show();
           $tr.addClass('shown');
         })

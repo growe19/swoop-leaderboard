@@ -21,14 +21,13 @@ export async function getRaceAppCarWithResults(raceAppSerieId, carId, mode) {
 /**
  *
  * @param {Object} response
- * @param {Object} d
+ * @param {Object} carInfo
  * @returns HTML string
  */
-export function formatChildRow(response, d) {
+export function formatChildRow(response, carInfo) {
   if (response && response.hasOwnProperty('results')) {
-    console.log(response.results);
-    // const tableBody = $('#tblBody'+ d.raceNumber);
-    var resultsRA = [];
+    console.log(response.results, carInfo);
+    const resultsRA = [];
     $.each(response.results, function (i, val) {
       const html = `<tr>
         <td>${val.track}</td>
@@ -45,14 +44,15 @@ export function formatChildRow(response, d) {
     });
   }
 
-  const cpos = moment.localeData().ordinal(d.raceAppByTagChampionshipPosition);
-  const best = moment.localeData().ordinal(d.raceAppByTagBestResult);
   const results = resultsRA.join();
 
-  const r = `<p>${d.raceNumber} ${d.currentDriver_FullName}</p>
-    <p>Currently ${cpos} in ${d.raceAppTag} with ${d.raceAppByTagChampionshipTotalPoints} points</p>
+  const cpos = moment.localeData().ordinal(carInfo.raceAppByTagChampionshipPosition);
+  const best = moment.localeData().ordinal(carInfo.raceAppByTagBestResult);
+
+  const r = `<p>${carInfo.raceNumber} ${carInfo.currentDriver_FullName}</p>
+    <p>Currently ${cpos} in ${carInfo.raceAppTag} with ${carInfo.raceAppByTagChampionshipTotalPoints} points</p>
     <p>Best Finish: ${best}</p>
-    <table id="resultsDriver${d.raceNumber}" cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;width=500px">
+    <table id="resultsDriver${carInfo.raceNumber}" cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;width=500px">
       <thead>
         <tr>
           <th>Event</th>
@@ -62,7 +62,7 @@ export function formatChildRow(response, d) {
           <th>Penalties</th>
         </tr>
       </thead>
-      <tbody id="tblbody${d.raceNumber}">
+      <tbody id="tblbody${carInfo.raceNumber}">
         ${results}
       </tbody>
     </table>`;
