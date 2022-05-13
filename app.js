@@ -555,7 +555,12 @@ $(document).ready(function() {
   table.columns(36).search($('#myText').val()).draw(); // UPDATE TARGET COLUMN
 
   // Add event listener for opening and closing details in the child row
-  $('body').on('click', 'td.dt-control', dt_control_click_handler);
+  $('body').on(
+    'click',
+    'td.dt-control',
+    { 'raceAppSerieId': sessionData.raceAppSerieId },
+    dt_control_click_handler
+  );
 
   // TODO: what is this for? triggers for every button?
   /*
@@ -772,6 +777,8 @@ function customLogging(driverURL, driverData, sessionURL, sessionData) {
 function dt_control_click_handler(e) {
   e.preventDefault();
   const table = $('#leaderboard').DataTable();
+  console.log(e.data);
+  const raceAppSerieId = e.data.raceAppSerieId;
 
   if (mode === 'static') {
     console.log('open child row');
@@ -786,9 +793,8 @@ function dt_control_click_handler(e) {
     $tr.removeClass('shown');
   } else {
     // Open this row
-    // row.child(format(row.data(), sessionData.raceAppSerieId, table)).show();
     const carId = row.data()['id'];
-    getRaceAppCarWithResults(sessionData.raceAppSerieId, carId, mode)
+    getRaceAppCarWithResults(raceAppSerieId, carId, mode)
       .then(data => {
         const html = formatChildRow(data, row.data());
         row.child(html).show();
