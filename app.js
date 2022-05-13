@@ -465,14 +465,14 @@ $(document).ready(function() {
             let positionChange = sum1 - sum2;
 
             // default = position unchanged
-            let championshipChange = `<span class=text-primary>&#9655;</span>${positionChange}`;
+            let championshipChange = "<span class=text-secondary><i class='fa-solid fa-minus'></i></span> ${positionChange}";
 
             if (positionChange >= 1) {
               // Position change red, you've dropped places!
-              championshipChange = "<span class=text-success>&#9650;</span> +" + positionChange;
+              championshipChange = "<span class=text-success><i class='fa-solid fa-chevron-up'></i></span> +" + positionChange;
             } else if (positionChange < 0) {
               // Position change green, you've overtaken cars!
-              championshipChange = "<span class=text-danger>&#9660;</span> " + positionChange;
+              championshipChange = "<span class=text-danger><i class='fa-solid fa-chevron-down'></i></span> " + positionChange;
             }
             return championshipChange;
           }
