@@ -13,7 +13,7 @@ export default function highlight(row, data) {
 
   console.log('showMe: ', showMe);
 
-  const match = showMe.split(',');
+  const raceNumbers = showMe.split(',');
   raceNumbers.forEach(raceNum => {
     if (raceNum === data.raceNumber) {
       $(row).addClass('bg-light text-dark');
