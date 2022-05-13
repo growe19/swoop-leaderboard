@@ -642,7 +642,8 @@ $(document).ready(function() {
     } else {
       // Open this row
       // row.child(format(row.data(), sessionData.raceAppSerieId, table)).show();
-      getRaceAppCarWithResults(sessionData.raceAppSerieId, row['id'], mode)
+      const carId = row.data()['id'];
+      getRaceAppCarWithResults(sessionData.raceAppSerieId, carId, mode)
         .then(data => {
           const html = formatChildRow(data, row);
           row.child(html).show();

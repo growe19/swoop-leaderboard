@@ -1,9 +1,9 @@
 /**
  *
- * @param {*} raceAppSerieId
- * @param {*} carNumber
- * @param {*} mode
- * @returns {Promise}
+ * @param {int} raceAppSerieId
+ * @param {int} carNumber
+ * @param {String} mode
+ * @returns {Object} -- could make this a class
  */
 export async function getRaceAppCarWithResults(raceAppSerieId, carId, mode) {
   let url = `http://localhost:8000/Acc/GetRaceAppCarWithResults/${raceAppSerieId}/${carId}`;
