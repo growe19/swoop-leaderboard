@@ -17,7 +17,7 @@ export default function movement(data, type) {
         directionMove = "<span class=text-danger><i class='fa-solid fa-chevron-down'></i></span>";
       } else {
         // Position change static, you've maintained track position!
-        directionMove = "<span class=text-secondary><i class='fa-solid fa-dash'></i></span> 0";
+        directionMove = "<span class=text-secondary><i class='fa-solid fa-minus'></i></span> 0";
       }
       return directionMove + ' ' + data;
     }
