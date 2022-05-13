@@ -438,8 +438,10 @@ $(document).ready(function() {
       {
         "render": function ( data, type, row ) {
           var timeFormatA = row['gap'];
-          if (timeFormatA === null) {
-            return timeFormatA;
+          var carLocation = row['isPitingLetter'];
+		
+	  if (carLocation == "P") {
+            return "<span class='text-primary'>IN PIT</span>"; 
           }
           return timeFormatA.replace(/'/g, '.');
         },
