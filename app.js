@@ -2,7 +2,7 @@ import carbrand from "./modules/carBrand.js";
 import cup_badge from "./modules/cup.js";
 import driverCategory from "./modules/driverCategory.js";
 import render_flag from "./modules/flags.js";
-import getRaceAppCarWithResults from "./modules/getRaceAppCarWithResults.js";
+import getRaceAppCarWithResults, { formatChildRow } from "./modules/getRaceAppCarWithResults.js";
 import highlightMe from "./modules/highlightMe.js";
 import loadlink from "./modules/loadlink.js";
 import movement from "./modules/movement.js";
@@ -644,7 +644,8 @@ $(document).ready(function() {
       // row.child(format(row.data(), sessionData.raceAppSerieId, table)).show();
       getRaceAppCarWithResults(sessionData.raceAppSerieId, row['id'], mode)
         .then(data => {
-          row.child(data).show();
+          const html = formatChildRow(data, row);
+          row.child(html).show();
           $tr.addClass('shown');
         })
     }
