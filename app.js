@@ -42,8 +42,8 @@ $(document).ready(function() {
     driverURL = 'http://'+ ipAddress+':8000/Acc/Allcars';
     sessionURL = 'http://'+ ipAddress+':8000/Acc/GetSessionInfos';
   } else if ( mode === 'static') {
-    driverURL = 'AllCars.json';
-    sessionURL = 'SessionInfo.json';
+    driverURL = 'AllCarsNew.json';
+    sessionURL = 'SessionInfoNew.json';
 
     console.log('Sourcing static data from GitHub');
   } else {
