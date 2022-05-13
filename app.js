@@ -443,7 +443,7 @@ $(document).ready(function() {
 	  if (carLocation == "P") {
             return "<span class='text-primary'>IN PIT</span>"; 
           }
-          return timeFormatA.replace(/'/g, '.');
+          return timeFormatA;
         },
         "targets": 21 //UPDATE TARGET
       },
