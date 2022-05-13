@@ -555,14 +555,16 @@ $(document).ready(function() {
   table.columns(36).search($('#myText').val()).draw(); // UPDATE TARGET COLUMN
 
   // Add event listener for opening and closing details in the child row
-  $('body').on('click', 'td.dt-control', dt_control_click_handler);
+  $('body').on('click', 'td.dt-control', dt_control_click_handler.bind(null, table));
 
   // TODO: what is this for? triggers for every button?
+  /*
   $('button').on('click', function () {
     // Get shown rows
     childRows = table.rows($('.shown'));
     table.ajax.reload();
   });
+  */
 
   // This adds the bg-dark class to the fixedHeader
   // but fixed header is disabled so don't think this is needed anymore!!!!!!
