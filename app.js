@@ -649,6 +649,11 @@ $(document).ready(function() {
           row.child(html).show();
           $tr.addClass('shown');
         })
+        .catch(error => {
+          console.error('Error:', error);
+          row.child('No data available').show();
+          $tr.addClass('shown');
+        });
     }
   });
 
