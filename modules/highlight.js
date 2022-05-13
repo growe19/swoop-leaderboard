@@ -1,4 +1,5 @@
 /**
+ * select rows to get a highlight class
  *
  * @param {*} row
  * @param {*} data
@@ -14,6 +15,8 @@ export default function highlight(row, data) {
   console.log('showMe: ', showMe);
 
   const raceNumbers = showMe.split(',');
+  console.log(raceNumbers, data.raceNumber);
+
   raceNumbers.forEach(raceNum => {
     if (raceNum === data.raceNumber) {
       $(row).addClass('bg-light text-dark');

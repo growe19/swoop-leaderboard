@@ -784,6 +784,9 @@ function dt_control_click_handler(e) {
     console.log('open child row');
   }
 
+  openChildRows.push(carId);
+  console.log(openChildRows);
+
   const $tr = $(this).closest('tr');
   const row = table.row($tr);
 
