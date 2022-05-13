@@ -2,7 +2,7 @@ import carbrand from "./modules/carBrand.js";
 import cup_badge from "./modules/cup.js";
 import driverCategory from "./modules/driverCategory.js";
 import render_flag from "./modules/flags.js";
-import getRaceAppCarWithResults, { formatChildRow } from "./modules/getRaceAppCarWithResults.js";
+import { getRaceAppCarWithResults, formatChildRow } from "./modules/getRaceAppCarWithResults.js";
 import highlightMe from "./modules/highlightMe.js";
 import loadlink from "./modules/loadlink.js";
 import movement from "./modules/movement.js";
