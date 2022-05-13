@@ -15,7 +15,13 @@ export async function getRaceAppCarWithResults(raceAppSerieId, carId, mode) {
 	//const prom = $.get(url, params, null, 'json')
   const response = await fetch(url);
 
-  return response.json();
+  if (response.ok) {
+    return response.json();
+  } else {
+    const err = new Error("Not 2xx response");
+    err.response = response;
+    throw err;
+  }
 }
 
 /**
