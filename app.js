@@ -465,7 +465,7 @@ $(document).ready(function() {
             let positionChange = sum1 - sum2;
 
             // default = position unchanged
-            let championshipChange = "<span class=text-secondary><i class='fa-solid fa-minus'></i></span> ${positionChange}";
+            let championshipChange = "<span class=text-secondary><i class='fa-solid fa-minus'></i></span> 0";
 
             if (positionChange >= 1) {
               // Position change red, you've dropped places!
