@@ -555,7 +555,7 @@ $(document).ready(function() {
   table.columns(36).search($('#myText').val()).draw(); // UPDATE TARGET COLUMN
 
   // Add event listener for opening and closing details in the child row
-  $('body').on('click', 'td.dt-control', table, dt_control_click_handler);
+  $('body').on('click', 'td.dt-control', dt_control_click_handler);
 
   // TODO: what is this for? triggers for every button?
   /*
@@ -771,7 +771,7 @@ function customLogging(driverURL, driverData, sessionURL, sessionData) {
  */
 function dt_control_click_handler(e) {
   e.preventDefault();
-  const table = e.data.table;
+  const table = $('#leaderboard').DataTable();
 
   if (mode === 'static') {
     console.log('open child row');
