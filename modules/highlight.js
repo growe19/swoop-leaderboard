@@ -3,7 +3,7 @@
  * @param {*} row
  * @param {*} data
  */
-export default function highlightMe(row, data) {
+export default function highlight(row, data) {
   /*
     The URL '&showme' parameter is comma separated Race Numbers of Drivers you want to see inverted in the table
   */
@@ -11,7 +11,9 @@ export default function highlightMe(row, data) {
   const urlParams = new URLSearchParams(queryString);
   const showMe = urlParams.get('showme');
 
-  var match = showMe.split(',')
+  console.log('showMe: ', showMe);
+
+  const match = showMe.split(',');
   for (var a in match) {
     const variable = match[a]
     if (data.raceNumber === variable) {

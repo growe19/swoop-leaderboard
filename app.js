@@ -4,7 +4,7 @@ import drawCallback from "./modules/drawCallback.js";
 import driverCategory from "./modules/driverCategory.js";
 import render_flag from "./modules/flags.js";
 import { getRaceAppCarWithResults, formatChildRow } from "./modules/getRaceAppCarWithResults.js";
-import highlightMe from "./modules/highlightMe.js";
+import highlight from "./modules/highlight.js";
 import loadlink from "./modules/loadlink.js";
 import movement from "./modules/movement.js";
 import sector from "./modules/sector.js";
@@ -539,7 +539,7 @@ $(document).ready(function() {
         "targets": 38
       }
     ],
-    'createdRow': highlightMe,
+    'createdRow': highlight,
     /* this is the code for indicating where you'll exit the pits in the leaderboard */
     'drawCallback': drawCallback
   }); // End of DataTable definition
