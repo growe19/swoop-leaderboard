@@ -28,7 +28,7 @@ $(document).ready(function() {
 
   // Check to see if there are any parameters set and if there are not then load the default string
   if (mode == null) {
-    window.open('https://' + location.host + location.pathname + "?mode=live&hide=0&order=1&class=&showme=","_self")
+    window.open('https://' + location.host + location.pathname + "?mode=live&hide=0&order=1&class=&showme=&refresh=2500","_self")
   }
 
   let driverURL = '';
