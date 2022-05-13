@@ -1,5 +1,6 @@
 import carbrand from "./modules/carBrand.js";
 import cup_badge from "./modules/cup.js";
+import drawCallback from "./modules/drawCallback.js";
 import driverCategory from "./modules/driverCategory.js";
 import render_flag from "./modules/flags.js";
 import { getRaceAppCarWithResults, formatChildRow } from "./modules/getRaceAppCarWithResults.js";
@@ -11,7 +12,7 @@ import serie_badge from "./modules/serie.js";
 import render_trophy from "./modules/trophys.js";
 
 // Global var to track shown child rows
-// var childRows = null;
+var openChildRows = [];
 var start = new Date();
 
 const queryString = window.location.search;
@@ -73,6 +74,7 @@ $(document).ready(function() {
     return driverData;
   })();
 
+  // TODO: review this part ... it works but causes page to load slowly
   var sessionData = (function () {
     let sessionData = {};
     $.ajax({
@@ -96,66 +98,12 @@ $(document).ready(function() {
     return sessionData;
   })();
 
-  console.log('////////// DRIVER DATA //////////');
-  console.log(driverData);
-  console.log('');
-  console.log('////////// DRIVER DATA TYPE //////////');
-  console.log(typeof driverData);
-  console.log('');
-  console.log('');
-  console.log('////////// DRIVER URL //////////');
-  console.log(driverURL);
-  console.log('');
-  console.log('////////// DRIVER URL DATA TYPE //////////');
-  console.log(typeof driverURL);
-  console.log('');
-  console.log('');
+  if (mode === 'static') {
+    customLogging();
+  }
 
-  console.log('////////// SESSION DATA //////////');
-  console.log(sessionData);
-  console.log('');
-  console.log('////////// SESSION DATA TYPE //////////');
-  console.log(typeof sessionData);
-  console.log('');
-  console.log('');
-  console.log('////////// SESSION URL //////////');
-  console.log(sessionURL);
-  console.log('');
-  console.log('////////// SESSION URL DATA TYPE //////////');
-  console.log(typeof sessionURL);
-  console.log('');
-
-  //var appObjects = $.extend({}, sessionData, driverData);
-  //var appObjects = sessionData.concat(driverData);
-
+  // append the driverData as a property of the sessionData
   sessionData.cars = driverData;
-  var appObjects = sessionData;
-
-  console.log('////////// COMBINED DATA //////////');
-  console.log(appObjects);
-  console.log('');
-  console.log('////////// COMBINED DATA TYPE //////////');
-  console.log(typeof appObjects);
-  console.log('');
-  console.log('');
-
-  // console.log(appObjects);
-  // Combine two data sets into one
-
-  // console.log(typeof appObjects);
-
-  // var appObjectsCleaned = JSON.parse(JSON.stringify(appObjects)); // ERR: still an object
-  // var appObjectsCleaned = JSON.parse(appObjects); // ERR doesn't work
-  // var appObjectsCleaned = JSON.stringify(appObjects); // converts it all to a string but 404 when loading into table
-
-  //sessionData.cars = driverData
-
-  // console.log(appObjectsCleaned);
-  // Combine two data sets into one
-  // console.log(typeof appObjectsCleaned);
-  //var appObjectsCleanedAgain = $.parseJSON(appObjectsCleaned);
-  // console.log(appObjectsCleanedAgain);
-  // console.log(typeof appObjectsCleanedAgain);
 
 
   /* Datatable Configuration
@@ -321,8 +269,8 @@ $(document).ready(function() {
     'searchBuilder': {},
     'select': false,
     'stateSave': true,		// Saving the layout of the table, columns and search etc.
-    "order": [colOrderURLParam, 'asc'],
-    "columns": [
+    'order': [colOrderURLParam, 'asc'],
+    'columns': [
       {
         // This column is for the child expanding data
         "className": 'dt-control',
@@ -477,7 +425,7 @@ $(document).ready(function() {
         'data': 'raceAppByTagChampionshipPredictedPoints'
       },
     ],
-    "columnDefs": [ //  when new columns are added all these need tweaking
+    'columnDefs': [ //  when new columns are added all these need tweaking
       {
         // add a no wrap class to these columns
         'className': 'nowrapping',
@@ -591,34 +539,14 @@ $(document).ready(function() {
         "targets": 38
       }
     ],
-    'createdRow': highlightMe
+    'createdRow': highlightMe,
+    /* this is the code for indicating where you'll exit the pits in the leaderboard */
+    'drawCallback': drawCallback
   }); // End of DataTable definition
 
-  /*
-  This is the code for indicating where you'll exit the pits in the leaderboard.
 
-  "drawCallback": function( settings ) {
-    // isPlayer
-    // lastDriveThroughTime   =   time driving through, stopping and exiting the pit lane
-    // gapToLeader
-
-    var api = this.api();
-
-      console.log( api.rows( {page:'current'} ).data() );
-
-    var tabledata = api.rows( {page:'current'} ).data();
-    console.log(tabledata);
-    tabledata.forEach((row) => {
-      if ( row.isPlayer ) {
-        console.log("hello");
-      }
-    });
-  }
-  */
-
-  console.log(table);
-
-  console.log('Hiding Columns: %s', hiddenCols);
+  // console.log(table);
+  // console.log('Hiding Columns: %s', hiddenCols);
 
   table.columns([hiddenCols]).visible(false);
 
@@ -627,35 +555,7 @@ $(document).ready(function() {
   table.columns(36).search($('#myText').val()).draw(); // UPDATE TARGET COLUMN
 
   // Add event listener for opening and closing details in the child row
-  $('body').on('click', 'td.dt-control', function () {
-    if (mode === 'static') {
-      console.log('open child row');
-    }
-
-    const $tr = $(this).closest('tr');
-    const row = table.row($tr);
-
-    if (row.child.isShown() ) {
-      // This row is already open - close it
-      row.child.hide();
-      $tr.removeClass('shown');
-    } else {
-      // Open this row
-      // row.child(format(row.data(), sessionData.raceAppSerieId, table)).show();
-      const carId = row.data()['id'];
-      getRaceAppCarWithResults(sessionData.raceAppSerieId, carId, mode)
-        .then(data => {
-          const html = formatChildRow(data, row.data());
-          row.child(html).show();
-          $tr.addClass('shown');
-        })
-        .catch(error => {
-          console.error('Error:', error);
-          row.child('No data available').show();
-          $tr.addClass('shown');
-        });
-    }
-  });
+  $('body').on('click', 'td.dt-control', dt_control_click_handler);
 
   // TODO: what is this for? triggers for every button?
   $('button').on('click', function () {
@@ -815,4 +715,86 @@ function populatShownChildRows(table, raceAppSerieId) {
 	"raceAppByTagChampionshipPredictedPosition": 0,
 	"raceAppByTagBestResult": 0,
 	*/
+}
+
+/**
+ * extra debugging
+ * @param {*} driverData
+ * @param {*} sessionData
+ */
+function customLogging(driverData, sessionData) {
+  console.log('////////// DRIVER DATA //////////');
+  console.log(driverData);
+  console.log('');
+  console.log('////////// DRIVER DATA TYPE //////////');
+  console.log(typeof driverData);
+  console.log('');
+  console.log('');
+  console.log('////////// DRIVER URL //////////');
+  console.log(driverURL);
+  console.log('');
+  console.log('////////// DRIVER URL DATA TYPE //////////');
+  console.log(typeof driverURL);
+  console.log('');
+  console.log('');
+
+  console.log('////////// SESSION DATA //////////');
+  console.log(sessionData);
+  console.log('');
+  console.log('////////// SESSION DATA TYPE //////////');
+  console.log(typeof sessionData);
+  console.log('');
+  console.log('');
+  console.log('////////// SESSION URL //////////');
+  console.log(sessionURL);
+  console.log('');
+  console.log('////////// SESSION URL DATA TYPE //////////');
+  console.log(typeof sessionURL);
+  console.log('');
+
+  const appObjects = sessionData;
+
+  console.log('////////// COMBINED DATA //////////');
+  console.log(appObjects);
+  console.log('');
+  console.log('////////// COMBINED DATA TYPE //////////');
+  console.log(typeof appObjects);
+  console.log('');
+  console.log('');
+}
+
+/**
+ *
+ * @param {*} e
+ */
+function dt_control_click_handler(e) {
+  e.preventDefault();
+
+  if (mode === 'static') {
+    console.log('open child row');
+  }
+
+  const $tr = $(this).closest('tr');
+  const row = table.row($tr);
+
+  if (row.child.isShown() ) {
+    // This row is already open - close it
+    row.child.hide();
+    $tr.removeClass('shown');
+  } else {
+    // Open this row
+    // row.child(format(row.data(), sessionData.raceAppSerieId, table)).show();
+    const carId = row.data()['id'];
+    getRaceAppCarWithResults(sessionData.raceAppSerieId, carId, mode)
+      .then(data => {
+        const html = formatChildRow(data, row.data());
+        row.child(html).show();
+        $tr.addClass('shown');
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        row.child('No data available').show();
+        $tr.addClass('shown');
+      });
+  }
 }

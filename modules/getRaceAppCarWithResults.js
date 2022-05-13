@@ -12,7 +12,6 @@ export async function getRaceAppCarWithResults(raceAppSerieId, carId, mode) {
 	}
 	const params = {};
 
-	//const prom = $.get(url, params, null, 'json')
   const response = await fetch(url);
 
   if (response.ok) {
