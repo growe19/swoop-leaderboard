@@ -465,7 +465,7 @@ $(document).ready(function() {
 
           if (type === 'display') {
             if (areYouTheBest >= 1) {
-              bestMarker = `<span class="text-purple">${bestTime}</span>`; // Global best goes purple!
+              bestMarker = '<span class="text-purple">${bestTime}</span>'; // Global best goes purple!
             } else {
               bestMarker = bestTime;
             }
