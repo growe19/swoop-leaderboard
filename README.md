@@ -27,3 +27,16 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
 * Intergrates with OBS using URL parameters.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+* Assetto Corsa Competizione on PC
+* SimHub [https://www.simhubdash.com](https://www.simhubdash.com)
+* Swoop Plug-in for SimHub [https://www.racedepartment.com/downloads/simhub-swoop-plugin.48487/](https://www.racedepartment.com/downloads/simhub-swoop-plugin.48487/)
+
+### Installation
+
+No installation required. Webapp can be accessed via GitHub Pages [https://growe19.github.io/swoop-leaderboard](https://growe19.github.io/swoop-leaderboard) or [https://garyrowe.co.uk/acc](https://garyrowe.co.uk/acc).
+
+<p align="right">(<a href="#top">back to top</a>)</p>
