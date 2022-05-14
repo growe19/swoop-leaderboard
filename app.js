@@ -498,8 +498,8 @@ $(document).ready(function() {
       },
       {
         "render": function ( data, type, row ) {
-          const pitStopCountForD = parseInt(row['pitStopCount']);
-          const areTheyPitting = parseInt(row['isPiting']);
+          const pitStopCountForD = row['pitStopCount'];
+          const areTheyPitting = row['isPiting'];
           // const pittingTimer = row['inPitSince'];
           let pitColMsg = '';
 
