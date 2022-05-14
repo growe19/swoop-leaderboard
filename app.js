@@ -460,12 +460,12 @@ $(document).ready(function() {
       {
         "render": function (data, type, row) {
           const bestTime = row['bestLapTime'];
-          const areYouTheBest = parseInt(row['haveAllBestLapTime']);
+          const areYouTheBest = row['haveAllBestLapTime'];
           let bestMarker;
 
           if (type === 'display') {
             if (areYouTheBest >= 1) {
-              bestMarker = '<span class="text-purple">${bestTime}</span>'; // Global best goes purple!
+              bestMarker = '<span class="text-purple">' + bestTime + '</span>'; // Global best goes purple!
             } else {
               bestMarker = bestTime;
             }
