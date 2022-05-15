@@ -21,10 +21,12 @@ console.log('Found the parameters that the User has set: %s', queryString);
 const urlParams = new URLSearchParams(queryString);
 const colOrderURLParam = urlParams.get('order');
 const mode = urlParams.get('mode');
-const showMe = urlParams.get('showme');
+// const showMe = urlParams.get('showme');
 const refresh = parseInt(urlParams.get('refresh') ?? 1000);
 
-const hiddenCols = urlParams.get('hide').split(',');
+// hide could be empty, have a single value or a comma separated list
+const hide = urlParams.get('hide') ?? '';
+const hiddenCols = hide.split(',');
 const classFiltering = urlParams.get('class');
 
 $(document).ready(function() {
