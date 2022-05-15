@@ -762,7 +762,9 @@ function dt_control_click_handler(e) {
     openChildRows.splice(carId, 1);
   } else {
     // add to collection of open child rows
-    openChildRows.push(carId);
+    if (!openChildRows.includes(carId)) {
+      openChildRows.push(carId);
+    }
     console.log(openChildRows);
 
     getRaceAppCarWithResults(raceAppSerieId, carId, mode)
