@@ -34,7 +34,7 @@ export function formatChildRow(response, carInfo) {
     return '';
   }
 
-  console.log(response.results, carInfo);
+  // console.log(response.results, carInfo);
   let resultsRA = [];
   $.each(response.results, function (i, val) {
     const html = `<tr>

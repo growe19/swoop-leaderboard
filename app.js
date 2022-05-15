@@ -745,15 +745,15 @@ function dt_control_click_handler(e) {
   console.log(e.data);
   const raceAppSerieId = e.data.raceAppSerieId;
 
-  if (mode === 'static') {
-    console.log('open child row');
-  }
-
   const $tr = $(this).closest('tr');
   const row = table.row($tr);
   const carId = parseInt(row.data()['id']);
 
   if (row.child.isShown() ) {
+    if (mode === 'static') {
+      console.log('close child row %i', carId);
+    }
+
     // This row is already open - close it
     row.child.hide();
     $tr.removeClass('shown');
@@ -761,6 +761,10 @@ function dt_control_click_handler(e) {
     // remove from the collection of open child rows
     openChildRows.splice(carId, 0);
   } else {
+    if (mode === 'static') {
+      console.log('open child row %i', carId);
+    }
+
     // add to collection of open child rows
     if (!openChildRows.includes(carId)) {
       openChildRows.push(carId);
@@ -778,5 +782,5 @@ function dt_control_click_handler(e) {
         $tr.addClass('shown');
       });
   }
-  console.log(openChildRows);
+  // console.log(openChildRows);
 }
