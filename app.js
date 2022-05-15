@@ -24,7 +24,7 @@ const mode = urlParams.get('mode');
 const showMe = urlParams.get('showme');
 const refresh = parseInt(urlParams.get('refresh') ?? 1000);
 
-const hiddenCols = urlParams.get('hide');
+const hiddenCols = urlParams.get('hide').split(',');
 const classFiltering = urlParams.get('class');
 
 $(document).ready(function() {
@@ -510,9 +510,9 @@ $(document).ready(function() {
   });
 
   // console.log(table);
-  // console.log('Hiding Columns: %s', hiddenCols);
 
-  table.columns([hiddenCols]).visible(false);
+  console.log('Hiding Columns: %s', hiddenCols);
+  table.columns(hiddenCols).visible(false);
 
   // classFiltering
   document.getElementById("myText").value = classFiltering;
