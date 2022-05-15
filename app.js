@@ -759,7 +759,7 @@ function dt_control_click_handler(e) {
     $tr.removeClass('shown');
 
     // remove from the collection of open child rows
-    openChildRows.splice(carId, 1);
+    openChildRows.splice(carId, 0);
   } else {
     // add to collection of open child rows
     if (!openChildRows.includes(carId)) {
