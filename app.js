@@ -503,9 +503,10 @@ $(document).ready(function() {
 
   // run whenever table is drawn including AJAX reloads
   table.on('draw', function () {
+    console.log('openChildRows: ', openChildRows);
     $.each(openChildRows, function (i, id) {
       // fire a click event for each row stored in the childRows array
-      $('#' + id + 'td.dt-control').trigger('click');
+      $('#' + id + ' td.dt-control').trigger('click');
     });
   });
 

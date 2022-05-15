@@ -12,13 +12,14 @@ export default function highlight(row, data) {
   const urlParams = new URLSearchParams(queryString);
   const showMe = urlParams.get('showme');
 
-  console.log('showMe: ', showMe);
+  // console.log('showMe: ', showMe);
 
   const raceNumbers = showMe.split(',');
-  console.log(raceNumbers, data.raceNumber);
+  // console.log(raceNumbers, data.raceNumber);
 
   raceNumbers.forEach(raceNum => {
     if (parseInt(raceNum) === data.raceNumber) {
+      console.log('Highlighting car %i', parseInt(raceNum));
       $(row).addClass('bg-light text-dark');
     }
   });
