@@ -1,4 +1,5 @@
 import carbrand from "./modules/carBrand.js";
+import colVis from "./modules/colVis.js";
 import cup_badge from "./modules/cup.js";
 import drawCallback from "./modules/drawCallback.js";
 import driverCategory from "./modules/driverCategory.js";
@@ -144,54 +145,7 @@ $(document).ready(function() {
 
         // IF NEW COLUMNS ARE ADDED DON'T FORGET TO ADD THE NUMBER HERE
         'columns': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43],
-        'columnText': function ( dt, idx, title ) {
-          if(idx==0){ return '<small>'+(idx)+': Additional Data +</small>';}
-          if(idx==1){ return '<small>'+(idx)+': Track Position</small>';}
-          if(idx==2){ return '<small>'+(idx)+': Starting Grid Position</small>';}
-          if(idx==3){ return '<small>'+(idx)+': Grid to Track Pos Change</small>';}
-          if(idx==4){ return '<small>'+(idx)+': Driver: Short Name</small>';}
-          if(idx==5){ return '<small>'+(idx)+': Driver: Nationality Flag</small>';}
-          if(idx==6){ return '<small>'+(idx)+': Driver: Nationality Word</small>';}
-          if(idx==7){ return '<small>'+(idx)+': Driver: Race Number</small>';}
-          if(idx==8){ return '<small>'+(idx)+': Driver: Full Name</small>';}
-          if(idx==9){ return '<small>'+(idx)+': Driver: First Name</small>';}
-          if(idx==10){ return '<small>'+(idx)+': Driver: Last Name</small>';}
-          if(idx==11){ return '<small>'+(idx)+': Driver: Category</small>';}
-          if(idx==12){ return '<small>'+(idx)+': Team: Name</small>';}
-          if(idx==13){ return '<small>'+(idx)+': Team: Nationality Flag</small>';}
-          if(idx==14){ return '<small>'+(idx)+': Car: Logo</small>';}
-          if(idx==15){ return '<small>'+(idx)+': Car: Manufacturer</small>';}
-          if(idx==16){ return '<small>'+(idx)+': Car: Model</small>';}
-          if(idx==17){ return '<small>'+(idx)+': Car: Series</small>';}
-          if(idx==18){ return '<small>'+(idx)+': Car: Cup </small>';}
-          if(idx==19){ return '<small>'+(idx)+': Lap: Total Count</small>';}
-          if(idx==20){ return '<small>'+(idx)+': Lap: Track Progress Bar</small>';}
-          if(idx==21){ return '<small>'+(idx)+': Gap: To Driver Ahead</small>';}
-          if(idx==22){ return '<small>'+(idx)+': Gap: To Leader</small>';}
-          if(idx==23){ return '<small>'+(idx)+': Last Lap: Time</small>';}
-          if(idx==24){ return '<small>'+(idx)+': Last Lap: Sector 1</small>';}
-          if(idx==25){ return '<small>'+(idx)+': Last Lap: Sector 2</small>';}
-          if(idx==26){ return '<small>'+(idx)+': Last Lap: Sector 3</small>';}
-          if(idx==27){ return '<small>'+(idx)+': Best Lap: Time</small>';}
-          if(idx==28){ return '<small>'+(idx)+': Best Lap: Sector 1</small>';}
-          if(idx==29){ return '<small>'+(idx)+': Best Lap: Sector 2</small>';}
-          if(idx==30){ return '<small>'+(idx)+': Best Lap: Sector 3</small>';}
-          if(idx==31){ return '<small>'+(idx)+': Delta: Driver Best Lap</small>';}
-          if(idx==32){ return '<small>'+(idx)+': Delta: All Cars Best Lap</small>';}
-          if(idx==33){ return '<small>'+(idx)+': Pit Stop: Count</small>';}
-          if(idx==34){ return '<small>'+(idx)+': Pit Stop: Age</small>';}
-          if(idx==35){ return '<small>'+(idx)+': Pit Stop: Delta</small>';}
-          if(idx==36){ return '<small>'+(idx)+': RaceApp.eu: Tag</small>';}
-          if(idx==37){ return '<small>'+(idx)+': RA.eu: Tag Pos #</small>';}
-          if(idx==38){ return '<small>'+(idx)+': RA.eu: Tag Gap in Class</small>';}
-          if(idx==39){ return '<small>'+(idx)+': RA.eu: Tag Current Champ Pos</small>';}
-          if(idx==40){ return '<small>'+(idx)+': RA.eu: Tag Current Champ Pts</small>';}
-          if(idx==41){ return '<small>'+(idx)+': RaceApp.eu: Championship Pred Change</small>';}
-          if(idx==42){ return '<small>'+(idx)+': RaceApp.eu: Tag Predicted Champ Pos</small>';}
-          if(idx==43){ return '<small>'+(idx)+': RaceApp.eu: Tag Predicted Champ Pts</small>';}
-
-          return (idx)+': ERROR';
-        }
+        'columnText': colVis
       },
       {
         extend: 'savedStatesCreate',
@@ -264,6 +218,7 @@ $(document).ready(function() {
     'ordering': true,		// Column ordering is allowed
     'paging': false,		// Paging turned off so that all Drivers appear on one page
     'processing': false, 	// Need to test this to see how it works
+    'rowId': 'id', // user the 'id' property as the identifier of each <tr>
     'scrollX': true,		// Scrolling allowed as there are so many columns
     'searching': true,		// Searching is allowed
     'searchBuilder': {},
@@ -439,9 +394,9 @@ $(document).ready(function() {
         "render": function ( data, type, row ) {
           var timeFormatA = row['gap'];
           var carLocation = row['isPitingLetter'];
-		
+
 	  if (carLocation == "P") {
-            return "<span class='text-primary'>IN PIT</span>"; 
+            return "<span class='text-primary'>IN PIT</span>";
           }
           return timeFormatA;
         },
@@ -546,6 +501,13 @@ $(document).ready(function() {
     'drawCallback': drawCallback
   }); // End of DataTable definition
 
+  // run whenever table is drawn including AJAX reloads
+  table.on('draw', function () {
+    $.each(childRows, function (i, id) {
+      // fire a click event for each row stored in the childRows array
+      $('#' + id + 'td.dt-control').trigger('click');
+    });
+  });
 
   // console.log(table);
   // console.log('Hiding Columns: %s', hiddenCols);
@@ -788,16 +750,17 @@ function dt_control_click_handler(e) {
 
   const $tr = $(this).closest('tr');
   const row = table.row($tr);
+  const carId = row.data()['id'];
 
   if (row.child.isShown() ) {
     // This row is already open - close it
     row.child.hide();
     $tr.removeClass('shown');
 
-    // remove from the collection of openChildRows
+    // remove from the collection of open child rows
+    childRows.splice(carId, 1);
   } else {
-    // Open this row
-    const carId = row.data()['id'];
+    // add to collection of open child rows
     openChildRows.push(carId);
     console.log(openChildRows);
 
