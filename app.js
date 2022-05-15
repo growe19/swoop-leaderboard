@@ -759,7 +759,7 @@ function dt_control_click_handler(e) {
     $tr.removeClass('shown');
 
     // remove from the collection of open child rows
-    openChildRows = openChildRows.filter(e => e === carId);
+    openChildRows = openChildRows.filter(e => e !== carId);
   } else {
     if (mode === 'static') {
       console.log('open child row %i', carId);
@@ -782,5 +782,5 @@ function dt_control_click_handler(e) {
         $tr.addClass('shown');
       });
   }
-  // console.log(openChildRows);
+  console.log(openChildRows);
 }
