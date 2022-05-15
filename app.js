@@ -86,7 +86,7 @@ $(document).ready(function() {
       'async': false,
       'global': false,
       'url': sessionURL,
-      'dataType': "json",
+      'dataType': 'json',
       'success': function (data) {
         sessionData = data;
       }
@@ -101,8 +101,8 @@ $(document).ready(function() {
       sessionData.sessionTimeLeft = new Date(1995, 1, 1, 0, 0, remain).toTimeString();
     }
 
-    $('#trackNameLoad').html(data.track);
-		$('#sessionRemainLoad').html(data.sessionTimeLeft);
+    $('#trackNameLoad').html(sessionData.track);
+		$('#sessionRemainLoad').html(sessionData.sessionTimeLeft);
 
     return sessionData;
   })();
