@@ -503,7 +503,7 @@ $(document).ready(function() {
 
   // run whenever table is drawn including AJAX reloads
   table.on('draw', function () {
-    $.each(childRows, function (i, id) {
+    $.each(openChildRows, function (i, id) {
       // fire a click event for each row stored in the childRows array
       $('#' + id + 'td.dt-control').trigger('click');
     });
@@ -758,7 +758,7 @@ function dt_control_click_handler(e) {
     $tr.removeClass('shown');
 
     // remove from the collection of open child rows
-    childRows.splice(carId, 1);
+    openChildRows.splice(carId, 1);
   } else {
     // add to collection of open child rows
     openChildRows.push(carId);
