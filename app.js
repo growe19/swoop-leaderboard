@@ -218,7 +218,7 @@ $(document).ready(function() {
     'ordering': true,		// Column ordering is allowed
     'paging': false,		// Paging turned off so that all Drivers appear on one page
     'processing': false, 	// Need to test this to see how it works
-    'rowId': id, // user the 'id' property as the identifier of each <tr>
+    'rowId': 'id', // user the 'id' property as the identifier of each <tr>
     'scrollX': true,		// Scrolling allowed as there are so many columns
     'searching': true,		// Searching is allowed
     'searchBuilder': {},
