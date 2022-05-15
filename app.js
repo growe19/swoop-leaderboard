@@ -38,8 +38,7 @@ $(document).ready(function() {
 
   let driverURL = '';
   let sessionURL = '';
-  const sessionData = {};
-  const driverData = {};
+  const driverData = [];
 
   // set up the data sources based on the given "mode"
   if ( mode === 'dev') {
@@ -78,6 +77,7 @@ $(document).ready(function() {
     });
     return driverData;
   })();
+  */
 
   // TODO: review this part ... it works but causes page to load slowly
   var sessionData = (function () {
@@ -102,7 +102,6 @@ $(document).ready(function() {
     }
     return sessionData;
   })();
-  */
 
   if (mode === 'static') {
     customLogging(driverURL, driverData, sessionURL, sessionData);
