@@ -54,18 +54,22 @@ export function formatChildRow(response, carInfo) {
   const results = resultsRA.join();
 
   // use Moment.js "ordinal" method to add language specific "st / nd / th"
-  const champPos = carInfo.raceAppByTagChampionshipPosition ?? '';
-  const cpos = moment.localeData().ordinal(champPos);
-
-  const bestResult = carInfo.raceAppByTagBestResult ?? 'n/a';
-  const best = moment.localeData().ordinal(bestResult);
+  const cpos = 'Unplaced';
+  if (carInfo.raceAppByTagChampionshipPosition) {
+    cpos = moment.localeData().ordinal(carInfo.raceAppByTagChampionshipPosition);
+  }
 
   const pts = carInfo.raceAppByTagChampionshipTotalPoints ?? '0';
   const race = carInfo.raceAppTag ?? '';
 
+  const best = '';
+  if (carInfo.raceAppByTagBestResult) {
+    best = '<p>Best Finish: ' + moment.localeData().ordinal(bestResult) + '</p>';
+  }
+
   const r = `<p>${carInfo.raceNumber} ${carInfo.currentDriver_FullName}</p>
     <p>Currently ${cpos} in ${race} with ${pts} points</p>
-    <p>Best Finish: ${best}</p>
+    ${best}
     <table id="resultsDriver${carInfo.raceNumber}" cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;width=500px">
       <thead>
         <tr>
