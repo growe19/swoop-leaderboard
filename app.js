@@ -751,7 +751,7 @@ function dt_control_click_handler(e) {
 
   const $tr = $(this).closest('tr');
   const row = table.row($tr);
-  const carId = row.data()['id'];
+  const carId = parseInt(row.data()['id']);
 
   if (row.child.isShown() ) {
     // This row is already open - close it
@@ -765,7 +765,6 @@ function dt_control_click_handler(e) {
     if (!openChildRows.includes(carId)) {
       openChildRows.push(carId);
     }
-    console.log(openChildRows);
 
     getRaceAppCarWithResults(raceAppSerieId, carId, mode)
       .then(data => {
@@ -779,4 +778,5 @@ function dt_control_click_handler(e) {
         $tr.addClass('shown');
       });
   }
+  console.log(openChildRows);
 }
