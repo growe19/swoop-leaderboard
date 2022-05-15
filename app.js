@@ -759,7 +759,7 @@ function dt_control_click_handler(e) {
     $tr.removeClass('shown');
 
     // remove from the collection of open child rows
-    openChildRows.splice(carId, 0);
+    openChildRows = openChildRows.filter(e => e === carId);
   } else {
     if (mode === 'static') {
       console.log('open child row %i', carId);
