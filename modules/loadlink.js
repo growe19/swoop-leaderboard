@@ -14,7 +14,7 @@ export default function loadlink(sessionURL, mode, start) {
 			json.sessionTimeLeft = new Date(1995, 1, 1, 0, 0, remain).toTimeString();
 		}
 
-		$('#trackNameLoad').html(json.track);
+		// $('#trackNameLoad').html(json.track); -- this never changes!
 		$('#sessionRemainLoad').html(json.sessionTimeLeft);
 	});
 }
