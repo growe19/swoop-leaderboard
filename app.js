@@ -503,15 +503,13 @@ $(document).ready(function() {
 
   // run whenever table is drawn including AJAX reloads
   table.on('draw', function () {
-    console.log('openChildRows: ', openChildRows);
+    // fire a click event for each row stored in the openChildRows array
     $.each(openChildRows, function (i, id) {
-      // fire a click event for each row stored in the childRows array
       $('#' + id + ' td.dt-control').trigger('click');
     });
   });
 
-  // console.log(table);
-
+  // hide any columns that were specified on the URL
   console.log('Hiding Columns: %s', hiddenCols);
   table.columns(hiddenCols).visible(false);
 
@@ -548,146 +546,12 @@ $(document).ready(function() {
 
   // refresh the content periodically
   setInterval(function() {
-    // make a collection of rows where the child row is open
-    const $openRows = $('.shown');
-    if ($openRows.length > 0) {
-      // populatShownChildRows(table, sessionData.raceAppSerieId);
-    }
-    // childRows = table.rows(); // Keep column 1 button open/showing if it has been clicked.
     table.ajax.reload();
 
     // inject the circuit name and session clock
     loadlink(sessionURL, mode, start);
   }, refresh ); // reload rate can be set as a URL param
 }); // end of $(document).ready(function () {
-
-/**
- * update content for any open child rows
- */
-function populatShownChildRows(table, raceAppSerieId) {
-  const childRows = table.rows();
-	console.log('populateShownChildRows: %o', childRows);
-	// If reloading table then show previously shown rows
-	if (childRows) {
-		childRows.every(function (rowIdx, tableLoop, rowLoop) {
-			// get the table data
-			const rowData = this.data();
-			// console.log(d);
-
-			format(rowData, raceAppSerieId, table);
-		});
-
-		// Reset childRows so loop is not executed each draw
-		// childRows = null;
-	}
-}
-
-/**
- * get previous results for a car
- *
- * @param {object} d car details
- * @param {int} raceAppSerieId
- * @param {DataTable} dataTable
- */
- function format(d, raceAppSerieId, dataTable) {
-	let url = 'http://localhost:8000/Acc/GetRaceAppCarWithResults/' + raceAppSerieId + '/' + d.raceNumber;
-	if (mode === 'static') {
-		url = 'seriesId2666carId63.json';
-	}
-	const params = {};
-
-	$.get(url, params, null, 'json')
-		.done(function (response) {
-			console.log(response);
-			console.log('carNumber: %i', response.carNumber);
-			// assuming "response" has your full JSON you can then dig into the "results" ...
-			if (response && response.hasOwnProperty('results')) {
-				console.log(response.results);
-				// const tableBody = $('#tblBody'+ d.raceNumber);
-				var resultsRA = [];
-				$.each(response.results, function (i, val) {
-					const html = `<tr>
-						<td>${val.track}</td>
-						<td>${val.position}/${val.driverCount}</td>
-						<td>${val.positionInClass}</td>
-						<td>${val.points}</td>
-						<td>- ${val.penaltyPoints}pts / ${val.penaltySeconds}sec</td>
-					</tr>`;
-
-					resultsRA.push(html);
-
-					// append onto the driver row
-					// document.getElementById('resultsDriver' + d.raceNumber) === resultsRA.join();
-				});
-			}
-
-			const cpos = moment.localeData().ordinal(d.raceAppByTagChampionshipPosition);
-			const best = moment.localeData().ordinal(d.raceAppByTagBestResult);
-			const results = resultsRA.join();
-
-			const r = `<p>${d.raceNumber} ${d.currentDriver_FullName}</p>
-				<p>Currently ${cpos} in ${d.raceAppTag} with ${d.raceAppByTagChampionshipTotalPoints} points</p>
-				<p>Best Finish: ${best}</p>
-				<table id="resultsDriver${d.raceNumber}" cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;width=500px">
-					<thead>
-						<tr>
-							<th>Event</th>
-							<th>Overall Position</th>
-							<th>Class Position</th>
-							<th>Points</th>
-							<th>Penalties</th>
-						</tr>
-					</thead>
-					<tbody id="tblbody${d.raceNumber}">
-						${results}
-					</tbody>
-				</table>`;
-
-			dataTable.child(r);
-			// dataTable.nodes().to$().addClass('shown');
-		})
-		.fail(function (error) {
-			console.warn(error);
-		});
-
-	// console.log('Results history from:' + url);
-
-	//var my_json_results;
-
-	//	$.getJSON(url, function(json) {
-	//	my_json_results = json;
-	//	console.log(my_json_results.results);
-	//});
-
-	// If this RETURN code isn't here then the page breaks.
-	//
-	// ERROR: TypeError: Cannot read properties of undefined (reading 'show')
-	// This is referring to something on line 1426 ......
-	// LINE 1426 : row.child( format(row.data()) ).show();
-	//
-
-	//GetResultsData();
-
-	/* Parameters from the Swoop API that are from AllCars
-
-	Historic Results come from /Acc/GetRaceAppCarWithResults/{serieId}/{raceNumber}
-
-	In the string above the {serieId} is actually the raceAppSerieId from /Acc/GetSessionInfos
-
-	"raceAppTag": "string",
-	"raceAppTagPosition": 0,
-	"raceAppGlobalChampionshipTotalPoints": 0,
-	"raceAppGlobalBestResult": 0,
-	"raceAppGlobalChampionshipPredictedPoints": 0,
-	"raceAppGlobalChampionshipPosition": 0,
-	"raceAppGlobalChampionshipPredictedPosition": 0,
-	"raceAppByTagChampionshipTotalPoints": 0,
-	"raceAppByTagChampionshipPredictedPoints": 0,
-	"raceAppByTagChampionshipPosition": 0,
-	"raceAppByTagChampionshipPredictedPosition": 0,
-	"raceAppByTagBestResult": 0,
-	*/
-}
 
 /**
  * extra debugging
