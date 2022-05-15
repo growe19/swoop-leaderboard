@@ -26,7 +26,9 @@ const refresh = parseInt(urlParams.get('refresh') ?? 1000);
 
 // hide could be empty, have a single value or a comma separated list
 const hide = urlParams.get('hide') ?? '';
-const hiddenCols = hide.split(',');
+const hiddenCols = hide.split(',').map(function(item) {
+  return parseInt(item, 10);
+});
 
 const classFiltering = urlParams.get('class');
 
