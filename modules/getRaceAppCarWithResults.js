@@ -60,7 +60,7 @@ export function formatChildRow(response, carInfo) {
   }
 
   const pts = carInfo.raceAppByTagChampionshipTotalPoints ?? '0';
-  const race = carInfo.raceAppTag ?? '';
+  const race = carInfo.raceAppTag ?? 'any championship';
 
   const best = '';
   if (carInfo.raceAppByTagBestResult) {
