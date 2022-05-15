@@ -76,6 +76,7 @@ $(document).ready(function() {
   })();
 
   // TODO: review this part ... it works but causes page to load slowly
+  /*
   var sessionData = (function () {
     let sessionData = {};
     $.ajax({
@@ -98,13 +99,14 @@ $(document).ready(function() {
     }
     return sessionData;
   })();
+  */
 
   if (mode === 'static') {
     customLogging(driverURL, driverData, sessionURL, sessionData);
   }
 
   // append the driverData as a property of the sessionData
-  sessionData.cars = driverData;
+  // sessionData.cars = driverData;
 
 
   /* Datatable Configuration
@@ -215,15 +217,15 @@ $(document).ready(function() {
       "infoEmpty": "No Drivers Found",
       "search": "Quick Global Filter",
     },
-    'ordering': true,		// Column ordering is allowed
-    'paging': false,		// Paging turned off so that all Drivers appear on one page
-    'processing': false, 	// Need to test this to see how it works
-    'rowId': 'id', // user the 'id' property as the identifier of each <tr>
-    'scrollX': true,		// Scrolling allowed as there are so many columns
-    'searching': true,		// Searching is allowed
+    'ordering': true, // Column ordering is allowed
+    'paging': false, // Paging turned off so that all Drivers appear on one page
+    'processing': false, // Need to test this to see how it works
+    'rowId': 'id', // use the 'id' property as the identifier of each <tr>
+    'scrollX': true, // Scrolling allowed as there are so many columns
+    'searching': true, // Searching is allowed
     'searchBuilder': {},
     'select': false,
-    'stateSave': true,		// Saving the layout of the table, columns and search etc.
+    'stateSave': true, // Saving the layout of the table, columns and search etc.
     'order': [colOrderURLParam, 'asc'],
     'columns': [
       {
@@ -395,7 +397,7 @@ $(document).ready(function() {
           var timeFormatA = row['gap'];
           var carLocation = row['isPitingLetter'];
 
-	  if (carLocation == "P") {
+          if (carLocation == "P") {
             return "<span class='text-primary'>IN PIT</span>";
           }
           return timeFormatA;
@@ -536,10 +538,12 @@ $(document).ready(function() {
 
   // This adds the bg-dark class to the fixedHeader
   // but fixed header is disabled so don't think this is needed anymore!!!!!!
+  /*
   const elements = document.getElementsByClassName("sorting");
   for (var i = 0; i < elements.length; i++) {
     elements[i].className += " bg-dark";
   }
+  */
 
   // set an event handler to add child rows each time the table is drawn
   // table.on('draw', populateShownChildRows);
@@ -601,19 +605,22 @@ function customLogging(driverURL, driverData, sessionURL, sessionData) {
 
 /**
  *
- * @param {*} e
+ * @param {Event} e
  */
 function dt_control_click_handler(e) {
   e.preventDefault();
+  // connect to table API
   const table = $('#leaderboard').DataTable();
+  // get data passed via bind
   console.log(e.data);
   const raceAppSerieId = e.data.raceAppSerieId;
 
+  // extract the carId from the row
   const $tr = $(this).closest('tr');
   const row = table.row($tr);
   const carId = parseInt(row.data()['id']);
 
-  if (row.child.isShown() ) {
+  if (row.child.isShown()) {
     if (mode === 'static') {
       console.log('close child row %i', carId);
     }
@@ -634,6 +641,7 @@ function dt_control_click_handler(e) {
       openChildRows.push(carId);
     }
 
+    // get the extended data for this car, inject into the child row and open
     getRaceAppCarWithResults(raceAppSerieId, carId, mode)
       .then(data => {
         const html = formatChildRow(data, row.data());

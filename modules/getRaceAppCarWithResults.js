@@ -10,7 +10,6 @@ export async function getRaceAppCarWithResults(raceAppSerieId, carId, mode) {
 	if (mode === 'static') {
 		url = `seriesId${raceAppSerieId}carId${carId}.json`;
 	}
-	const params = {};
 
   const response = await fetch(url);
 
@@ -54,7 +53,7 @@ export function formatChildRow(response, carInfo) {
   const results = resultsRA.join();
 
   // use Moment.js "ordinal" method to add language specific "st / nd / th"
-  const cpos = 'Unplaced';
+  const cpos = 'unplaced';
   if (carInfo.raceAppByTagChampionshipPosition) {
     cpos = moment.localeData().ordinal(carInfo.raceAppByTagChampionshipPosition);
   }
