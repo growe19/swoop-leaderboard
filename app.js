@@ -27,7 +27,9 @@ const refresh = parseInt(urlParams.get('refresh') ?? 1000);
 // hide could be empty, have a single value or a comma separated list
 const hide = urlParams.get('hide') ?? '';
 const hiddenCols = hide.split(',').map(function(item) {
-  return parseInt(item, 10);
+  if (item) {
+    return parseInt(item, 10);
+  }
 });
 
 const classFiltering = urlParams.get('class');
@@ -43,7 +45,6 @@ $(document).ready(function() {
 
   let driverURL = '';
   let sessionURL = '';
-  const driverData = [];
 
   // set up the data sources based on the given "mode"
   if ( mode === 'dev') {
@@ -68,7 +69,6 @@ $(document).ready(function() {
   //var sessionURL = "http://localhost:8000/Acc/GetSessionInfos";
   // URL are set above in the IF
 
-  /*
   var driverData = (function () {
     let driverData = {};
     $.ajax({
@@ -82,7 +82,6 @@ $(document).ready(function() {
     });
     return driverData;
   })();
-  */
 
   // TODO: review this part ... it works but causes page to load slowly
   var sessionData = (function () {
