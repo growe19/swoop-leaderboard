@@ -38,7 +38,10 @@ $(document).ready(function() {
 
   let driverURL = '';
   let sessionURL = '';
+  const sessionData = {};
+  const driverData = {};
 
+  // set up the data sources based on the given "mode"
   if ( mode === 'dev') {
     driverURL = 'http://localhost:8000/AccTest/Allcars';
     sessionURL = 'http://localhost:8000/AccTest/GetSessionInfos';
@@ -61,6 +64,7 @@ $(document).ready(function() {
   //var sessionURL = "http://localhost:8000/Acc/GetSessionInfos";
   // URL are set above in the IF
 
+  /*
   var driverData = (function () {
     let driverData = {};
     $.ajax({
@@ -76,7 +80,6 @@ $(document).ready(function() {
   })();
 
   // TODO: review this part ... it works but causes page to load slowly
-  /*
   var sessionData = (function () {
     let sessionData = {};
     $.ajax({
