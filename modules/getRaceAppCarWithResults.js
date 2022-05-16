@@ -10,7 +10,6 @@ export async function getRaceAppCarWithResults(raceAppSerieId, carId, mode) {
 	if (mode === 'static') {
 		url = `seriesId${raceAppSerieId}carId${carId}.json`;
 	}
-	const params = {};
 
   const response = await fetch(url);
 
@@ -34,7 +33,7 @@ export function formatChildRow(response, carInfo) {
     return '';
   }
 
-  console.log(response.results, carInfo);
+  // console.log(response.results, carInfo);
   let resultsRA = [];
   $.each(response.results, function (i, val) {
     const html = `<tr>
@@ -53,12 +52,23 @@ export function formatChildRow(response, carInfo) {
 
   const results = resultsRA.join();
 
-  const cpos = moment.localeData().ordinal(carInfo.raceAppByTagChampionshipPosition);
-  const best = moment.localeData().ordinal(carInfo.raceAppByTagBestResult);
+  // use Moment.js "ordinal" method to add language specific "st / nd / th"
+  const cpos = 'unplaced';
+  if (carInfo.raceAppByTagChampionshipPosition) {
+    cpos = moment.localeData().ordinal(carInfo.raceAppByTagChampionshipPosition);
+  }
+
+  const pts = carInfo.raceAppByTagChampionshipTotalPoints ?? '0';
+  const race = carInfo.raceAppTag ?? 'any championship';
+
+  const best = '';
+  if (carInfo.raceAppByTagBestResult) {
+    best = '<p>Best Finish: ' + moment.localeData().ordinal(bestResult) + '</p>';
+  }
 
   const r = `<p>${carInfo.raceNumber} ${carInfo.currentDriver_FullName}</p>
-    <p>Currently ${cpos} in ${carInfo.raceAppTag} with ${carInfo.raceAppByTagChampionshipTotalPoints} points</p>
-    <p>Best Finish: ${best}</p>
+    <p>Currently ${cpos} in ${race} with ${pts} points</p>
+    ${best}
     <table id="resultsDriver${carInfo.raceNumber}" cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;width=500px">
       <thead>
         <tr>

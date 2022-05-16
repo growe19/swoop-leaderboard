@@ -21,10 +21,17 @@ console.log('Found the parameters that the User has set: %s', queryString);
 const urlParams = new URLSearchParams(queryString);
 const colOrderURLParam = urlParams.get('order');
 const mode = urlParams.get('mode');
-const showMe = urlParams.get('showme');
+// const showMe = urlParams.get('showme');
 const refresh = parseInt(urlParams.get('refresh') ?? 1000);
 
-const hiddenCols = urlParams.get('hide');
+// hide could be empty, have a single value or a comma separated list
+const hide = urlParams.get('hide') ?? '';
+const hiddenCols = hide.split(',').map(function(item) {
+  if (item) {
+    return parseInt(item, 10);
+  }
+});
+
 const classFiltering = urlParams.get('class');
 
 $(document).ready(function() {
@@ -39,6 +46,7 @@ $(document).ready(function() {
   let driverURL = '';
   let sessionURL = '';
 
+  // set up the data sources based on the given "mode"
   if ( mode === 'dev') {
     driverURL = 'http://localhost:8000/AccTest/Allcars';
     sessionURL = 'http://localhost:8000/AccTest/GetSessionInfos';
@@ -82,7 +90,7 @@ $(document).ready(function() {
       'async': false,
       'global': false,
       'url': sessionURL,
-      'dataType': "json",
+      'dataType': 'json',
       'success': function (data) {
         sessionData = data;
       }
@@ -96,6 +104,10 @@ $(document).ready(function() {
       const remain = DURATION - elapsed;
       sessionData.sessionTimeLeft = new Date(1995, 1, 1, 0, 0, remain).toTimeString();
     }
+
+    $('#trackNameLoad').html(sessionData.track);
+		$('#sessionRemainLoad').html(sessionData.sessionTimeLeft);
+
     return sessionData;
   })();
 
@@ -104,7 +116,7 @@ $(document).ready(function() {
   }
 
   // append the driverData as a property of the sessionData
-  sessionData.cars = driverData;
+  // sessionData.cars = driverData;
 
 
   /* Datatable Configuration
@@ -215,15 +227,15 @@ $(document).ready(function() {
       "infoEmpty": "No Drivers Found",
       "search": "Quick Global Filter",
     },
-    'ordering': true,		// Column ordering is allowed
-    'paging': false,		// Paging turned off so that all Drivers appear on one page
-    'processing': false, 	// Need to test this to see how it works
-    'rowId': 'id', // user the 'id' property as the identifier of each <tr>
-    'scrollX': true,		// Scrolling allowed as there are so many columns
-    'searching': true,		// Searching is allowed
+    'ordering': true, // Column ordering is allowed
+    'paging': false, // Paging turned off so that all Drivers appear on one page
+    'processing': false, // Need to test this to see how it works
+    'rowId': 'id', // use the 'id' property as the identifier of each <tr>
+    'scrollX': true, // Scrolling allowed as there are so many columns
+    'searching': true, // Searching is allowed
     'searchBuilder': {},
     'select': false,
-    'stateSave': true,		// Saving the layout of the table, columns and search etc.
+    'stateSave': true, // Saving the layout of the table, columns and search etc.
     'order': [colOrderURLParam, 'asc'],
     'columns': [
       {
@@ -395,7 +407,7 @@ $(document).ready(function() {
           var timeFormatA = row['gap'];
           var carLocation = row['isPitingLetter'];
 
-	  if (carLocation == "P") {
+          if (carLocation == "P") {
             return "<span class='text-primary'>IN PIT</span>";
           }
           return timeFormatA;
@@ -503,16 +515,15 @@ $(document).ready(function() {
 
   // run whenever table is drawn including AJAX reloads
   table.on('draw', function () {
-    $.each(childRows, function (i, id) {
-      // fire a click event for each row stored in the childRows array
-      $('#' + id + 'td.dt-control').trigger('click');
+    // fire a click event for each row stored in the openChildRows array
+    $.each(openChildRows, function (i, id) {
+      $('#' + id + ' td.dt-control').trigger('click');
     });
   });
 
-  // console.log(table);
-  // console.log('Hiding Columns: %s', hiddenCols);
-
-  table.columns([hiddenCols]).visible(false);
+  // hide any columns that were specified on the URL
+  console.log('Hiding Columns: %o', hiddenCols);
+  //table.columns(hiddenCols).visible(false);
 
   // classFiltering
   document.getElementById("myText").value = classFiltering;
@@ -537,156 +548,24 @@ $(document).ready(function() {
 
   // This adds the bg-dark class to the fixedHeader
   // but fixed header is disabled so don't think this is needed anymore!!!!!!
+  /*
   const elements = document.getElementsByClassName("sorting");
   for (var i = 0; i < elements.length; i++) {
     elements[i].className += " bg-dark";
   }
+  */
 
   // set an event handler to add child rows each time the table is drawn
   // table.on('draw', populateShownChildRows);
 
   // refresh the content periodically
   setInterval(function() {
-    // make a collection of rows where the child row is open
-    const $openRows = $('.shown');
-    if ($openRows.length > 0) {
-      // populatShownChildRows(table, sessionData.raceAppSerieId);
-    }
-    // childRows = table.rows(); // Keep column 1 button open/showing if it has been clicked.
     table.ajax.reload();
 
     // inject the circuit name and session clock
     loadlink(sessionURL, mode, start);
   }, refresh ); // reload rate can be set as a URL param
 }); // end of $(document).ready(function () {
-
-/**
- * update content for any open child rows
- */
-function populatShownChildRows(table, raceAppSerieId) {
-  const childRows = table.rows();
-	console.log('populateShownChildRows: %o', childRows);
-	// If reloading table then show previously shown rows
-	if (childRows) {
-		childRows.every(function (rowIdx, tableLoop, rowLoop) {
-			// get the table data
-			const rowData = this.data();
-			// console.log(d);
-
-			format(rowData, raceAppSerieId, table);
-		});
-
-		// Reset childRows so loop is not executed each draw
-		// childRows = null;
-	}
-}
-
-/**
- * get previous results for a car
- *
- * @param {object} d car details
- * @param {int} raceAppSerieId
- * @param {DataTable} dataTable
- */
- function format(d, raceAppSerieId, dataTable) {
-	let url = 'http://localhost:8000/Acc/GetRaceAppCarWithResults/' + raceAppSerieId + '/' + d.raceNumber;
-	if (mode === 'static') {
-		url = 'seriesId2666carId63.json';
-	}
-	const params = {};
-
-	$.get(url, params, null, 'json')
-		.done(function (response) {
-			console.log(response);
-			console.log('carNumber: %i', response.carNumber);
-			// assuming "response" has your full JSON you can then dig into the "results" ...
-			if (response && response.hasOwnProperty('results')) {
-				console.log(response.results);
-				// const tableBody = $('#tblBody'+ d.raceNumber);
-				var resultsRA = [];
-				$.each(response.results, function (i, val) {
-					const html = `<tr>
-						<td>${val.track}</td>
-						<td>${val.position}/${val.driverCount}</td>
-						<td>${val.positionInClass}</td>
-						<td>${val.points}</td>
-						<td>- ${val.penaltyPoints}pts / ${val.penaltySeconds}sec</td>
-					</tr>`;
-
-					resultsRA.push(html);
-
-					// append onto the driver row
-					// document.getElementById('resultsDriver' + d.raceNumber) === resultsRA.join();
-				});
-			}
-
-			const cpos = moment.localeData().ordinal(d.raceAppByTagChampionshipPosition);
-			const best = moment.localeData().ordinal(d.raceAppByTagBestResult);
-			const results = resultsRA.join();
-
-			const r = `<p>${d.raceNumber} ${d.currentDriver_FullName}</p>
-				<p>Currently ${cpos} in ${d.raceAppTag} with ${d.raceAppByTagChampionshipTotalPoints} points</p>
-				<p>Best Finish: ${best}</p>
-				<table id="resultsDriver${d.raceNumber}" cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;width=500px">
-					<thead>
-						<tr>
-							<th>Event</th>
-							<th>Overall Position</th>
-							<th>Class Position</th>
-							<th>Points</th>
-							<th>Penalties</th>
-						</tr>
-					</thead>
-					<tbody id="tblbody${d.raceNumber}">
-						${results}
-					</tbody>
-				</table>`;
-
-			dataTable.child(r);
-			// dataTable.nodes().to$().addClass('shown');
-		})
-		.fail(function (error) {
-			console.warn(error);
-		});
-
-	// console.log('Results history from:' + url);
-
-	//var my_json_results;
-
-	//	$.getJSON(url, function(json) {
-	//	my_json_results = json;
-	//	console.log(my_json_results.results);
-	//});
-
-	// If this RETURN code isn't here then the page breaks.
-	//
-	// ERROR: TypeError: Cannot read properties of undefined (reading 'show')
-	// This is referring to something on line 1426 ......
-	// LINE 1426 : row.child( format(row.data()) ).show();
-	//
-
-	//GetResultsData();
-
-	/* Parameters from the Swoop API that are from AllCars
-
-	Historic Results come from /Acc/GetRaceAppCarWithResults/{serieId}/{raceNumber}
-
-	In the string above the {serieId} is actually the raceAppSerieId from /Acc/GetSessionInfos
-
-	"raceAppTag": "string",
-	"raceAppTagPosition": 0,
-	"raceAppGlobalChampionshipTotalPoints": 0,
-	"raceAppGlobalBestResult": 0,
-	"raceAppGlobalChampionshipPredictedPoints": 0,
-	"raceAppGlobalChampionshipPosition": 0,
-	"raceAppGlobalChampionshipPredictedPosition": 0,
-	"raceAppByTagChampionshipTotalPoints": 0,
-	"raceAppByTagChampionshipPredictedPoints": 0,
-	"raceAppByTagChampionshipPosition": 0,
-	"raceAppByTagChampionshipPredictedPosition": 0,
-	"raceAppByTagBestResult": 0,
-	*/
-}
 
 /**
  * extra debugging
@@ -736,34 +615,43 @@ function customLogging(driverURL, driverData, sessionURL, sessionData) {
 
 /**
  *
- * @param {*} e
+ * @param {Event} e
  */
 function dt_control_click_handler(e) {
   e.preventDefault();
+  // connect to table API
   const table = $('#leaderboard').DataTable();
+  // get data passed via bind
   console.log(e.data);
   const raceAppSerieId = e.data.raceAppSerieId;
 
-  if (mode === 'static') {
-    console.log('open child row');
-  }
-
+  // extract the carId from the row
   const $tr = $(this).closest('tr');
   const row = table.row($tr);
-  const carId = row.data()['id'];
+  const carId = parseInt(row.data()['id']);
 
-  if (row.child.isShown() ) {
+  if (row.child.isShown()) {
+    if (mode === 'static') {
+      console.log('close child row %i', carId);
+    }
+
     // This row is already open - close it
     row.child.hide();
     $tr.removeClass('shown');
 
     // remove from the collection of open child rows
-    childRows.splice(carId, 1);
+    openChildRows = openChildRows.filter(e => e !== carId);
   } else {
-    // add to collection of open child rows
-    openChildRows.push(carId);
-    console.log(openChildRows);
+    if (mode === 'static') {
+      console.log('open child row %i', carId);
+    }
 
+    // add to collection of open child rows
+    if (!openChildRows.includes(carId)) {
+      openChildRows.push(carId);
+    }
+
+    // get the extended data for this car, inject into the child row and open
     getRaceAppCarWithResults(raceAppSerieId, carId, mode)
       .then(data => {
         const html = formatChildRow(data, row.data());
@@ -776,4 +664,5 @@ function dt_control_click_handler(e) {
         $tr.addClass('shown');
       });
   }
+  console.log(openChildRows);
 }
