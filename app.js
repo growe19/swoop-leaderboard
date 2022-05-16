@@ -655,7 +655,8 @@ function dt_control_click_handler(e) {
     getRaceAppCarWithResults(raceAppSerieId, carId, mode)
       .then(data => {
         const html = formatChildRow(data, row.data());
-        row.child(html).show();
+        $('#DescModal').modal("show");
+	row.child(html).show();
         $tr.addClass('shown');
       })
       .catch(error => {
