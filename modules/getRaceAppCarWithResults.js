@@ -45,7 +45,7 @@ export function formatChildRow(response, carInfo) {
     </tr>`;
 
     resultsRA.push(html);
-
+    
     // append onto the driver row
     // document.getElementById('resultsDriver' + d.raceNumber) === resultsRA.join();
   });
@@ -85,4 +85,5 @@ export function formatChildRow(response, carInfo) {
     </table>`;
 
   return r;
+$('#resultsLoad').html(r); // field on the modal
 }
