@@ -5,7 +5,7 @@
  */
 export default function drawCallback(settings) {
   const api = this.api();
-  const tabledata = api.rows({ 'page': 'current' }).data();
+  // const tabledata = api.rows({ 'page': 'current' }).data();
   // console.log(tabledata);
 
   /**
@@ -31,7 +31,7 @@ export default function drawCallback(settings) {
     const car = this.data();
     // console.log(car);
     if (car.isPlayer) {
-      console.log("hello me");
+      console.log('I am ' + car.currentDriver_FullName);
     }
 
     // actually this is always the first row!
@@ -42,21 +42,41 @@ export default function drawCallback(settings) {
     if (car.raceAppTag && car.raceAppTagPosition === 1 && car.gapToLeader) {
       // console.log(car.currentDriver_FullName + ' is the ' + car.raceAppTag + ' leader');
       const g = car.gapToLeader.split(':'); // separate mins and secs
-      leaders[car.raceAppTag] = { 'id': car.id, 'gapToLeader': moment.duration({ m: g[0], s: g[1] }) };
+      // leaders[car.raceAppTag] = { 'id': car.id, 'gapToLeader': moment.duration({ m: g[0], s: g[1] }) };
+      leaders[car.raceAppTag] = { 'id': car.id, 'gapToLeader': car.gapToLeader };
     }
   });
 
   console.log('Class leaders: ', leaders);
 
-  api.rows().every(function () {
+  api.rows().every(function (rowIdx, tableLoop, rowLoop) {
     const car = this.data();
+    let gap;
 
+    // api.cells({ 'row': rowIdx, 'column': 38 }).data('simon');
+    console.log(car);
+
+    // exclude cars that are not in any class or are missing 'gapToLeader' or are themselves a leader
     if (car.raceAppTag && car.gapToLeader) {
-      const myClass = car.raceAppTag;
-      const myGapToLeader = moment.duration({ m: car.gapToLeader.split(':')[0], s: car.gapToLeader.split(':')[1] });
-      const gapToClassLeader = myGapToLeader - leaders[myClass].gapToLeader;
-      console.log('Class leader is: ' + gapToClassLeader + ' ahead of ' + car.currentDriver_FullName);
+      if (car.raceAppTagPosition !== 1) {
+        const myClass = car.raceAppTag;
+        const myGapToLeader = moment.duration("00:" + car.gapToLeader).as('milliseconds');
+        const classLeaderGap = moment.duration("00:" + leaders[myClass].gapToLeader).as('milliseconds');
+        // console.log(classLeaderGap);
+        const gapToClassLeader = moment.duration({ 'milliseconds': myGapToLeader - classLeaderGap });
+        //console.log(gapToClassLeader);
+        console.log(car.raceAppTag + ' leader is ' + gapToClassLeader.as('seconds') + 's ahead of ' + car.currentDriver_FullName);
+        gap = gapToClassLeader.as('seconds');
+      } else {
+        console.log(car.currentDriver_FullName + ' is leading in class ' + car.raceAppTag);
+        gap = 0;
+      }
+    } else {
+      gap = '-';
     }
+
+    this.data().gapToClassLeader = gap;
+    this.invalidate();
   });
   // lastDriveThroughTime   =   time driving through, stopping and exiting the pit lane
   // gapToLeader

@@ -342,8 +342,13 @@ $(document).ready(function() {
           else { return '<span class="badge badge-outline badge-danger">NOT FOUND</span>';}
         }
       },
-      { 'data': 'raceAppTagPosition' },
-      { 'data': null,"defaultContent": '' }, // Gap within RaceApp Class
+      {
+        'data': 'raceAppTagPosition',
+      },
+      {
+        'data': 'gapToClassLeader',
+        'defaultContent': ''
+      }, // Gap within RaceApp Class
       {
         'data': "raceAppByTagChampionshipPosition" ,
         'render': function (data, type, row) {
@@ -497,15 +502,6 @@ $(document).ready(function() {
       {
         'searchBuilderTitle': 'RaceApp.eu Position within Driver Tag (Class)',
         'targets': 37
-      },
-      {
-        "render": function ( data, type, row ) {
-          return "sum";
-          /*
-            This is where the code will go to calculate the gap between players in the same RaceApp Class
-          */
-        },
-        "targets": 38
       }
     ],
     'createdRow': highlight,
