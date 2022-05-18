@@ -4,8 +4,8 @@
  * @param {Object} settings see https://datatables.net/reference/type/DataTables.Settings
  */
 export default function drawCallback(settings) {
-  const api = this.api;
-  const tabledata = api.rows( {page:'current'} ).data();
+  const api = this.api();
+  const tabledata = api.rows({ 'page': 'current' }).data();
   console.log(tabledata);
 
   /**
