@@ -69,7 +69,7 @@ export function formatChildRow(response, carInfo) {
   const r = `
     <p>Currently ${cpos} in ${race} with ${pts} points</p>
     ${best}
-    <table id="resultsDriver${carInfo.raceNumber}" cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;width=800px">
+    <table class="table table-dark" id="resultsDriver${carInfo.raceNumber}" cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;width=800px">
       <thead>
         <tr>
           <th>Event</th>
