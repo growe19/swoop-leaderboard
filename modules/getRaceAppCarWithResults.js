@@ -84,5 +84,6 @@ export function formatChildRow(response, carInfo) {
       </tbody>
     </table>`;
 
+    $('#modalTestData').html(r);
   return r;
 }
