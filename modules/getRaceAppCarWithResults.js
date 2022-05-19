@@ -68,7 +68,9 @@ export function formatChildRow(response, carInfo) {
 
   const r = `
     <p>Currently ${cpos} in ${race} with ${pts} points</p>
+    <p>Currently ${carInfo.position} overall and ${carInfo.positionInClass} in Class (${carInfo.raceAppTag})</p>
     ${best}
+    <h4>Previous results from RaceApp</h4>
     <table class="table table-sm table-bordered table-dark" id="resultsDriver${carInfo.raceNumber}" style="width=800px">
       <thead>
         <tr>
