@@ -36,13 +36,13 @@ export function formatChildRow(response, carInfo) {
   // console.log(response.results, carInfo);
   let resultsRA = [];
   $.each(response.results, function (i, val) {
-    const html = `<tr>
-      <td>${val.track}</td>
-      <td>${val.position}/${val.driverCount}</td>
-      <td>${val.positionInClass}</td>
-      <td>${val.points}</td>
-      <td>- ${val.penaltyPoints}pts / ${val.penaltySeconds}sec</td>
-    </tr>`;
+    const html = '<tr>' +
+      '<td>${val.track}</td>' +
+      '<td>${val.position}/${val.driverCount}</td>' +
+      '<td>${val.positionInClass} test:' & moment.localeData().ordinal(${val.positionInClass}) & '</td>' +  
+      '<td>${val.points}</td>' +
+      '<td>- ${val.penaltyPoints}pts / +${val.penaltySeconds} sec</td>' +
+    '</tr>';
 
     resultsRA.push(html);
 
