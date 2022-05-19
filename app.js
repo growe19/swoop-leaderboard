@@ -656,7 +656,7 @@ function dt_control_click_handler(e) {
 
         // testing out adding modal
         $('#DescModal').modal('show')
-
+        $('#modalTestData').html(carId);
 
       })
       .catch(error => {
