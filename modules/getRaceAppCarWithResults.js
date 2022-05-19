@@ -66,10 +66,10 @@ export function formatChildRow(response, carInfo) {
     best = '<p>Best Finish: ' + moment.localeData().ordinal(bestResult) + '</p>';
   }
 
-  const r = `<p>${carInfo.raceNumber} ${carInfo.currentDriver_FullName}</p>
+  const r = `
     <p>Currently ${cpos} in ${race} with ${pts} points</p>
     ${best}
-    <table id="resultsDriver${carInfo.raceNumber}" cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;width=500px">
+    <table id="resultsDriver${carInfo.raceNumber}" cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;width=800px">
       <thead>
         <tr>
           <th>Event</th>
@@ -84,6 +84,8 @@ export function formatChildRow(response, carInfo) {
       </tbody>
     </table>`;
 
-    $('#modalTestData').html(r);
+    $('#modalResultsTable').html(r);
+    $('#modalDriver').html(${carInfo.currentDriver_FullName});
+    $('#modalCarNo').html(${carInfo.raceNumber});
   return r;
 }
