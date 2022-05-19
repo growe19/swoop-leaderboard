@@ -35,7 +35,7 @@ export function formatChildRow(response, carInfo) {
 
   // console.log(response.results, carInfo);
   let resultsRA = [];
-  let orindalPositionInClass = moment.localeData().ordinal(${val.positionInClass});
+  const orindalPositionInClass = moment.localeData().ordinal(${val.positionInClass});
   $.each(response.results, function (i, val) {
     const html = `<tr>
       <td>${val.track}</td>
