@@ -653,6 +653,15 @@ function dt_control_click_handler(e) {
         const html = formatChildRow(data, row.data());
         row.child(html).show();
         $tr.addClass('shown');
+
+        // testing out adding modal
+        $('#DescModal').on('show.bs.modal', function (event) {
+          var modal = $(this)
+          modal.find('.modal-title').text('Test jQ changed the title')
+          
+        })
+
+
       })
       .catch(error => {
         console.error('Error:', error);
