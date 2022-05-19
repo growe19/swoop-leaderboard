@@ -41,7 +41,7 @@ export function formatChildRow(response, carInfo) {
       <td>${val.position}/${val.driverCount}</td>
       <td>${val.positionInClass} </td>  
       <td>${val.points}</td>
-      <td>- ${val.penaltyPoints}pts / +${val.penaltySeconds} sec</td>
+      <td>- ${val.penaltyPoints}pts / <span class="badge badge-danger">+${val.penaltySeconds} sec</span></td>
     </tr>`;
 
     resultsRA.push(html);
