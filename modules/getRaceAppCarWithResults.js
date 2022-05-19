@@ -85,7 +85,7 @@ export function formatChildRow(response, carInfo) {
     </table>`;
 
     $('#modalResultsTable').html(r);
-    $('#modalDriver').html(${carInfo.currentDriver_FullName});
-    $('#modalCarNo').html(${carInfo.raceNumber});
+    $('#modalDriver').html(carInfo.currentDriver_FullName);
+    $('#modalCarNo').html(carInfo.raceNumber);
   return r;
 }
