@@ -35,11 +35,12 @@ export function formatChildRow(response, carInfo) {
 
   // console.log(response.results, carInfo);
   let resultsRA = [];
+  let orindalPositionInClass = moment.localeData().ordinal(${val.positionInClass});
   $.each(response.results, function (i, val) {
     const html = `<tr>
       <td>${val.track}</td>
       <td>${val.position}/${val.driverCount}</td>
-      <td>${val.positionInClass} test: moment.localeData().ordinal(${val.positionInClass}) </td>  
+      <td>${val.positionInClass} test: ${orindalPositionInClass} </td>  
       <td>${val.points}</td>
       <td>- ${val.penaltyPoints}pts / +${val.penaltySeconds} sec</td>
     </tr>`;
