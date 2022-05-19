@@ -634,7 +634,7 @@ function dt_control_click_handler(e) {
     // This row is already open - close it
     row.child.hide();
     $tr.removeClass('shown');
-    $('#DescModal').modal('hide')
+    $('#DescModal').modal('hide'); // not a clue what this is needed for, doesn't seem to do anything
 
     // remove from the collection of open child rows
     openChildRows = openChildRows.filter(e => e !== carId);
