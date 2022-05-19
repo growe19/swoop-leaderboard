@@ -655,11 +655,7 @@ function dt_control_click_handler(e) {
         $tr.addClass('shown');
 
         // testing out adding modal
-        $('#DescModal').on('show.bs.modal', function (event) {
-          var modal = $(this)
-          modal.find('.modal-title').text('Test jQ changed the title')
-          
-        })
+        $('#DescModal').modal('show')
 
 
       })
