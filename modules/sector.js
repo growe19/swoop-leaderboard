@@ -3,20 +3,23 @@
  * @param {*} data
  * @param {*} type
  * @param {*} row
- * @returns
+ * @returns {string} HTML
  */
 export default function sector(data, type, row) {
     var splinePercent = row['splinePosition'] * 100 ;
+    /*
     var notMoving = row['isPiting'];
     var isItMe = row['isPlayer'];
     var sectOne = row['currentSector1Status'];
     var sectTwo = row['currentSector2Status'];
     var sectThree = row['currentSector3Status'];
+    */
 
     var sectOneCol = "";
     var sectTwoCol = "";
     var sectThreeCol = "";
 
+    // TODO: this is ugly
     if ( row['currentSector1Status'] == '0') { sectOneCol = '292b2c';}
     else if ( row['currentSector1Status'] == '1') { sectOneCol = 'd9534f';}
     else if ( row['currentSector1Status'] == '2') { sectOneCol = 'f0ad4e';}
@@ -44,12 +47,23 @@ export default function sector(data, type, row) {
     */
 
     if (type === 'display') {
-        if (notMoving >= '1' ) {
-          return '<div class="progress_bar" style="width: 300px;"><div class="pro-bar"><span class="progress-bar-inner" style="background-color: #d9534f; width: ' + Math.trunc(splinePercent) + '%;" data-value="' + Math.trunc(splinePercent) + '" data-percentage-value="' + Math.trunc(splinePercent) + '"></span></div></div>'
+        if (row['isPiting']) {
+          return `<div class="progress_bar" style="width: 300px;">
+              <div class="pro-bar">
+                <span class="progress-bar-inner" style="background-color: #d9534f; width: ${Math.trunc(splinePercent)}%;" data-value="${Math.trunc(splinePercent)}" data-percentage-value="${Math.trunc(splinePercent)}">
+                </span>
+              </div>
+            </div>`;
         } else {
-          return '<div class="progress_bar" style="width: 300px;"><div class="pro-bar"><span class="progress-bar-inner" style="background-color: #5cb85c; width: ' + Math.trunc(splinePercent) + '%;" data-value="' + Math.trunc(splinePercent) + '" data-percentage-value="' + Math.trunc(splinePercent) + '"></span></div></div>'
+          return `<div class="progress_bar" style="width: 300px;">
+              <div class="pro-bar">
+                <span class="progress-bar-inner" style="background-color: #5cb85c; width: ${Math.trunc(splinePercent)}%;" data-value="${Math.trunc(splinePercent)}" data-percentage-value="${Math.trunc(splinePercent)}">
+                </span>
+              </div>
+            </div>`;
         }
+    } else {
+      // for sorting
+      return row['splinePosition'];
     }
-
-    return data;
   }

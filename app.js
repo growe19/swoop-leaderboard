@@ -412,7 +412,7 @@ $(document).ready(function() {
           var timeFormatA = row['gap'];
           var carLocation = row['isPitingLetter'];
 
-          if (carLocation == "P") {
+          if (carLocation === "P") {
             return "<span class='text-primary'>IN PIT</span>";
           }
           return timeFormatA;
@@ -657,7 +657,7 @@ function dt_control_click_handler(e) {
 
         // testing out adding modal
         $('#DescModal').modal('show')
-        
+
 
       })
       .catch(error => {

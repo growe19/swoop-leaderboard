@@ -8,24 +8,65 @@ export default function drawCallback(settings) {
   // const tabledata = api.rows({ 'page': 'current' }).data();
   // console.log(tabledata);
 
+  let me = {};
+
   /**
-   * calculate the gap to the class leader
-   *    establish the leader in each class and their time gap to the overall leader
-   *    for each driver we can now use gapToLeader - classLeaderGapToLeader
+   * calculate the gap to the car ahead of us in the class leaderboard
    */
-  /*
-  tabledata.forEach((tableRow) => {
-    if (tableRow.isPlayer) {
-      console.log("hello me");
+
+  // put all the cars in order under their raceAppTag (PLATIN, GOLD, SILVER, BRONZE)
+  const classPositions = [];
+  api.rows().every(function (rowIdx, tableLoop, rowLoop) {
+    const car = this.data();
+
+    // while we are looping let's save the identity of game player
+    if (car.isPlayer) {
+      me = car;
     }
 
-    if (tableRow.racePosition === 1) {
-      console.log(`${tableRow.currentDriver_FullName} is the leader`);
+    // console.log(classPositions);
+    if (car.raceAppTag) {
+      let index = classPositions.hasOwnProperty(car.raceAppTag);
+      // console.log(index, car.raceAppTag);
+      if (!index) {
+        classPositions[car.raceAppTag] = [];
+      }
+      classPositions[car.raceAppTag][car.raceAppTagPosition] = car;
     }
-
-    console.log(tableRow.class);
   });
+  console.log('classPositions %o', classPositions);
+
+  /*
+  if (Object.keys(classPositions).length > 0) {
+    const carsBehind = trackOrder(api.rows(), me, classPositions['PLATIN'][1]);
+    console.log('Track position: ', carsBehind);
+  } else {
+    console.warn('WFT');
+  }
   */
+
+  const order = trackOrder(api.rows());
+
+  // loop thru the rows again, now use our classPositions array to calculate the gap to car one place ahead in the class
+  api.rows().every(function (rowIdx, tableLoop, rowLoop) {
+    // console.log(rowIdx, tableLoop, rowLoop);
+    const car = this.data();
+
+    let gap = '-';
+    let relTrackPos = '-'
+    if (car.raceAppTag) {
+      if (car.raceAppTagPosition > 1 && car.gapToLeader) {
+        gap = gapAsSeconds(car, classPositions[car.raceAppTag][car.raceAppTagPosition - 1]);
+        // carAhead = classPositions[car.raceAppTag][car.raceAppTagPosition - 1].id;
+
+        relTrackPos = trackPosition(order, car, classPositions[car.raceAppTag][car.raceAppTagPosition - 1]);
+      }
+    }
+    this.data().gapToClassLeader = gap + ' (' + relTrackPos + ')';
+    this.invalidate();
+  });
+
+  // ===============
   const leaders = [];
   api.rows().every(function (rowIdx, tableLoop, rowLoop) {
     const car = this.data();
@@ -47,14 +88,14 @@ export default function drawCallback(settings) {
     }
   });
 
-  console.log('Class leaders: ', leaders);
+  // console.log('Class leaders: ', leaders);
 
+  /*
   api.rows().every(function (rowIdx, tableLoop, rowLoop) {
     const car = this.data();
     let gap;
 
-    // api.cells({ 'row': rowIdx, 'column': 38 }).data('simon');
-    console.log(car);
+    // console.log(car);
 
     // exclude cars that are not in any class or are missing 'gapToLeader' or are themselves a leader
     if (car.raceAppTag && car.gapToLeader) {
@@ -78,6 +119,58 @@ export default function drawCallback(settings) {
     this.data().gapToClassLeader = gap;
     this.invalidate();
   });
+  */
+
   // lastDriveThroughTime   =   time driving through, stopping and exiting the pit lane
   // gapToLeader
+}
+
+/**
+ *
+ * @param {*} car1
+ * @param {*} car2
+ * @returns
+ */
+function gapAsSeconds(car1, car2) {
+  if (!car2.hasOwnProperty('gapToLeader')) {
+    return '-';
+  }
+  const car1GapToLeader = moment.duration("00:" + car1.gapToLeader).as('milliseconds');
+  const car2GapToLeader = moment.duration("00:" + car2.gapToLeader).as('milliseconds');
+  const gapMs = moment.duration({ 'milliseconds': car1GapToLeader - car2GapToLeader });
+  console.log(car1.currentDriver_FullName + ' leads ' + car2.currentDriver_FullName) + ' by ' + gapMs.as('seconds');
+
+  return gapMs.as('seconds');
+}
+
+/**
+ * put all the cars into their order on the track based on splinePosition property
+ * @param {*} dtRows
+ * @returns
+ */
+function trackOrder(dtRows) {
+  const order = [];
+  dtRows.every(function (rowId, tableLoop, rowLoop) {
+    const car = this.data();
+    order.push(car);
+  });
+
+  order.sort((a, b) => a.splinePosition - b.splinePosition);
+  return order;
+}
+
+/**
+ * calc number of cars on track between two given cars
+ * @param {*} trackOrder
+ * @param {*} car1
+ * @param {*} car2
+ * @returns
+ */
+function trackPosition(trackOrder, car1, car2) {
+  const car1trackPosition = trackOrder.findIndex((element) => element.id === car1.id);
+  const car2trackPosition = trackOrder.findIndex((element) => element.id === car2.id);
+
+  // console.log(trackOrder);
+  return car2trackPosition - car1trackPosition;
+
 }
