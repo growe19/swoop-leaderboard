@@ -8,6 +8,7 @@ import { getRaceAppCarWithResults, formatChildRow } from "./modules/getRaceAppCa
 import highlight from "./modules/highlight.js";
 import loadlink from "./modules/loadlink.js";
 import movement from "./modules/movement.js";
+import pgsbBadge from "./modules/pgsb-badges.js";
 import sector from "./modules/sector.js";
 import serie_badge from "./modules/serie.js";
 import render_trophy from "./modules/trophys.js";
@@ -38,8 +39,8 @@ $(document).ready(function() {
   console.log('Mode: %s', mode);
   console.log('Column Ordering by Column ID: %s', colOrderURLParam);
 
-  // Check to see if there are any parameters set and if there are not then load the default string
-  if (mode == null) {
+  // if mode is not set bounce over to a default configuration with LIVE data source
+  if (mode === null) {
     window.open('https://' + location.host + location.pathname + "?mode=live&hide=0&order=1&class=&showme=&refresh=2500","_self")
   }
 
@@ -306,12 +307,38 @@ $(document).ready(function() {
       },
       { 'data': 'laps' },
       {
-        // column 20 - progress bar
-        'data': null,
-        'defaultContent': ''
+        // column 20 - progress bar based on spline
+        'data': 'splinePosition',
+        'defaultContent': '',
+        'render': sector
       },
-      { 'data': null,"defaultContent": '' }, // gap
-      { 'data': null,"defaultContent": '' }, // gapToLeader
+      {
+        // gap to car ahead
+        'data': 'gap',
+        'defaultContent': '',
+        'render': function ( data, type, row ) {
+          var timeFormatA = data;
+          var carLocation = row['isPitingLetter'];
+
+          if (carLocation === "P") {
+            return "<span class='text-primary'>IN PIT</span>";
+          }
+          return timeFormatA;
+        }
+      },
+      {
+        // gapToLeader
+        'data': 'gapToLeader',
+        'defaultContent': '',
+        "render": function ( data, type, row ) {
+          const timeFormatB = data;
+          if (timeFormatB === null) {
+            return timeFormatB;
+          }
+          // TODO: I have no idea what this is supposed to achieve!
+          return timeFormatB.replace(/'/g, '.');
+        },
+       },
       { 'data': 'lastLapTime' },
       { 'data': 'lastLapSector1' },
       {
@@ -319,49 +346,79 @@ $(document).ready(function() {
         'data': 'lastLapSector2'
       },
       { 'data': 'lastLapSector3' },
-      { 'data': null,"defaultContent": '' }, // this is the bestLapTime column but needs processing on it for IS GLOBAL BEST
+      {
+        // this is the bestLapTime column but needs processing on it for IS GLOBAL BEST
+        'data': null,
+        'defaultContent': '',
+        'render': function (data, type, row) {
+          const bestTime = row['bestLapTime'];
+          const areYouTheBest = row['haveAllBestLapTime'];
+          let bestMarker;
+
+          // highlight if you are the best overall
+          if (type === 'display') {
+            if (areYouTheBest >= 1) {
+              bestMarker = '<span class="text-purple">' + bestTime + '</span>'; // Global best goes purple!
+            } else {
+              bestMarker = bestTime;
+            }
+            return bestMarker;
+          }
+
+          return data;
+        },
+       },
       { 'data': 'bestSector1' },
       { 'data': 'bestSector2' },
       { 'data': 'bestSector3' }, // column 30
-      { 'data': null,"defaultContent": '' }, // deltaFromBestLap
-      { 'data': null,"defaultContent": '' }, // deltaFromAllCarsBestLap
-      { 'data': null,"defaultContent": '' }, // Pit Stop Count
-      { 'data': null,"defaultContent": '' }, // Laps Ago
-      { 'data': 'inPitSince' }, // column 35
       {
-        'data': "raceAppTag" ,
-        'render': function (data, type, row) {
-          if ( row["raceAppTag"] == 'SILVER') {
-            return '<span class="badge text-silver badge-outline badge-silver">SILVER</span>';}
-          else if ( row["raceAppTag"] == 'BRONZE') {
-            return '<span class="badge text-bronze badge-outline badge-bronze">BRONZE</span>';}
-          else if ( row["raceAppTag"] == 'GOLD') {
-            return '<span class="badge text-gold badge-outline badge-gold">GOLD</span>';}
-          else if ( row["raceAppTag"] == 'PLATIN') {
-            return '<span class="badge text-platinum badge-outline badge-platinum">PLATINUM</span>';}
-          else { return '<span class="badge badge-outline badge-danger">NOT FOUND</span>';}
-        }
+        'data': 'deltaFromBestLap',
       },
+      { 'data': 'deltaFromAllCarsBestLap' },
       {
-        'data': 'raceAppTagPosition',
-      },
-      {
-        'data': 'gapToClassLeader',
-        'defaultContent': ''
-      }, // Gap within RaceApp Class
-      {
-        'data': "raceAppByTagChampionshipPosition" ,
-        'render': function (data, type, row) {
-          if (data === 1) {
-            return '1 <i class="fa-solid fa-trophy text-gold"></i>';
-          } else if (data === 2) {
-            return '2 <i class="fa-solid fa-trophy text-silver"></i>';
-          } else if (data === 3) {
-            return '3 <i class="fa-solid fa-trophy text-bronze"></i>';
+        // Pit Stop Count
+        'data': 'pitStopCount',
+        'defaultContent': '',
+        'render': function ( data, type, row ) {
+          const areTheyPitting = row['isPiting'];
+          let pitColMsg = '';
+
+          if (type === 'display') {
+            if (areTheyPitting) {
+              pitColMsg = data + 1;
+            } else {
+              pitColMsg = data;
+            }
+            return pitColMsg;
           } else {
             return data;
           }
         }
+      },
+      {
+        // when did we achieve our best lap?
+        'data': 'lapsFromLastPitStop',
+      },
+      {
+        // column 35 - time in pit lane
+        'data': 'inPitSince'
+      },
+      {
+        'data': "raceAppTag" ,
+        'render': pgsbBadge
+      },
+      {
+        // position in class
+        'data': 'raceAppTagPosition',
+      },
+      {
+        // Gap within RaceApp Class
+        'data': 'gapToClassLeader',
+        'defaultContent': ''
+      },
+      {
+        'data': "raceAppByTagChampionshipPosition" ,
+        'render': render_trophy
       },
       { 'data': 'raceAppByTagChampionshipTotalPoints' }, // column 40
       {
@@ -402,98 +459,6 @@ $(document).ready(function() {
         // add a no wrap class to these columns
         'className': 'nowrapping',
         'targets': [ 4,8,9,10,12,13,16,22,24,25,26,28,29,30,31,32,34,38 ]
-      },
-      {
-        'render': sector,
-        'targets': 20
-      },
-      {
-        "render": function ( data, type, row ) {
-          var timeFormatA = row['gap'];
-          var carLocation = row['isPitingLetter'];
-
-          if (carLocation === "P") {
-            return "<span class='text-primary'>IN PIT</span>";
-          }
-          return timeFormatA;
-        },
-        "targets": 21 //UPDATE TARGET
-      },
-      {
-        "render": function ( data, type, row ) {
-          var timeFormatB = row['gapToLeader'];
-          if (timeFormatB == null){
-            return timeFormatB;
-          }
-          return timeFormatB.replace(/'/g, '.');
-        },
-        "targets": 22 //UPDATE TARGET
-      },
-      {
-        "render": function (data, type, row) {
-          const bestTime = row['bestLapTime'];
-          const areYouTheBest = row['haveAllBestLapTime'];
-          let bestMarker;
-
-          if (type === 'display') {
-            if (areYouTheBest >= 1) {
-              bestMarker = '<span class="text-purple">' + bestTime + '</span>'; // Global best goes purple!
-            } else {
-              bestMarker = bestTime;
-            }
-            return bestMarker;
-          }
-
-          return data;
-        },
-        "targets": 27 //UPDATE TARGET
-      },
-      {
-        "render": function ( data, type, row ) {
-          const timeFormatC = row['deltaFromBestLap'];
-          if (timeFormatC == null){
-            return timeFormatC;
-          }
-          return timeFormatC.replace(/'/g, '.');
-        },
-        "targets": 31 //UPDATE TARGET
-      },
-      {
-        "render": function ( data, type, row ) {
-          var timeFormatD = row['deltaFromAllCarsBestLap'];
-          if (timeFormatD == null){
-            return timeFormatD;
-          }
-          return timeFormatD.replace(/'/g, '.');
-        },
-        "targets": 32 //UPDATE TARGET
-      },
-      {
-        "render": function ( data, type, row ) {
-          const pitStopCountForD = row['pitStopCount'];
-          const areTheyPitting = row['isPiting'];
-          // const pittingTimer = row['inPitSince'];
-          let pitColMsg = '';
-
-          if (type === 'display') {
-            if (areTheyPitting >= 1) {
-              pitColMsg = pitStopCountForD + 1; // Position change red, you've dropped places!
-            } else {
-              pitColMsg = pitStopCountForD; // Position change static, you've maintained track position!
-            }
-            return '' + pitColMsg + '';
-          }
-
-          return data;
-        },
-        "targets": 33 //UPDATE TARGET
-      },
-      {
-        "render": function ( data, type, row ) {
-          var lastStopAge = row['lapsFromLastPitStop'];
-          return lastStopAge;
-        },
-        "targets": 34 //UPDATE TARGET
       },
       {
         'searchBuilderTitle': 'RaceApp.eu Driver Tag (Class)',
@@ -540,15 +505,6 @@ $(document).ready(function() {
     childRows = table.rows($('.shown'));
     table.ajax.reload();
   });
-  */
-
-  // This adds the bg-dark class to the fixedHeader
-  // but fixed header is disabled so don't think this is needed anymore!!!!!!
-  /*
-  const elements = document.getElementsByClassName("sorting");
-  for (var i = 0; i < elements.length; i++) {
-    elements[i].className += " bg-dark";
-  }
   */
 
   // set an event handler to add child rows each time the table is drawn
@@ -657,8 +613,6 @@ function dt_control_click_handler(e) {
 
         // testing out adding modal
         $('#DescModal').modal('show')
-
-
       })
       .catch(error => {
         console.error('Error:', error);

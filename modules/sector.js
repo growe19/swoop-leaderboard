@@ -6,20 +6,12 @@
  * @returns {string} HTML
  */
 export default function sector(data, type, row) {
-    var splinePercent = row['splinePosition'] * 100 ;
-    /*
-    var notMoving = row['isPiting'];
-    var isItMe = row['isPlayer'];
-    var sectOne = row['currentSector1Status'];
-    var sectTwo = row['currentSector2Status'];
-    var sectThree = row['currentSector3Status'];
-    */
-
+    var splinePercent = data * 100 ;
     var sectOneCol = "";
     var sectTwoCol = "";
     var sectThreeCol = "";
 
-    // TODO: this is ugly
+    // TODO: this is ugly and maybe doesn't do anything?
     if ( row['currentSector1Status'] == '0') { sectOneCol = '292b2c';}
     else if ( row['currentSector1Status'] == '1') { sectOneCol = 'd9534f';}
     else if ( row['currentSector1Status'] == '2') { sectOneCol = 'f0ad4e';}
@@ -46,6 +38,7 @@ export default function sector(data, type, row) {
     OverallBest = 4
     */
 
+    // colour red if in pits, green otherwise
     if (type === 'display') {
         if (row['isPiting']) {
           return `<div class="progress_bar" style="width: 300px;">

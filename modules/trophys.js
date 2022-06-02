@@ -1,15 +1,21 @@
 export default function render_trophy(data, type, row) {
-    if (type === 'display') {
-      if (data === 1) {
-        return '1 <i class="fa-solid fa-trophy text-gold"></i>';
-      }	else if (data === 2) {
-        return '2 <i class="fa-solid fa-trophy text-silver"></i>';
-      }	else if (data === 3) {
-        return '3 <i class="fa-solid fa-trophy text-bronze"></i>';
-      }	else {
-        return data;
-      }
-    }
+  let t = '';
+  if (type === 'display') {
+    switch (data) {
+      case 1:
+        t = 'text-gold';
+        break;
+      case 2:
+        t = 'text-silver';
+        break;
+      case 3:
+        t = 'text-bronze';
+        break;
+      default:
 
+    }
+    return `${data}&nbsp;<i class="fa-solid fa-trophy ${t}"></i>`;
+  } else {
     return data;
   }
+}
