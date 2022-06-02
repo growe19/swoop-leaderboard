@@ -11,6 +11,7 @@ import movement from "./modules/movement.js";
 import pgsbBadge from "./modules/pgsb-badges.js";
 import sector from "./modules/sector.js";
 import serie_badge from "./modules/serie.js";
+import stripZero from "./modules/stripZero.js";
 import render_trophy from "./modules/trophys.js";
 
 // Global var to track shown child rows
@@ -410,10 +411,11 @@ $(document).ready(function() {
       {
         // position in class
         'data': 'raceAppTagPosition',
+        'render': stripZero
       },
       {
-        // Gap within RaceApp Class
-        'data': 'gapToClassLeader',
+        // Gap to car ahear within RaceApp Class -- we calculate this in drawCallback once all data is available
+        'data': 'gapToClassTarget',
         'defaultContent': ''
       },
       {

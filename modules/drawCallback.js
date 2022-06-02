@@ -55,14 +55,18 @@ export default function drawCallback(settings) {
     let gap = '-';
     let relTrackPos = '-'
     if (car.raceAppTag) {
-      if (car.raceAppTagPosition > 1 && car.gapToLeader) {
-        gap = gapAsSeconds(car, classPositions[car.raceAppTag][car.raceAppTagPosition - 1]);
-        // carAhead = classPositions[car.raceAppTag][car.raceAppTagPosition - 1].id;
-
+      if (car.raceAppTagPosition === 1) {
+        // this is the class leader
+        gap = 0;
+        relTrackPos = 1;
+      } else {
+        if (car.gapToLeader) {
+          gap = gapAsSeconds(car, classPositions[car.raceAppTag][car.raceAppTagPosition - 1]);
+        }
         relTrackPos = trackPosition(order, car, classPositions[car.raceAppTag][car.raceAppTagPosition - 1]);
       }
     }
-    this.data().gapToClassLeader = gap + ' (' + relTrackPos + ')';
+    this.data().gapToClassTarget = gap + ' (' + relTrackPos + ')';
     this.invalidate();
   });
 
