@@ -1,7 +1,19 @@
+/**
+ *
+ * @param {*} data
+ * @param {*} type
+ * @param {*} row
+ * @returns {string} HTML
+ */
 export default function render_trophy(data, type, row) {
   let t = '';
+  // only show if we have data and trophies only for place 1-3
+  if (!data || data > 3) {
+    return '';
+  }
+
   if (type === 'display') {
-    switch (data) {
+    switch (parseInt(data)) {
       case 1:
         t = 'text-gold';
         break;

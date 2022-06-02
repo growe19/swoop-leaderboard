@@ -417,7 +417,7 @@ $(document).ready(function() {
         'defaultContent': ''
       },
       {
-        'data': "raceAppByTagChampionshipPosition" ,
+        'data': 'raceAppByTagChampionshipPosition',
         'render': render_trophy
       },
       { 'data': 'raceAppByTagChampionshipTotalPoints' }, // column 40
