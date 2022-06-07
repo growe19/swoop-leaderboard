@@ -64,10 +64,10 @@ export default function drawCallback(settings) {
           gap = gapAsSeconds(car, classPositions[car.raceAppTag][car.raceAppTagPosition - 1]);
         }
         // The -1 at the end of the Line below works for positive values but not negative ones. Works for the most part but needs addressing.
-        relTrackPos = trackPosition(order, car, classPositions[car.raceAppTag][car.raceAppTagPosition - 1])-1;
+        relTrackPos = trackPosition(order, car, classPositions[car.raceAppTag][car.raceAppTagPosition - 1]);
       }
     }
-    this.data().gapToClassTarget = gap + ' (' + relTrackPos + ')';
+    this.data().gapToClassTarget = gap + ' (' + Math.abs(relTrackPos)-1 + ')';
     this.invalidate();
   });
 
