@@ -57,12 +57,13 @@ export default function drawCallback(settings) {
     if (car.raceAppTag) {
       if (car.raceAppTagPosition === 1) {
         // this is the class leader
-        gap = '';
-        relTrackPos = 'Class Lead';
+        gap = 'Class Lead';
+        relTrackPos = '-';
       } else {
         if (car.gapToLeader) {
           gap = gapAsSeconds(car, classPositions[car.raceAppTag][car.raceAppTagPosition - 1]);
         }
+        // The -1 at the end of the Line below works for positive values but not negative ones. Works for the most part but needs addressing.
         relTrackPos = trackPosition(order, car, classPositions[car.raceAppTag][car.raceAppTagPosition - 1])-1;
       }
     }
