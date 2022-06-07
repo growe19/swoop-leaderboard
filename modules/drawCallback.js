@@ -57,8 +57,8 @@ export default function drawCallback(settings) {
     if (car.raceAppTag) {
       if (car.raceAppTagPosition === 1) {
         // this is the class leader
-        gap = 0;
-        relTrackPos = 1;
+        gap = '-';
+        relTrackPos = 'Leader';
       } else {
         if (car.gapToLeader) {
           gap = gapAsSeconds(car, classPositions[car.raceAppTag][car.raceAppTagPosition - 1]);
