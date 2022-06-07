@@ -486,7 +486,7 @@ $(document).ready(function() {
 
   // hide any columns that were specified on the URL
   console.log('Hiding Columns: %o', hiddenCols);
-  //table.columns(hiddenCols).visible(false);
+  table.columns(hiddenCols).visible(false);
 
   // classFiltering
   document.getElementById("myText").value = classFiltering;
