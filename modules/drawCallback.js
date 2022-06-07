@@ -57,13 +57,13 @@ export default function drawCallback(settings) {
     if (car.raceAppTag) {
       if (car.raceAppTagPosition === 1) {
         // this is the class leader
-        gap = '-';
-        relTrackPos = 'Leader';
+        gap = '';
+        relTrackPos = 'Class Lead';
       } else {
         if (car.gapToLeader) {
           gap = gapAsSeconds(car, classPositions[car.raceAppTag][car.raceAppTagPosition - 1]);
         }
-        relTrackPos = trackPosition(order, car, classPositions[car.raceAppTag][car.raceAppTagPosition - 1]);
+        relTrackPos = trackPosition(order, car, classPositions[car.raceAppTag][car.raceAppTagPosition - 1])-1;
       }
     }
     this.data().gapToClassTarget = gap + ' (' + relTrackPos + ')';
