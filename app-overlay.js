@@ -196,7 +196,7 @@ $(document).ready(function() {
       },
     ], // End of buttons
     "colReorder": false, 	// Reordering of Columsn doesn't work when you have spanned headings
-    'dom': 'frtip',
+    'dom': 'rtip',
     'fixedHeader': {
       'header': false,
       'headerOffset': $('#navbar').outerHeight()
