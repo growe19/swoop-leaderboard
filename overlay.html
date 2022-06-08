@@ -1,0 +1,294 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Leaderboard for ACC using the supplied datafeed from the SwoopAPI plug-in for SimHub.">
+    <meta name="author" content="Gary Rowe">
+
+	<title>Swoop Leaderboard</title>
+
+	<!-- Fancy Font -->
+	<link href="https://fonts.googleapis.com/css2?family=Exo:wght@600&display=swap" rel="stylesheet">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+	<!-- Data Tables CSS -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.11.5/b-colvis-2.2.2/cr-1.5.5/date-1.1.2/fh-3.2.2/r-2.2.9/rg-1.1.4/sb-1.3.2/sp-2.0.0/sr-1.1.0/datatables.min.css"/>
+	<link rel="stylesheet" type="text/css" href="https://nightly.datatables.net/buttons/css/buttons.bootstrap4.min.css"/>
+
+	<!-- CSS Flags and Car Manufacturer Icons -->
+	<link href="https://garyrowe.co.uk/acc/flag-icons-main/css/flag-icons.min.css" rel="stylesheet">
+	<link href="./car-make-icons-1.1.1/dist/style.css" rel="stylesheet">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-HM89GN1XDX"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-HM89GN1XDX');
+	</script>
+
+	<link rel="stylesheet" type="text/css" href="leaderboard.css"/>
+  
+
+    
+</head>
+
+<body class="bg-dark text-light">
+	<nav class=".d-none navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+		<span class="navbar-brand">Leaderboard:
+			<span id="trackNameLoad"></span>
+			<span id="sessionRemainLoad"></span>
+		</span>
+
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="modal" data-target="#aboutModal" href="">About</a>
+				</li>
+			</ul>
+
+			<span class="navbar-text">
+				<a class="nav-link" data-toggle="modal" data-target="#versionModal" href="">v 0.1.4</a>
+			</span>
+		</div>
+	</nav>
+
+	<!-- Modal -->
+	<div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title text-dark" id="exampleModalLabel">About</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body text-dark">
+					<p class="lead">This is a Leaderboard webapp for Assetto Corsa Competizione (ACC). It has advanced conditional filtering and column visibility controls allowing you to control what you see. You can also save these layout views to quickly change between them.</p>
+					<p>The Leaderboard makes use of the SwoopAPI Application which is part of the SimHub Swoop Plug-in for SimHub by David Desguin. SimHub and the Swoop Plug-in are required for this Leaderboard to function.</p>
+
+						<div class="list-group">
+							<a href="https://www.simhubdash.com/" class="list-group-item list-group-item-action flex-column align-items-start" target="blank">
+								<div class="d-flex w-100 justify-content-between">
+									<h5 class="mb-1">SimHub</h5>
+								</div>
+							</a>
+							<a href="https://www.racedepartment.com/downloads/simhub-swoop-plugin.48487/updates" class="list-group-item list-group-item-action flex-column align-items-start" target="blank">
+								<div class="d-flex w-100 justify-content-between">
+									<h5 class="mb-1">SimHub Swoop Plug-in</h5>
+									<small class="text-muted text-danger">Use API Application Required</small>
+								</div>
+							</a>
+						</div>
+
+						<br/>
+						<p>This webapp was written using the Bootstrap framework and DataTables plug-in for jQuery.</p>
+						<p>p.s.</p>
+						<p>I am not a developer, it's only luck that this works. </p>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="versionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title text-dark" id="exampleModalLabel">Build Changelog</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body text-dark">
+					<kbd><kbd>0.1.4</kbd></kbd><br/>
+					<code>- showme URL parameter added to indicate isPlayer row colour change</code><br/>
+					<kbd><kbd>0.1.3.1</kbd></kbd><br/>
+					<code>- Code housekeeping</code><br/>
+					<kbd><kbd>0.1.3</kbd></kbd><br/>
+					<code>- Added columns for Driver Nationality </code><br/>
+					<code>- Added Quick Track Position Order button </code><br/>
+					<code>- Improved Driver Progress bar</code><br/>
+					<code>- General improvements to UI</code><br/>
+					<kbd><kbd>0.1.2</kbd></kbd><br/>
+					<code>- Now using SwoopAPI 0.6.1.2 beta</code><br/>
+					<code>- Improvements to column processing</code><br/>
+					<code>- Added Lap Count and Progress columns </code><br/>
+					<kbd><kbd>0.1.1</kbd></kbd><br/>
+					<code>- Now using SwoopAPI 0.6.1.1</code><br/>
+					<code>- Improvements to column processing</code><br/>
+					<code>- Improvements to UI</code><br/>
+					<code>- Support for OBS added</code><br/>
+					<code>- Table export functionality added</code><br/>
+					<kbd><kbd>0.1.0</kbd> </kbd><br/>
+					<code>- Initial Release</code>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <main style="padding-top:70px;padding-left:20px;padding-right:20px;">
+		<!-- Add a class and code this into the Style -->
+		<input id="myText" type="hidden" value="" />
+
+		<table id="leaderboard" class="table table-dark table-striped table-hover table-sm table-border" style="width:100%;">
+			<thead>
+				<tr>
+					<th colspan="39"></th> <!-- Everything else!-->
+					<th colspan="5">League Standings</th>
+				</tr>
+				<tr>
+					<th colspan="1"></th> <!-- Data Interaction-->
+					<th colspan="3">Position</th>
+					<th colspan="8">Driver</th>
+					<th colspan="2">Team</th>
+					<th colspan="5">Car</th>
+					<th colspan="2">Lap</th>
+					<th colspan="2">Gap</th>
+					<th colspan="4">Last Lap</th>
+					<th colspan="6">Best Lap</th>
+					<th colspan="3">Pit Stop</th>
+					<th colspan="3">RA Class</th>
+					<th colspan="2">Current</th>
+					<th colspan="3">Provisional</th>
+				</tr>
+				<tr>
+                	<!-- Group: (Data Interaction) column 0 -->
+					<th></th>
+					<!-- Group: (Position) columns 1-3 -->
+					<th>#</th>
+					<th>Grid</th>
+					<th>Change</th>
+					<!-- Group: (Driver) columns 4-11 -->
+					<th>Short Name</th>
+					<th>Flag</th>
+					<th>Nationality</th>
+					<th>Number</th>
+					<th>Full Name</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Cat.</th>
+					<!-- Group: (Team) columns 12-13 -->
+					<th>Name</th>
+					<th>Flag</th>
+					<!-- Group: (Car) columns 14-18-->
+					<th>Logo</th>
+					<th>Manufacturer</th>
+					<th>Model</th>
+					<th>Series</th>
+					<th>Cup</th>
+					<!-- Group: (Lap) columns 19-20 -->
+					<th>Count</th>
+					<th>Progress</th>
+					<!-- Group: (Gap) columns 21-22 -->
+					<th>Ahead</th>
+					<th>To Lead</th>
+					<!-- Group: (Last Lap) columns 23-26 -->
+					<th>Time</th>
+					<th>Sector 1</th>
+					<th>Sector 2</th>
+					<th>Sector 3</th>
+					<!-- Group: (Best Lap) columns 27-32 -->
+					<th>Time</th>
+					<th>Sector 1</th>
+					<th>Sector 2</th>
+					<th>Sector 3</th>
+					<th>Delta From Own</th>
+					<th>Delta From Global</th>
+					<!-- Group: (Pit Stop) columns 33-35 -->
+					<th>Count</th>
+					<th>Laps Ago</th>
+					<th>Delta</th>
+					<!-- Group: (RaceApp.eu Tag -- Class) columns 36-38 -->
+					<th>Class</th>
+					<th>Pos</th>
+					<th>Gap & Traffic</th>
+					<!-- Group: (League Standings: Current) columns 39-40 -->
+					<th>Pos</th>
+					<th>Pts</th>
+					<!-- Group: (League Standings: Provisional) columns 41-43 -->
+					<th>Change</th>
+					<th>Pos</th>
+					<th>Pts</th>
+				</tr>
+			</thead>
+		</table>
+
+
+		<!-- Modal: This is a spare modal to be used for the Compare feature
+		================================================== -->
+		<div class="modal fade" tabindex="-1" role="dialog" id="DescModal">
+			<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title text-dark">Car #<span id="modalCarNo"></span>, <span id="modalDriver"></span></h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+
+					<div class="modal-body text-dark">
+
+					<span id="modalResultsTable"></span>
+					<!-- Modal content-->
+
+
+					</div>
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+    </main><!-- /.container -->
+
+	<!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<!-- Bootstrap core JS ================================================== -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+		crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+		integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+		crossorigin="anonymous">
+	</script>
+
+	<!-- Datatables with Bootstrap 4, Buttons (with Column Visibility), Column Reordering, Date, Fixed Header (fh), Responsive (r), Row Group (rg), Search Panes (sp), and State Restore (sr)
+    ================================================== -->
+	<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.5/b-2.2.2/b-colvis-2.2.2/cr-1.5.5/date-1.1.2/fh-3.2.2/r-2.2.9/rg-1.1.4/sb-1.3.2/sp-2.0.0/sr-1.1.0/datatables.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+
+	<!-- Moment JS https://momentjs.com/ -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+
+
+	<!-- App ================================================== -->
+	<script type="module" src="app.js"></script>
+
+	<!-- Font Awesome (domain limited) -->
+	<script src="https://kit.fontawesome.com/b439db3590.js" crossorigin="anonymous"></script>
+</body>
+</html>
