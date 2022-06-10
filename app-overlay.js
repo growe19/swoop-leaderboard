@@ -237,7 +237,7 @@ $(document).ready(function() {
     'searching': true, // Searching is allowed
     'searchBuilder': {},
     'select': false,
-    'stateSave': true, // Saving the layout of the table, columns and search etc.
+    'stateSave': false, // Saving the layout of the table, columns and search etc.
     'order': [colOrderURLParam, 'asc'],
     'columns': [
       {
