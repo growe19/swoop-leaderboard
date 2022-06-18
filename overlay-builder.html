@@ -503,7 +503,7 @@
 <script>
 function updateTextArea() {
     var text = "https://growe19.github.io/swoop-leaderboard/overlay.html?mode=live&hide=0";
-    $('input[type=checkbox]:checked').each( function() {
+    $('input[type=checkbox]:unchecked').each( function() {
         text += $(this).val() + "";
     });
     $('input[type=text]').each( function() {
