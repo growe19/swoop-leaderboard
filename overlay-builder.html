@@ -61,6 +61,50 @@
     <main style="padding-top:70px;padding-left:20px;padding-right:20px;">
 	
 	<form>
+			<h5>Options</h5>
+ <div class="row">
+ 
+    <div class="col-sm">
+	<b>Table Order</b>
+    <select name="myselect" class="form-control">
+    <option value="&order=1">Track Position</option>
+ 
+</select>
+</div>
+
+    <div class="col-sm">
+     <b>RaceApp Class Filtering</b>
+	   <select name="myselect" class="form-control">
+	   <option value="&class=">No Filtering</option>
+    <option value="&class=plat">Platinum (GT3)</option>
+  <option value="&class=silv">Silver (GT3)</option>
+  <option value="&class=bro">Bronze (GT3)</option>
+  <option value="&class=gold">Gold (GT4)</option>
+</select>
+</div>
+
+	 <div class="col-sm">
+    <b>Invert Table Rows</b>
+	<div class="form-group">
+  
+    <input type="text" class="form-control" id="invert" >
+    <small class="form-text">Type in their Driver Number to invert that row.<br/><br/>To invert multiple Drivers comma separate the numbers eg. <i>63,71,90</i> will invert three Drivers.</small>
+  </div>
+</div>
+
+    <div class="col-sm">
+    <b>Table Refresh Rate</b>
+	  <select name="myselect" class="form-control">
+    <option value="&refresh=1000">1 second</option>
+  <option value="&refresh=2000">2 seconds</option>
+  <option value="&refresh=3000" selected>3 seconds</option>
+  <option value="&refresh=5000">5 seconds</option>
+</select>
+</div>
+	
+  </div>
+
+		<br/>
 	<h5>Hide Columns</h5>
 	
   <div class="row">
@@ -425,50 +469,6 @@
 	
   </div>
 
-	<br/>
-	
-	<h5>Options</h5>
- <div class="row">
- 
-    <div class="col-sm">
-	<b>Table Order</b>
-    <select name="myselect" class="form-control">
-    <option value="&order=1">Track Position</option>
- 
-</select>
-</div>
-
-    <div class="col-sm">
-     <b>RaceApp Class Filtering</b>
-	   <select name="myselect" class="form-control">
-	   <option value="&class=">No Filtering</option>
-    <option value="&class=plat">Platinum (GT3)</option>
-  <option value="&class=silv">Silver (GT3)</option>
-  <option value="&class=bro">Bronze (GT3)</option>
-  <option value="&class=gold">Gold (GT4)</option>
-</select>
-</div>
-
-	 <div class="col-sm">
-    <b>Invert Table Rows</b>
-	<div class="form-group">
-  
-    <input type="text" class="form-control" id="invert" >
-    <small class="form-text">Type in their Driver Number to invert that row.<br/><br/>To invert multiple Drivers comma separate the numbers eg. <i>63,71,90</i> will invert three Drivers.</small>
-  </div>
-</div>
-
-    <div class="col-sm">
-    <b>Table Refresh Rate</b>
-	  <select name="myselect" class="form-control">
-    <option value="&refresh=1000">1 second</option>
-  <option value="&refresh=2000">2 seconds</option>
-  <option value="&refresh=3000" selected>3 seconds</option>
-  <option value="&refresh=5000">5 seconds</option>
-</select>
-</div>
-	
-  </div>
 
 
 
