@@ -614,7 +614,7 @@ function dt_control_click_handler(e) {
         //$tr.addClass('shown');
 
         // testing out adding modal
-        $('#DescModal').modal('show')
+        //$('#DescModal').modal('show')
       })
       .catch(error => {
         console.error('Error:', error);
