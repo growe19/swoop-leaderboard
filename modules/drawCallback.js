@@ -58,7 +58,7 @@ export default function drawCallback(settings) {
       if (car.raceAppTagPosition === 1) {
         // this is the class leader
         gap = 'Class Lead';
-        relTrackPos = '-';
+        relTrackPos = ''; // this appears if they're Class Lead for Traffic
       } else {
         if (car.gapToLeader) {
           gap = gapAsSeconds(car, classPositions[car.raceAppTag][car.raceAppTagPosition - 1]);
@@ -67,7 +67,7 @@ export default function drawCallback(settings) {
         relTrackPos = Math.abs(trackPosition(order, car, classPositions[car.raceAppTag][car.raceAppTagPosition - 1]))-1;
       }
     }
-    this.data().gapToClassTarget = gap + ' (<i class="fa-solid fa-car"></i>' + relTrackPos + ')';
+    this.data().gapToClassTarget = gap + ' <i class="fa-solid fa-car"></i> ' + relTrackPos + '';
     this.invalidate();
   });
 
