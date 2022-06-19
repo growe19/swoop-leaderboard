@@ -67,7 +67,7 @@ export default function drawCallback(settings) {
         relTrackPos = Math.abs(trackPosition(order, car, classPositions[car.raceAppTag][car.raceAppTagPosition - 1]))-1;
       }
     }
-    this.data().gapToClassTarget = gap + ' <i class="fa-solid fa-car"></i> ' + relTrackPos + '';
+    this.data().gapToClassTarget = gap + ' <i class="fa-solid fa-car text-secondary"></i> ' + relTrackPos + '';
     this.invalidate();
   });
 
