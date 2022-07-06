@@ -14,6 +14,9 @@ import serie_badge from "./modules/serie.js";
 import stripZero from "./modules/stripZero.js";
 import render_trophy from "./modules/trophys.js";
 
+import Series from "./classes/series.js";
+import Event from './classes/raceAppEvent.js';
+
 // Global var to track shown child rows
 var openChildRows = [];
 var start = new Date();
@@ -35,6 +38,8 @@ const hiddenCols = hide.split(',').map(function(item) {
 });
 
 const classFiltering = urlParams.get('class');
+
+const leaderboard = {};
 
 $(document).ready(function() {
   console.log('Mode: %s', mode);
@@ -66,26 +71,34 @@ $(document).ready(function() {
     sessionURL = 'http://localhost:8000/Acc/GetSessionInfos';
   }
 
-  // Combine two data sets into one
-  //var driverURL =	"http://localhost:8000/Acc/Allcars";
-  //var sessionURL = "http://localhost:8000/Acc/GetSessionInfos";
-  // URL are set above in the IF
+  var sessionDataPromise = getSessionData(sessionURL);
+  sessionDataPromise.then((data) => {
+    const sessionData = data;
+    $('#trackNameLoad').html(sessionData.track);
+		$('#sessionRemainLoad').html(sessionData.sessionTimeLeft);
 
-  var driverData = (function () {
-    let driverData = {};
-    $.ajax({
-      'async': false,
-      'global': false,
-      'url': driverURL,
-      'dataType': "json",
-      'success': function (data) {
-        driverData = data;
-      }
-    });
-    return driverData;
-  })();
+    // Add event listener for opening and closing details in the child row
+    $('body').on(
+      'click',
+      'td.dt-control',
+      { 'raceAppSerieId': sessionData.raceAppSerieId },
+      dt_control_click_handler
+    );
+
+    fetch(`raceApp/series.php?seriesId=${sessionData.raceAppSerieId}`)
+    .then(response => response.json())
+    .then(data => leaderboard.series = new Series(data))
+    .catch((error) => console.error('Error: ', error)); // unlikely since any response is a success
+  });
+
+  var eventPromise = getEvent(13988);
+  eventPromise.then((data) => {
+    // console.log(data);
+    leaderboard.event = new Event(data);
+  });
 
   // TODO: review this part ... it works but causes page to load slowly
+  /*
   var sessionData = (function () {
     let sessionData = {};
     $.ajax({
@@ -112,15 +125,51 @@ $(document).ready(function() {
 
     return sessionData;
   })();
+  */
 
-  if (mode === 'static') {
-    customLogging(driverURL, driverData, sessionURL, sessionData);
-  }
+  /**
+   * create the Data Table
+   */
+  var table = makeDataTable(driverURL);
 
-  // append the driverData as a property of the sessionData
-  // sessionData.cars = driverData;
+  // run whenever table is drawn including AJAX reloads
+  table.on('draw', function () {
+    // fire a click event for each row stored in the openChildRows array
+    $.each(openChildRows, function (i, id) {
+      $('#' + id + ' td.dt-control').trigger('click');
+    });
+  });
 
+  // hide any columns that were specified on the URL
+  console.log('Hiding Columns: %o', hiddenCols);
+  table.columns(hiddenCols).visible(false);
 
+  // classFiltering
+  document.getElementById("myText").value = classFiltering;
+  table.columns(36).search($('#myText').val()).draw(); // UPDATE TARGET COLUMN
+
+  // set an event handler to add child rows each time the table is drawn
+  // table.on('draw', populateShownChildRows);
+
+  // refresh the content periodically
+  setInterval(function() {
+    console.log('SILVER Bookings: %o', leaderboard.series.filterBookingsByTag('SILVER'));
+    console.log('SILVER results: %o', leaderboard.series.filterResultsByTag('SILVER'));
+    console.log('Points system: %o', leaderboard.series.pointsForTag('SILVER', 2));
+    console.log('Events: %o', leaderboard.event.filterEventByTag('SILVER'));
+
+    table.ajax.reload();
+
+    // inject the circuit name and session clock
+    loadlink(sessionURL, mode, start);
+  }, refresh ); // reload rate can be set as a URL param
+}); // end of $(document).ready(function () {
+
+/**
+ *
+ * @returns
+ */
+function makeDataTable (driverURL) {
   /* Datatable Configuration
   ================================================== */
   const $dt = $('#leaderboard');
@@ -419,6 +468,7 @@ $(document).ready(function() {
         'defaultContent': ''
       },
       {
+        // League Standings section
         'data': 'raceAppByTagChampionshipPosition',
         'render': render_trophy
       },
@@ -476,50 +526,8 @@ $(document).ready(function() {
     'drawCallback': drawCallback
   }); // End of DataTable definition
 
-  // run whenever table is drawn including AJAX reloads
-  table.on('draw', function () {
-    // fire a click event for each row stored in the openChildRows array
-    $.each(openChildRows, function (i, id) {
-      $('#' + id + ' td.dt-control').trigger('click');
-    });
-  });
-
-  // hide any columns that were specified on the URL
-  console.log('Hiding Columns: %o', hiddenCols);
-  table.columns(hiddenCols).visible(false);
-
-  // classFiltering
-  document.getElementById("myText").value = classFiltering;
-  table.columns(36).search($('#myText').val()).draw(); // UPDATE TARGET COLUMN
-
-  // Add event listener for opening and closing details in the child row
-  $('body').on(
-    'click',
-    'td.dt-control',
-    { 'raceAppSerieId': sessionData.raceAppSerieId },
-    dt_control_click_handler
-  );
-
-  // TODO: what is this for? triggers for every button?
-  /*
-  $('button').on('click', function () {
-    // Get shown rows
-    childRows = table.rows($('.shown'));
-    table.ajax.reload();
-  });
-  */
-
-  // set an event handler to add child rows each time the table is drawn
-  // table.on('draw', populateShownChildRows);
-
-  // refresh the content periodically
-  setInterval(function() {
-    table.ajax.reload();
-
-    // inject the circuit name and session clock
-    loadlink(sessionURL, mode, start);
-  }, refresh ); // reload rate can be set as a URL param
-}); // end of $(document).ready(function () {
+  return table;
+}
 
 /**
  * extra debugging
@@ -623,4 +631,37 @@ function dt_control_click_handler(e) {
       });
   }
   console.log(openChildRows);
+}
+
+/**
+ *
+ * @param {string} sessionURL
+ * @returns {Promise}
+ */
+async function getSessionData (sessionURL) {
+  const response = await fetch(sessionURL);
+
+  if (!response.ok) {
+    throw new Error(`HTTP error: ${response.error}`);
+  }
+
+  const data = await response.json();
+  return data;
+}
+
+/**
+ *
+ * @param {*} eventId
+ * @returns
+ */
+async function getEvent (eventId) {
+
+  const response =  await fetch(`raceApp/event.php?eventId=${eventId}`);
+
+  if (!response.ok) {
+    throw new Error(`HTTP error: ${response.error}`);
+  }
+
+  const data = await response.json();
+  return data;
 }

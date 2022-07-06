@@ -1,0 +1,13 @@
+{
+    "name": "simon/swoop-leaderboard",
+    "type": "projet",
+    "require": {
+        "guzzlehttp/guzzle": "^7.4"
+    },
+    "authors": [
+        {
+            "name": "Simon Gilhooly",
+            "email": "32387490+kyojin007@users.noreply.github.com"
+        }
+    ]
+}

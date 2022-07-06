@@ -1,0 +1,6215 @@
+{
+    "Id": 3025,
+    "Info": null,
+    "Rules": null,
+    "Settings": {
+      "Id": 3025,
+      "BookingOpenDate": null,
+      "IsActive": true,
+      "CommunityId": 320,
+      "CommunityName": "Racing Pals",
+      "Name": "RP Series - Season 5  ",
+      "DefaultSimulationId": 5,
+      "DefaultSimulationName": "AC Competizione",
+      "DefaultClass": "GT3,GT4",
+      "ModelsInclude": null,
+      "ModelsExclude": null,
+      "EnableMulticlassScoring": true,
+      "JoinPassword": "==NOTSET==",
+      "DefaultServerNamePrefix": null,
+      "ShowRulesTab": false,
+      "ShowBookingTags": true,
+      "Owners": [
+        {
+          "Id": 7681,
+          "OwnerId": "eddbbf64-5f07-4144-85d4-2378bcbc7b77",
+          "OwnerName": "Bingus McBongus",
+          "SeriesId": 3025,
+          "SeriesName": "RP Series - Season 5  "
+        }
+      ],
+      "ScratchResults": 1,
+      "ScratchPerDay": false,
+      "UnregisteredDriversAsGuests": false,
+      "EnableScoringPerTag": true,
+      "HideStandardScoreTable": true,
+      "RatedUnfinishedLimit": null,
+      "MultiDivisionType": 0,
+      "ScoreTables": [
+        {
+          "Id": 2721,
+          "Name": "SILVER",
+          "QualiScore": [],
+          "RaceScore": [
+            {
+              "Position": 1,
+              "Points": 16
+            },
+            {
+              "Position": 2,
+              "Points": 13
+            },
+            {
+              "Position": 3,
+              "Points": 10
+            },
+            {
+              "Position": 4,
+              "Points": 8
+            },
+            {
+              "Position": 5,
+              "Points": 7
+            },
+            {
+              "Position": 6,
+              "Points": 6
+            },
+            {
+              "Position": 7,
+              "Points": 5
+            },
+            {
+              "Position": 8,
+              "Points": 4
+            },
+            {
+              "Position": 9,
+              "Points": 3
+            },
+            {
+              "Position": 10,
+              "Points": 2
+            },
+            {
+              "Position": 11,
+              "Points": 1
+            },
+            {
+              "Position": 12,
+              "Points": 1
+            },
+            {
+              "Position": 13,
+              "Points": 1
+            },
+            {
+              "Position": 14,
+              "Points": 1
+            },
+            {
+              "Position": 15,
+              "Points": 1
+            },
+            {
+              "Position": 16,
+              "Points": 1
+            },
+            {
+              "Position": 17,
+              "Points": 1
+            },
+            {
+              "Position": 18,
+              "Points": 1
+            },
+            {
+              "Position": 19,
+              "Points": 1
+            },
+            {
+              "Position": 20,
+              "Points": 1
+            }
+          ],
+          "FastestLapPoints": 0,
+          "DnsPoints": 0
+        },
+        {
+          "Id": 2722,
+          "Name": "BRONZE",
+          "QualiScore": [],
+          "RaceScore": [
+            {
+              "Position": 1,
+              "Points": 16
+            },
+            {
+              "Position": 2,
+              "Points": 13
+            },
+            {
+              "Position": 3,
+              "Points": 10
+            },
+            {
+              "Position": 4,
+              "Points": 8
+            },
+            {
+              "Position": 5,
+              "Points": 7
+            },
+            {
+              "Position": 6,
+              "Points": 6
+            },
+            {
+              "Position": 7,
+              "Points": 5
+            },
+            {
+              "Position": 8,
+              "Points": 4
+            },
+            {
+              "Position": 9,
+              "Points": 3
+            },
+            {
+              "Position": 10,
+              "Points": 2
+            },
+            {
+              "Position": 11,
+              "Points": 1
+            },
+            {
+              "Position": 12,
+              "Points": 1
+            },
+            {
+              "Position": 13,
+              "Points": 1
+            },
+            {
+              "Position": 14,
+              "Points": 1
+            },
+            {
+              "Position": 15,
+              "Points": 1
+            },
+            {
+              "Position": 16,
+              "Points": 1
+            },
+            {
+              "Position": 17,
+              "Points": 1
+            },
+            {
+              "Position": 18,
+              "Points": 1
+            },
+            {
+              "Position": 19,
+              "Points": 1
+            },
+            {
+              "Position": 20,
+              "Points": 1
+            }
+          ],
+          "FastestLapPoints": 0,
+          "DnsPoints": 0
+        },
+        {
+          "Id": 2723,
+          "Name": "GOLD",
+          "QualiScore": [],
+          "RaceScore": [
+            {
+              "Position": 1,
+              "Points": 16
+            },
+            {
+              "Position": 2,
+              "Points": 13
+            },
+            {
+              "Position": 3,
+              "Points": 10
+            },
+            {
+              "Position": 4,
+              "Points": 8
+            },
+            {
+              "Position": 5,
+              "Points": 7
+            },
+            {
+              "Position": 6,
+              "Points": 6
+            },
+            {
+              "Position": 7,
+              "Points": 5
+            },
+            {
+              "Position": 8,
+              "Points": 4
+            },
+            {
+              "Position": 9,
+              "Points": 3
+            },
+            {
+              "Position": 10,
+              "Points": 2
+            },
+            {
+              "Position": 11,
+              "Points": 1
+            },
+            {
+              "Position": 12,
+              "Points": 1
+            },
+            {
+              "Position": 13,
+              "Points": 1
+            },
+            {
+              "Position": 14,
+              "Points": 1
+            },
+            {
+              "Position": 15,
+              "Points": 1
+            },
+            {
+              "Position": 16,
+              "Points": 1
+            },
+            {
+              "Position": 17,
+              "Points": 1
+            },
+            {
+              "Position": 18,
+              "Points": 1
+            },
+            {
+              "Position": 19,
+              "Points": 1
+            },
+            {
+              "Position": 20,
+              "Points": 1
+            }
+          ],
+          "FastestLapPoints": 0,
+          "DnsPoints": 0
+        },
+        {
+          "Id": 2724,
+          "Name": "Standard-50",
+          "QualiScore": [],
+          "RaceScore": [
+            {
+              "Position": 1,
+              "Points": 102
+            },
+            {
+              "Position": 2,
+              "Points": 98
+            },
+            {
+              "Position": 3,
+              "Points": 94
+            },
+            {
+              "Position": 4,
+              "Points": 90
+            },
+            {
+              "Position": 5,
+              "Points": 87
+            },
+            {
+              "Position": 6,
+              "Points": 84
+            },
+            {
+              "Position": 7,
+              "Points": 81
+            },
+            {
+              "Position": 8,
+              "Points": 78
+            },
+            {
+              "Position": 9,
+              "Points": 75
+            },
+            {
+              "Position": 10,
+              "Points": 72
+            },
+            {
+              "Position": 11,
+              "Points": 69
+            },
+            {
+              "Position": 12,
+              "Points": 66
+            },
+            {
+              "Position": 13,
+              "Points": 63
+            },
+            {
+              "Position": 14,
+              "Points": 60
+            },
+            {
+              "Position": 15,
+              "Points": 57
+            },
+            {
+              "Position": 16,
+              "Points": 54
+            },
+            {
+              "Position": 17,
+              "Points": 51
+            },
+            {
+              "Position": 18,
+              "Points": 49
+            },
+            {
+              "Position": 19,
+              "Points": 47
+            },
+            {
+              "Position": 20,
+              "Points": 45
+            },
+            {
+              "Position": 21,
+              "Points": 43
+            },
+            {
+              "Position": 22,
+              "Points": 41
+            },
+            {
+              "Position": 23,
+              "Points": 39
+            },
+            {
+              "Position": 24,
+              "Points": 37
+            },
+            {
+              "Position": 25,
+              "Points": 35
+            },
+            {
+              "Position": 26,
+              "Points": 33
+            },
+            {
+              "Position": 27,
+              "Points": 31
+            },
+            {
+              "Position": 28,
+              "Points": 29
+            },
+            {
+              "Position": 29,
+              "Points": 27
+            },
+            {
+              "Position": 30,
+              "Points": 25
+            },
+            {
+              "Position": 31,
+              "Points": 23
+            },
+            {
+              "Position": 32,
+              "Points": 21
+            },
+            {
+              "Position": 33,
+              "Points": 19
+            },
+            {
+              "Position": 34,
+              "Points": 17
+            },
+            {
+              "Position": 35,
+              "Points": 16
+            },
+            {
+              "Position": 36,
+              "Points": 15
+            },
+            {
+              "Position": 37,
+              "Points": 14
+            },
+            {
+              "Position": 38,
+              "Points": 13
+            },
+            {
+              "Position": 39,
+              "Points": 12
+            },
+            {
+              "Position": 40,
+              "Points": 11
+            },
+            {
+              "Position": 41,
+              "Points": 10
+            },
+            {
+              "Position": 42,
+              "Points": 9
+            },
+            {
+              "Position": 43,
+              "Points": 8
+            },
+            {
+              "Position": 44,
+              "Points": 7
+            },
+            {
+              "Position": 45,
+              "Points": 6
+            },
+            {
+              "Position": 46,
+              "Points": 5
+            },
+            {
+              "Position": 47,
+              "Points": 4
+            },
+            {
+              "Position": 48,
+              "Points": 3
+            },
+            {
+              "Position": 49,
+              "Points": 2
+            },
+            {
+              "Position": 50,
+              "Points": 1
+            }
+          ],
+          "FastestLapPoints": 0,
+          "DnsPoints": 0
+        },
+        {
+          "Id": 2879,
+          "Name": "PLATIN",
+          "QualiScore": [],
+          "RaceScore": [
+            {
+              "Position": 1,
+              "Points": 16
+            },
+            {
+              "Position": 2,
+              "Points": 13
+            },
+            {
+              "Position": 3,
+              "Points": 10
+            },
+            {
+              "Position": 4,
+              "Points": 8
+            },
+            {
+              "Position": 5,
+              "Points": 7
+            },
+            {
+              "Position": 6,
+              "Points": 6
+            },
+            {
+              "Position": 7,
+              "Points": 5
+            },
+            {
+              "Position": 8,
+              "Points": 4
+            },
+            {
+              "Position": 9,
+              "Points": 3
+            },
+            {
+              "Position": 10,
+              "Points": 2
+            },
+            {
+              "Position": 11,
+              "Points": 1
+            },
+            {
+              "Position": 12,
+              "Points": 1
+            },
+            {
+              "Position": 13,
+              "Points": 1
+            },
+            {
+              "Position": 14,
+              "Points": 1
+            },
+            {
+              "Position": 15,
+              "Points": 1
+            },
+            {
+              "Position": 16,
+              "Points": 1
+            },
+            {
+              "Position": 17,
+              "Points": 1
+            },
+            {
+              "Position": 18,
+              "Points": 1
+            },
+            {
+              "Position": 19,
+              "Points": 1
+            },
+            {
+              "Position": 20,
+              "Points": 1
+            }
+          ],
+          "FastestLapPoints": 0,
+          "DnsPoints": 0
+        }
+      ],
+      "MaxDriversInSeries": 50,
+      "MaxDriversInClass": null,
+      "MaxModelsPerSoloDriver": null,
+      "MaxDriversPerLivery": null,
+      "MaxDriversPerCarNumber": 1,
+      "RequireModelOnBooking": true,
+      "RequireLiveryOnBooking": false,
+      "IsOpenForBooking": false,
+      "EnableLiveryBrowser": false,
+      "AllowManualCarNumber": true,
+      "AllowManualLiveryName": true,
+      "AllowDummyCustomLivery": false,
+      "AllowPersonalTemplateLiveries": false,
+      "AllowPersonalPaintingLiveries": false,
+      "MaxModelsTotal": null,
+      "IracingTopCategory": null,
+      "MinIrating": null,
+      "MaxIrating": null,
+      "RequireGameAuth": 10,
+      "RequireDiscord": true,
+      "BlockedCommunityDrivers": true,
+      "BlockedGlobalDrivers": false,
+      "TeamSize": null,
+      "MaxDriversInTeam": null,
+      "TeamDriversByResults": false,
+      "MaxTeams": null,
+      "TeamScratchSubtractSoloScratch": false,
+      "TeamScratchFromWorstTeamResult": 0,
+      "MaxModelsPerTeam": null,
+      "EnableTeamlessDrivers": false,
+      "MixedTeamType": 0,
+      "SameLiveryInTeam": false,
+      "EnableDriverSwap": 0,
+      "SeparateSwapDriversInSeriesScoring": 0,
+      "EnduranceTeamMinSize": 0,
+      "RequireExternalTeamId": false,
+      "EnableSelfBooking": false,
+      "EnableSelfCreateTeam": false,
+      "EnableDriverRetreat": true,
+      "EnableUpdateDriverBooking": false,
+      "EnableUpdateTeamBooking": false,
+      "BookingPassword": "==NOTSET==",
+      "EnableSingleEventConfirm": true,
+      "EnableSingleEventGuests": true,
+      "SingleEventConfirmStart": 336,
+      "SingleEventConfirmEnd": 0,
+      "EnableSingleEventUpdate": false,
+      "EnableSingleEventAddDriver": false,
+      "EnableSingleEventRemoveDriver": false,
+      "EnableVlnScoring": false,
+      "VlnScoringType": 0,
+      "VlnDnsPenalty": 0,
+      "EnableMultiSeriesScoring": 0,
+      "MultiSeriesScoringOptions": null,
+      "DiscordSyncRole": "current RP series driver",
+      "WeightPerTagJson": null,
+      "WeightPerModelJson": null,
+      "CarSoloBookings": [
+        {
+          "IdFromSolo": 42412,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 15381,
+              "Name": "Kai Sforza",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "Porsche 911 II GT3 R 2019",
+          "CarNumber": "156",
+          "CarName": "Team Sforza",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "SILVER",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42415,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 8071,
+              "Name": "Gary Rowe",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "AMR V8 Vantage 2019",
+          "CarNumber": "63",
+          "CarName": "www.SuperErn.ie",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "SILVER",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42417,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 9749,
+              "Name": "DEEP CUTS",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT4",
+          "Class": "GT4",
+          "Model": "Mercedes AMG GT4",
+          "CarNumber": "69",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "GOLD",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42419,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 1413,
+              "Name": "Lee Taylor",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT4",
+          "Class": "GT4",
+          "Model": "Alpine A110 GT4",
+          "CarNumber": "84",
+          "CarName": "The Gentlemens Lounge",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "GOLD",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42422,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 17624,
+              "Name": "MissingYew",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "McLaren 720S GT3 Special",
+          "CarNumber": "1",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "BRONZE",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42423,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 9795,
+              "Name": "TBag | T.Long",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "AMR V8 Vantage 2019",
+          "CarNumber": "71",
+          "CarName": "TLO",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "SILVER",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42424,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 18658,
+              "Name": "james1234kenny | James kenny",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "AMR V8 Vantage 2019",
+          "CarNumber": "90",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "BRONZE",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42425,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 9449,
+              "Name": "Morten Angstmann",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT4",
+          "Class": "GT4",
+          "Model": "BMW M4 GT4",
+          "CarNumber": "495",
+          "CarName": "MARKracing",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "GOLD",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42426,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 15844,
+              "Name": "Tino Gunkel",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "BMW M4 GT3",
+          "CarNumber": "979",
+          "CarName": "MARKracing",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "BRONZE",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42427,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 15829,
+              "Name": "M.Schöpe",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "Audi R8 LMS GT3 evo II",
+          "CarNumber": "94",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "BRONZE",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42428,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 14268,
+              "Name": "Alvinyakatori | J. Andrews",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT4",
+          "Class": "GT4",
+          "Model": "Aston Martin V8 Vantage GT4",
+          "CarNumber": "74",
+          "CarName": "Wynn's JT Racing AM",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "GOLD",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42431,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 18629,
+              "Name": "adslamb",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT4",
+          "Class": "GT4",
+          "Model": "Ginetta G55 GT4",
+          "CarNumber": "56",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "GOLD",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42433,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 6783,
+              "Name": "Ralf Kettern",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT4",
+          "Class": "GT4",
+          "Model": "Audi R8 GT4",
+          "CarNumber": "70",
+          "CarName": "MARKracing",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "GOLD",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42435,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 14896,
+              "Name": "The Good Doctor",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT4",
+          "Class": "GT4",
+          "Model": "McLaren 570S GT4",
+          "CarNumber": "17",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "GOLD",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42438,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 18659,
+              "Name": "D Gates",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT4",
+          "Class": "GT4",
+          "Model": "Porsche 718 Cayman Clubsport GT4",
+          "CarNumber": "18",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "GOLD",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42449,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 9721,
+              "Name": "Jakerthesnak2",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "Porsche 911 II GT3 R 2019",
+          "CarNumber": "431",
+          "CarName": "Speedy Jake Racing",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "SILVER",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42455,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 8638,
+              "Name": "Robin Moe",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "Honda NSX Evo 2019",
+          "CarNumber": "130",
+          "CarName": "Red Bull Moetorsport",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "PLATIN",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42474,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 9899,
+              "Name": "ToRN | N. Van Geluwe",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "McLaren 720S GT3 Special",
+          "CarNumber": "21",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "BRONZE",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42477,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 9804,
+              "Name": "Chirpy | A. Trifunov",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "BMW M4 GT3",
+          "CarNumber": "22",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "BRONZE",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42505,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 10256,
+              "Name": "i'm JGott",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "Lexus RC F GT3",
+          "CarNumber": "36",
+          "CarName": "The Wu-Tang Clan",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "BRONZE",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42506,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 9747,
+              "Name": "subnai | I. Arnold",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "Porsche 911 II GT3 R 2019",
+          "CarNumber": "47",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "SILVER",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42568,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 12855,
+              "Name": "robert delisle",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "BMW M6 GT3",
+          "CarNumber": "64",
+          "CarName": "bob",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "BRONZE",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42579,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 9805,
+              "Name": "cheba | F. Sjöblom",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "Porsche 911 II GT3 R 2019",
+          "CarNumber": "951",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "SILVER",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42780,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 15233,
+              "Name": "Nathaniel Foltz-Rocheleau | nordet2",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT4",
+          "Class": "GT4",
+          "Model": "Porsche 718 Cayman Clubsport GT4",
+          "CarNumber": "142",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "GOLD",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42803,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 9895,
+              "Name": "Suicidal Cookie",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "McLaren 720S GT3 Special",
+          "CarNumber": "12",
+          "CarName": "No Livery Racing",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "PLATIN",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42903,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 10465,
+              "Name": "Anthony Sanchez",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "Lexus RC F GT3",
+          "CarNumber": "88",
+          "CarName": "Castrol TOM’S RC F",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "PLATIN",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42920,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 12139,
+              "Name": "Denny Xenon",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "Audi R8 LMS GT3 evo II",
+          "CarNumber": "953",
+          "CarName": "All In Racing",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "PLATIN",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42926,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 9750,
+              "Name": "Trainboy_2005",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "Porsche 911 II GT3 R 2019",
+          "CarNumber": "301",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "PLATIN",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42934,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 12168,
+              "Name": "Tom Hatcher",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT4",
+          "Class": "GT4",
+          "Model": "Mercedes AMG GT4",
+          "CarNumber": "55",
+          "CarName": "Garage-Fiftyfive",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "GOLD",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42944,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 15415,
+              "Name": "George Whitley",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT4",
+          "Class": "GT4",
+          "Model": "Ginetta G55 GT4",
+          "CarNumber": "999",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "GOLD",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42963,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 15534,
+              "Name": "Goalium | Eli Schwartz",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT4",
+          "Class": "GT4",
+          "Model": "BMW M4 GT4",
+          "CarNumber": "52",
+          "CarName": "Formula Friends BMW",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "GOLD",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42984,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 18828,
+              "Name": "Garold",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "McLaren 720S GT3 Special",
+          "CarNumber": "97",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "BRONZE",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 42997,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 7673,
+              "Name": "Sensh",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "Ferrari 488 GT3 Evo 2020",
+          "CarNumber": "24",
+          "CarName": "BalognaRacing",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "PLATIN",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 43001,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 9762,
+              "Name": "Brad Hoover",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT4",
+          "Class": "GT4",
+          "Model": "Audi R8 GT4",
+          "CarNumber": "11",
+          "CarName": "Yukon",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "GOLD",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 43010,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 13276,
+              "Name": "Jan Tenner",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "Audi R8 LMS GT3 evo II",
+          "CarNumber": "10",
+          "CarName": "All In Racing",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "PLATIN",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 43016,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 18840,
+              "Name": "Fuchs1805",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "Honda NSX Evo 2019",
+          "CarNumber": "185",
+          "CarName": "Lap1-Foxes",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "PLATIN",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 43018,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 14256,
+              "Name": "Luis Rubicone",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT4",
+          "Class": "GT4",
+          "Model": "BMW M4 GT4",
+          "CarNumber": "59",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "GOLD",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 43028,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 13823,
+              "Name": "Grimeloki",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT4",
+          "Class": "GT4",
+          "Model": "BMW M4 GT4",
+          "CarNumber": "135",
+          "CarName": "Nastin Speed Solutions Grimeloki Racing",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "GOLD",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 43034,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 18842,
+              "Name": "Salad | CJS",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT4",
+          "Class": "GT4",
+          "Model": "Aston Martin V8 Vantage GT4",
+          "CarNumber": "81",
+          "CarName": "Salad Racing",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "GOLD",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 43051,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 13821,
+              "Name": "/ / s k w i d 2 3 / / | Connor Barnes",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT4",
+          "Class": "GT4",
+          "Model": "Porsche 718 Cayman Clubsport GT4",
+          "CarNumber": "419",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "GOLD",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 43060,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 15533,
+              "Name": "lunamoon | Luana Santos",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT4",
+          "Class": "GT4",
+          "Model": "Porsche 718 Cayman Clubsport GT4",
+          "CarNumber": "19",
+          "CarName": "Moonsquid Racing",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "GOLD",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 43093,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 7605,
+              "Name": "Bingus McBongus",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "Lamborghini Huracan Evo 2019",
+          "CarNumber": "8",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "PLATIN",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 43140,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 9757,
+              "Name": "LecherousSloth",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "Lexus RC F GT3",
+          "CarNumber": "2",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "PLATIN",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 43239,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 7604,
+              "Name": "Darkius | P. Moreno",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "Porsche 911 II GT3 R 2019",
+          "CarNumber": "922",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "PLATIN",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 43316,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 18912,
+              "Name": "Senne Stofmeel",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT4",
+          "Class": "GT4",
+          "Model": "BMW M4 GT4",
+          "CarNumber": "14",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "GOLD",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 43331,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 1620,
+              "Name": "Till Mueller",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "Bentley Continental GT3 2018",
+          "CarNumber": "210",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "BRONZE",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 43951,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 11596,
+              "Name": "Luca Denn",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT4",
+          "Class": "GT4",
+          "Model": "Audi R8 GT4",
+          "CarNumber": "82",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "GOLD",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 44120,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 11516,
+              "Name": "PizzaRanger | V.Borlin",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "McLaren 720S GT3 Special",
+          "CarNumber": "141",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "PLATIN",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 44230,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 15824,
+              "Name": "Simon Beeg",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "BMW M4 GT3",
+          "CarNumber": "95",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "PLATIN",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        },
+        {
+          "IdFromSolo": 44820,
+          "IdFromTeam": null,
+          "Drivers": [
+            {
+              "Id": 16316,
+              "Name": "aaron",
+              "Tag": null,
+              "IsDiscordActive": true
+            }
+          ],
+          "Comment": null,
+          "PerformanceClass": "GT3",
+          "Class": "GT3",
+          "Model": "McLaren 720S GT3 Special",
+          "CarNumber": "44",
+          "CarName": "",
+          "CarTags": "",
+          "LiveryDatabaseId": null,
+          "Tag": "BRONZE",
+          "TeamId": null,
+          "TeamName": null,
+          "ExternalTeamId": null,
+          "IsReplacement": false,
+          "EventBooking": null
+        }
+      ],
+      "CarTeamBookings": [],
+      "TeamBookings": []
+    },
+    "Events": [
+      {
+        "Id": 13985,
+        "Name": "Misano 1 Hour",
+        "Start": "2022-06-05T18:45:00Z",
+        "End": "2022-06-05T18:46:00Z",
+        "WeekDay": null,
+        "Track": "Misano",
+        "TrackLayout": null,
+        "Classes": "GT3,GT4",
+        "SimulationId": 5,
+        "SimulationName": "AC Competizione",
+        "CommunityId": 320,
+        "CommunityName": "Racing Pals",
+        "CommunityUrl": "pals",
+        "BoostedCommunity": false,
+        "SeriesId": 3025,
+        "SeriesName": "RP Series - Season 5  ",
+        "SeriesImageUrl": null,
+        "DriverCount": 38,
+        "IsUnrated": false,
+        "AutoLinkLogs": false,
+        "ServerNamePrefix": null,
+        "HasScores": true,
+        "EventNumber": 1,
+        "EventNumberCount": 6,
+        "RunNumber": 1,
+        "RunNumberCount": 1,
+        "BookingStart": null,
+        "BookingEnd": null,
+        "GuestApplicationAllowed": false,
+        "EventConfirmationRequired": false,
+        "SeriesBookingOpen": false,
+        "SeriesBookingPwRequired": false,
+        "DriverId": null,
+        "DriverName": null,
+        "ResultPosition": null,
+        "ResultType": 0,
+        "IsSeriesBooked": null,
+        "IsConfirmed": null,
+        "IsGuest": null,
+        "RaceEvents": [
+          21961,
+          21964
+        ],
+        "RaceEventCount": 2,
+        "OwnerId": "eddbbf64-5f07-4144-85d4-2378bcbc7b77",
+        "OwnerName": "Muscleheim",
+        "ClientIsScratch": false,
+        "ClientCorrectedPoints": 0
+      },
+      {
+        "Id": 13986,
+        "Name": "Spa 1 Hour",
+        "Start": "2022-06-19T18:45:00Z",
+        "End": "2022-06-19T18:46:00Z",
+        "WeekDay": null,
+        "Track": "Spa Francorchamps",
+        "TrackLayout": null,
+        "Classes": "GT3,GT4",
+        "SimulationId": 5,
+        "SimulationName": "AC Competizione",
+        "CommunityId": 320,
+        "CommunityName": "Racing Pals",
+        "CommunityUrl": "pals",
+        "BoostedCommunity": false,
+        "SeriesId": 3025,
+        "SeriesName": "RP Series - Season 5  ",
+        "SeriesImageUrl": null,
+        "DriverCount": 47,
+        "IsUnrated": false,
+        "AutoLinkLogs": false,
+        "ServerNamePrefix": null,
+        "HasScores": true,
+        "EventNumber": 2,
+        "EventNumberCount": 6,
+        "RunNumber": 1,
+        "RunNumberCount": 1,
+        "BookingStart": null,
+        "BookingEnd": null,
+        "GuestApplicationAllowed": false,
+        "EventConfirmationRequired": false,
+        "SeriesBookingOpen": false,
+        "SeriesBookingPwRequired": false,
+        "DriverId": null,
+        "DriverName": null,
+        "ResultPosition": null,
+        "ResultType": 0,
+        "IsSeriesBooked": null,
+        "IsConfirmed": null,
+        "IsGuest": null,
+        "RaceEvents": [
+          22099,
+          22100
+        ],
+        "RaceEventCount": 2,
+        "OwnerId": "eddbbf64-5f07-4144-85d4-2378bcbc7b77",
+        "OwnerName": "Muscleheim",
+        "ClientIsScratch": false,
+        "ClientCorrectedPoints": 0
+      },
+      {
+        "Id": 13988,
+        "Name": "Silverstone 1 Hour",
+        "Start": "2022-07-03T18:45:00Z",
+        "End": "2022-07-03T18:46:00Z",
+        "WeekDay": null,
+        "Track": "Silverstone",
+        "TrackLayout": null,
+        "Classes": "GT3,GT4",
+        "SimulationId": 5,
+        "SimulationName": "AC Competizione",
+        "CommunityId": 320,
+        "CommunityName": "Racing Pals",
+        "CommunityUrl": "pals",
+        "BoostedCommunity": false,
+        "SeriesId": 3025,
+        "SeriesName": "RP Series - Season 5  ",
+        "SeriesImageUrl": null,
+        "DriverCount": 49,
+        "IsUnrated": false,
+        "AutoLinkLogs": false,
+        "ServerNamePrefix": null,
+        "HasScores": true,
+        "EventNumber": 3,
+        "EventNumberCount": 6,
+        "RunNumber": 1,
+        "RunNumberCount": 1,
+        "BookingStart": null,
+        "BookingEnd": null,
+        "GuestApplicationAllowed": false,
+        "EventConfirmationRequired": false,
+        "SeriesBookingOpen": false,
+        "SeriesBookingPwRequired": false,
+        "DriverId": null,
+        "DriverName": null,
+        "ResultPosition": null,
+        "ResultType": 0,
+        "IsSeriesBooked": null,
+        "IsConfirmed": null,
+        "IsGuest": null,
+        "RaceEvents": [
+          22242,
+          22243
+        ],
+        "RaceEventCount": 2,
+        "OwnerId": "eddbbf64-5f07-4144-85d4-2378bcbc7b77",
+        "OwnerName": "Muscleheim",
+        "ClientIsScratch": false,
+        "ClientCorrectedPoints": 0
+      },
+      {
+        "Id": 13987,
+        "Name": "Bathurst 1 Hour",
+        "Start": "2022-07-17T18:45:00Z",
+        "End": "2022-07-17T18:47:00Z",
+        "WeekDay": null,
+        "Track": "Mount Panorama",
+        "TrackLayout": null,
+        "Classes": "GT3,GT4",
+        "SimulationId": 5,
+        "SimulationName": "AC Competizione",
+        "CommunityId": 320,
+        "CommunityName": "Racing Pals",
+        "CommunityUrl": "pals",
+        "BoostedCommunity": false,
+        "SeriesId": 3025,
+        "SeriesName": "RP Series - Season 5  ",
+        "SeriesImageUrl": null,
+        "DriverCount": 0,
+        "IsUnrated": false,
+        "AutoLinkLogs": false,
+        "ServerNamePrefix": null,
+        "HasScores": false,
+        "EventNumber": 4,
+        "EventNumberCount": 6,
+        "RunNumber": 1,
+        "RunNumberCount": 1,
+        "BookingStart": null,
+        "BookingEnd": null,
+        "GuestApplicationAllowed": false,
+        "EventConfirmationRequired": false,
+        "SeriesBookingOpen": false,
+        "SeriesBookingPwRequired": false,
+        "DriverId": null,
+        "DriverName": null,
+        "ResultPosition": null,
+        "ResultType": 0,
+        "IsSeriesBooked": null,
+        "IsConfirmed": null,
+        "IsGuest": null,
+        "RaceEvents": [],
+        "RaceEventCount": 0,
+        "OwnerId": "eddbbf64-5f07-4144-85d4-2378bcbc7b77",
+        "OwnerName": "Muscleheim",
+        "ClientIsScratch": false,
+        "ClientCorrectedPoints": 0
+      },
+      {
+        "Id": 13989,
+        "Name": "Laguna Seca 1 Hour",
+        "Start": "2022-07-31T18:45:00Z",
+        "End": "2022-07-31T18:46:00Z",
+        "WeekDay": null,
+        "Track": "Laguna Seca",
+        "TrackLayout": null,
+        "Classes": "GT3,GT4",
+        "SimulationId": 5,
+        "SimulationName": "AC Competizione",
+        "CommunityId": 320,
+        "CommunityName": "Racing Pals",
+        "CommunityUrl": "pals",
+        "BoostedCommunity": false,
+        "SeriesId": 3025,
+        "SeriesName": "RP Series - Season 5  ",
+        "SeriesImageUrl": null,
+        "DriverCount": 0,
+        "IsUnrated": false,
+        "AutoLinkLogs": false,
+        "ServerNamePrefix": null,
+        "HasScores": false,
+        "EventNumber": 5,
+        "EventNumberCount": 6,
+        "RunNumber": 1,
+        "RunNumberCount": 1,
+        "BookingStart": null,
+        "BookingEnd": null,
+        "GuestApplicationAllowed": false,
+        "EventConfirmationRequired": false,
+        "SeriesBookingOpen": false,
+        "SeriesBookingPwRequired": false,
+        "DriverId": null,
+        "DriverName": null,
+        "ResultPosition": null,
+        "ResultType": 0,
+        "IsSeriesBooked": null,
+        "IsConfirmed": null,
+        "IsGuest": null,
+        "RaceEvents": [],
+        "RaceEventCount": 0,
+        "OwnerId": "eddbbf64-5f07-4144-85d4-2378bcbc7b77",
+        "OwnerName": "Muscleheim",
+        "ClientIsScratch": false,
+        "ClientCorrectedPoints": 0
+      },
+      {
+        "Id": 13990,
+        "Name": "Nurburgring 1 Hour",
+        "Start": "2022-08-14T18:45:00Z",
+        "End": "2022-08-14T18:46:00Z",
+        "WeekDay": null,
+        "Track": "Nürburgring",
+        "TrackLayout": null,
+        "Classes": "GT3,GT4",
+        "SimulationId": 5,
+        "SimulationName": "AC Competizione",
+        "CommunityId": 320,
+        "CommunityName": "Racing Pals",
+        "CommunityUrl": "pals",
+        "BoostedCommunity": false,
+        "SeriesId": 3025,
+        "SeriesName": "RP Series - Season 5  ",
+        "SeriesImageUrl": null,
+        "DriverCount": 0,
+        "IsUnrated": false,
+        "AutoLinkLogs": false,
+        "ServerNamePrefix": null,
+        "HasScores": false,
+        "EventNumber": 6,
+        "EventNumberCount": 6,
+        "RunNumber": 1,
+        "RunNumberCount": 1,
+        "BookingStart": null,
+        "BookingEnd": null,
+        "GuestApplicationAllowed": false,
+        "EventConfirmationRequired": false,
+        "SeriesBookingOpen": false,
+        "SeriesBookingPwRequired": false,
+        "DriverId": null,
+        "DriverName": null,
+        "ResultPosition": null,
+        "ResultType": 0,
+        "IsSeriesBooked": null,
+        "IsConfirmed": null,
+        "IsGuest": null,
+        "RaceEvents": [],
+        "RaceEventCount": 0,
+        "OwnerId": "eddbbf64-5f07-4144-85d4-2378bcbc7b77",
+        "OwnerName": "Muscleheim",
+        "ClientIsScratch": false,
+        "ClientCorrectedPoints": 0
+      }
+    ],
+    "Results": [
+      {
+        "Id": 174190,
+        "Position": 1,
+        "PositionInClass": 1,
+        "TotalPoints": 302,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Alpine A110 GT4",
+        "VehicleClass": "GT4",
+        "PerformanceClass": "GT4",
+        "CarName": "#84 The Gentlemens Lounge",
+        "SeriesDrivers": [
+          {
+            "Id": 1413,
+            "Name": "Lee Taylor"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 1413,
+            "DriverName": "Lee Taylor",
+            "CarName": "#84 The Gentlemens Lounge",
+            "ManagedEventId": 13985,
+            "Position": 22,
+            "PositionInClass": 2,
+            "Points": 98,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 1413,
+            "DriverName": "Lee Taylor",
+            "CarName": "#84 The Gentlemens Lounge",
+            "ManagedEventId": 13986,
+            "Position": 22,
+            "PositionInClass": 1,
+            "Points": 102,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 1413,
+            "DriverName": "Lee Taylor",
+            "CarName": "#84 The Gentlemens Lounge",
+            "ManagedEventId": 13988,
+            "Position": 23,
+            "PositionInClass": 1,
+            "Points": 102,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "GOLD",
+        "CssClass": null
+      },
+      {
+        "Id": 174189,
+        "Position": 2,
+        "PositionInClass": 1,
+        "TotalPoints": 282,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Audi R8 LMS GT3 evo II",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#953 All In Racing",
+        "SeriesDrivers": [
+          {
+            "Id": 12139,
+            "Name": "Denny Xenon"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 12139,
+            "DriverName": "Denny Xenon",
+            "CarName": "#953 All In Racing",
+            "ManagedEventId": 13988,
+            "Position": 4,
+            "PositionInClass": 4,
+            "Points": 90,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 12139,
+            "DriverName": "Denny Xenon",
+            "CarName": "#953 All In Racing",
+            "ManagedEventId": 13985,
+            "Position": 2,
+            "PositionInClass": 2,
+            "Points": 98,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 5,
+            "CssClass": null
+          },
+          {
+            "DriverId": 12139,
+            "DriverName": "Denny Xenon",
+            "CarName": "#953 All In Racing",
+            "ManagedEventId": 13986,
+            "Position": 3,
+            "PositionInClass": 3,
+            "Points": 94,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "PLATIN",
+        "CssClass": null
+      },
+      {
+        "Id": 174196,
+        "Position": 3,
+        "PositionInClass": 2,
+        "TotalPoints": 279,
+        "PenaltyPoints": 0,
+        "VehicleModel": "BMW M4 GT4",
+        "VehicleClass": "GT4",
+        "PerformanceClass": "GT4",
+        "CarName": "#135 Nastin Speed Solutions Grimeloki Racing",
+        "SeriesDrivers": [
+          {
+            "Id": 13823,
+            "Name": "Grimeloki"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 13823,
+            "DriverName": "Grimeloki",
+            "CarName": "#135 Nastin Speed Solutions Grimeloki Racing",
+            "ManagedEventId": 13986,
+            "Position": 24,
+            "PositionInClass": 2,
+            "Points": 98,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 13823,
+            "DriverName": "Grimeloki",
+            "CarName": "#135 Nastin Speed Solutions Grimeloki Racing",
+            "ManagedEventId": 13988,
+            "Position": 25,
+            "PositionInClass": 3,
+            "Points": 94,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 13823,
+            "DriverName": "Grimeloki",
+            "CarName": "#135 Nastin Speed Solutions Grimeloki Racing",
+            "ManagedEventId": 13985,
+            "Position": 25,
+            "PositionInClass": 5,
+            "Points": 87,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "GOLD",
+        "CssClass": null
+      },
+      {
+        "Id": 174192,
+        "Position": 4,
+        "PositionInClass": 3,
+        "TotalPoints": 258,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Mercedes AMG GT4",
+        "VehicleClass": "GT4",
+        "PerformanceClass": "GT4",
+        "CarName": "#55 Garage-Fiftyfive",
+        "SeriesDrivers": [
+          {
+            "Id": 12168,
+            "Name": "Tom Hatcher"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 12168,
+            "DriverName": "Tom Hatcher",
+            "CarName": "#55 Garage-Fiftyfive",
+            "ManagedEventId": 13986,
+            "Position": 30,
+            "PositionInClass": 8,
+            "Points": 78,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 60,
+            "CssClass": null
+          },
+          {
+            "DriverId": 12168,
+            "DriverName": "Tom Hatcher",
+            "CarName": "#55 Garage-Fiftyfive",
+            "ManagedEventId": 13985,
+            "Position": 24,
+            "PositionInClass": 4,
+            "Points": 90,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 40,
+            "CssClass": null
+          },
+          {
+            "DriverId": 12168,
+            "DriverName": "Tom Hatcher",
+            "CarName": "#55 Garage-Fiftyfive",
+            "ManagedEventId": 13988,
+            "Position": 26,
+            "PositionInClass": 4,
+            "Points": 90,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "GOLD",
+        "CssClass": null
+      },
+      {
+        "Id": 174210,
+        "Position": 5,
+        "PositionInClass": 4,
+        "TotalPoints": 234,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Multi",
+        "VehicleClass": "GT4",
+        "PerformanceClass": "GT4",
+        "CarName": "#495 MARKracing",
+        "SeriesDrivers": [
+          {
+            "Id": 9449,
+            "Name": "Morten Angstmann"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 9449,
+            "DriverName": "Morten Angstmann",
+            "CarName": "#495 MARKracing",
+            "ManagedEventId": 13986,
+            "Position": 28,
+            "PositionInClass": 6,
+            "Points": 84,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 9449,
+            "DriverName": "Morten Angstmann",
+            "CarName": "#495 MARKracing",
+            "ManagedEventId": 13985,
+            "Position": 32,
+            "PositionInClass": 11,
+            "Points": 69,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 9449,
+            "DriverName": "Morten Angstmann",
+            "CarName": "#495 MARKracing",
+            "ManagedEventId": 13988,
+            "Position": 29,
+            "PositionInClass": 7,
+            "Points": 81,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "GOLD",
+        "CssClass": null
+      },
+      {
+        "Id": 174206,
+        "Position": 6,
+        "PositionInClass": 5,
+        "TotalPoints": 228,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Audi R8 GT4",
+        "VehicleClass": "GT4",
+        "PerformanceClass": "GT4",
+        "CarName": "#11 Yukon",
+        "SeriesDrivers": [
+          {
+            "Id": 9762,
+            "Name": "Brad Hoover"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 9762,
+            "DriverName": "Brad Hoover",
+            "CarName": "#11 Yukon",
+            "ManagedEventId": 13985,
+            "Position": 31,
+            "PositionInClass": 10,
+            "Points": 72,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 9762,
+            "DriverName": "Brad Hoover",
+            "CarName": "#11 Yukon",
+            "ManagedEventId": 13986,
+            "Position": 29,
+            "PositionInClass": 7,
+            "Points": 81,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 9762,
+            "DriverName": "Brad Hoover",
+            "CarName": "#11 Yukon",
+            "ManagedEventId": 13988,
+            "Position": 31,
+            "PositionInClass": 9,
+            "Points": 75,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "GOLD",
+        "CssClass": null
+      },
+      {
+        "Id": 174203,
+        "Position": 7,
+        "PositionInClass": 2,
+        "TotalPoints": 225,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Lexus RC F GT3",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#36 The Wu-Tang Clan",
+        "SeriesDrivers": [
+          {
+            "Id": 10256,
+            "Name": "i'm JGott"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 10256,
+            "DriverName": "i'm JGott",
+            "CarName": "#36 The Wu-Tang Clan",
+            "ManagedEventId": 13986,
+            "Position": 10,
+            "PositionInClass": 10,
+            "Points": 72,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 10256,
+            "DriverName": "i'm JGott",
+            "CarName": "#36 The Wu-Tang Clan",
+            "ManagedEventId": 13985,
+            "Position": 9,
+            "PositionInClass": 9,
+            "Points": 75,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 10256,
+            "DriverName": "i'm JGott",
+            "CarName": "#36 The Wu-Tang Clan",
+            "ManagedEventId": 13988,
+            "Position": 8,
+            "PositionInClass": 8,
+            "Points": 78,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "BRONZE",
+        "CssClass": null
+      },
+      {
+        "Id": 174204,
+        "Position": 8,
+        "PositionInClass": 6,
+        "TotalPoints": 222,
+        "PenaltyPoints": 0,
+        "VehicleModel": "BMW M4 GT4",
+        "VehicleClass": "GT4",
+        "PerformanceClass": "GT4",
+        "CarName": "#59",
+        "SeriesDrivers": [
+          {
+            "Id": 14256,
+            "Name": "Luis Rubicone"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 14256,
+            "DriverName": "Luis Rubicone",
+            "CarName": "#59",
+            "ManagedEventId": 13985,
+            "Position": 30,
+            "PositionInClass": 9,
+            "Points": 75,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 14256,
+            "DriverName": "Luis Rubicone",
+            "CarName": "#59",
+            "ManagedEventId": 13986,
+            "Position": 31,
+            "PositionInClass": 9,
+            "Points": 75,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 14256,
+            "DriverName": "Luis Rubicone",
+            "CarName": "#59",
+            "ManagedEventId": 13988,
+            "Position": 32,
+            "PositionInClass": 10,
+            "Points": 72,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "GOLD",
+        "CssClass": null
+      },
+      {
+        "Id": 174201,
+        "Position": 9,
+        "PositionInClass": 3,
+        "TotalPoints": 214,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Honda NSX Evo 2019",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#130 Red Bull Moetorsport",
+        "SeriesDrivers": [
+          {
+            "Id": 8638,
+            "Name": "Robin Moe"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 8638,
+            "DriverName": "Robin Moe",
+            "CarName": "#130 Red Bull Moetorsport",
+            "ManagedEventId": 13988,
+            "Position": 5,
+            "PositionInClass": 5,
+            "Points": 87,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 8638,
+            "DriverName": "Robin Moe",
+            "CarName": "#130 Red Bull Moetorsport",
+            "ManagedEventId": 13985,
+            "Position": 8,
+            "PositionInClass": 8,
+            "Points": 78,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 8638,
+            "DriverName": "Robin Moe",
+            "CarName": "#130 Red Bull Moetorsport",
+            "ManagedEventId": 13986,
+            "Position": 18,
+            "PositionInClass": 18,
+            "Points": 49,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "PLATIN",
+        "CssClass": null
+      },
+      {
+        "Id": 174199,
+        "Position": 10,
+        "PositionInClass": 4,
+        "TotalPoints": 211,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Audi R8 LMS GT3 evo II",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#10 All In Racing",
+        "SeriesDrivers": [
+          {
+            "Id": 13276,
+            "Name": "Jan Tenner"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 13276,
+            "DriverName": "Jan Tenner",
+            "CarName": "#10 All In Racing",
+            "ManagedEventId": 13988,
+            "Position": 18,
+            "PositionInClass": 18,
+            "Points": 49,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 10,
+            "CssClass": null
+          },
+          {
+            "DriverId": 13276,
+            "DriverName": "Jan Tenner",
+            "CarName": "#10 All In Racing",
+            "ManagedEventId": 13986,
+            "Position": 7,
+            "PositionInClass": 7,
+            "Points": 81,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 13276,
+            "DriverName": "Jan Tenner",
+            "CarName": "#10 All In Racing",
+            "ManagedEventId": 13985,
+            "Position": 7,
+            "PositionInClass": 7,
+            "Points": 81,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 15,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "PLATIN",
+        "CssClass": null
+      },
+      {
+        "Id": 174215,
+        "Position": 11,
+        "PositionInClass": 5,
+        "TotalPoints": 204,
+        "PenaltyPoints": 0,
+        "VehicleModel": "AMR V8 Vantage 2019",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#71 TLO",
+        "SeriesDrivers": [
+          {
+            "Id": 9795,
+            "Name": "TBag | T.Long"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 9795,
+            "DriverName": "TBag | T.Long",
+            "CarName": "#71 TLO",
+            "ManagedEventId": 13988,
+            "Position": 7,
+            "PositionInClass": 7,
+            "Points": 81,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 9795,
+            "DriverName": "TBag | T.Long",
+            "CarName": "#71 TLO",
+            "ManagedEventId": 13986,
+            "Position": 11,
+            "PositionInClass": 11,
+            "Points": 69,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 9795,
+            "DriverName": "TBag | T.Long",
+            "CarName": "#71 TLO",
+            "ManagedEventId": 13985,
+            "Position": 16,
+            "PositionInClass": 16,
+            "Points": 54,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 10,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "SILVER",
+        "CssClass": null
+      },
+      {
+        "Id": 174207,
+        "Position": 12,
+        "PositionInClass": 6,
+        "TotalPoints": 204,
+        "PenaltyPoints": 0,
+        "VehicleModel": "BMW M6 GT3",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#64 bob",
+        "SeriesDrivers": [
+          {
+            "Id": 12855,
+            "Name": "robert delisle"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 12855,
+            "DriverName": "robert delisle",
+            "CarName": "#64 bob",
+            "ManagedEventId": 13985,
+            "Position": 11,
+            "PositionInClass": 11,
+            "Points": 69,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 12855,
+            "DriverName": "robert delisle",
+            "CarName": "#64 bob",
+            "ManagedEventId": 13986,
+            "Position": 9,
+            "PositionInClass": 9,
+            "Points": 75,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 12855,
+            "DriverName": "robert delisle",
+            "CarName": "#64 bob",
+            "ManagedEventId": 13988,
+            "Position": 14,
+            "PositionInClass": 14,
+            "Points": 60,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 15,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "BRONZE",
+        "CssClass": null
+      },
+      {
+        "Id": 174195,
+        "Position": 13,
+        "PositionInClass": 7,
+        "TotalPoints": 201,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Porsche 911 II GT3 R 2019",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#47",
+        "SeriesDrivers": [
+          {
+            "Id": 9747,
+            "Name": "subnai | I. Arnold"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 9747,
+            "DriverName": "subnai | I. Arnold",
+            "CarName": "#47",
+            "ManagedEventId": 13986,
+            "Position": 20,
+            "PositionInClass": 20,
+            "Points": 45,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 9747,
+            "DriverName": "subnai | I. Arnold",
+            "CarName": "#47",
+            "ManagedEventId": 13985,
+            "Position": 5,
+            "PositionInClass": 5,
+            "Points": 87,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 9747,
+            "DriverName": "subnai | I. Arnold",
+            "CarName": "#47",
+            "ManagedEventId": 13988,
+            "Position": 11,
+            "PositionInClass": 11,
+            "Points": 69,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "SILVER",
+        "CssClass": null
+      },
+      {
+        "Id": 174191,
+        "Position": 14,
+        "PositionInClass": 8,
+        "TotalPoints": 196,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Lamborghini Huracan Evo 2019",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#8",
+        "SeriesDrivers": [
+          {
+            "Id": 7605,
+            "Name": "Bingus McBongus"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 7605,
+            "DriverName": "Bingus McBongus",
+            "CarName": "#8",
+            "ManagedEventId": 13985,
+            "Position": 3,
+            "PositionInClass": 3,
+            "Points": 94,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 7605,
+            "DriverName": "Bingus McBongus",
+            "CarName": "",
+            "ManagedEventId": 13986,
+            "Position": 45,
+            "PositionInClass": 27,
+            "Points": 0,
+            "ResultType": 7,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 7605,
+            "DriverName": "Bingus McBongus",
+            "CarName": "#8",
+            "ManagedEventId": 13988,
+            "Position": 1,
+            "PositionInClass": 1,
+            "Points": 102,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "PLATIN",
+        "CssClass": null
+      },
+      {
+        "Id": 174786,
+        "Position": 15,
+        "PositionInClass": 9,
+        "TotalPoints": 196,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Ferrari 488 GT3 Evo 2020",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#28 Ferrari 488 GT3 Evo 2020",
+        "SeriesDrivers": [
+          {
+            "Id": 9800,
+            "Name": "Ed Kerstetter"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 9800,
+            "DriverName": "Ed Kerstetter",
+            "CarName": "#28 Ferrari 488 GT3 Evo 2020",
+            "ManagedEventId": 13986,
+            "Position": 2,
+            "PositionInClass": 2,
+            "Points": 98,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 9800,
+            "DriverName": "Ed Kerstetter",
+            "CarName": "#28 Ferrari 488 GT3 Evo 2020",
+            "ManagedEventId": 13988,
+            "Position": 2,
+            "PositionInClass": 2,
+            "Points": 98,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": null,
+        "CssClass": null
+      },
+      {
+        "Id": 174194,
+        "Position": 16,
+        "PositionInClass": 7,
+        "TotalPoints": 178,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Porsche 718 Cayman Clubsport GT4",
+        "VehicleClass": "GT4",
+        "PerformanceClass": "GT4",
+        "CarName": "#142",
+        "SeriesDrivers": [
+          {
+            "Id": 15233,
+            "Name": "Nathaniel Foltz-Rocheleau | nordet2"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 15233,
+            "DriverName": "Nathaniel Foltz-Rocheleau | nordet2",
+            "CarName": "#142",
+            "ManagedEventId": 13988,
+            "Position": 28,
+            "PositionInClass": 6,
+            "Points": 84,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 15233,
+            "DriverName": "Nathaniel Foltz-Rocheleau | nordet2",
+            "CarName": "",
+            "ManagedEventId": 13986,
+            "Position": 40,
+            "PositionInClass": 16,
+            "Points": 0,
+            "ResultType": 7,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 15233,
+            "DriverName": "Nathaniel Foltz-Rocheleau | nordet2",
+            "CarName": "#142",
+            "ManagedEventId": 13985,
+            "Position": 23,
+            "PositionInClass": 3,
+            "Points": 94,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "GOLD",
+        "CssClass": null
+      },
+      {
+        "Id": 174197,
+        "Position": 16,
+        "PositionInClass": 10,
+        "TotalPoints": 178,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Lexus RC F GT3",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#2",
+        "SeriesDrivers": [
+          {
+            "Id": 9757,
+            "Name": "LecherousSloth"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 9757,
+            "DriverName": "LecherousSloth",
+            "CarName": "#2",
+            "ManagedEventId": 13988,
+            "Position": 3,
+            "PositionInClass": 3,
+            "Points": 94,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 9757,
+            "DriverName": "LecherousSloth",
+            "CarName": "#2",
+            "ManagedEventId": 13985,
+            "Position": 6,
+            "PositionInClass": 6,
+            "Points": 84,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "PLATIN",
+        "CssClass": null
+      },
+      {
+        "Id": 174214,
+        "Position": 18,
+        "PositionInClass": 11,
+        "TotalPoints": 177,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Porsche 911 II GT3 R 2019",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#951",
+        "SeriesDrivers": [
+          {
+            "Id": 9805,
+            "Name": "cheba | F. Sjöblom"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 9805,
+            "DriverName": "cheba | F. Sjöblom",
+            "CarName": "#951",
+            "ManagedEventId": 13985,
+            "Position": 15,
+            "PositionInClass": 15,
+            "Points": 57,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 9805,
+            "DriverName": "cheba | F. Sjöblom",
+            "CarName": "#951",
+            "ManagedEventId": 13986,
+            "Position": 12,
+            "PositionInClass": 12,
+            "Points": 66,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 9805,
+            "DriverName": "cheba | F. Sjöblom",
+            "CarName": "#951",
+            "ManagedEventId": 13988,
+            "Position": 16,
+            "PositionInClass": 16,
+            "Points": 54,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "SILVER",
+        "CssClass": null
+      },
+      {
+        "Id": 174187,
+        "Position": 19,
+        "PositionInClass": 12,
+        "TotalPoints": 174,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Multi",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#13 smol pp",
+        "SeriesDrivers": [
+          {
+            "Id": 14269,
+            "Name": "Tom | Thomas Jack"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 14269,
+            "DriverName": "Tom | Thomas Jack",
+            "CarName": "#13 smol pp",
+            "ManagedEventId": 13985,
+            "Position": 1,
+            "PositionInClass": 1,
+            "Points": 102,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 14269,
+            "DriverName": "Tom | Thomas Jack",
+            "CarName": "#13 Jaguar G3",
+            "ManagedEventId": 13988,
+            "Position": 10,
+            "PositionInClass": 10,
+            "Points": 72,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": null,
+        "CssClass": null
+      },
+      {
+        "Id": 174787,
+        "Position": 20,
+        "PositionInClass": 8,
+        "TotalPoints": 160,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Mercedes AMG GT4",
+        "VehicleClass": "GT4",
+        "PerformanceClass": "GT4",
+        "CarName": "#69",
+        "SeriesDrivers": [
+          {
+            "Id": 9749,
+            "Name": "DEEP CUTS"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 9749,
+            "DriverName": "DEEP CUTS",
+            "CarName": "#69",
+            "ManagedEventId": 13988,
+            "Position": 34,
+            "PositionInClass": 12,
+            "Points": 66,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 9749,
+            "DriverName": "DEEP CUTS",
+            "CarName": "#69",
+            "ManagedEventId": 13986,
+            "Position": 25,
+            "PositionInClass": 3,
+            "Points": 94,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "GOLD",
+        "CssClass": null
+      },
+      {
+        "Id": 174205,
+        "Position": 21,
+        "PositionInClass": 13,
+        "TotalPoints": 159,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Porsche 911 II GT3 R 2019",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#301",
+        "SeriesDrivers": [
+          {
+            "Id": 9750,
+            "Name": "Trainboy_2005"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 9750,
+            "DriverName": "Trainboy_2005",
+            "CarName": "#301",
+            "ManagedEventId": 13986,
+            "Position": 5,
+            "PositionInClass": 5,
+            "Points": 87,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 9750,
+            "DriverName": "Trainboy_2005",
+            "CarName": "#301",
+            "ManagedEventId": 13985,
+            "Position": 10,
+            "PositionInClass": 10,
+            "Points": 72,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 5,
+            "CssClass": null
+          },
+          {
+            "DriverId": 9750,
+            "DriverName": "Trainboy_2005",
+            "CarName": "",
+            "ManagedEventId": 13988,
+            "Position": 43,
+            "PositionInClass": 28,
+            "Points": 0,
+            "ResultType": 7,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "PLATIN",
+        "CssClass": null
+      },
+      {
+        "Id": 174193,
+        "Position": 22,
+        "PositionInClass": 14,
+        "TotalPoints": 156,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Honda NSX Evo 2019",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#185 Lap1-Foxes",
+        "SeriesDrivers": [
+          {
+            "Id": 18840,
+            "Name": "Fuchs1805"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 18840,
+            "DriverName": "Fuchs1805",
+            "CarName": "#185 Lap1-Foxes",
+            "ManagedEventId": 13986,
+            "Position": 35,
+            "PositionInClass": 24,
+            "Points": 0,
+            "ResultType": 3,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 18840,
+            "DriverName": "Fuchs1805",
+            "CarName": "#185 Lap1-Foxes",
+            "ManagedEventId": 13988,
+            "Position": 12,
+            "PositionInClass": 12,
+            "Points": 66,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 15,
+            "CssClass": null
+          },
+          {
+            "DriverId": 18840,
+            "DriverName": "Fuchs1805",
+            "CarName": "#185 Lap1-Foxes",
+            "ManagedEventId": 13985,
+            "Position": 4,
+            "PositionInClass": 4,
+            "Points": 90,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "PLATIN",
+        "CssClass": null
+      },
+      {
+        "Id": 174218,
+        "Position": 23,
+        "PositionInClass": 15,
+        "TotalPoints": 155,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Bentley Continental GT3 2018",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#210",
+        "SeriesDrivers": [
+          {
+            "Id": 1620,
+            "Name": "Till Mueller"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 1620,
+            "DriverName": "Till Mueller",
+            "CarName": "#210",
+            "ManagedEventId": 13988,
+            "Position": 20,
+            "PositionInClass": 20,
+            "Points": 45,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 1620,
+            "DriverName": "Till Mueller",
+            "CarName": "#210",
+            "ManagedEventId": 13986,
+            "Position": 13,
+            "PositionInClass": 13,
+            "Points": 63,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 1620,
+            "DriverName": "Till Mueller",
+            "CarName": "#210",
+            "ManagedEventId": 13985,
+            "Position": 19,
+            "PositionInClass": 19,
+            "Points": 47,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "BRONZE",
+        "CssClass": null
+      },
+      {
+        "Id": 174213,
+        "Position": 24,
+        "PositionInClass": 16,
+        "TotalPoints": 151,
+        "PenaltyPoints": 0,
+        "VehicleModel": "AMR V8 Vantage 2019",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#63 www.SuperErn.ie",
+        "SeriesDrivers": [
+          {
+            "Id": 8071,
+            "Name": "Gary Rowe"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 8071,
+            "DriverName": "Gary Rowe",
+            "CarName": "#63 www.SuperErn.ie",
+            "ManagedEventId": 13986,
+            "Position": 16,
+            "PositionInClass": 16,
+            "Points": 54,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 30,
+            "CssClass": null
+          },
+          {
+            "DriverId": 8071,
+            "DriverName": "Gary Rowe",
+            "CarName": "#63 www.SuperErn.ie",
+            "ManagedEventId": 13985,
+            "Position": 14,
+            "PositionInClass": 14,
+            "Points": 60,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 8071,
+            "DriverName": "Gary Rowe",
+            "CarName": "#63 www.SuperErn.ie",
+            "ManagedEventId": 13988,
+            "Position": 37,
+            "PositionInClass": 24,
+            "Points": 37,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "SILVER",
+        "CssClass": null
+      },
+      {
+        "Id": 174202,
+        "Position": 25,
+        "PositionInClass": 9,
+        "TotalPoints": 150,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Aston Martin V8 Vantage GT4",
+        "VehicleClass": "GT4",
+        "PerformanceClass": "GT4",
+        "CarName": "#74 Wynn's JT Racing AM",
+        "SeriesDrivers": [
+          {
+            "Id": 14268,
+            "Name": "Alvinyakatori | J. Andrews"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 14268,
+            "DriverName": "Alvinyakatori | J. Andrews",
+            "CarName": "#74 Wynn's JT Racing AM",
+            "ManagedEventId": 13988,
+            "Position": 33,
+            "PositionInClass": 11,
+            "Points": 69,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 14268,
+            "DriverName": "Alvinyakatori | J. Andrews",
+            "CarName": "Wynn's JT Racing AM",
+            "ManagedEventId": 13986,
+            "Position": 37,
+            "PositionInClass": 13,
+            "Points": 0,
+            "ResultType": 7,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 14268,
+            "DriverName": "Alvinyakatori | J. Andrews",
+            "CarName": "#74 Wynn's JT Racing AM",
+            "ManagedEventId": 13985,
+            "Position": 28,
+            "PositionInClass": 7,
+            "Points": 81,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "GOLD",
+        "CssClass": null
+      },
+      {
+        "Id": 174211,
+        "Position": 26,
+        "PositionInClass": 17,
+        "TotalPoints": 147,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Audi R8 LMS GT3 evo II",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#94",
+        "SeriesDrivers": [
+          {
+            "Id": 15829,
+            "Name": "M.Schöpe"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 15829,
+            "DriverName": "M.Schöpe",
+            "CarName": "#94",
+            "ManagedEventId": 13985,
+            "Position": 13,
+            "PositionInClass": 13,
+            "Points": 63,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 5,
+            "CssClass": null
+          },
+          {
+            "DriverId": 15829,
+            "DriverName": "M.Schöpe",
+            "CarName": "#94",
+            "ManagedEventId": 13986,
+            "Position": 34,
+            "PositionInClass": 23,
+            "Points": 0,
+            "ResultType": 3,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 15829,
+            "DriverName": "M.Schöpe",
+            "CarName": "#94",
+            "ManagedEventId": 13988,
+            "Position": 6,
+            "PositionInClass": 6,
+            "Points": 84,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "BRONZE",
+        "CssClass": null
+      },
+      {
+        "Id": 174208,
+        "Position": 27,
+        "PositionInClass": 10,
+        "TotalPoints": 144,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Porsche 718 Cayman Clubsport GT4",
+        "VehicleClass": "GT4",
+        "PerformanceClass": "GT4",
+        "CarName": "#19 Moonsquid Racing",
+        "SeriesDrivers": [
+          {
+            "Id": 15533,
+            "Name": "lunamoon | Luana Santos"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 15533,
+            "DriverName": "lunamoon | Luana Santos",
+            "CarName": "#19 Moonsquid Racing",
+            "ManagedEventId": 13985,
+            "Position": 33,
+            "PositionInClass": 12,
+            "Points": 66,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 20,
+            "CssClass": null
+          },
+          {
+            "DriverId": 15533,
+            "DriverName": "lunamoon | Luana Santos",
+            "CarName": "#19 Moonsquid Racing",
+            "ManagedEventId": 13988,
+            "Position": 30,
+            "PositionInClass": 8,
+            "Points": 78,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "GOLD",
+        "CssClass": null
+      },
+      {
+        "Id": 174788,
+        "Position": 28,
+        "PositionInClass": 18,
+        "TotalPoints": 141,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Ferrari 488 GT3 Evo 2020",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#24 BalognaRacing",
+        "SeriesDrivers": [
+          {
+            "Id": 7673,
+            "Name": "Sensh"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 7673,
+            "DriverName": "Sensh",
+            "CarName": "#24 BalognaRacing",
+            "ManagedEventId": 13988,
+            "Position": 17,
+            "PositionInClass": 17,
+            "Points": 51,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 20,
+            "CssClass": null
+          },
+          {
+            "DriverId": 7673,
+            "DriverName": "Sensh",
+            "CarName": "#24 BalognaRacing",
+            "ManagedEventId": 13986,
+            "Position": 4,
+            "PositionInClass": 4,
+            "Points": 90,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "PLATIN",
+        "CssClass": null
+      },
+      {
+        "Id": 174209,
+        "Position": 29,
+        "PositionInClass": 19,
+        "TotalPoints": 141,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Porsche 911 II GT3 R 2019",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#156 Team Sforza",
+        "SeriesDrivers": [
+          {
+            "Id": 15381,
+            "Name": "Kai Sforza"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 15381,
+            "DriverName": "Kai Sforza",
+            "CarName": "#156 Team Sforza",
+            "ManagedEventId": 13985,
+            "Position": 12,
+            "PositionInClass": 12,
+            "Points": 66,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 15381,
+            "DriverName": "Kai Sforza",
+            "CarName": "#156 Team Sforza",
+            "ManagedEventId": 13988,
+            "Position": 9,
+            "PositionInClass": 9,
+            "Points": 75,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "SILVER",
+        "CssClass": null
+      },
+      {
+        "Id": 174217,
+        "Position": 30,
+        "PositionInClass": 20,
+        "TotalPoints": 137,
+        "PenaltyPoints": 0,
+        "VehicleModel": "McLaren 720S GT3 Special",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#1",
+        "SeriesDrivers": [
+          {
+            "Id": 17624,
+            "Name": "MissingYew"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 17624,
+            "DriverName": "MissingYew",
+            "CarName": "#1",
+            "ManagedEventId": 13988,
+            "Position": 19,
+            "PositionInClass": 19,
+            "Points": 47,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 10,
+            "CssClass": null
+          },
+          {
+            "DriverId": 17624,
+            "DriverName": "MissingYew",
+            "CarName": "#1",
+            "ManagedEventId": 13986,
+            "Position": 23,
+            "PositionInClass": 22,
+            "Points": 41,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 17624,
+            "DriverName": "MissingYew",
+            "CarName": "#1",
+            "ManagedEventId": 13985,
+            "Position": 18,
+            "PositionInClass": 18,
+            "Points": 49,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 20,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "BRONZE",
+        "CssClass": null
+      },
+      {
+        "Id": 174224,
+        "Position": 31,
+        "PositionInClass": 11,
+        "TotalPoints": 135,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Audi R8 GT4",
+        "VehicleClass": "GT4",
+        "PerformanceClass": "GT4",
+        "CarName": "#70 MARKracing",
+        "SeriesDrivers": [
+          {
+            "Id": 6783,
+            "Name": "Ralf Kettern"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 6783,
+            "DriverName": "Ralf Kettern",
+            "CarName": "#70 MARKracing",
+            "ManagedEventId": 13985,
+            "Position": 38,
+            "PositionInClass": 16,
+            "Points": 0,
+            "ResultType": 3,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 10,
+            "CssClass": null
+          },
+          {
+            "DriverId": 6783,
+            "DriverName": "Ralf Kettern",
+            "CarName": "#70 MARKracing",
+            "ManagedEventId": 13988,
+            "Position": 35,
+            "PositionInClass": 13,
+            "Points": 63,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 6783,
+            "DriverName": "Ralf Kettern",
+            "CarName": "#70 MARKracing",
+            "ManagedEventId": 13986,
+            "Position": 32,
+            "PositionInClass": 10,
+            "Points": 72,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "GOLD",
+        "CssClass": null
+      },
+      {
+        "Id": 174220,
+        "Position": 32,
+        "PositionInClass": 21,
+        "TotalPoints": 125,
+        "PenaltyPoints": 0,
+        "VehicleModel": "AMR V8 Vantage 2019",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#90",
+        "SeriesDrivers": [
+          {
+            "Id": 18658,
+            "Name": "james1234kenny | James kenny"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 18658,
+            "DriverName": "james1234kenny | James kenny",
+            "CarName": "#90",
+            "ManagedEventId": 13988,
+            "Position": 36,
+            "PositionInClass": 23,
+            "Points": 39,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 30,
+            "CssClass": null
+          },
+          {
+            "DriverId": 18658,
+            "DriverName": "james1234kenny | James kenny",
+            "CarName": "#90",
+            "ManagedEventId": 13985,
+            "Position": 27,
+            "PositionInClass": 21,
+            "Points": 43,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 18658,
+            "DriverName": "james1234kenny | James kenny",
+            "CarName": "#90",
+            "ManagedEventId": 13986,
+            "Position": 21,
+            "PositionInClass": 21,
+            "Points": 43,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "BRONZE",
+        "CssClass": null
+      },
+      {
+        "Id": 174793,
+        "Position": 33,
+        "PositionInClass": 22,
+        "TotalPoints": 120,
+        "PenaltyPoints": 0,
+        "VehicleModel": "BMW M4 GT3",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#979 MARKracing",
+        "SeriesDrivers": [
+          {
+            "Id": 15844,
+            "Name": "Tino Gunkel"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 15844,
+            "DriverName": "Tino Gunkel",
+            "CarName": "#979 MARKracing",
+            "ManagedEventId": 13988,
+            "Position": 13,
+            "PositionInClass": 13,
+            "Points": 63,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 15844,
+            "DriverName": "Tino Gunkel",
+            "CarName": "#979 MARKracing",
+            "ManagedEventId": 13986,
+            "Position": 15,
+            "PositionInClass": 15,
+            "Points": 57,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "BRONZE",
+        "CssClass": null
+      },
+      {
+        "Id": 174222,
+        "Position": 34,
+        "PositionInClass": 23,
+        "TotalPoints": 103,
+        "PenaltyPoints": 0,
+        "VehicleModel": "McLaren 720S GT3 Special",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#21",
+        "SeriesDrivers": [
+          {
+            "Id": 9899,
+            "Name": "ToRN | N. Van Geluwe"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 9899,
+            "DriverName": "ToRN | N. Van Geluwe",
+            "CarName": "#21",
+            "ManagedEventId": 13988,
+            "Position": 21,
+            "PositionInClass": 21,
+            "Points": 43,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 9899,
+            "DriverName": "ToRN | N. Van Geluwe",
+            "CarName": "#21",
+            "ManagedEventId": 13985,
+            "Position": 36,
+            "PositionInClass": 22,
+            "Points": 0,
+            "ResultType": 3,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 30,
+            "CssClass": null
+          },
+          {
+            "DriverId": 9899,
+            "DriverName": "ToRN | N. Van Geluwe",
+            "CarName": "#21",
+            "ManagedEventId": 13986,
+            "Position": 14,
+            "PositionInClass": 14,
+            "Points": 60,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "BRONZE",
+        "CssClass": null
+      },
+      {
+        "Id": 174188,
+        "Position": 35,
+        "PositionInClass": 12,
+        "TotalPoints": 102,
+        "PenaltyPoints": 0,
+        "VehicleModel": "BMW M4 GT4",
+        "VehicleClass": "GT4",
+        "PerformanceClass": "GT4",
+        "CarName": "#14",
+        "SeriesDrivers": [
+          {
+            "Id": 18912,
+            "Name": "Senne Stofmeel"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 18912,
+            "DriverName": "Senne Stofmeel",
+            "CarName": "",
+            "ManagedEventId": 13988,
+            "Position": 49,
+            "PositionInClass": 20,
+            "Points": 0,
+            "ResultType": 7,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 18912,
+            "DriverName": "Senne Stofmeel",
+            "CarName": "",
+            "ManagedEventId": 13986,
+            "Position": 46,
+            "PositionInClass": 19,
+            "Points": 0,
+            "ResultType": 7,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 18912,
+            "DriverName": "Senne Stofmeel",
+            "CarName": "#14",
+            "ManagedEventId": 13985,
+            "Position": 21,
+            "PositionInClass": 1,
+            "Points": 102,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "GOLD",
+        "CssClass": null
+      },
+      {
+        "Id": 174785,
+        "Position": 35,
+        "PositionInClass": 24,
+        "TotalPoints": 102,
+        "PenaltyPoints": 0,
+        "VehicleModel": "BMW M4 GT3",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#95",
+        "SeriesDrivers": [
+          {
+            "Id": 15824,
+            "Name": "Simon Beeg"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 15824,
+            "DriverName": "Simon Beeg",
+            "CarName": "#95",
+            "ManagedEventId": 13986,
+            "Position": 1,
+            "PositionInClass": 1,
+            "Points": 102,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "PLATIN",
+        "CssClass": null
+      },
+      {
+        "Id": 174216,
+        "Position": 37,
+        "PositionInClass": 25,
+        "TotalPoints": 98,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Porsche 911 II GT3 R 2019",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#431 Speedy Jake Racing",
+        "SeriesDrivers": [
+          {
+            "Id": 9721,
+            "Name": "Jakerthesnak2"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 9721,
+            "DriverName": "Jakerthesnak2",
+            "CarName": "#431 Speedy Jake Racing",
+            "ManagedEventId": 13985,
+            "Position": 17,
+            "PositionInClass": 17,
+            "Points": 51,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 20,
+            "CssClass": null
+          },
+          {
+            "DriverId": 9721,
+            "DriverName": "Jakerthesnak2",
+            "CarName": "#431 Speedy Jake Racing",
+            "ManagedEventId": 13986,
+            "Position": 19,
+            "PositionInClass": 19,
+            "Points": 47,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "SILVER",
+        "CssClass": null
+      },
+      {
+        "Id": 175311,
+        "Position": 38,
+        "PositionInClass": 13,
+        "TotalPoints": 98,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Porsche 718 Cayman Clubsport GT4",
+        "VehicleClass": "GT4",
+        "PerformanceClass": "GT4",
+        "CarName": "#405 Porsche 718 Cayman Clubsport GT4",
+        "SeriesDrivers": [
+          {
+            "Id": 4607,
+            "Name": "Alexander Heim"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 4607,
+            "DriverName": "Alexander Heim",
+            "CarName": "#405 Porsche 718 Cayman Clubsport GT4",
+            "ManagedEventId": 13988,
+            "Position": 24,
+            "PositionInClass": 2,
+            "Points": 98,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": null,
+        "CssClass": null
+      },
+      {
+        "Id": 174219,
+        "Position": 39,
+        "PositionInClass": 26,
+        "TotalPoints": 96,
+        "PenaltyPoints": 0,
+        "VehicleModel": "BMW M4 GT3",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#22",
+        "SeriesDrivers": [
+          {
+            "Id": 9804,
+            "Name": "Chirpy | A. Trifunov"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 9804,
+            "DriverName": "Chirpy | A. Trifunov",
+            "CarName": "#22",
+            "ManagedEventId": 13988,
+            "Position": 39,
+            "PositionInClass": 26,
+            "Points": 0,
+            "ResultType": 3,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 40,
+            "CssClass": null
+          },
+          {
+            "DriverId": 9804,
+            "DriverName": "Chirpy | A. Trifunov",
+            "CarName": "#22",
+            "ManagedEventId": 13986,
+            "Position": 17,
+            "PositionInClass": 17,
+            "Points": 51,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 9804,
+            "DriverName": "Chirpy | A. Trifunov",
+            "CarName": "#22",
+            "ManagedEventId": 13985,
+            "Position": 20,
+            "PositionInClass": 20,
+            "Points": 45,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "BRONZE",
+        "CssClass": null
+      },
+      {
+        "Id": 174223,
+        "Position": 40,
+        "PositionInClass": 14,
+        "TotalPoints": 90,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Ginetta G55 GT4",
+        "VehicleClass": "GT4",
+        "PerformanceClass": "GT4",
+        "CarName": "#999",
+        "SeriesDrivers": [
+          {
+            "Id": 15415,
+            "Name": "George Whitley"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 15415,
+            "DriverName": "George Whitley",
+            "CarName": "",
+            "ManagedEventId": 13988,
+            "Position": 44,
+            "PositionInClass": 16,
+            "Points": 0,
+            "ResultType": 7,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 15415,
+            "DriverName": "George Whitley",
+            "CarName": "#999",
+            "ManagedEventId": 13986,
+            "Position": 26,
+            "PositionInClass": 4,
+            "Points": 90,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 15415,
+            "DriverName": "George Whitley",
+            "CarName": "#999",
+            "ManagedEventId": 13985,
+            "Position": 37,
+            "PositionInClass": 15,
+            "Points": 0,
+            "ResultType": 3,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "GOLD",
+        "CssClass": null
+      },
+      {
+        "Id": 174789,
+        "Position": 41,
+        "PositionInClass": 15,
+        "TotalPoints": 87,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Audi R8 GT4",
+        "VehicleClass": "GT4",
+        "PerformanceClass": "GT4",
+        "CarName": "#82",
+        "SeriesDrivers": [
+          {
+            "Id": 11596,
+            "Name": "Luca Denn"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 11596,
+            "DriverName": "Luca Denn",
+            "CarName": "#82",
+            "ManagedEventId": 13986,
+            "Position": 27,
+            "PositionInClass": 5,
+            "Points": 87,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 30,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "GOLD",
+        "CssClass": null
+      },
+      {
+        "Id": 174794,
+        "Position": 41,
+        "PositionInClass": 15,
+        "TotalPoints": 87,
+        "PenaltyPoints": 0,
+        "VehicleModel": "McLaren 570S GT4",
+        "VehicleClass": "GT4",
+        "PerformanceClass": "GT4",
+        "CarName": "",
+        "SeriesDrivers": [
+          {
+            "Id": 14896,
+            "Name": "The Good Doctor"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 14896,
+            "DriverName": "The Good Doctor",
+            "CarName": "",
+            "ManagedEventId": 13986,
+            "Position": 39,
+            "PositionInClass": 15,
+            "Points": 0,
+            "ResultType": 7,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 14896,
+            "DriverName": "The Good Doctor",
+            "CarName": "#17",
+            "ManagedEventId": 13988,
+            "Position": 27,
+            "PositionInClass": 5,
+            "Points": 87,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 5,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "GOLD",
+        "CssClass": null
+      },
+      {
+        "Id": 174198,
+        "Position": 43,
+        "PositionInClass": 16,
+        "TotalPoints": 84,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Mercedes AMG GT4",
+        "VehicleClass": "GT4",
+        "PerformanceClass": "GT4",
+        "CarName": "#722 Presidential Limo",
+        "SeriesDrivers": [
+          {
+            "Id": 12184,
+            "Name": "Cpt_IceMan | I. Barac"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 12184,
+            "DriverName": "Cpt_IceMan | I. Barac",
+            "CarName": "#722 Presidential Limo",
+            "ManagedEventId": 13985,
+            "Position": 26,
+            "PositionInClass": 6,
+            "Points": 84,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": null,
+        "CssClass": null
+      },
+      {
+        "Id": 174790,
+        "Position": 43,
+        "PositionInClass": 27,
+        "TotalPoints": 84,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Bentley Continental GT3 2018",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#77 Bentley Continental GT3 2018",
+        "SeriesDrivers": [
+          {
+            "Id": 4955,
+            "Name": "Denny Rutkowski"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 4955,
+            "DriverName": "Denny Rutkowski",
+            "CarName": "#77 Bentley Continental GT3 2018",
+            "ManagedEventId": 13986,
+            "Position": 6,
+            "PositionInClass": 6,
+            "Points": 84,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": null,
+        "CssClass": null
+      },
+      {
+        "Id": 174200,
+        "Position": 45,
+        "PositionInClass": 17,
+        "TotalPoints": 78,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Porsche 718 Cayman Clubsport GT4",
+        "VehicleClass": "GT4",
+        "PerformanceClass": "GT4",
+        "CarName": "#18",
+        "SeriesDrivers": [
+          {
+            "Id": 18659,
+            "Name": "D Gates"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 18659,
+            "DriverName": "D Gates",
+            "CarName": "#18",
+            "ManagedEventId": 13985,
+            "Position": 29,
+            "PositionInClass": 8,
+            "Points": 78,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 20,
+            "CssClass": null
+          },
+          {
+            "DriverId": 18659,
+            "DriverName": "D Gates",
+            "CarName": "",
+            "ManagedEventId": 13988,
+            "Position": 41,
+            "PositionInClass": 15,
+            "Points": 0,
+            "ResultType": 7,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 18659,
+            "DriverName": "D Gates",
+            "CarName": "",
+            "ManagedEventId": 13986,
+            "Position": 36,
+            "PositionInClass": 12,
+            "Points": 0,
+            "ResultType": 7,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "GOLD",
+        "CssClass": null
+      },
+      {
+        "Id": 174791,
+        "Position": 45,
+        "PositionInClass": 28,
+        "TotalPoints": 78,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Porsche 911 II GT3 R 2019",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#922",
+        "SeriesDrivers": [
+          {
+            "Id": 7604,
+            "Name": "Darkius | P. Moreno"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 7604,
+            "DriverName": "Darkius | P. Moreno",
+            "CarName": "",
+            "ManagedEventId": 13988,
+            "Position": 48,
+            "PositionInClass": 29,
+            "Points": 0,
+            "ResultType": 7,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 7604,
+            "DriverName": "Darkius | P. Moreno",
+            "CarName": "#922",
+            "ManagedEventId": 13986,
+            "Position": 8,
+            "PositionInClass": 8,
+            "Points": 78,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "PLATIN",
+        "CssClass": null
+      },
+      {
+        "Id": 174792,
+        "Position": 47,
+        "PositionInClass": 18,
+        "TotalPoints": 69,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Porsche 718 Cayman Clubsport GT4",
+        "VehicleClass": "GT4",
+        "PerformanceClass": "GT4",
+        "CarName": "#419",
+        "SeriesDrivers": [
+          {
+            "Id": 13821,
+            "Name": "/ / s k w i d 2 3 / / | Connor Barnes"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 13821,
+            "DriverName": "/ / s k w i d 2 3 / / | Connor Barnes",
+            "CarName": "",
+            "ManagedEventId": 13988,
+            "Position": 47,
+            "PositionInClass": 19,
+            "Points": 0,
+            "ResultType": 7,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 13821,
+            "DriverName": "/ / s k w i d 2 3 / / | Connor Barnes",
+            "CarName": "#419",
+            "ManagedEventId": 13986,
+            "Position": 33,
+            "PositionInClass": 11,
+            "Points": 69,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "GOLD",
+        "CssClass": null
+      },
+      {
+        "Id": 174212,
+        "Position": 48,
+        "PositionInClass": 19,
+        "TotalPoints": 63,
+        "PenaltyPoints": 0,
+        "VehicleModel": "BMW M4 GT4",
+        "VehicleClass": "GT4",
+        "PerformanceClass": "GT4",
+        "CarName": "#52 Formula Friends BMW",
+        "SeriesDrivers": [
+          {
+            "Id": 15534,
+            "Name": "Goalium | Eli Schwartz"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 15534,
+            "DriverName": "Goalium | Eli Schwartz",
+            "CarName": "Formula Friends BMW",
+            "ManagedEventId": 13988,
+            "Position": 45,
+            "PositionInClass": 17,
+            "Points": 0,
+            "ResultType": 7,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 15534,
+            "DriverName": "Goalium | Eli Schwartz",
+            "CarName": "Formula Friends BMW",
+            "ManagedEventId": 13986,
+            "Position": 42,
+            "PositionInClass": 17,
+            "Points": 0,
+            "ResultType": 7,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 15534,
+            "DriverName": "Goalium | Eli Schwartz",
+            "CarName": "#52 Formula Friends BMW",
+            "ManagedEventId": 13985,
+            "Position": 34,
+            "PositionInClass": 13,
+            "Points": 63,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "GOLD",
+        "CssClass": null
+      },
+      {
+        "Id": 175312,
+        "Position": 49,
+        "PositionInClass": 29,
+        "TotalPoints": 57,
+        "PenaltyPoints": 0,
+        "VehicleModel": "McLaren 720S GT3 Special",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "#44",
+        "SeriesDrivers": [
+          {
+            "Id": 16316,
+            "Name": "aaron"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 16316,
+            "DriverName": "aaron",
+            "CarName": "#44",
+            "ManagedEventId": 13988,
+            "Position": 15,
+            "PositionInClass": 15,
+            "Points": 57,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "BRONZE",
+        "CssClass": null
+      },
+      {
+        "Id": 174796,
+        "Position": 50,
+        "PositionInClass": 30,
+        "TotalPoints": 41,
+        "PenaltyPoints": 0,
+        "VehicleModel": "McLaren 720S GT3 Special",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "",
+        "SeriesDrivers": [
+          {
+            "Id": 18828,
+            "Name": "Garold"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 18828,
+            "DriverName": "Garold",
+            "CarName": "",
+            "ManagedEventId": 13986,
+            "Position": 43,
+            "PositionInClass": 26,
+            "Points": 0,
+            "ResultType": 7,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 18828,
+            "DriverName": "Garold",
+            "CarName": "#97",
+            "ManagedEventId": 13988,
+            "Position": 22,
+            "PositionInClass": 22,
+            "Points": 41,
+            "ResultType": 1,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 40,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "BRONZE",
+        "CssClass": null
+      },
+      {
+        "Id": 174221,
+        "Position": 51,
+        "PositionInClass": 20,
+        "TotalPoints": 0,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Ginetta G55 GT4",
+        "VehicleClass": "GT4",
+        "PerformanceClass": "GT4",
+        "CarName": "#56",
+        "SeriesDrivers": [
+          {
+            "Id": 18629,
+            "Name": "adslamb"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 18629,
+            "DriverName": "adslamb",
+            "CarName": "#56",
+            "ManagedEventId": 13985,
+            "Position": 35,
+            "PositionInClass": 14,
+            "Points": 0,
+            "ResultType": 3,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 18629,
+            "DriverName": "adslamb",
+            "CarName": "",
+            "ManagedEventId": 13988,
+            "Position": 40,
+            "PositionInClass": 14,
+            "Points": 0,
+            "ResultType": 7,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 18629,
+            "DriverName": "adslamb",
+            "CarName": "",
+            "ManagedEventId": 13986,
+            "Position": 38,
+            "PositionInClass": 14,
+            "Points": 0,
+            "ResultType": 7,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "GOLD",
+        "CssClass": null
+      },
+      {
+        "Id": 174795,
+        "Position": 51,
+        "PositionInClass": 31,
+        "TotalPoints": 0,
+        "PenaltyPoints": 0,
+        "VehicleModel": "McLaren 720S GT3 Special",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "No Livery Racing",
+        "SeriesDrivers": [
+          {
+            "Id": 9895,
+            "Name": "Suicidal Cookie"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 9895,
+            "DriverName": "Suicidal Cookie",
+            "CarName": "#12 No Livery Racing",
+            "ManagedEventId": 13988,
+            "Position": 38,
+            "PositionInClass": 25,
+            "Points": 0,
+            "ResultType": 3,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 9895,
+            "DriverName": "Suicidal Cookie",
+            "CarName": "No Livery Racing",
+            "ManagedEventId": 13986,
+            "Position": 41,
+            "PositionInClass": 25,
+            "Points": 0,
+            "ResultType": 7,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "PLATIN",
+        "CssClass": null
+      },
+      {
+        "Id": 174797,
+        "Position": 51,
+        "PositionInClass": 20,
+        "TotalPoints": 0,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Aston Martin V8 Vantage GT4",
+        "VehicleClass": "GT4",
+        "PerformanceClass": "GT4",
+        "CarName": "Salad Racing",
+        "SeriesDrivers": [
+          {
+            "Id": 18842,
+            "Name": "Salad | CJS"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 18842,
+            "DriverName": "Salad | CJS",
+            "CarName": "Salad Racing",
+            "ManagedEventId": 13986,
+            "Position": 44,
+            "PositionInClass": 18,
+            "Points": 0,
+            "ResultType": 7,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          },
+          {
+            "DriverId": 18842,
+            "DriverName": "Salad | CJS",
+            "CarName": "Salad Racing",
+            "ManagedEventId": 13988,
+            "Position": 46,
+            "PositionInClass": 18,
+            "Points": 0,
+            "ResultType": 7,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "GOLD",
+        "CssClass": null
+      },
+      {
+        "Id": 174798,
+        "Position": 51,
+        "PositionInClass": 31,
+        "TotalPoints": 0,
+        "PenaltyPoints": 0,
+        "VehicleModel": "McLaren 720S GT3 Special",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "",
+        "SeriesDrivers": [
+          {
+            "Id": 11516,
+            "Name": "PizzaRanger | V.Borlin"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 11516,
+            "DriverName": "PizzaRanger | V.Borlin",
+            "CarName": "",
+            "ManagedEventId": 13986,
+            "Position": 47,
+            "PositionInClass": 28,
+            "Points": 0,
+            "ResultType": 7,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "PLATIN",
+        "CssClass": null
+      },
+      {
+        "Id": 175313,
+        "Position": 51,
+        "PositionInClass": 31,
+        "TotalPoints": 0,
+        "PenaltyPoints": 0,
+        "VehicleModel": "Lexus RC F GT3",
+        "VehicleClass": "GT3",
+        "PerformanceClass": "GT3",
+        "CarName": "Castrol TOM’S RC F",
+        "SeriesDrivers": [
+          {
+            "Id": 10465,
+            "Name": "Anthony Sanchez"
+          }
+        ],
+        "Events": [
+          {
+            "DriverId": 10465,
+            "DriverName": "Anthony Sanchez",
+            "CarName": "Castrol TOM’S RC F",
+            "ManagedEventId": 13988,
+            "Position": 42,
+            "PositionInClass": 27,
+            "Points": 0,
+            "ResultType": 7,
+            "IsScratchResult": false,
+            "PenaltyPoints": 0,
+            "PenaltySeconds": 0,
+            "CssClass": null
+          }
+        ],
+        "ScratchTotal": null,
+        "Tag": "PLATIN",
+        "CssClass": null
+      }
+    ],
+    "TeamResults": [],
+    "TeamTotals": [],
+    "ImageUrl": null,
+    "BookingErrors": [],
+    "Penalties": [
+      {
+        "Id": 7847,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 9895,
+        "AccusedDriverName": "Suicidal Cookie",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "17",
+        "Location": "10",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 0,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket #630 | Lap 27 Turn 10 | #12 @Suicidal_Cookie | J.Oosthuizen & #81 @Salad | CJS\n\nVerdict:\n#12 @Suicidal_Cookie | J.Oosthuizen - Divebombing | 1 Penalty Point Applied & Warning",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 0,
+        "PenaltyBlockedEvents": 1,
+        "ManagedEventId": 13984,
+        "ManagedEventName": "Barcelona Pre-Season"
+      },
+      {
+        "Id": 7848,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 12855,
+        "AccusedDriverName": "robert delisle",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "33",
+        "Location": "7",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 0,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket #630b | Lap 33 Turn 7 | #64 @r.delisle(bobby) & #81 @Salad | CJS \n\nVerdict:\n#64 @r.delisle(bobby) - Divebombing | 1 Penalty Point Applied & Warning",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 0,
+        "PenaltyBlockedEvents": 1,
+        "ManagedEventId": 13984,
+        "ManagedEventName": "Barcelona Pre-Season"
+      },
+      {
+        "Id": 7849,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 15844,
+        "AccusedDriverName": "Tino Gunkel",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "10",
+        "Location": "13",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 631 | Lap 10 Turn 13 | #979 @TinoGunkel & #22 @Chirpy | A. Trifunov \n\nVerdict:\n#979 @TinoGunkel  - Causing a Collision | 10 Seconds Added to Race Time, 3 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 10,
+        "PenaltyBlockedEvents": 3,
+        "ManagedEventId": 13984,
+        "ManagedEventName": "Barcelona Pre-Season"
+      },
+      {
+        "Id": 7850,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 13823,
+        "AccusedDriverName": "Grimeloki",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "28",
+        "Location": "5",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 632 | Lap 28 Turn 5 | #74 @Alvinyakatori | J. Andrews  & #135 @Grimeloki | J. Langevin \nVerdict:\n#135 @Grimeloki | J. Langevin - Causing a Collision | Racing Incident",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 0,
+        "PenaltyBlockedEvents": 0,
+        "ManagedEventId": 13984,
+        "ManagedEventName": "Barcelona Pre-Season"
+      },
+      {
+        "Id": 7851,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 18159,
+        "AccusedDriverName": "CrawlingBigfoot",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "1",
+        "Location": "1",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 633 | Lap 1 Turn 1 | #3 @CrawlingBigfoot & Multiple Cars\n\nVerdict:\n#3 @CrawlingBigfoot - Causing a Collision | 12 Penalty Points Applied, Must Serve Qualifying Ban Next Race",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 0,
+        "PenaltyBlockedEvents": 12,
+        "ManagedEventId": 13984,
+        "ManagedEventName": "Barcelona Pre-Season"
+      },
+      {
+        "Id": 7852,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 15415,
+        "AccusedDriverName": "George Whitley",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "5",
+        "Location": "10",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 635 | Lap 5 Turn 10 | #999 @George Whitley & #142 @Nathaniel Foltz-Rocheleau \n\nVerdict:\n#999 @George Whitley - Causing a Collision | 5 Seconds Added to Race Time, 2 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 5,
+        "PenaltyBlockedEvents": 2,
+        "ManagedEventId": 13984,
+        "ManagedEventName": "Barcelona Pre-Season"
+      },
+      {
+        "Id": 7853,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 9747,
+        "AccusedDriverName": "subnai | I. Arnold",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "8",
+        "Location": "6",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 637 | Lap 8 Turn 7 | #47 @subnai | I. Arnold | 🏆 RP GT4 and #1 @MissingYew \n\nVerdict:\n#47 @subnai | I. Arnold | 🏆 RP GT4  - Causing a Collision | 5 Seconds Added to Race Time, 2 Penalty Points Applied | Penalty reduced by waiting and returning position",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 5,
+        "PenaltyBlockedEvents": 2,
+        "ManagedEventId": 13984,
+        "ManagedEventName": "Barcelona Pre-Season"
+      },
+      {
+        "Id": 7919,
+        "FilingDriverId": 9895,
+        "FilingDriverName": "Suicidal Cookie",
+        "AccusedDriverId": 15233,
+        "AccusedDriverName": "Nathaniel Foltz-Rocheleau | nordet2",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "7",
+        "Location": "2",
+        "IncidentDescription": "",
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 636 | Lap 7 Turn 2 | #59 @Luis Rubicone & #142 @Nathaniel Foltz-Rocheleau \n\nVerdict:\n#142 @Nathaniel Foltz-Rocheleau  - Causing a Collision | 10 Seconds Added to Race Time, 3 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 15,
+        "PenaltyBlockedEvents": 3,
+        "ManagedEventId": 13984,
+        "ManagedEventName": "Barcelona Pre-Season"
+      },
+      {
+        "Id": 8014,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 12168,
+        "AccusedDriverName": "Tom Hatcher",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "1",
+        "Location": "1",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 648 | Lap 1 Turn 1 | #55 @Hatcher94 & #722 @Cpt_IceMan | I. Barac & #22 @Chirpy | A. Trifunov \n\nVerdict:\n#55 @Hatcher94 - Causing a Collision | 40 Seconds Added to Race Time, 4 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 40,
+        "PenaltyBlockedEvents": 4,
+        "ManagedEventId": 13985,
+        "ManagedEventName": "Misano 1 Hour"
+      },
+      {
+        "Id": 8015,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 15533,
+        "AccusedDriverName": "lunamoon | Luana Santos",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "1",
+        "Location": "14",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 641 | Lap 1 Turn 14 | #495 @Morten Kristian Angstmann & #19 @lunamoon | Luana Santos\n\nVerdict:\n#19 @lunamoon | Luana Santos - Causing a Collison | 20 Seconds Added to Race Time, 3 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 20,
+        "PenaltyBlockedEvents": 3,
+        "ManagedEventId": 13985,
+        "ManagedEventName": "Misano 1 Hour"
+      },
+      {
+        "Id": 8016,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 15829,
+        "AccusedDriverName": "M.Schöpe",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "Qualifying",
+        "Location": "4",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 642 | Qualifying Turn 4 | #94 @M.Schöpe and #13 @Tom | Thomas Jack \n\nVerdict:\n#94 @M.Schöpe  - Impeding a car on a hot lap during qualifying | 5 Seconds added to race time, 2 penalty points applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 5,
+        "PenaltyBlockedEvents": 2,
+        "ManagedEventId": 13985,
+        "ManagedEventName": "Misano 1 Hour"
+      },
+      {
+        "Id": 8017,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 9721,
+        "AccusedDriverName": "Jakerthesnak2",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "28",
+        "Location": "4",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 643 & 659 | Lap 26 Turn 4 | #19 @lunamoon | Luana Santos & #431 @Jakerthesnak | J. Alesia \n\nVerdit:\n#431 @Jakerthesnak | J. Alesia - Causing a Collision | 10 Seconds Added to Race Time, 3 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 10,
+        "PenaltyBlockedEvents": 3,
+        "ManagedEventId": 13985,
+        "ManagedEventName": "Misano 1 Hour"
+      },
+      {
+        "Id": 8018,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 9721,
+        "AccusedDriverName": "Jakerthesnak2",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "25",
+        "Location": "8",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 645 | Lap 28 Turn 8 | #495 @Morten Kristian Angstmann & #431 @Jakerthesnak | J. Alesia \n\nVerdict:\n#431 @Jakerthesnak | J. Alesia - Causing a Collision | 10 Seconds Added to Race TIme, 3 Penalty Points",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 10,
+        "PenaltyBlockedEvents": 3,
+        "ManagedEventId": 13985,
+        "ManagedEventName": "Misano 1 Hour"
+      },
+      {
+        "Id": 8019,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 6783,
+        "AccusedDriverName": "Ralf Kettern",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "10",
+        "Location": "4",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 648 | Lap 13 Turn 4 & 6 | #70 @Ralf & #431 @Jakerthesnak | J. Alesia \n\nVerdict:\n#70 @Ralf - Causing a Collision x2 | 10 Seconds Added to Race Time, 3 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 10,
+        "PenaltyBlockedEvents": 3,
+        "ManagedEventId": 13985,
+        "ManagedEventName": "Misano 1 Hour"
+      },
+      {
+        "Id": 8020,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 17624,
+        "AccusedDriverName": "MissingYew",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "1",
+        "Location": "4",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticker 646 | Lap 1 Turn 3 | #1 @MissingYew  & #94 @M.Schöpe \n\nVerdict:\n#1 @MissingYew - Causing a Collision | 15 Seconds Added to Race Time, 3 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 20,
+        "PenaltyBlockedEvents": 3,
+        "ManagedEventId": 13985,
+        "ManagedEventName": "Misano 1 Hour"
+      },
+      {
+        "Id": 8021,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 18659,
+        "AccusedDriverName": "D Gates",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "10",
+        "Location": "10",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 201,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 652 | Lap 10 Turn 10 | #18 @Dan G  & #70 @Ralf \n\nVerdict:\n#18 @Dan G - Causing a Collision | 10 Seconds Added to Race Time, 3 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 10,
+        "PenaltyBlockedEvents": 3,
+        "ManagedEventId": 13985,
+        "ManagedEventName": "Misano 1 Hour"
+      },
+      {
+        "Id": 8022,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 9750,
+        "AccusedDriverName": "Trainboy_2005",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "9",
+        "Location": "14",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 653 | Lap 9 Turn 14 |#301 @Trainboy_2005 & #2 @Sloth | W. Saunders \n\nVerdict:\n#301 @Trainboy_2005 - Causing a Collision | 5 Seconds Added to Race Time, 2 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 5,
+        "PenaltyBlockedEvents": 1,
+        "ManagedEventId": 13985,
+        "ManagedEventName": "Misano 1 Hour"
+      },
+      {
+        "Id": 8023,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 13276,
+        "AccusedDriverName": "Jan Tenner",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "22",
+        "Location": "13",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 654 | Lap 22 Turn 13 |#10 @Jan Tenner & #722 @Cpt_IceMan | I. Barac \n\nVerdict:\n#10 @Jan Tenner - Causing a Collision | 5 Seconds Added to Race Time, 2 Penalty Points",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 5,
+        "PenaltyBlockedEvents": 2,
+        "ManagedEventId": 13985,
+        "ManagedEventName": "Misano 1 Hour"
+      },
+      {
+        "Id": 8024,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 9795,
+        "AccusedDriverName": "TBag | T.Long",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "27",
+        "Location": "12",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 655 | Lap 27 Turn 13 | #84 @Lee Taylor & #71 @TBag | T.Long \n\nVerdict:\n#71 @TBag | T.Long - Causing a Collision | 10 Seconds Added to Race Time, 3 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 10,
+        "PenaltyBlockedEvents": 3,
+        "ManagedEventId": 13985,
+        "ManagedEventName": "Misano 1 Hour"
+      },
+      {
+        "Id": 8025,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 9899,
+        "AccusedDriverName": "ToRN | N. Van Geluwe",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "22",
+        "Location": "4",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 656 | Lap 22 Turn 4 | #21 @ToRN | N. Van Geluwe & #19 @lunamoon | Luana Santos \n\nVerdict:\n#21 @ToRN | N. Van Geluwe - Causing a Collision | 30 Seconds Added to Race Time, 4 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 30,
+        "PenaltyBlockedEvents": 4,
+        "ManagedEventId": 13985,
+        "ManagedEventName": "Misano 1 Hour"
+      },
+      {
+        "Id": 8027,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 13276,
+        "AccusedDriverName": "Jan Tenner",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "32",
+        "Location": "13",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 658 | Lap 32 Turn 13 | #10 @Jan Tenner & #722 @Cpt_IceMan | I. Barac \n\nVerdict:\n#10 @Jan Tenner - Causing a Collision | 10 Seconds Added to Race Time, 3 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 10,
+        "PenaltyBlockedEvents": 3,
+        "ManagedEventId": 13985,
+        "ManagedEventName": "Misano 1 Hour"
+      },
+      {
+        "Id": 8028,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 12139,
+        "AccusedDriverName": "Denny Xenon",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "34",
+        "Location": "10",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 660 | Lap 34 Turn 10 | #953 @Denny Xenon & #19 @lunamoon | Luana Santos \n\nVerdict:\n#953 @Denny Xenon - Causing a Collision | 5 Seconds Added to Race Time, 2 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 5,
+        "PenaltyBlockedEvents": 2,
+        "ManagedEventId": 13985,
+        "ManagedEventName": "Misano 1 Hour"
+      },
+      {
+        "Id": 8056,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 18659,
+        "AccusedDriverName": "D Gates",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "1",
+        "Location": "2",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 657 | Lap1 Turn 2 | #18 @Dan G  &  @Morten Kristian Angstmann \n\nVerdict:\n#18 @Dan G - Causing a Collision | 10 Seconds added to Race Time, 2 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 10,
+        "PenaltyBlockedEvents": 2,
+        "ManagedEventId": 13985,
+        "ManagedEventName": "Misano 1 Hour"
+      },
+      {
+        "Id": 8249,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 8071,
+        "AccusedDriverName": "Gary Rowe",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "6",
+        "Location": "5",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 666 | Lap 6 Turn 5 | #63 @Gary Rowe #63   & #47 @subnai | I. Arnold | 🏆 RP GT4 \n\nVerdict:\n#63 @Gary Rowe #63 - Causing A Collison | 30 Seconds added to Race Time, 4 Penalty Points Applied (Please Hold Your Breaks)",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 30,
+        "PenaltyBlockedEvents": 4,
+        "ManagedEventId": 13986,
+        "ManagedEventName": "Spa 1 Hour"
+      },
+      {
+        "Id": 8250,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 11596,
+        "AccusedDriverName": "Luca Denn",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "1",
+        "Location": "7",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 668B | Lap 1 Turn 7 | #999 @George Whitley   & #82 @Luca Denn & #11 @hoov | B. Hoover \n\nVerdict:\n#82 @Luca Denn | 30 Seconds Added To Race Time, 4 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 30,
+        "PenaltyBlockedEvents": 4,
+        "ManagedEventId": 13986,
+        "ManagedEventName": "Spa 1 Hour"
+      },
+      {
+        "Id": 8251,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 12168,
+        "AccusedDriverName": "Tom Hatcher",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "1",
+        "Location": "19",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 669 | Lap 1 Turn 19 | #55 @Hatcher94 & #979 @TinoGunkel \n\nVerdict : #55 @Hatcher94 - Causing A Collision | 60 Seconds added to Race Time, 6 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 60,
+        "PenaltyBlockedEvents": 6,
+        "ManagedEventId": 13986,
+        "ManagedEventName": "Spa 1 Hour"
+      },
+      {
+        "Id": 8272,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 9899,
+        "AccusedDriverName": "ToRN | N. Van Geluwe",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "7",
+        "Location": "1",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 102,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 670 | Lap 7 Turn 1 | #63 @Gary Rowe #63 and #21 @ToRN | N. Van Geluwe \n\nVerdict: #21 @ToRN | N. Van Geluwe  - Blocking to Defend | 2 Penalty Points Applied - Please leave a car's width between your car and the edge of the track after defending position",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 0,
+        "PenaltyBlockedEvents": 2,
+        "ManagedEventId": 13986,
+        "ManagedEventName": "Spa 1 Hour"
+      },
+      {
+        "Id": 8436,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 18840,
+        "AccusedDriverName": "Fuchs1805",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "Qualifying",
+        "Location": "Village",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 202,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 684 | #405 @Alexander Heim and #185 @Fuchs1805 \n\nVerdict: #185 - Blocking on Qualy Hotlap | 10 Seconds added to Race Time, 3 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 10,
+        "PenaltyBlockedEvents": 3,
+        "ManagedEventId": 13988,
+        "ManagedEventName": "Silverstone 1 Hour"
+      },
+      {
+        "Id": 8437,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 18828,
+        "AccusedDriverName": "Garold",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "1",
+        "Location": "Maggots",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 677a | #22 @Chirpy | A. Trifunov and #97 @GarryM \n\nVerdict: #97 @GarryM - Causing a Collision | 40 Seconds added to Race Time, 6 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 40,
+        "PenaltyBlockedEvents": 6,
+        "ManagedEventId": 13988,
+        "ManagedEventName": "Silverstone 1 Hour"
+      },
+      {
+        "Id": 8438,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 9804,
+        "AccusedDriverName": "Chirpy | A. Trifunov",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "1",
+        "Location": "Vale",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 677b | #22 @Chirpy | A. Trifunov and #19 @lunamoon | Luana Santos \n\nVerdict: #22 @Chirpy | A. Trifunov  - Causing a Collision | 40 Seconds added to Race Time, 4 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 40,
+        "PenaltyBlockedEvents": 4,
+        "ManagedEventId": 13988,
+        "ManagedEventName": "Silverstone 1 Hour"
+      },
+      {
+        "Id": 8439,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 14896,
+        "AccusedDriverName": "The Good Doctor",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "5",
+        "Location": "Stowe",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 678 | #69 @DEEP CUTS and #17 @Aaron Raines \n\nVerdict: #17 @Aaron Raines - Causing a Collision | 5 Seconds added to Race Time, 2 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 5,
+        "PenaltyBlockedEvents": 2,
+        "ManagedEventId": 13988,
+        "ManagedEventName": "Silverstone 1 Hour"
+      },
+      {
+        "Id": 8440,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 13276,
+        "AccusedDriverName": "Jan Tenner",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": null,
+        "Location": "Vale",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 679 | #10 @Jan Tenner and #55 @Hatcher94 \n\nVerdict: #10 @Jan Tenner - Causing a Collision | 10 Seconds added to Race Time, 3 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 10,
+        "PenaltyBlockedEvents": 3,
+        "ManagedEventId": 13988,
+        "ManagedEventName": "Silverstone 1 Hour"
+      },
+      {
+        "Id": 8441,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 18658,
+        "AccusedDriverName": "james1234kenny | James kenny",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "18",
+        "Location": "Loop",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 680 | lap 18, The Loop | #69 @DEEP CUTS and #90 @James1234kenny \n\nVerdict: #90 @James1234kenny - Causing a Collision | 10 Seconds added to Race Time, 4 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 10,
+        "PenaltyBlockedEvents": 4,
+        "ManagedEventId": 13988,
+        "ManagedEventName": "Silverstone 1 Hour"
+      },
+      {
+        "Id": 8442,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 18840,
+        "AccusedDriverName": "Fuchs1805",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "23",
+        "Location": "Copse",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticekt 681 | Lap 23, Copse | #185 @Fuchs1805  and #495 @Morten Kristian Angstmann\n\nVerdict: #185 @Fuchs1805 - Causing a Collision | 5 Seconds added to Race Time, 2 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 5,
+        "PenaltyBlockedEvents": 2,
+        "ManagedEventId": 13988,
+        "ManagedEventName": "Silverstone 1 Hour"
+      },
+      {
+        "Id": 8443,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 17624,
+        "AccusedDriverName": "MissingYew",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "21",
+        "Location": "Becketts",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 682 | Lap 21 (For #1), Becketts | #69 @DEEP CUTS and #1 @MissingYew \n\nVerdict: #1 @MissingYew - Causing a Collision | 10 Seconds added to Race Time, 3 Penalty Points (Penalty upgraded for not holding brakes following incident)",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 10,
+        "PenaltyBlockedEvents": 3,
+        "ManagedEventId": 13988,
+        "ManagedEventName": "Silverstone 1 Hour"
+      },
+      {
+        "Id": 8444,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 12139,
+        "AccusedDriverName": "Denny Xenon",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "30",
+        "Location": "Club",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 0,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 683 | Lap 30, Sir Lewis Hamilton Straight | #130 @Robin_Moe and #953 @Denny Xenon\n\nVerdict: No Further Action due to being forced off track",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 0,
+        "PenaltyBlockedEvents": 0,
+        "ManagedEventId": 13988,
+        "ManagedEventName": "Silverstone 1 Hour"
+      },
+      {
+        "Id": 8445,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 7673,
+        "AccusedDriverName": "Sensh",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "11",
+        "Location": "Loop",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 685 | Lap 11, The Loop | #24 @Sensh | K. Cook and #70 @Ralf \n\nVerdict: #24 @Sensh | K. Cook - Causing a Collision | 10 Seconds Applied to Race Time, 3 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 10,
+        "PenaltyBlockedEvents": 3,
+        "ManagedEventId": 13988,
+        "ManagedEventName": "Silverstone 1 Hour"
+      },
+      {
+        "Id": 8446,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 12855,
+        "AccusedDriverName": "robert delisle",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "12",
+        "Location": "Loop",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "-Ticket 686 | Lap12, The Loop | #64 @r.delisle(bobby) and #74 @Alvinyakatori | J. Andrews \n\nVerdict: @r.delisle(bobby)  - Causing a Collision | 15 Seconds Applied to Race Time, 3 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 15,
+        "PenaltyBlockedEvents": 4,
+        "ManagedEventId": 13988,
+        "ManagedEventName": "Silverstone 1 Hour"
+      },
+      {
+        "Id": 8447,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 7673,
+        "AccusedDriverName": "Sensh",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": null,
+        "Location": "Club",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 687 | Lap 28, Club | #70 @Ralf and #24 @Sensh | K. Cook \n\nVerdict: #24 @Sensh | K. Cook | K. Cook - Causing a Collision | 10 Seconds Applied to Race Time, 3 Penalty Points Applied",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 10,
+        "PenaltyBlockedEvents": 3,
+        "ManagedEventId": 13988,
+        "ManagedEventName": "Silverstone 1 Hour"
+      },
+      {
+        "Id": 8448,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 17624,
+        "AccusedDriverName": "MissingYew",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "12",
+        "Location": "Copse",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 201,
+        "PenaltyResultType": 4,
+        "ResultDescription": "Ticket 690 | Lap 12, Copse | #64 @r.delisle(bobby) and #1 @MissingYew \n\nVerdict: Racing Incident",
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 0,
+        "PenaltyBlockedEvents": 0,
+        "ManagedEventId": 13988,
+        "ManagedEventName": "Silverstone 1 Hour"
+      },
+      {
+        "Id": 8449,
+        "FilingDriverId": 7605,
+        "FilingDriverName": "Bingus McBongus",
+        "AccusedDriverId": 18658,
+        "AccusedDriverName": "james1234kenny | James kenny",
+        "DamagedDriverId": null,
+        "DamagedDriverName": null,
+        "Time": "1",
+        "Location": "Vale",
+        "IncidentDescription": null,
+        "EvidenceLinks": null,
+        "PenaltyType": 101,
+        "PenaltyResultType": 4,
+        "ResultDescription": null,
+        "PenaltyPoints": 0,
+        "PenaltySeconds": 20,
+        "PenaltyBlockedEvents": 3,
+        "ManagedEventId": 13988,
+        "ManagedEventName": "Silverstone 1 Hour"
+      }
+    ]
+  }

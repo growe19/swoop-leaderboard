@@ -143,7 +143,7 @@ function gapAsSeconds(car1, car2) {
   const car1GapToLeader = moment.duration("00:" + car1.gapToLeader).as('milliseconds');
   const car2GapToLeader = moment.duration("00:" + car2.gapToLeader).as('milliseconds');
   const gapMs = moment.duration({ 'milliseconds': car1GapToLeader - car2GapToLeader });
-  console.log(car1.currentDriver_FullName + ' leads ' + car2.currentDriver_FullName) + ' by ' + gapMs.as('seconds');
+  // console.log(car1.currentDriver_FullName + ' leads ' + car2.currentDriver_FullName) + ' by ' + gapMs.as('seconds');
 
   return gapMs.as('seconds');
 }
