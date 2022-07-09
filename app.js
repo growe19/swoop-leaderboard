@@ -158,10 +158,11 @@ $(document).ready(function() {
   setInterval(function() {
     // console.log('SILVER Bookings: %o', leaderboard.series.filterBookingsByTag('SILVER'));
     console.log('Standings: %o', leaderboard.series.Standings.sort((a,b) => a.Pts - b.Pts));
-    console.log('SILVER results: %o', leaderboard.series.filterResultsByTag('SILVER'));
-    console.log('Points system: %o', leaderboard.series.ScoreTable.getPointsForPosition(2));
-    console.log('Events in Series %o', leaderboard.series.filterPastRaces());
-    // console.log('Events: %o', leaderboard.event.filterEventByTag('SILVER'));
+    console.log('SILVER results: %o', leaderboard.series.filterResultsByTag());
+    // console.log('Points system: %o', leaderboard.series.ScoreTable.getPointsForPosition(2));
+    // console.log('Events in Series %o', leaderboard.series.filterPastRaces());
+
+    console.log('Events %o', leaderboard.series.Events);
 
     table.ajax.reload();
 
@@ -659,24 +660,3 @@ async function getSessionData (sessionURL) {
  * @param {*} eventId
  * @returns
  */
-async function getEvent (eventId) {
-
-  const response =  await fetch(`raceApp/event.php?eventId=${eventId}`);
-
-  if (!response.ok) {
-    throw new Error(`HTTP error: ${response.error}`);
-  }
-
-  const data = await response.json();
-  return data;
-}
-
-function sortByPts( a, b ) {
-  if ( a.Pts < b.Pts ) {
-    return -1;
-  }
-  if ( a.Pts > b.Pts ) {
-    return 1;
-  }
-  return 0;
-}

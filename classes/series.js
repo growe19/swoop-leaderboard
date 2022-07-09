@@ -11,6 +11,7 @@ export default class Series {
     // this.Penalties = data.Penalties;
     this.Results = data.Results;
     this.Settings = data.Settings;
+    this.raceAppTag = raceAppTag;
 
     const scoreTables = data.Settings.ScoreTables;
     const tagScoreTable = scoreTables.filter(table => table.Name === raceAppTag)[0];
@@ -25,6 +26,12 @@ export default class Series {
 
     data.Events.forEach(event => {
       this.Events.push(new Event(event));
+    });
+
+    this.filterPastRaces().forEach(event => {
+      console.log('get result for %s', event.Name);
+      const p = this.getEventResults(event.Id);
+      p.then(response => event.Results = response);
     });
   }
 
@@ -42,8 +49,9 @@ export default class Series {
    * @param {*} tagName
    * @returns
    */
-  filterResultsByTag(tagName) {
-    return this.Results.filter(result => result.Tag === tagName);
+  filterResultsByTag(tag) {
+    tag = tag ?? this.raceAppTag;
+    return this.Results.filter(result => result.Tag === tag);
   }
 
   /**
@@ -59,4 +67,17 @@ export default class Series {
   filterPastRaces() {
     return this.Events.filter(e => e.isRaceRun);
   }
+
+  async getEventResults (eventId) {
+
+    const response =  await fetch(`raceApp/event.php?eventId=${eventId}`);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error: ${response.error}`);
+    }
+
+    const data = await response.json();
+    return data;
+  }
+
 }
