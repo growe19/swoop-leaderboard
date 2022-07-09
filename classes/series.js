@@ -1,41 +1,62 @@
+import RaceAppCar from "./raceAppCar.js";
+import Event from "./raceAppEvent.js";
+import ScoreTable from "./scoreTable.js";
+
 export default class Series {
-    constructor(data) {
-        this.penalties = data.Penalties;
-        this.results = data.Results;
-        this.settings = data.Settings;
-    }
+  Standings = [];
+  Events = [];
 
-    filterResultsByClass (className) {
-        return this.results.filter(result => result.VehicleClass === className);
-    }
+  constructor(data, raceAppTag) {
+    console.log('new Series instance %s', raceAppTag);
+    // this.Penalties = data.Penalties;
+    this.Results = data.Results;
+    this.Settings = data.Settings;
 
-    filterResultsByTag (tagName) {
-        return this.results.filter(result => result.Tag === tagName);
-    }
+    const scoreTables = data.Settings.ScoreTables;
+    const tagScoreTable = scoreTables.filter(table => table.Name === raceAppTag)[0];
+    this.ScoreTable = new ScoreTable(tagScoreTable);
 
-    /**
-     *
-     * @param {string} tagName 'BRONZE' | 'SILVER' | 'GOLD' | 'PLATIN'
-     * @param {Integer} racePosition
-     * @returns {Integer} points awards for given position in the given Tag class
-     */
-    pointsForTag (tagName, racePosition) {
-        // TODO - validate tagName
+    data.Settings.CarSoloBookings
+      .filter(booking => booking.Tag === raceAppTag)
+      .forEach(car => {
+        this.Standings.push(new RaceAppCar(car));
+      }
+      );
 
-        const tagScoreTable = this.settings.ScoreTables.filter(table => table.Name === tagName);
-        // const v = tagScoreTable.RaceScore.values();
-        const ptsTable = tagScoreTable[0].RaceScore;
-        const pts = ptsTable.filter(row => row.Position === racePosition)[0].Points;
-        return pts;
-    }
+    data.Events.forEach(event => {
+      this.Events.push(new Event(event));
+    });
+  }
 
-    /**
-     * Get all the cars that are involved in this Series
-     *
-     * @param {string} tagName
-     * @returns {array}
-     */
-    filterBookingsByTag (tagName) {
-        return this.settings.CarSoloBookings.filter(car => car.Tag === tagName);
-    }
+  /**
+   *
+   * @param {*} className
+   * @returns
+   */
+  filterResultsByClass(className) {
+    return this.Results.filter(result => result.VehicleClass === className);
+  }
+
+  /**
+   *
+   * @param {*} tagName
+   * @returns
+   */
+  filterResultsByTag(tagName) {
+    return this.Results.filter(result => result.Tag === tagName);
+  }
+
+  /**
+   * Get all the cars that are involved in this Series
+   *
+   * @param {string} tagName
+   * @returns {array}
+   */
+  filterBookingsByTag(tagName) {
+    return this.Settings.CarSoloBookings.filter(car => car.Tag === tagName);
+  }
+
+  filterPastRaces() {
+    return this.Events.filter(e => e.isRaceRun);
+  }
 }

@@ -28,6 +28,7 @@ const colOrderURLParam = urlParams.get('order');
 const mode = urlParams.get('mode');
 // const showMe = urlParams.get('showme');
 const refresh = parseInt(urlParams.get('refresh') ?? 1000);
+const raceAppTag = urlParams.get('raceAppTag') ?? 'SILVER';
 
 // hide could be empty, have a single value or a comma separated list
 const hide = urlParams.get('hide') ?? '';
@@ -87,15 +88,17 @@ $(document).ready(function() {
 
     fetch(`raceApp/series.php?seriesId=${sessionData.raceAppSerieId}`)
     .then(response => response.json())
-    .then(data => leaderboard.series = new Series(data))
+    .then(data => leaderboard.series = new Series(data, raceAppTag))
     .catch((error) => console.error('Error: ', error)); // unlikely since any response is a success
   });
 
+  /*
   var eventPromise = getEvent(13988);
   eventPromise.then((data) => {
     // console.log(data);
     leaderboard.event = new Event(data);
   });
+  */
 
   // TODO: review this part ... it works but causes page to load slowly
   /*
@@ -153,10 +156,12 @@ $(document).ready(function() {
 
   // refresh the content periodically
   setInterval(function() {
-    console.log('SILVER Bookings: %o', leaderboard.series.filterBookingsByTag('SILVER'));
+    // console.log('SILVER Bookings: %o', leaderboard.series.filterBookingsByTag('SILVER'));
+    console.log('Standings: %o', leaderboard.series.Standings.sort((a,b) => a.Pts - b.Pts));
     console.log('SILVER results: %o', leaderboard.series.filterResultsByTag('SILVER'));
-    console.log('Points system: %o', leaderboard.series.pointsForTag('SILVER', 2));
-    console.log('Events: %o', leaderboard.event.filterEventByTag('SILVER'));
+    console.log('Points system: %o', leaderboard.series.ScoreTable.getPointsForPosition(2));
+    console.log('Events in Series %o', leaderboard.series.filterPastRaces());
+    // console.log('Events: %o', leaderboard.event.filterEventByTag('SILVER'));
 
     table.ajax.reload();
 
@@ -664,4 +669,14 @@ async function getEvent (eventId) {
 
   const data = await response.json();
   return data;
+}
+
+function sortByPts( a, b ) {
+  if ( a.Pts < b.Pts ) {
+    return -1;
+  }
+  if ( a.Pts > b.Pts ) {
+    return 1;
+  }
+  return 0;
 }

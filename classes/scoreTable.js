@@ -1,7 +1,21 @@
 export default class ScoreTable {
     constructor(data) {
-        this.id = data.Id;
-        this.name = data.Name;
-        this.raceScore = data.raceScore;
+        this.Id = data.Id;
+        this.Name = data.Name;
+        this.RaceScore = data.RaceScore;
+    }
+
+    /**
+     *
+     * @param {integer} position
+     * @returns {integer}
+     */
+    getPointsForPosition (position) {
+        const p = this.RaceScore.filter(score => score.Position === position);
+        if (p.length === 1) {
+            return p[0].Points;
+        } else {
+            return 0;
+        }
     }
 }

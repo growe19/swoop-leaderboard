@@ -1,9 +1,13 @@
 export default class RaceAppCar {
     constructor(data) {
-        this.drivers = data.Drivers; // array
-        this.performanceClass = data.PerformanceClass;
-        this.class = data.Class;
-        this.carNumber = data.carNumber;
-        this.tag = data.Tag; // 'BRONZE' | 'SILVER' | ...
+        this.Drivers = data.Drivers; // array
+        // this.PerformanceClass = data.PerformanceClass;
+        this.Class = data.Class;
+        this.Model = data.Model;
+        this.CarNumber = data.CarNumber;
+        this.CarName = data.CarName
+        this.Tag = data.Tag; // 'BRONZE' | 'SILVER' | ...
+
+        this.pts = 0;
     }
 }

@@ -6,13 +6,24 @@ import RaceAppResult from "./raceAppResult.js";
 export default class Event {
     Results = [];
     constructor(data) {
+        /*
         data.Driver.forEach(driver => {
             this.Results.push(new RaceAppResult(driver));
         });
+        */
         // this.events = data.Driver;
+        this.Id = data.Id;
+        this.Name = data.Name;
+        this.Start = new Date(data.Start);
+        this.Track = data.Track;
+        this.BookingOpen = data.SeriesBookingOpen;
     }
 
-    filterEventByTag (tagName) {
-        return this.Results.filter(result => result.Tag === tagName);
+    get isRaceRun () {
+        if (this.Start < new Date()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
