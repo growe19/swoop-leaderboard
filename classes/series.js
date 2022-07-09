@@ -31,7 +31,19 @@ export default class Series {
     this.filterPastRaces().forEach(event => {
       console.log('get result for %s', event.Name);
       const p = this.getEventResults(event.Id);
-      p.then(response => event.Results = response);
+
+      // only get the results if we didn't already have them
+      if (event.Results.length === 0) {
+        p.then((response) => {
+          console.log(response);
+          const resultsForTag = response.Driver.filter(result => result.Tag === 'SILVER');
+          event.Results = resultsForTag;
+
+          event.Results.forEach((result, i) => {
+            console.log('Car %s is placed %i for %i points', result.CarName, i + 1, this.ScoreTable.RaceScore[i].Points);
+          });
+        });
+      }
     });
   }
 
