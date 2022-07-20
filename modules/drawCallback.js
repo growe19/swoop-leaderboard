@@ -34,7 +34,7 @@ export default function drawCallback(settings) {
       classPositions[car.raceAppTag][car.raceAppTagPosition] = car;
     }
   });
-  console.log('classPositions %o', classPositions);
+  // console.log('classPositions %o', classPositions);
 
   /*
   if (Object.keys(classPositions).length > 0) {
@@ -81,9 +81,11 @@ export default function drawCallback(settings) {
     }
 
     // actually this is always the first row!
+    /*
     if (car.racePosition === 1) {
       console.log(`${car.currentDriver_FullName} is the leader`);
     }
+    */
 
     if (car.raceAppTag && car.raceAppTagPosition === 1 && car.gapToLeader) {
       // console.log(car.currentDriver_FullName + ' is the ' + car.raceAppTag + ' leader');

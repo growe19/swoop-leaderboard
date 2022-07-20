@@ -10,4 +10,28 @@ export default class RaceAppCar {
 
         this.pts = 0;
     }
+
+    /**
+     * increment the number of points for this car instance
+     *
+     * @param {integer} pts
+     */
+    addPoints (pts) {
+        this.pts += pts;
+    }
+
+    /**
+     * helps us identify car for given driver
+     * @param {integer} driverId
+     * @returns {boolean}
+     */
+    hasDriver (driverId) {
+        const d = this.Drivers.filter(d => d.Id === driverId);
+        console.log(d);
+        if (d.length > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

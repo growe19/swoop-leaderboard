@@ -15,14 +15,14 @@ $seriesId = $_GET['seriesId'];
 
 $url = "https://raceapp.eu/api/series/";
 
-$client = new Client([
-    // Base URI is used with relative requests
-    'base_uri' => $url,
-    // You can set any number of default request options.
-    'timeout'  => 20.0,
-]);
-
 try {
+    $client = new Client([
+        // Base URI is used with relative requests
+        'base_uri' => $url,
+        // You can set any number of default request options.
+        'timeout'  => 20.0,
+    ]);
+
     $response = $client->request('GET', $seriesId);
 
     $code = $response->getStatusCode(); // 200
@@ -41,6 +41,7 @@ try {
         echo 'Failed';
     }
 } catch (ClientException $e) {
-    echo Psr7\Message::toString($e->getRequest());
+    http_response_code(403);
+    // echo Psr7\Message::toString($e->getRequest());
     echo Psr7\Message::toString($e->getResponse());
 }

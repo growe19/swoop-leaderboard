@@ -87,7 +87,14 @@ $(document).ready(function() {
     );
 
     fetch(`raceApp/series.php?seriesId=${sessionData.raceAppSerieId}`)
-    .then(response => response.json())
+    .then(response => {
+      // console.log(response);
+      if (response.status === 200) {
+        return response.json();
+      } else {
+        // reject?
+      }
+    })
     .then(data => leaderboard.series = new Series(data, raceAppTag))
     .catch((error) => console.error('Error: ', error)); // unlikely since any response is a success
   });
@@ -156,19 +163,22 @@ $(document).ready(function() {
 
   // refresh the content periodically
   setInterval(function() {
-    // console.log('SILVER Bookings: %o', leaderboard.series.filterBookingsByTag('SILVER'));
-    console.log('Standings: %o', leaderboard.series.Standings.sort((a,b) => a.Pts - b.Pts));
-    console.log('SILVER results: %o', leaderboard.series.filterResultsByTag());
-    // console.log('Points system: %o', leaderboard.series.ScoreTable.getPointsForPosition(2));
-    // console.log('Events in Series %o', leaderboard.series.filterPastRaces());
-
-    console.log('Events %o', leaderboard.series.Events);
-
     table.ajax.reload();
 
     // inject the circuit name and session clock
     loadlink(sessionURL, mode, start);
   }, refresh ); // reload rate can be set as a URL param
+
+  setTimeout(function() {
+    // console.log('SILVER Bookings: %o', leaderboard.series.filterBookingsByTag('SILVER'));
+    console.log('Standings: %o', leaderboard.series.Competitors.sort((a,b) => a.Pts - b.Pts));
+    console.log('SILVER results: %o', leaderboard.series.filterResultsByTag());
+    // console.log('Points system: %o', leaderboard.series.ScoreTable.getPointsForPosition(2));
+    // console.log('Events in Series %o', leaderboard.series.filterPastRaces());
+    console.log(leaderboard.series.findCar(1413));
+
+    console.log('Events %o', leaderboard.series.Events);
+  }, 5000)
 }); // end of $(document).ready(function () {
 
 /**
