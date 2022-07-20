@@ -1,14 +1,19 @@
+/**
+ * an object representing a car entered in the series
+ *
+ * sourced from GET /api/series/{id} using Settings.CarSoloBookings
+ */
 export default class RaceAppCar {
     constructor(data) {
+        this.Id = data.IdFromSolo;
         this.Drivers = data.Drivers; // array
-        // this.PerformanceClass = data.PerformanceClass;
         this.Class = data.Class;
         this.Model = data.Model;
         this.CarNumber = data.CarNumber;
         this.CarName = data.CarName
         this.Tag = data.Tag; // 'BRONZE' | 'SILVER' | ...
 
-        this.pts = 0;
+        this.pts = 0; // used to track our custom points
     }
 
     /**
@@ -26,9 +31,9 @@ export default class RaceAppCar {
      * @returns {boolean}
      */
     hasDriver (driverId) {
-        const d = this.Drivers.filter(d => d.Id === driverId);
-        console.log(d);
-        if (d.length > 0) {
+        const d = this.Drivers.some(d => d.Id === driverId);
+        // console.log(d);
+        if (d) {
             return true;
         } else {
             return false;

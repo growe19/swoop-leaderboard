@@ -170,12 +170,9 @@ $(document).ready(function() {
   }, refresh ); // reload rate can be set as a URL param
 
   setTimeout(function() {
-    // console.log('SILVER Bookings: %o', leaderboard.series.filterBookingsByTag('SILVER'));
     console.log('Standings: %o', leaderboard.series.Competitors.sort((a,b) => a.Pts - b.Pts));
     console.log('SILVER results: %o', leaderboard.series.filterResultsByTag());
-    // console.log('Points system: %o', leaderboard.series.ScoreTable.getPointsForPosition(2));
-    // console.log('Events in Series %o', leaderboard.series.filterPastRaces());
-    console.log(leaderboard.series.findCar(1413));
+    console.log('Car for driver 8071: %o', leaderboard.series.findCar(8071));
 
     console.log('Events %o', leaderboard.series.Events);
   }, 5000)

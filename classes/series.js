@@ -37,7 +37,7 @@ export default class Series {
 
     // just looking at the races that have been completed ...
     this.filterPastRaces().forEach(event => {
-      console.log('get result for %s', event.Name);
+      console.log('get result for %s (%i)', event.Name, event.Id);
       const p = this.getEventResults(event.Id);
 
       // only get the results if we didn't already have them
@@ -62,7 +62,7 @@ export default class Series {
       this.Results.push(new SeriesResult(r));
     });
 
-    console.log(this.Results);
+    // console.log(this.Results);
   }
 
   /**
@@ -70,13 +70,19 @@ export default class Series {
    * @param {*} driverId
    */
   findCar (driverId) {
+    let result = '';
+    // console.log('searching for driverId %i in %o', driverId, this.Competitors);
     this.Competitors.forEach(c => {
-      if (c.hasDriver(driverId)) {
-        return c.CarName;
+      // console.log('checking %o', c);
+      const found = c.hasDriver(driverId);
+      if (found) {
+        result = c.CarName;
       }
     });
 
-    return 0;
+    console.log(result);
+
+    return result;
   }
   /**
    *
@@ -85,7 +91,7 @@ export default class Series {
   addCompetitor (raceAppCar) {
     // console.log('addCompetitor(%o', raceAppCar);
     const index = raceAppCar.carNumber
-    this.Competitors[index] = raceAppCar;
+    this.Competitors[raceAppCar.Id] = raceAppCar;
   }
 
   /**
