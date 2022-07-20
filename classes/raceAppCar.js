@@ -9,7 +9,7 @@ export default class RaceAppCar {
         this.Drivers = data.Drivers; // array
         this.Class = data.Class;
         this.Model = data.Model;
-        this.CarNumber = data.CarNumber;
+        this.CarNumber = parseInt(data.CarNumber);
         this.CarName = data.CarName
         this.Tag = data.Tag; // 'BRONZE' | 'SILVER' | ...
 
