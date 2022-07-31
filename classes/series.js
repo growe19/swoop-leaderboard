@@ -1,13 +1,21 @@
 import RaceAppCar from "./raceAppCar.js";
-import Event from "./raceAppEvent.js";
+import SeriesEvent from "./seriesEvent.js";
 import ScoreTable from "./scoreTable.js";
 import SeriesResult from "./seriesResult.js";
+import EventResult from "./eventResult.js";
 
 export default class Series {
   Competitors = [];
   Events = [];
   Results = [];
 
+  /**
+   * constructor function for Series -
+   *    -- get all the Competitors as RaceAppCarr from Settings.CarSoloBookings
+   *    -- get all the Events as SeriesEvent from Events
+   * @param {*} data
+   * @param {*} raceAppTag
+   */
   constructor(data, raceAppTag) {
     console.log('new Series instance %s', raceAppTag);
     // this.Penalties = data.Penalties;
@@ -15,7 +23,7 @@ export default class Series {
     this.Settings = data.Settings;
     this.raceAppTag = raceAppTag;
 
-    // TODO: store them all as objects
+    // TODO: store them all as objects -- although they are currently all the same!
     const scoreTables = data.Settings.ScoreTables;
     const tagScoreTable = scoreTables.filter(table => table.Name === raceAppTag)[0];
     this.ScoreTable = new ScoreTable(tagScoreTable);
@@ -32,30 +40,44 @@ export default class Series {
 
     // add new Event (race) from series.Events
     data.Events.forEach(event => {
-      this.Events.push(new Event(event));
+      this.Events.push(new SeriesEvent(event));
     });
 
     // just looking at the races that have been completed ...
     this.filterPastRaces().forEach(event => {
       console.log('get result for %s (%i)', event.Name, event.Id);
+
+      // get the detailed data for each race that has been run
       const p = this.getEventResults(event.Id);
+      p.then((response) => {
+        console.log('car order for %i is %o', event.Id, response);
 
-      // only get the results if we didn't already have them
-      if (event.Results.length === 0) {
-        p.then((response) => {
-          console.log(response);
-          // const positions = [];
-          const resultsForTag = response.Driver.filter(result => result.Tag === 'SILVER');
-          event.Results = resultsForTag;
-
-          event.Results.forEach((result, i) => {
-            console.log('Car %s is placed %i for %i points', result.CarName, i + 1, this.ScoreTable.RaceScore[i].Points);
-            // positions.push(result.CarNumber);
-          });
-
-          // this.awardPoints(event.Results, this.ScoreTable);
+        response.Driver.forEach(car => {
+          event.addResult(new EventResult(car));
         });
-      }
+
+        // const positions = [];
+        // const resultsForTag = response.Driver.filter(result => result.Tag === 'SILVER');
+        // event.Results = resultsForTag; // store the result under series.Events[].Results
+
+        // console.log(JSON.parse(JSON.stringify(this.Events)));
+
+        e = this.Events.filter((e) => e.Id === event.Id)[0];
+        for (const carClass in e.Results) {
+          for (const carTag in e.Results[carClass]) {
+            e.Results[carClass][carTag].forEach((car, position) => {
+              // console.log('Car %o is placed %i for %i points', car, position + 1, this.ScoreTable.RaceScore[position].Points);
+
+              // find this car in Competitors and add the appropriate number of points
+              const competitor = this.Competitors.find(c => c.CarNumber === car.CarNumber);
+              if (competitor) {
+                // console.log('competitor %o', competitor);
+                competitor.addPoints(this.ScoreTable.RaceScore[position].Points);
+              }
+            })
+          }
+        }
+      });
     });
 
     data.Results.forEach(r => {
@@ -66,8 +88,9 @@ export default class Series {
   }
 
   /**
-   *
+   * get the car associated with the given driver
    * @param {*} driverId
+   * @return {string} car name
    */
   findCar (driverId) {
     let result = '';
@@ -80,25 +103,26 @@ export default class Series {
       }
     });
 
-    console.log(result);
+    // console.log(result);
 
     return result;
   }
   /**
-   *
+   * adds a car to the collection of Competitors
    * @param {raceAppCar} raceAppCar
    */
   addCompetitor (raceAppCar) {
     // console.log('addCompetitor(%o', raceAppCar);
     const index = raceAppCar.carNumber
-    this.Competitors[raceAppCar.Id] = raceAppCar;
+    //this.Competitors[raceAppCar.Id] = raceAppCar;
+    this.Competitors.push(raceAppCar);
   }
 
   /**
-   *
+   * filter Competitors by given Class and Tag sorted by their Pts property
    * @param {*} eventClass
    * @param {*} tag
-   * @returns
+   * @returns {array}
    */
   filterCompetitors(eventClass, tag) {
     return this.Competitors
@@ -147,6 +171,7 @@ export default class Series {
 
   /**
    * get results for this given eventId
+   * @param {number} eventId
    */
   async getEventResults (eventId) {
 
@@ -163,13 +188,57 @@ export default class Series {
   /**
    * update the Standings based on ordered car numbers and corresponding scores table
    * @param {array} pointsWinners
-   * @param {ScoreTabe} scoreTable
+   * @param {ScoreTable} scoreTable
    */
   awardPoints (pointsWinners, scoreTable) {
+    console.log(pointsWinners);
     pointsWinners.forEach((car, index) => {
-      console.log(car, index);
+      const pts = scoreTable.getPointsForPosition[index];
+      console.log('awarding %i points to car %o', pts, car);
       const raceAppCar = this.Competitors[car];
-      // raceAppCar.addPoints(scoreTable.getPointsForPosition[index]);
+      raceAppCar.addPoints(pts);
     });
+  }
+
+  /**
+   *
+   */
+  standings () {
+    const s = [];
+    // group the cars by Tag
+    this.Competitors.forEach(car => {
+      if (!s[car.Tag]) {
+        s[car.Tag] = [];
+      }
+      s[car.Tag].push(car);
+    });
+
+    console.log('standings: %o', s);
+
+    // sort by pts
+    for (const carTag in s) {
+      const x = s[carTag].sort((a, b) => b.pts - a.pts);
+      console.log(JSON.parse(JSON.stringify(x)));
+    }
+
+    return s;
+  }
+
+  getPosition (carTag, carNumber) {
+    const s = this.standings();
+    console.log(s, carTag, carNumber);
+    const car = s[carTag].findIndex(car => car.CarNumber === carNumber) + 1;
+
+    return car;
+  }
+
+  getPoints (carNumber) {
+    const car = this.Competitors.find(car => car.CarNumber === parseInt(carNumber));
+
+    if (car) {
+      return car.pts;
+    } else {
+      return 0;
+    }
   }
 }

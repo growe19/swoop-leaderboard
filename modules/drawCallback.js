@@ -1,3 +1,5 @@
+import leaderboard from '../app.js';
+
 /**
  * See https://datatables.net/reference/option/drawCallback
  *
@@ -96,6 +98,42 @@ export default function drawCallback(settings) {
   });
 
   // console.log('Class leaders: ', leaders);
+  api.rows().every(function (rowIdx, tableLoop, rowLoop) {
+    if (leaderboard.series) {
+      let s;
+      const car = this.data();
+      console.log(leaderboard);
+      switch (car.driverCategory) {
+        case 0:
+          s = 'BRONZE';
+          break;
+        case 1:
+          s = 'SILVER';
+          break;
+        case 2:
+          s = 'GOLD';
+          break;
+        default:
+          s = 'PLATIN';
+      }
+      let pos = leaderboard.series.getPosition(s, car.raceNumber);
+      const pts = leaderboard.series.getPoints(car.raceNumber);
+
+      console.log('car position is %i', pos);
+
+      this.data().raceAppByTagChampionshipPosition = pos;
+      this.data().raceAppByTagChampionshipTotalPoints = pts;
+
+      let ptsPredicted = 0;
+      if (pos) {
+        ptsPredicted = leaderboard.series.ScoreTable.RaceScore[pos -1].Points;
+      } else {
+        pos =  'N/A';
+      }
+      this.data().raceAppByTagChampionshipPredictedPoints = pts + ptsPredicted;
+      this.invalidate();
+    }
+  });
 
   /*
   api.rows().every(function (rowIdx, tableLoop, rowLoop) {

@@ -13,7 +13,7 @@ export default class ScoreTable {
     getPointsForPosition (position) {
         const p = this.RaceScore.filter(score => score.Position === position);
         if (p.length === 1) {
-            return p[0].Points;
+            return parseInt(p[0].Points);
         } else {
             return 0;
         }
