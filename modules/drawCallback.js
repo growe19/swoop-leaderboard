@@ -102,7 +102,6 @@ export default function drawCallback(settings) {
     if (leaderboard.series) {
       let s;
       const car = this.data();
-      console.log(leaderboard);
       switch (car.driverCategory) {
         case 0:
           s = 'BRONZE';
@@ -116,19 +115,19 @@ export default function drawCallback(settings) {
         default:
           s = 'PLATIN';
       }
-      let pos = leaderboard.series.getPosition(s, car.raceNumber);
+
+      let leaguePos = leaderboard.series.getPosition(s, car.raceNumber);
       const pts = leaderboard.series.getPoints(car.raceNumber);
 
-      console.log('car position is %i', pos);
-
-      this.data().raceAppByTagChampionshipPosition = pos;
+      this.data().raceAppByTagChampionshipPosition = leaguePos || 'N/A';
       this.data().raceAppByTagChampionshipTotalPoints = pts;
+      const currentRacePos = this.data().raceAppTagPosition;
+
+      console.log('car position is %i', currentRacePos);
 
       let ptsPredicted = 0;
-      if (pos) {
-        ptsPredicted = leaderboard.series.ScoreTable.RaceScore[pos -1].Points;
-      } else {
-        pos =  'N/A';
+      if (currentRacePos) {
+        ptsPredicted = leaderboard.series.ScoreTable.RaceScore[currentRacePos - 1].Points;
       }
       this.data().raceAppByTagChampionshipPredictedPoints = pts + ptsPredicted;
       this.invalidate();

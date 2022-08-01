@@ -320,8 +320,10 @@ const table = $dt.DataTable({
     },
     { 'data': 'raceAppByTagChampionshipTotalPoints' }, // column 40
     {
+      // predicted points based on current race positions
       'data': null,
       'render': function (data, type, row) {
+        /*
         if (type === 'display') {
           const sum1 = row.raceAppByTagChampionshipPosition;
           const sum2 = row.raceAppByTagChampionshipPredictedPosition;
@@ -339,8 +341,9 @@ const table = $dt.DataTable({
           }
           return championshipChange;
         }
+        */
 
-        return data;
+        return '';
       }
     },
     {

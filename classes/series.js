@@ -218,7 +218,6 @@ export default class Series {
     // sort by pts
     for (const carTag in s) {
       const x = s[carTag].sort((a, b) => b.pts - a.pts);
-      console.log(JSON.parse(JSON.stringify(x)));
     }
 
     return s;
