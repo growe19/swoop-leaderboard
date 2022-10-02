@@ -158,7 +158,7 @@ $(document).ready(function() {
         'text': 'Column Visibility',
 
         // IF NEW COLUMNS ARE ADDED DON'T FORGET TO ADD THE NUMBER HERE
-        'columns': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43],
+        'columns': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44],
         'columnText': colVis
       },
       {
@@ -454,6 +454,9 @@ $(document).ready(function() {
       },
       {
         'data': 'raceAppByTagChampionshipPredictedPoints'
+      },
+	     {
+        'data': 'positionIfPiting.racePosition'
       },
     ],
     'columnDefs': [ //  when new columns are added all these need tweaking
