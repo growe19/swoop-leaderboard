@@ -457,7 +457,7 @@ $(document).ready(function() {
       },
 	{
         //'data': 'positionIfPiting.racePosition'
-		'data': 'positionIfPiting',
+		'data': 'racePosition',
        //  return data;
       },
     ],
