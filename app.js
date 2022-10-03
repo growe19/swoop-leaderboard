@@ -457,8 +457,8 @@ $(document).ready(function() {
       },
 	{
         //'data': 'positionIfPiting.racePosition'
-		'data': 'carBrand',
-        'render': carbrand
+		'data': 'positionIfPiting.racePosition',
+        'render': positionIfPiting.racePosition
       },
     ],
     'columnDefs': [ //  when new columns are added all these need tweaking
