@@ -1,8 +1,8 @@
-
+[
    {
       "id":71,
       "isPlayer":0,
-	  "positionIfPiting";{"racePosition":9999},"raceNumber":71,
+	  "positionIfPiting":{"racePosition":9999},"raceNumber":71,
       "raceNumberWithSharp":"#71",
       "teamName":"",
       "teamNationality":"Any",
@@ -84,7 +84,7 @@
    {
       "id":90,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":90,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":90,
       "raceNumberWithSharp":"#90",
       "teamName":"",
       "teamNationality":"Any",
@@ -166,7 +166,7 @@
    {
       "id":156,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":156,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":156,
       "raceNumberWithSharp":"#156",
       "teamName":"",
       "teamNationality":"Any",
@@ -248,7 +248,7 @@
    {
       "id":63,
       "isPlayer":1,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":63,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":63,
       "raceNumberWithSharp":"#63",
       "teamName":"",
       "teamNationality":"Any",
@@ -330,7 +330,7 @@
    {
       "id":64,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":64,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":64,
       "raceNumberWithSharp":"#64",
       "teamName":"",
       "teamNationality":"Any",
@@ -412,7 +412,7 @@
    {
       "id":13,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":13,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":13,
       "raceNumberWithSharp":"#13",
       "teamName":"",
       "teamNationality":"Any",
@@ -494,7 +494,7 @@
    {
       "id":47,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":47,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":47,
       "raceNumberWithSharp":"#47",
       "teamName":"",
       "teamNationality":"Any",
@@ -576,7 +576,7 @@
    {
       "id":36,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":36,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":36,
       "raceNumberWithSharp":"#36",
       "teamName":"",
       "teamNationality":"Any",
@@ -658,7 +658,7 @@
    {
       "id":210,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":210,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":210,
       "raceNumberWithSharp":"#210",
       "teamName":"",
       "teamNationality":"Any",
@@ -740,7 +740,7 @@
    {
       "id":979,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":979,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":979,
       "raceNumberWithSharp":"#979",
       "teamName":"",
       "teamNationality":"Any",
@@ -822,7 +822,7 @@
    {
       "id":44,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":44,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":44,
       "raceNumberWithSharp":"#44",
       "teamName":"",
       "teamNationality":"Any",
@@ -904,7 +904,7 @@
    {
       "id":1,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":1,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":1,
       "raceNumberWithSharp":"#1",
       "teamName":"",
       "teamNationality":"Any",
@@ -986,7 +986,7 @@
    {
       "id":21,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":21,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":21,
       "raceNumberWithSharp":"#21",
       "teamName":"",
       "teamNationality":"Any",
@@ -1068,7 +1068,7 @@
    {
       "id":951,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":951,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":951,
       "raceNumberWithSharp":"#951",
       "teamName":"",
       "teamNationality":"Any",
@@ -1150,7 +1150,7 @@
    {
       "id":2,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":2,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":2,
       "raceNumberWithSharp":"#2",
       "teamName":"",
       "teamNationality":"Any",
@@ -1232,7 +1232,7 @@
    {
       "id":97,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":97,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":97,
       "raceNumberWithSharp":"#97",
       "teamName":"",
       "teamNationality":"Any",
@@ -1314,7 +1314,7 @@
    {
       "id":12,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":12,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":12,
       "raceNumberWithSharp":"#12",
       "teamName":"",
       "teamNationality":"Any",
@@ -1396,7 +1396,7 @@
    {
       "id":84,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":84,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":84,
       "raceNumberWithSharp":"#84",
       "teamName":"",
       "teamNationality":"Any",
@@ -1478,7 +1478,7 @@
    {
       "id":130,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":130,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":130,
       "raceNumberWithSharp":"#130",
       "teamName":"",
       "teamNationality":"Any",
@@ -1560,7 +1560,7 @@
    {
       "id":70,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":70,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":70,
       "raceNumberWithSharp":"#70",
       "teamName":"",
       "teamNationality":"Any",
@@ -1642,7 +1642,7 @@
    {
       "id":8,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":8,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":8,
       "raceNumberWithSharp":"#8",
       "teamName":"",
       "teamNationality":"Any",
@@ -1724,7 +1724,7 @@
    {
       "id":11,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":11,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":11,
       "raceNumberWithSharp":"#11",
       "teamName":"",
       "teamNationality":"Any",
@@ -1806,7 +1806,7 @@
    {
       "id":135,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":135,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":135,
       "raceNumberWithSharp":"#135",
       "teamName":"",
       "teamNationality":"Any",
@@ -1888,7 +1888,7 @@
    {
       "id":953,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":953,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":953,
       "raceNumberWithSharp":"#953",
       "teamName":"",
       "teamNationality":"Any",
@@ -1970,7 +1970,7 @@
    {
       "id":185,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":185,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":185,
       "raceNumberWithSharp":"#185",
       "teamName":"",
       "teamNationality":"Any",
@@ -2052,7 +2052,7 @@
    {
       "id":94,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":94,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":94,
       "raceNumberWithSharp":"#94",
       "teamName":"",
       "teamNationality":"Any",
@@ -2134,7 +2134,7 @@
    {
       "id":10,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":10,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":10,
       "raceNumberWithSharp":"#10",
       "teamName":"",
       "teamNationality":"Any",
@@ -2216,7 +2216,7 @@
    {
       "id":69,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":69,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":69,
       "raceNumberWithSharp":"#69",
       "teamName":"",
       "teamNationality":"Any",
@@ -2298,7 +2298,7 @@
    {
       "id":55,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":55,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":55,
       "raceNumberWithSharp":"#55",
       "teamName":"",
       "teamNationality":"Any",
@@ -2380,7 +2380,7 @@
    {
       "id":59,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":59,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":59,
       "raceNumberWithSharp":"#59",
       "teamName":"",
       "teamNationality":"Any",
@@ -2462,7 +2462,7 @@
    {
       "id":495,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":495,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":495,
       "raceNumberWithSharp":"#495",
       "teamName":"",
       "teamNationality":"Any",
@@ -2544,7 +2544,7 @@
    {
       "id":74,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":74,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":74,
       "raceNumberWithSharp":"#74",
       "teamName":"",
       "teamNationality":"Any",
@@ -2626,7 +2626,7 @@
    {
       "id":24,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":24,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":24,
       "raceNumberWithSharp":"#24",
       "teamName":"",
       "teamNationality":"Any",
@@ -2708,7 +2708,7 @@
    {
       "id":19,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":19,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":19,
       "raceNumberWithSharp":"#19",
       "teamName":"",
       "teamNationality":"Any",
@@ -2790,7 +2790,7 @@
    {
       "id":405,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":405,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":405,
       "raceNumberWithSharp":"#405",
       "teamName":"",
       "teamNationality":"Any",
@@ -2872,7 +2872,7 @@
    {
       "id":17,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":17,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":17,
       "raceNumberWithSharp":"#17",
       "teamName":"",
       "teamNationality":"Any",
@@ -2954,7 +2954,7 @@
    {
       "id":28,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":28,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":28,
       "raceNumberWithSharp":"#28",
       "teamName":"",
       "teamNationality":"Any",
@@ -3036,7 +3036,7 @@
    {
       "id":142,
       "isPlayer":0,
-      "positionIfPiting";{"racePosition":9999},"raceNumber":142,
+      "positionIfPiting":{"racePosition":9999},"raceNumber":142,
       "raceNumberWithSharp":"#142",
       "teamName":"",
       "teamNationality":"Any",
@@ -3115,3 +3115,4 @@
       "driver3_Nationality":null,
       "driver3_NationalityNumber":null
    }
+]
