@@ -455,8 +455,10 @@ $(document).ready(function() {
       {
         'data': 'raceAppByTagChampionshipPredictedPoints'
       },
-	     {
-        'data': 'positionIfPiting.racePosition'
+	{
+        //'data': 'positionIfPiting.racePosition'
+		'data': 'carBrand',
+        'render': carbrand
       },
     ],
     'columnDefs': [ //  when new columns are added all these need tweaking
