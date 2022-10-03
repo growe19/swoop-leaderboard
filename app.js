@@ -458,7 +458,7 @@ $(document).ready(function() {
 	{
         //'data': 'positionIfPiting.racePosition'
 		'data': 'positionIfPiting.racePosition',
-        'render': positionIfPiting.racePosition
+         return data;
       },
     ],
     'columnDefs': [ //  when new columns are added all these need tweaking
