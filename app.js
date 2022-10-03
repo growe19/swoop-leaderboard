@@ -456,8 +456,8 @@ $(document).ready(function() {
         'data': 'raceAppByTagChampionshipPredictedPoints'
       },
 	{
-        //'data': 'positionIfPiting.racePosition'
-		'data': 'racePosition',
+        'data': 'positionIfPiting.racePosition'
+	//	'data': 'racePosition',
        //  return data;
       },
     ],
