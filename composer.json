@@ -1,6 +1,6 @@
 {
     "name": "simon/swoop-leaderboard",
-    "type": "projet",
+    "type": "project",
     "require": {
         "guzzlehttp/guzzle": "^7.4"
     },
@@ -9,5 +9,10 @@
             "name": "Simon Gilhooly",
             "email": "32387490+kyojin007@users.noreply.github.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "Leaderboard\\": "raceApp/classes/"
+        }
+    }
 }
