@@ -13,6 +13,11 @@ use GuzzleHttp\Psr7;
 
 use Leaderboard\Event;
 
+if (!isset($_GET['seriesId'])) {
+    echo 'Please send a seriesId';
+    exit(0);
+}
+
 $seriesId = $_GET['seriesId'];
 
 $url = "https://raceapp.eu/api/series/";
@@ -55,23 +60,37 @@ try {
             foreach ($car['Events'] as $result) {
                 if ($result['Position']) {
                     $events[$result['ManagedEventId']]->overallPosition($c->number, $result['Position']);
-                    $pts = $events[$result['ManagedEventId']]->raceappClassPosition($c->raceappClass, $c->number);
+                    $events[$result['ManagedEventId']]->raceappClassPosition($c->raceappClass, $c->number, $result['Position']);
 
-                    $c->assignPts($pts);
+                    // $c->assignPts($pts);
                 }
             }
         }
 
+        // now we got all the cars in order we can assign points
+        foreach ($events as $event) {
+            $event->sort();
+
+            // loop thru the raceappClass positions assigning points
+            foreach ($event->positions as $i => $p) {
+                foreach ($p as $pos => $carNumber) {
+                    $carIndex = array_search($carNumber, array_column($cars, 'number'));
+                    // $cars[$carIndex]->assignPts(Event::PTS[$pos]);
+                }
+            }
+        }
+
+
+        header('Content-Type: application/json;charset=utf-8');
         cors();
 
         echo json_encode(['events' => $events, 'cars' => $cars]);
     } else {
         http_response_code(403);
-        echo 'Failed';
+        echo 'Failed to fetch data from RaceApp, status code: ' . $code;
     }
 } catch (ClientException $e) {
     http_response_code(403);
-    // echo Psr7\Message::toString($e->getRequest());
     echo Psr7\Message::toString($e->getResponse());
 }
 

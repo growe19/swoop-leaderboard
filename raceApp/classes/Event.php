@@ -6,7 +6,7 @@ use RuntimeException;
 
 class Event
 {
-    private const PTS = [16, 13, 10, 8, 7, 5, 4, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+    public const PTS = [16, 13, 10, 8, 7, 5, 4, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 
     /**
      * @var int $Id
@@ -31,19 +31,43 @@ class Event
         $this->positions = [];
     }
 
-    public function overallPosition (int $carId, int $position)
+    /**
+     * record the position of a car in this race
+     * @param int $carNumber - race number of this car
+     * @param int $position - overall position
+     */
+    public function overallPosition(int $carNumber, int $position)
     {
-        $this->positions['overall'][$position] = $carId;
+        $this->positions['overall'][$position] = $carNumber;
     }
 
-    public function raceappClassPosition (string $raceappClass, int $carId): int
+    /**
+     * record the position within the given class
+     * @param string $raceappClass - BRONZE, SILVER, GOLD, etc
+     * @param int $carNumber -
+     *
+     * @return int number of points awarded
+     */
+    public function raceappClassPosition(string $raceappClass, int $carNumber, int $position): void
     {
-        $this->positions[$raceappClass][] = $carId;
+        if ($raceappClass !== '') {
+            $this->positions[$raceappClass][$position] = $carNumber;
+        }
 
+        /*
         $raceappPosition = count($this->positions[$raceappClass]) - 1;
         if ($raceappPosition >= count(self::PTS)) {
             return 0;
         }
         return self::PTS[$raceappPosition];
+        */
+    }
+
+    public function sort(): void
+    {
+        foreach ($this->positions as $i => $e) {
+            ksort($e);
+            $this->positions[$i] = array_values($e);
+        }
     }
 }

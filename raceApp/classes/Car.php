@@ -28,6 +28,7 @@ class Car
             // $this->name = substr($car['CarName'], strlen($this->number));
             $this->name = $car['CarName'];
         }
+
         $this->class = $car['VehicleClass'];
         $this->model = $car['VehicleModel'];
         $this->raceappClass = $car['Tag'] ?? '';
@@ -35,7 +36,10 @@ class Car
         $this->raceappPts = 0;
     }
 
-    public function assignPts (int $pts): void
+    /**
+     * assign given number of points to this car's total
+     */
+    public function assignPts(int $pts): void
     {
         if ($this->raceappClass !== '') {
             $this->raceappPts += $pts;
