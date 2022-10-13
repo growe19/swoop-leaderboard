@@ -43,12 +43,7 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
     <li><b>Change</b>
       <br/><img src="https://cdn.rawgit.com/crocodilejs/font-awesome-assets/master/media/gree/angle-up.svg" width="16" height="16" title="angle-up" alt="angle-up" />
       <br/><img src="https://cdn.rawgit.com/crocodilejs/font-awesome-assets/master/media/black/minus.svg" width="16" height="16" title="minus" alt="minus" />
-      <br/><img src="https://cdn.rawgit.com/crocodilejs/font-awesome-assets/master/media/red/angle-down.svg" width="16" height="16" title="angle-up" alt="angle-down" />
-      
-      <svg>
-    <use href="https://cdn.rawgit.com/crocodilejs/font-awesome-assets/master/media/red/angle-down.svg" style="--color_fill: #000;"></use>
-</svg>
-      
+      <br/><img src="https://cdn.rawgit.com/crocodilejs/font-awesome-assets/master/media/red/angle-down.svg" width="16" height="16" title="angle-up" alt="angle-down" /> 
       </li>
   </ul>
 </details>
