@@ -38,8 +38,8 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
 <details>
   <summary><b>Position</b></summary>
   <ul>
-    <li><b>Track</b>, Text</li>
-    <li><b>Grid</b>, Text</li>
+    <li><b>Track</b [x] #739</li>
+    <li><b>Grid</b>, Text Text Text Text Text Text Text Text Text Text Text Text Text Text<ul><li>sse wes fe ew ew</li></ul></li>
     <li><b>Change</b>, Text</li>
   </ul>
 </details>
