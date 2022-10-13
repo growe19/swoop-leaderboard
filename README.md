@@ -28,6 +28,62 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+
+## Leaderboard Columns Explained
+### Position
+#### Track 
+Text
+#### Grid 
+Text
+#### Change
+Text
+### Driver
+#### Short Name 
+Text
+#### Flag
+Text
+#### Nationality
+Text
+#### Number
+Text
+#### Full Name
+Text
+#### First Name
+Text
+#### Last Name
+Text
+#### Category
+Text
+### Team
+#### Name 
+Text
+#### Flag 
+Text
+### Car 
+#### Logo 
+Text
+#### Manufacturer 
+Text
+#### Model 
+Text
+#### Series 
+Text
+#### Cup 
+Text
+### Lap 
+#### Count 
+Text
+#### Progress 
+Text
+
+
+
+
+
+
+
+
+
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
