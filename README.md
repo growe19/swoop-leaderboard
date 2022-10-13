@@ -37,9 +37,9 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
 
 <details>
   <summary><b>Position</b></summary>
-**Track**, Text
+<p>**Track**, Text
 **Grid**, Text
-**Change**, Text
+**Change**, Text</p>
 </details>
 
 <details>
