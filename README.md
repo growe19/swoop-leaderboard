@@ -30,6 +30,19 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
 
 
 ## Leaderboard Columns Explained
+
+<details><summary>CLICK ME</summary>
+<p>
+
+#### We can hide anything, even code!
+
+```ruby
+   puts "Hello World"
+```
+
+</p>
+</details>
+
 ### Position
 #### Track 
 Text
