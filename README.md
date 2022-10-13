@@ -37,10 +37,11 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
 
 <details>
   <summary><b>Position</b></summary>
-  <ul><li><b>Track</b>, Text</li></ul>
-- <b>Track</b>, Text
-<b>- Track</b>, Text
-  </p>
+  <ul>
+    <li><b>Track</b>, Text</li>
+    <li><b>Track</b>, Text</li>
+    <li><b>Track</b>, Text</li>
+  </ul>
 </details>
 
 <details>
