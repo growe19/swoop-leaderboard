@@ -110,11 +110,52 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
     <li><b>Sector 1</b>, Text</li>
     <li><b>Sector 2</b>, Text</li>
     <li><b>Sector 3</b>, Text</li>
+    <li><b>Delta From Own</b>, Text</li>
+    <li><b>Delta From Global</b>, Text</li>
   </ul>
 </details>
 
+<details>
+  <summary><b>Pit Stop</b></summary>
+ <ul>
+    <li><b>Count</b>, Text</li>
+    <li><b>Laps Ago</b>, Text</li>
+    <li><b>Delta</b>, Text</li>
+  </ul>
+</details>
 
+<details>
+  <summary><b>RA Class (RaceApp)</b></summary>
+ <ul>
+    <li><b>Class</b>, Text</li>
+    <li><b>Pos</b>, Text</li>
+    <li><b>Gap &amp; Traffic</b>, Text</li>
+  </ul>
+</details>
 
+<details>
+  <summary><b>League Standings: Current (RaceApp)</b></summary>
+ <ul>
+    <li><b>Pos</b>, Text</li>
+    <li><b>Pts</b>, Text</li>
+  </ul>
+</details>
+
+<details>
+  <summary><b>League Standings: Provisional (RaceApp)</b></summary>
+ <ul>
+    <li><b>Change</b>, Text</li>
+    <li><b>Pos</b>, Text</li>
+    <li><b>Pts</b>, Text</li>
+  </ul>
+</details>
+
+<details>
+  <summary><b>Beta</b></summary>
+ <ul>
+    <li><b>PitExit</b>, Text</li>
+  </ul>
+</details>
 
 
 ### Prerequisites
