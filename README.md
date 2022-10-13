@@ -35,14 +35,20 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
 
 ## Leaderboard Columns Explained
 
+<details>
+  <summary><b>Position</b></summary>
+  <br/>
 
-### Position
 #### Track 
 Text
 #### Grid 
 Text
 #### Change
 Text
+
+</details>
+
+
 ### Driver
 #### Short Name 
 Text
