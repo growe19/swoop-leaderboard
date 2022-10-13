@@ -31,17 +31,9 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
 
 ## Leaderboard Columns Explained
 
-<details>### Position
-<p>
-#### Track 
-Text
-#### Grid 
-Text
-#### Change
-Text
-</p>
-</details>
-
+<table><tr>
+  
+<td valign="top" width="33%">
 ### Position
 #### Track 
 Text
@@ -66,6 +58,10 @@ Text
 Text
 #### Category
 Text
+
+</td>
+  
+<td valign="top" width="34%">
 ### Team
 #### Name 
 Text
@@ -87,6 +83,40 @@ Text
 Text
 #### Progress 
 Text
+
+</td>
+  
+<td valign="top" width="33%">
+### Gap
+#### Ahead
+Text
+#### To Lead
+Text
+### Last Lap
+#### Time
+Text
+#### Sector 1
+Text
+#### Sector 2
+Text
+#### Sector 3
+Text
+### Best Lap
+#### Time
+Text
+#### Sector 1
+Text
+#### Sector 2
+Text
+#### Sector 3
+Text
+  
+
+</td></tr></table>
+
+
+
+
 
 
 
