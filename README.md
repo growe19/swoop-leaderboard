@@ -39,98 +39,78 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
   <summary><b>Position</b></summary>
   <ul>
     <li><b>Track</b>, Text</li>
-    <li><b>Track</b>, Text</li>
-    <li><b>Track</b>, Text</li>
+    <li><b>Grid</b>, Text</li>
+    <li><b>Change</b>, Text</li>
   </ul>
 </details>
 
 <details>
   <summary><b>Driver</b></summary>
-
-#### Short Name 
-Text
-#### Flag
-Text
-#### Nationality
-Text
-#### Number
-Text
-#### Full Name
-Text
-#### First Name
-Text
-#### Last Name
-Text
-#### Category
-Text
+    <ul>
+    <li><b>Short Name</b>, Text</li>
+    <li><b>Flag</b>, Text</li>
+    <li><b>Nationality</b>, Text</li>
+    <li><b>Number</b>, Text</li>
+    <li><b>Full Name</b>, Text</li>
+    <li><b>First Name</b>, Text</li>
+    <li><b>Last Name</b>, Text</li>
+    <li><b>Cat.</b>, Text</li>
+  </ul>
 </details>
 
 <details>
   <summary><b>Team</b></summary>
-
-#### Name 
-Text
-#### Flag 
-Text
+  <ul>
+    <li><b>Name</b>, Text</li>
+    <li><b>Flag</b>, Text</li>
+  </ul>
 </details>
 
 <details>
   <summary><b>Car</b></summary>
-
-#### Logo 
-Text
-#### Manufacturer 
-Text
-#### Model 
-Text
-#### Series 
-Text
-#### Cup 
-Text
+    <ul>
+    <li><b>Logo</b>, Text</li>
+    <li><b>Manufacturer</b>, Text</li>
+    <li><b>Model</b>, Text</li>
+    <li><b>Series</b>, Text</li>
+    <li><b>Cup</b>, Text</li>
+  </ul>
 </details>
 
 <details>
   <summary><b>Lap</b></summary>
-
-#### Count 
-Text
-#### Progress 
-Text
+  <ul>
+    <li><b>Count</b>, Text</li>
+    <li><b>Progress</b>, Text</li>
+  </ul>
 </details>
 
 <details>
   <summary><b>Gap</b></summary>
-
-#### Ahead
-Text
-#### To Lead
-Text
+    <ul>
+    <li><b>Ahead</b>, Text</li>
+    <li><b>To Lead</b>, Text</li>
+  </ul>
 </details>
 
 <details>
   <summary><b>Last Lap</b></summary>
-
-#### Time
-Text
-#### Sector 1
-Text
-#### Sector 2
-Text
-#### Sector 3
-Text
+  <ul>
+    <li><b>Time</b>, Text</li>
+    <li><b>Sector 1</b>, Text</li>
+    <li><b>Sector 2</b>, Text</li>
+    <li><b>Sector 3</b>, Text</li>
+  </ul>
 </details>
 
 <details>
   <summary><b>Best Lap</b></summary>
-
-#### Time
-Text
-#### Sector 1
-Text
-#### Sector 2
-Text
-#### Sector 3
-Text
+ <ul>
+    <li><b>Time</b>, Text</li>
+    <li><b>Sector 1</b>, Text</li>
+    <li><b>Sector 2</b>, Text</li>
+    <li><b>Sector 3</b>, Text</li>
+  </ul>
 </details>
 
 
