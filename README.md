@@ -40,7 +40,10 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
   <ul>
     <li><b>Track</b [x] #739</li>
     <li><b>Grid</b>, <blockquote>xt Text Text</blockquote></li>
-    <li><b>Change</b>, Text</li>
+    <li><b>Change</b>
+      <br/><img src="https://cdn.rawgit.com/crocodilejs/font-awesome-assets/master/media/rainbow/angle-up.svg" width="16" height="16" title="angle-up" alt="angle-up" />
+      <br/><img src="https://cdn.rawgit.com/crocodilejs/font-awesome-assets/master/media/rainbow/angle-down.svg" width="16" height="16" title="angle-up" alt="angle-down" />
+      </li>
   </ul>
 </details>
 
