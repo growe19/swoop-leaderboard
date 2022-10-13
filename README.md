@@ -37,7 +37,6 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
 
 <details>
   <summary><b>Position</b></summary>
-  <br/>
 
 #### Track 
 Text
@@ -45,11 +44,11 @@ Text
 Text
 #### Change
 Text
-
 </details>
 
+<details>
+  <summary><b>Driver</b></summary>
 
-### Driver
 #### Short Name 
 Text
 #### Flag
@@ -66,14 +65,20 @@ Text
 Text
 #### Category
 Text
+</details>
 
+<details>
+  <summary><b>Team</b></summary>
 
-### Team
 #### Name 
 Text
 #### Flag 
 Text
-### Car 
+</details>
+
+<details>
+  <summary><b>Car</b></summary>
+
 #### Logo 
 Text
 #### Manufacturer 
@@ -84,19 +89,29 @@ Text
 Text
 #### Cup 
 Text
-### Lap 
+</details>
+
+<details>
+  <summary><b>Lap</b></summary>
+
 #### Count 
 Text
 #### Progress 
 Text
+</details>
 
+<details>
+  <summary><b>Gap</b></summary>
 
-### Gap
 #### Ahead
 Text
 #### To Lead
 Text
-### Last Lap
+</details>
+
+<details>
+  <summary><b>Last Lap</b></summary>
+
 #### Time
 Text
 #### Sector 1
@@ -105,7 +120,11 @@ Text
 Text
 #### Sector 3
 Text
-### Best Lap
+</details>
+
+<details>
+  <summary><b>Best Lap</b></summary>
+
 #### Time
 Text
 #### Sector 1
@@ -114,16 +133,7 @@ Text
 Text
 #### Sector 3
 Text
-  
-
-
-
-
-
-
-
-
-
+</details>
 
 
 
