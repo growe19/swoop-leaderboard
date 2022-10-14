@@ -83,7 +83,7 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
   <summary><b>Lap</b></summary>
   <ul>
     <li><b>Count</b>, is the number of Laps the Driver has completed.</li>
-    <li><b>Progress</b>, along the track distance is indicated with a progress bar. The progress bar colour will turn red when the Driver is travelling through the Pit Lane or has stopped in the Pit Box.
+    <li><b>Progress</b>, along the track distance is indicated with a progress bar. The progress bar colour will turn red when the Driver is travelling through the Pit Lane or has stopped in the Pit Box. The progress bar resets from 100% back to 0% at the Start/Finish Line.
     <br/><img src="https://github.com/growe19/swoop-leaderboard/blob/main/Progress.PNG" /> 
   </ul>
 </details>
