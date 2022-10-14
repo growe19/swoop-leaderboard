@@ -41,9 +41,7 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
     <li><b>Track</b [x] #739</li>
     <li><b>Grid</b>, <blockquote>xt Text Text</blockquote></li>
     <li><b>Change</b>
-      <br/><span color="#000000"><img src="https://cdn.rawgit.com/crocodilejs/font-awesome-assets/master/media/rainbow/angle-up.svg" width="16" height="16" title="angle-up" alt="angle-up" /></span>
-      <br/><img src="https://cdn.rawgit.com/crocodilejs/font-awesome-assets/master/media/black/minus.svg" width="16" height="16" title="minus" alt="minus" />
-      <br/><img src="https://cdn.rawgit.com/crocodilejs/font-awesome-assets/master/media/red/angle-down.svg" width="16" height="16" title="angle-up" alt="angle-down" /> 
+      <br/><img src="https://github.com/growe19/swoop-leaderboard/blob/main/change.PNG" /> 
       </li>
   </ul>
 </details>
