@@ -49,22 +49,22 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
 <details>
   <summary><b>Driver</b></summary>
     <ul>
-    <li><b>Short Name</b>, Text</li>
-    <li><b>Flag</b>, Text</li>
-    <li><b>Nationality</b>, Text</li>
-    <li><b>Number</b>, Text</li>
-    <li><b>Full Name</b>, Text</li>
-    <li><b>First Name</b>, Text</li>
-    <li><b>Last Name</b>, Text</li>
-    <li><b>Cat.</b>, Text</li>
+    <li><b>Short Name</b> is the three letter Driver code. Usually the first three letters of the Driver's Last Name.</li>
+    <li><b>Flag</b> for the Nationality of the Driver.</li>
+    <li><b>Nationality</b> as a word for the Driver.</li>
+    <li><b>Number</b> is the Driver Number.</li>
+    <li><b>Full Name</b> of the Driver.</li>
+    <li><b>First Name</b> of the Driver.</li>
+    <li><b>Last Name</b> of the Driver.</li>
+    <li><b>Cat.</b> is the Category of the Driver; PLATINUM, GOLD, SILVER, BRONZE, etc.</li>
   </ul>
 </details>
 
 <details>
   <summary><b>Team</b></summary>
   <ul>
-    <li><b>Name</b>, Text</li>
-    <li><b>Flag</b>, Text</li>
+    <li><b>Name</b> of the Team.</li>
+    <li><b>Flag</b> for the Nationality of the Team.</li>
   </ul>
 </details>
 
@@ -74,8 +74,8 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
     <li><b>Logo</b>, Text</li>
     <li><b>Manufacturer</b>, Text</li>
     <li><b>Model</b>, Text</li>
-    <li><b>Series</b>, Text</li>
-    <li><b>Cup</b>, Text</li>
+    <li><b>Series</b> is the Series of the Car; GT3, GT4, etc.</li>
+    <li><b>Cup</b> is the Cup of the Car; PRO, PRO-AM, SILVER, AM, etc.</li>
   </ul>
 </details>
 
