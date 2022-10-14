@@ -38,9 +38,9 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
 <details>
   <summary><b>Position</b></summary>
   <ul>
-    <li><b>Track</b [x] #739</li>
-    <li><b>Grid</b>, <blockquote>xt Text Text</blockquote></li>
-    <li><b>Change</b>
+    <li><b>Track</b> position is the standard position of the Driver on track. Pretty standard for Column 1 in any Leaderboard.</li>
+    <li><b>Grid</b> is the position the Driver started the race in. Usually where they finished in Qualifying.</li>
+    <li><b>Change</b> is the difference between the Driver's starting Grid position and their Track position. Illustrated with a red down arrow if the Driver has dropped positions, a green up arrow if they have gain posistions and a straight dash line if their position has not changed. 
       <br/><img src="https://github.com/growe19/swoop-leaderboard/blob/main/change.PNG" /> 
       </li>
   </ul>
@@ -83,7 +83,7 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
   <summary><b>Lap</b></summary>
   <ul>
     <li><b>Count</b>, is the number of Laps the Driver has completed.</li>
-    <li><b>Progress</b>, along the track distance is indicated with a progress bar. The progress bar colour will turn red when the Driver is in travelling in the Pit Lane or stopped in the Pit Lane.
+    <li><b>Progress</b>, along the track distance is indicated with a progress bar. The progress bar colour will turn red when the Driver is travelling through the Pit Lane or has stopped in the Pit Box.
     <br/><img src="https://github.com/growe19/swoop-leaderboard/blob/main/Progress.PNG" /> 
   </ul>
 </details>
