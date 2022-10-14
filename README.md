@@ -40,7 +40,7 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
   <ul>
     <li><b>Track</b> position is the standard position of the Driver on track. Pretty standard for Column 1 in any Leaderboard.</li>
     <li><b>Grid</b> is the position the Driver started the race in. Usually where they finished in Qualifying.</li>
-    <li><b>Change</b> is the difference between the Driver's starting Grid position and their Track position. Illustrated with a red down arrow if the Driver has dropped positions, a green up arrow if they have gain posistions and a straight dash line if their position has not changed. 
+    <li><b>Change</b> is the difference between the Driver's starting Grid position and their Track position. Illustrated with a red down arrow if the Driver has dropped positions, a green up arrow if they have gained positions and a straight dash line if their position has not changed. 
       <br/><img src="https://github.com/growe19/swoop-leaderboard/blob/main/change.PNG" /> 
       </li>
   </ul>
@@ -147,8 +147,8 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
 <details>
   <summary><b>League Standings: Provisional (RaceApp)</b></summary>
  <ul>
-    <li><b>Change</b>, Text</li>
-    <li><b>Pos</b>, Text</li>
+    <li><b>Change</b> is the difference between the Current RaceApp League Standing Position and the Provisional RaceApp League Standing Position. Illustrated with a red down arrow if the Driver has dropped positions, a green up arrow if they have gained positions and a straight dash line if their position has not changed.</li>
+    <li><b>Pos</b> is the predicted Provisional RaceApp League Standing Position based on the Driver's Current RaceApp League Standing Position with the Points for their RaceApp Class Position Points combined.</li>
     <li><b>Pts</b>, Text</li>
   </ul>
 </details>
@@ -156,7 +156,7 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
 <details>
   <summary><b>Beta</b></summary>
  <ul>
-    <li><b>PitExit</b>, Text</li>
+    <li><b>PitExit</b> is a prediction of the Track Position you will be if you were to pit at any given time. This feature is being tested before being fully implemented and appearing within the Pit group.</li>
   </ul>
 </details>
 
