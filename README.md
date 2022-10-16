@@ -18,6 +18,9 @@
     <a href="https://github.com/growe19/swoop-leaderboard/issues">Request Feature</a>
   </p>
 </div>
+<img src="https://github.com/growe19/swoop-leaderboard/blob/main/Leaderboard.PNG"/>
+
+
 
 
 <!-- ABOUT THE PROJECT -->
