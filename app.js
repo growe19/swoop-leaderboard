@@ -253,7 +253,14 @@ $(document).ready(function() {
         'data': 'movements',
         'render': movement
       },
-      { 'data': 'currentDriver_ShortName' },
+      
+       { // This is the FIX for currentDriver_ShortName 
+        'data': 'currentDriver_LasttName',
+        'render': function (data, type, row) {
+          return data.slice(0, 3);
+        }
+      // .slice(0, 3);
+      },
       {
         // column 5
         'data': 'currentDriver_NationalityNumber',
