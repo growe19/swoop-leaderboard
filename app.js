@@ -257,7 +257,8 @@ $(document).ready(function() {
        { // This is the FIX for currentDriver_ShortName 
         'data': 'currentDriver_LasttName',
         'render': function (data, type, row) {
-          return data.slice(0, 3);
+          // return data.slice(0, 3);
+		return data.slice(0, 3).toUpperCase();
         }
       // .slice(0, 3);
       },
