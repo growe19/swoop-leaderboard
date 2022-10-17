@@ -52,7 +52,7 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
 <details>
   <summary><b>Driver</b></summary>
     <ul>
-    <li><b>Short Name</b> is the three letter Driver code. Usually the first three letters of the Driver's Last Name.</li>
+    <li><b>Short Name</b> is the three letter Driver code. This is the first three letters of the Driver's Last Name regardless of what they have set in-game. Because of this you can have more than one Driver with the same Short Name which is not true to real life.</li>
     <li><b>Flag</b> for the Nationality of the Driver.</li>
     <li><b>Nationality</b> as a word for the Driver.</li>
     <li><b>Number</b> is the Driver Number.</li>
