@@ -6,7 +6,8 @@
  * @returns {Object} -- could make this a class
  */
 export async function getRaceAppCarWithResults(raceAppSerieId, carId, mode) {
-  let url = `http://localhost:8000/Acc/GetRaceAppCarWithResults/${raceAppSerieId}/${carId}`;
+  	//let url = `https://leaderboard.atom14.co.uk/raceApp/series.php?seriesId=${raceAppSerieId}/${carId}`;
+	let url = `https://leaderboard.atom14.co.uk/raceApp/series.php?seriesId=${raceAppSerieId}`;
 	if (mode === 'static') {
 		url = `seriesId${raceAppSerieId}carId${carId}.json`;
 	}
