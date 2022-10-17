@@ -496,7 +496,7 @@ $(document).ready(function() {
 
   // classFiltering
   document.getElementById("myText").value = classFiltering;
-  table.columns(36).search($('#myText').val()).draw(); // UPDATE TARGET COLUMN
+  table.columns(37).search($('#myText').val()).draw(); // UPDATE TARGET COLUMN
 
   // Add event listener for opening and closing details in the child row
   $('body').on(
