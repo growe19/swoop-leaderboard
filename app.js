@@ -482,7 +482,7 @@ $(document).ready(function() {
       {
         // add a no wrap class to these columns
         'className': 'nowrapping',
-        'targets': [ 4,8,9,10,12,13,16,22,24,25,26,28,29,30,31,32,34,39 ]
+        'targets': [ 4,6,8,9,10,12,13,16,22,24,25,26,28,29,30,31,32,34,40 ]
       },
       {
         'searchBuilderTitle': 'RaceApp.eu Driver Tag (Class)',
