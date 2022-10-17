@@ -9,7 +9,8 @@ export async function getRaceAppCarWithResults(raceAppSerieId, carId, mode) {
   	//let url = `https://leaderboard.atom14.co.uk/raceApp/series.php?seriesId=${raceAppSerieId}/${carId}`;
 	let url = `https://leaderboard.atom14.co.uk/raceApp/series.php?seriesId=${raceAppSerieId}`;
 	if (mode === 'static') {
-		url = `seriesId${raceAppSerieId}carId${carId}.json`;
+		url = `https://leaderboard.atom14.co.uk/raceApp/series.php?seriesId=${raceAppSerieId}`;
+		//url = `seriesId${raceAppSerieId}carId${carId}.json`;
 	}
 
   const response = await fetch(url);
