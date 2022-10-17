@@ -1,12 +1,8 @@
 
 <div align="center">
 
-  <h3 align="center">Swoop Leaderboard <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/fire_1f525.png" width="20" alt="new" /></h3>
-<div id="badges">
-  
-  <img src="https://img.shields.io/badge/YouTube-red?style=for-the-badge&logo=youtube&logoColor=white" alt="Youtube Badge"/>
-  
-</div>
+  <h3 align="center">Swoop Leaderboard </h3>
+
   <p align="center">
     Leaderboard webapp for Assetto Corsa Competizione (ACC) using localhost supplied data from the Swoop API plug-in for SimHub.
     <br />
@@ -151,7 +147,7 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
 <details>
   <summary><b>League Standings: Provisional (RaceApp)</b></summary>
  <ul>
-    <li><b>Change</b> is the difference between the Current RaceApp League Standing Position and the Provisional RaceApp League Standing Position. Illustrated with a red down arrow if the Driver has dropped positions, a green up arrow if they have gained positions and a straight dash line if their position has not changed.</li>
+    <li><b>Change</b> is the difference between the <code>Current RaceApp League Standing Position</code> and the <code>Provisional RaceApp League Standing Position</code>. Illustrated with a red down arrow if the Driver has dropped positions, a green up arrow if they have gained positions and a straight dash line if their position has not changed.</li>
     <li><b>Pos</b> is the predicted Provisional RaceApp League Standing Position based on the Driver's Current RaceApp League Standing Position with the Points for their RaceApp Class Position Points combined.</li>
     <li><b>Pts</b>, Text</li>
   </ul>
