@@ -404,6 +404,11 @@ $(document).ready(function() {
         // column 35 - time in pit lane
         'data': 'inPitSince'
       },
+	    {
+        'data': 'positionIfPiting.racePosition'
+	//	'data': 'racePosition',
+       //  return data;
+      },
       {
         'data': "raceAppTag" ,
         'render': pgsbBadge
@@ -455,25 +460,21 @@ $(document).ready(function() {
       {
         'data': 'raceAppByTagChampionshipPredictedPoints'
       },
-	{
-        'data': 'positionIfPiting.racePosition'
-	//	'data': 'racePosition',
-       //  return data;
-      },
+	
     ],
     'columnDefs': [ //  when new columns are added all these need tweaking
       {
         // add a no wrap class to these columns
         'className': 'nowrapping',
-        'targets': [ 4,8,9,10,12,13,16,22,24,25,26,28,29,30,31,32,34,38 ]
+        'targets': [ 4,8,9,10,12,13,16,22,24,25,26,28,29,30,31,32,34,39 ]
       },
       {
         'searchBuilderTitle': 'RaceApp.eu Driver Tag (Class)',
-        'targets': 36
+        'targets': 37
       },
       {
         'searchBuilderTitle': 'RaceApp.eu Position within Driver Tag (Class)',
-        'targets': 37
+        'targets': 38
       }
     ],
     'createdRow': highlight,
