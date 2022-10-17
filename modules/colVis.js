@@ -35,14 +35,15 @@ export default function colVis( dt, idx, title ) {
   if(idx==33){ return '<small>'+(idx)+': Pit Stop: Count</small>';}
   if(idx==34){ return '<small>'+(idx)+': Pit Stop: Age</small>';}
   if(idx==35){ return '<small>'+(idx)+': Pit Stop: Delta</small>';}
-  if(idx==36){ return '<small>'+(idx)+': RaceApp.eu: Tag</small>';}
-  if(idx==37){ return '<small>'+(idx)+': RA.eu: Tag Pos #</small>';}
-  if(idx==38){ return '<small>'+(idx)+': RA.eu: Tag Gap in Class</small>';}
-  if(idx==39){ return '<small>'+(idx)+': RA.eu: Tag Current Champ Pos</small>';}
-  if(idx==40){ return '<small>'+(idx)+': RA.eu: Tag Current Champ Pts</small>';}
-  if(idx==41){ return '<small>'+(idx)+': RaceApp.eu: Championship Pred Change</small>';}
-  if(idx==42){ return '<small>'+(idx)+': RaceApp.eu: Tag Predicted Champ Pos</small>';}
-  if(idx==43){ return '<small>'+(idx)+': RaceApp.eu: Tag Predicted Champ Pts</small>';}
+  if(idx==36){ return '<small>'+(idx)+': Pit Stop: Exit Prediction</small>';}
+  if(idx==37){ return '<small>'+(idx)+': RaceApp.eu: Tag</small>';}
+  if(idx==38){ return '<small>'+(idx)+': RA.eu: Tag Pos #</small>';}
+  if(idx==39){ return '<small>'+(idx)+': RA.eu: Tag Gap in Class</small>';}
+  if(idx==40){ return '<small>'+(idx)+': RA.eu: Tag Current Champ Pos</small>';}
+  if(idx==41){ return '<small>'+(idx)+': RA.eu: Tag Current Champ Pts</small>';}
+  if(idx==42){ return '<small>'+(idx)+': RaceApp.eu: Championship Pred Change</small>';}
+  if(idx==43){ return '<small>'+(idx)+': RaceApp.eu: Tag Predicted Champ Pos</small>';}
+  if(idx==44){ return '<small>'+(idx)+': RaceApp.eu: Tag Predicted Champ Pts</small>';}
 
   return (idx) + ': ERROR';
 }
