@@ -52,7 +52,7 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
 <details>
   <summary><b>Driver</b></summary>
     <ul>
-    <li><b>Short Name</b> is the three letter Driver code. This is the first three letters of the Driver's Last Name regardless of what they have set in-game. Because of this you can have more than one Driver with the same Short Name which is not true to real life.</li>
+    <li><b>Short Name</b> is the three letter Driver code. This <b>is</b> the first three letters of the Driver's Last Name, regardless of what they have set in-game. Because of this you can have more than one Driver with the same Short Name, which is not true to real life.</li>
     <li><b>Flag</b> for the Nationality of the Driver.</li>
     <li><b>Nationality</b> as a word for the Driver.</li>
     <li><b>Number</b> is the Driver Number.</li>
@@ -127,6 +127,7 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
     <li><b>Count</b>, Text</li>
     <li><b>Laps Ago</b>, Text</li>
     <li><b>Delta</b>, Text</li>
+   <li><b>ExitPos</b> is a prediction of the Track Position the Driver will be if they were to pit at any given time.</li>
   </ul>
 </details>
 
@@ -156,12 +157,7 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
   </ul>
 </details>
 
-<details>
-  <summary><b>Beta</b></summary>
- <ul>
-    <li><b>PitExit</b> is a prediction of the Track Position you will be if you were to pit at any given time. This feature is being tested before being fully implemented and appearing within the Pit group.</li>
-  </ul>
-</details>
+
 
 
 ### Prerequisites
