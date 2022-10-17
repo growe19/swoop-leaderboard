@@ -286,7 +286,7 @@ $(document).ready(function() {
       },
       { 'data': 'currentDriver_FirstName',
         'render': function (data, type, row) {
-          return data[0].toUpperCase();
+          return data[0].toUpperCase() + data.substring(1);
         }
       },
       {
@@ -294,7 +294,7 @@ $(document).ready(function() {
         'data': 'currentDriver_LasttName'
      ,
         'render': function (data, type, row) {
-          return data[0].toUpperCase();
+          return data[0].toUpperCase() + data.substring(1);
         }
       },
       {
