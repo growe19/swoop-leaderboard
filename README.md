@@ -101,7 +101,8 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
     <li><b>Full Name</b> of the Driver.</li>
     <li><b>First Name</b> of the Driver.</li>
     <li><b>Last Name</b> of the Driver.</li>
-    <li><b>Cat.</b> is the Category of the Driver; PLATINUM, GOLD, SILVER, BRONZE, etc.</li>
+    <li><b>Cat.</b> is the Category of the Driver.<br/><img src="https://github.com/growe19/swoop-leaderboard/blob/main/DriverCat.PNG" /> </li>
+    
   </ul>
 </details>
 
@@ -116,11 +117,11 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
 <details>
   <summary><b>Car</b></summary>
     <ul>
-    <li><b>Logo</b>, Text</li>
+    <li><b>Logo</b>, Text<br/><img src="https://github.com/growe19/swoop-leaderboard/blob/main/CarLogo.PNG" /></li>
     <li><b>Manufacturer</b>, Text</li>
     <li><b>Model</b>, Text</li>
-    <li><b>Series</b> is the Series of the Car; GT3, GT4, etc.</li>
-    <li><b>Cup</b> is the Cup of the Car; PRO, PRO-AM, SILVER, AM, etc.</li>
+    <li><b>Series</b> is the Series of the Car<br/><img src="https://github.com/growe19/swoop-leaderboard/blob/main/CarSeries.PNG" /></li>
+    <li><b>Cup</b> is the Cup of the Car.<br/><img src="https://github.com/growe19/swoop-leaderboard/blob/main/CarCup.PNG" /></li>
   </ul>
 </details>
 
