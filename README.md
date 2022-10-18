@@ -36,8 +36,8 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
 <details>
   <summary><b>Mode</b></summary>
   <ul>
-    <li><b>Option</b> Text.</li>
-    <li><b>Option</b> Text.</li>
+    <li><b><code>live</code></b> This mode requires ACC, SimHub and the SwoopAPI to be running to see data in the table.</li>
+    <li><b><code>static</code></b> Sample test data mode that will not update.</li>
   </ul>
 </details>
   
