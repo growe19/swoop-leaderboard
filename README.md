@@ -31,8 +31,8 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Leaderboard Columns Explained
-<code>mode=live&hide=0&order=1&class=&showme=&refresh=2500
+## URL Parameters Explained
+
 <details>
   <summary><b>Mode</b></summary>
   <ul>
