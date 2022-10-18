@@ -44,40 +44,35 @@ There are many great leaderboard apps for ACC; however, I didn't find one that r
   <details>
   <summary><b>Hide</b></summary>
   <ul>
-    <li><b>Option</b> Text.</li>
-    <li><b>Option</b> Text.</li>
+    <li><b><code>number</code></b> .</li>
   </ul>
 </details>
   
   <details>
   <summary><b>Order</b></summary>
   <ul>
-    <li><b>Option</b> Text.</li>
-    <li><b>Option</b> Text.</li>
+<li><b><code>number</code></b> .</li>
   </ul>
 </details>
   
   <details>
   <summary><b>Class</b></summary>
   <ul>
-    <li><b>Option</b> Text.</li>
-    <li><b>Option</b> Text.</li>
+<li><b><code>word</code></b> .</li>
   </ul>
 </details>
   
   <details>
   <summary><b>Showme</b></summary>
   <ul>
-    <li><b>Option</b> Text.</li>
-    <li><b>Option</b> Text.</li>
+<li><b><code>number</code></b> .</li>
   </ul>
 </details>
   
   <details>
   <summary><b>Refresh</b></summary>
   <ul>
-    <li><b>Option</b> Text.</li>
-    <li><b>Option</b> Text.</li>
+<li><b><code>number</code></b> .</li>
   </ul>
 </details>
 
